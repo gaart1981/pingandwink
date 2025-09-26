@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "141169163809",
+    "project_id": "ping-and-wing",
+    "storage_bucket": "ping-and-wing.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141169163809:android:a7308df5a566a508e62d60",
+        "android_client_info": {
+          "package_name": "com.pingandwink.pingandwink"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSz1r5VGEAoBJ6M_6F78za1GWCLz95Z8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

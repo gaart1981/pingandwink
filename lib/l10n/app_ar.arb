@@ -1,0 +1,632 @@
+{
+  "@@locale": "ar",
+  
+  "commonCancel": "إلغاء",
+  "commonClose": "إغلاق",
+  "commonOk": "حسناً",
+  "commonYes": "نعم",
+  "commonNo": "لا",
+  "commonSave": "حفظ",
+  "commonDelete": "حذف",
+  "commonShare": "مشاركة",
+  "commonLoading": "جاري التحميل...",
+  "commonError": "حصل خطأ",
+  "commonSuccess": "تم بنجاح!",
+  "commonRetry": "حاول مرة تانية",
+  "commonNext": "التالي",
+  "commonBack": "رجوع",
+  "commonSkip": "تخطي",
+  "commonDone": "انتهى",
+  "commonContinue": "استمر",
+  "commonConfirm": "متأكد؟",
+  
+
+
+  "emptyStateMorningStoryMain": "المدينة لا تزال تستيقظ، تتمدد ببطء\nالجميع في طقوسهم الصباحية\nقهوة، تنقل، التظاهر بالعمل\nلكن إليك ما لا يعرفونه بعد:\nالليلة في الساعة 7 مساءً، هذه الخريطة تتحول تماماً",
+  "emptyStateMorningStorySub": "اضبط المنبه الآن، اشكر نفسك لاحقاً ⏰",
+  "emptyStateMorningCuriosityMain": "وصلت للخريطة في مرحلتها الهادئة\nمثل نادي ليلي ظهراً - فارغ لكن مليء بالإمكانات\n3 أشخاص تفقدوا قبلك اليوم\nكلهم وضعوا تذكيرات للـ 7 مساءً\nصدفة؟ أم يعرفون شيئاً؟",
+  "emptyStateMorningCuriositySub": "الجواب يكشف نفسه عند الغروب 🌅",
+  "emptyStateMorningSocialMain": "حقيقة صباح الاثنين:\nالجميع يتظاهر بالعمل الآن\nجداول البيانات مفتوحة، العقول في مكان آخر\nأنت 1 من 7 أشخاص تفقدوا قبل الظهر\nهذا يجعلك مميزاً، أو مجنوناً، أو كليهما",
+  "emptyStateMorningSocialSub": "ارجع الساعة 7 مساءً لتكتشف أيهما",
+  "emptyStateFridayMain": "مفارقة عصر الجمعة:\nالجميع منفصل ذهنياً لكن محاصر جسدياً\nيعدون الساعات حتى الحرية ({hours} متبقية)\nعند الـ 5 مساءً يبدأ التحول\nمن زومبي العمل إلى محاربي نهاية الأسبوع",
+  "@emptyStateFridayMain": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+  "emptyStateFridaySub": "وصلت مبكراً لتشهد ذلك 🦋",
+  "emptyStateAfternoonReturningMain": "تستمر بالعودة في هذا الوقت\nتبحث عن شيء ليس هنا... بعد\nإصرار أم جنون؟\nالكون يراقب\nويكافئ الصبر",
+  "emptyStateAfternoonReturningSub": "تقريباً {hours} ساعات حتى الإشعال 🚀",
+  "@emptyStateAfternoonReturningSub": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+  "emptyStateAfternoonFirstMain": "أحياناً يحدث الساعة 2:47 مساءً\nأحياناً الساعة 6:13 مساءً\nلكنه يحدث دائماً\nالتحول من ميت إلى حي\nمن فارغ إلى كهربائي",
+  "emptyStateAfternoonFirstSub": "السؤال هو: هل ستكون هنا عندما يحدث؟",
+  "emptyStatePrimetimeFirstMain": "مرحباً بك على حافة شيء كبير\nبعد 23 دقيقة، هذه الخريطة الفارغة تنفجر\nمئات الذبذبات تظهر كالنجوم\nكل واحدة شخص حقيقي، عاطفة حقيقية، لحظة حقيقية\nأنت هنا قبل الحشد",
+  "emptyStatePrimetimeFirstSub": "هذا إما عبقرية أو حظ ⚡",
+  "emptyStatePrimetimeReturnMain": "صمت ما قبل اللعبة قبل العاصفة\nأنت تعرف ما قادم\nالـ 7 مساءً تضرب بشكل مختلف على هذه الخريطة\nضغط العمل يتحول إلى طاقة نهاية الأسبوع\nشاهده يحدث في الوقت الفعلي",
+  "emptyStatePrimetimeReturnSub": "أو أغلق التطبيق وتساءل إلى الأبد",
+  "emptyStateWeekendEveningMain": "ظاهرة ليلة السبت:\nالجميع هناك يعيش أفضل حياته\nأو يتظاهر على الإنستغرام\nلكنك وجدت نبض المدينة الحقيقي\nعواطف غير مفلترة، غير محررة، غير مراقبة",
+  "emptyStateWeekendEveningSub": "حدّث بعد 5 دقائق للحقيقة 🌃",
+  "emptyStateWeekendMorningMain": "المدينة مخمورة\nتجمع ببطء الليلة الماضية\nتفحص الأضرار، تعد الندم\nالخريطة تنام حتى 2 مساءً\nلكن عندما تستيقظ...",
+  "emptyStateWeekendMorningSub": "يبدأ الفوضى الجولة 2 🎭",
+  "emptyStateLateNightMain": "وضوح الـ 2 صباحاً يضرب بشكل مختلف\nعندما يتوقف الضجيج، تظهر الحقيقة\nفقط الحقيقيون مستيقظون الآن\nيشاركون أفكار الـ 3 صباحاً\nخام، صادق، غير مفلتر",
+  "emptyStateLateNightSub": "لست وحيداً في الظلام 🌙",
+  "emptyStatePush1Title": "ping&wink",
+  "emptyStatePush1Body": "الخريطة تستيقظ 👀",
+  "emptyStatePush2Title": "ping&wink",
+  "emptyStatePush2Body": "ذروة الذبذبات الآن ⚡",
+  "emptyStatePush3Title": "ping&wink",
+  "emptyStatePush3Body": "بالأمس فاتتك 47 ذبذبة. اليوم؟",
+  "emptyStateNotificationEnabled": "الإشعارات مفعلة! ستعرف عندما تظهر الذبذبات 🔔",
+  "emptyStateTapToClose": "اضغط للإغلاق",
+  "emptyStateAfternoonReturningHours": "تقريباً {hours} ساعات حتى الإشعال 🚀",
+  "@emptyStateAfternoonReturningHours": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+
+
+  "vibeLabelBrainMode": "وضع التركيز",
+  "vibeLabelLatteBreak": "استراحة قهوة",
+  "vibeLabelSportMode": "وضع الرياضة",
+  "vibeLabelSoundLoop": "في الموسيقى",
+  "vibeLabelCityWalk": "جولة بالمدينة",
+  "vibeLabelContentMode": "وضع المحتوى",
+  "vibeLabelChillNight": "ليلة هادية",
+  "vibeLabelPartyMode": "وضع الحفلة",
+  
+  "scanYourVibe": "حدد vibe بتاعك ⚡",
+  "pickYourMood": "اختار مودك وشوف إيه اللي بيحصل دلوقتي 👀",
+  "waitMinutes": "استنى {minutes} دقيقة ⏰",
+  "@waitMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "swipeDownToMap": "↓ اسحب لتحت عشان تشوف الخريطة",
+  "changeYourMood": "غير مودك",
+  "swipeUp": "اسحب لفوق ↑",
+  "youAreNotAlone": "مش لوحدك!",
+  "you": "انت",
+  "others": "غيرك",
+  "days": "يوم",
+  "streak": "🔥 السلسلة: {days} يوم",
+  "@streak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "shareMyVibe": "📤 شارك vibe بتاعي",
+  "close": "إغلاق",
+  "happy": "سعيد",
+  "nearby": "قريب",
+  "enableLocationSettings": "فعّل الموقع من الإعدادات",
+  "errorTryAgain": "خطأ، جرب تاني",
+  "networkError": "مشكلة في الشبكة",
+  "missingConfiguration": "الإعدادات ناقصة",
+  "shareMessage": "حاسس بـ {emotion} دلوقتي 💭 مين تاني؟ شوف -> moodmap.cloud  #MoodMap #VibeCheck",
+  "@shareMessage": {
+    "placeholders": {
+      "emotion": {
+        "type": "String"
+      },
+      "emotionName": {
+        "type": "String"
+      },
+      "nearbyCount": {
+        "type": "int"
+      },
+      "streakDays": {
+        "type": "int"
+      },
+      "happinessPercent": {
+        "type": "int"
+      }
+    }
+  },
+  "shareSubject": "vibe بتاعي على MoodMap! 🌟",
+
+
+
+  "pingErrorYourVibeExpired": "vibe بتاعك انتهى، حط واحد جديد",
+  "pingSentSuccess": "ping اتبعت! ⚡ 60 ثانية للـ Wink",
+  "pingWaitSeconds": "استنى {seconds} ثانية",
+  "@pingWaitSeconds": {
+    "placeholders": {
+      "seconds": {"type": "int"}
+    }
+  },
+  "pingSomeoneAlreadySent": "حد بعت ping قبلك",
+  "pingPersonInSpark": "الشخص ده في PW chat دلوقتي",
+  "pingThisVibeExpired": "vibe ده انتهى",
+  "pingFailedToSend": "مش قادر يتبعت",
+  "pingSendingError": "خطأ في الإرسال",
+  "pingCancelled": "ping اتلغى",
+  "pingCancelledBySender": "المرسل لغى ping",
+  "pingErrorConnecting": "مش قادر يتصل بـ PW mate",
+  "pingErrorStartingChat": "خطأ في بدء المحادثة",
+
+
+
+  "chatTimeNow": "دلوقتي",
+  "chatTimeMinutes": "{minutes}د",
+  "@chatTimeMinutes": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "chatTimeHours": "{hours}س",
+  "@chatTimeHours": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+
+
+
+  "distanceVeryClose": "قريب أوي",
+  "distanceMeters": "{meters}م",
+  "@distanceMeters": {
+    "placeholders": {
+      "meters": {"type": "int"}
+    }
+  },
+  "distanceKilometers": "{km}كم",
+  "@distanceKilometers": {
+    "placeholders": {
+      "km": {"type": "String"}
+    }
+  },
+
+
+
+  "sparkDefaultAlias1": "PW mate 1",
+  "sparkDefaultAlias2": "PW mate 2",
+
+
+
+  "birthYearTitle": "سنة ميلادك",
+  "birthYearPrivacyText": "خاص • محدش هيشوفه",
+  "birthYearDefaultGeneration": "جيل رائع ⭐",
+  "genLabel2012": "جيل الآيباد 📱",
+  "genLabel2011": "أساطير Minecraft ⛏️",
+  "genLabel2010": "Angry Birds 🦅",
+  "genLabel2009": "جيل إنستجرام 📸",
+  "genLabel2008": "Musical.ly 🎵",
+  "genLabel2007": "أطفال TikTok 🎬",
+  "genLabel2006": "جيل YouTube 🎮",
+  "genLabel2005": "عصر Facebook 👍",
+  "genLabel2004": "Snapchat 👻",
+  "genLabel2003": "زمن الماسنجر 💬",
+  "genLabel2002": "جيل iPod 🎧",
+  "genLabel2001": "عشاق هاري بوتر ⚡",
+  "genLabel2000": "أطفال Y2K 🌐",
+  "genLabel1999": "جيل Matrix 💊",
+  "genLabel1998": "Game Boy 🎮",
+  "genLabel1997": "Pokémon 🔴",
+  "genLabel1996": "أطفال الإنترنت 💻",
+  "genLabel1995": "Windows 95 🪟",
+  "genLabel1994": "عصر Friends ☕",
+  "genLabel1993": "جيل Sonic 💨",
+  "genLabel1992": "سبيستون 📺",
+  "genLabel1991": "أطفال الألعاب 🎮",
+  "genLabel1990": "جيل MTV 🎸",
+  "genLabel1989": "عصر Nintendo 🕹️",
+  "genLabel1988": "Walkman 🎧",
+  "genLabel1987": "أطفال VHS 📼",
+  "genLabel1986": "جيل الأتاري 👾",
+  "genLabel1985": "العودة للمستقبل ⏰",
+  "genLabel1984": "أطفال Mac 🍎",
+  "genLabel1983": "Star Wars ⚔️",
+  "genLabel1982": "جيل E.T. 👽",
+  "genLabel1981": "بداية MTV 📺",
+  "genLabel1980": "Pac-Man 👾",
+  "genLabel1979": "عصر الديسكو 🪩",
+  "genLabel1978": "Space Invaders 🚀",
+  "genLabel1977": "Star Wars الأصلي 🌟",
+  "genLabel1976": "Punk Rock 🎸",
+  "genLabel1975": "جيل Jaws 🦈",
+  "genLabel1974": "بداية الديسكو 💃",
+  "genLabel1973": "Pink Floyd 🌈",
+  "genLabel1972": "عصر Pong 🏓",
+  "genLabel1971": "Led Zeppelin 🎸",
+  "genLabel1970": "جيل Beatles 🎵",
+  "genLabel1969": "الأساطير 👑",
+  "birthYear1969Plus": "1969+",
+
+
+
+  "historyTitle": "السجل",
+  "historyEmptyTitle": "مفيش مشاعر لسه",
+  "historyEmptySubtitle": "ابدأ شارك مودك\nعشان تشوف السجل",
+  "historyMyEmotions": "مشاعري",
+  "historyStatTotal": "المجموع",
+  "historyStatDominant": "الأكثر",
+  "historyToday": "النهاردة",
+  "historyTimeFormat": "{date} • {time}",
+  "@historyTimeFormat": {
+    "placeholders": {
+      "date": {"type": "String"},
+      "time": {"type": "String"}
+    }
+  },
+  "historyTodayFormat": "{today} • {time}",
+  "@historyTodayFormat": {
+    "placeholders": {
+      "today": {"type": "String"},
+      "time": {"type": "String"}
+    }
+  },
+
+
+
+  "trendsTitle": "الترندات",
+  "trendsSubtitle": "إحصائيات المدينة بتتحمل",
+  "trendsEmoji": "📊",
+
+
+
+  "mapToastYourOwnVibe": "ده vibe بتاعك انت",
+  "mapErrorNeedActiveVibeToPing": "محتاج vibe نشط عشان تبعت ping", 
+  "mapErrorAlreadyHavePingOrUnavailable": "عندك ping نشط بالفعل أو vibe مش متاح",
+  "mapBanRestrictionMessage": "انت محظور لمدة {time}",
+  "@mapBanRestrictionMessage": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "mapBanRestrictionLifted": "الحظر اتشال! تقدر تشارك vibes تاني",
+  "mapSuccessVibeSent": "vibe اتبعت! {count} ناس تانية قريبة 🎉",
+  "@mapSuccessVibeSent": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "mapTutorialTapToSpark": "دوس على vibe حد • هتحصل على PW chat في 60 ثانية",
+  "mapActivePingStatus": "ping نشط ({seconds}ث) - دوس عشان تلغي",
+  "@mapActivePingStatus": {
+    "placeholders": {
+      "seconds": {"type": "int"}
+    }
+  },
+
+
+
+  "onboardingTitlePingWink": "ping & wink",
+  "onboardingSubtitleSeeWhatsPoppin": "شوف إيه اللي بيحصل حواليك",
+  "onboardingButtonLetsGo": "يلا بينا",
+  "onboardingBadgeAge13Plus": "13+ بس",
+  "onboardingValueTitleInstantSparks": "PW chat فوري",
+  "onboardingValueSubtitleConnect60Sec": "اتصل في 60 ثانية",
+  "onboardingValueTitleHyperlocalVibes": "vibes محلية جداً",
+  "onboardingValueSubtitleOnly2kmRadius": "3 كم بس",
+  "onboardingValueTitleNoProfiles": "مفيش بروفايلات",
+  "onboardingValueSubtitleJustPureMoments": "لحظات حقيقية بس",
+  "onboardingButtonImReady": "أنا جاهز",
+  "onboardingLocationTitle": "افتح منطقتك",
+  "onboardingLocationSubtitle": "شوف المود في دايرة 3 كم",
+  "onboardingLocationPrivacyTitle": "الخصوصية أولاً",
+  "onboardingLocationPrivacyBullet1": "بس لما التطبيق يكون مفتوح",
+  "onboardingLocationPrivacyBullet2": "مفيش تتبع في الخلفية",
+  "onboardingLocationPrivacyBullet3": "vibes مجهولة بس",
+  "onboardingButtonEnableRadar": "فعّل الرادار",
+  "onboardingButtonMaybeLater": "بعدين",
+  "onboardingNotificationTitle": "متفوتش أي PW chat",
+  "onboardingNotificationSubtitle": "هتوصلك ping لما يكون فيه حاجة مثيرة قريبة",
+  "onboardingNotificationFeature1": "ping فوري لما حد يعمل vibe",
+  "onboardingNotificationFeature2": "تذكيرات vibe يومية",
+  "onboardingNotificationFeature3": "تنبيهات الأماكن النشطة",
+  "onboardingButtonTurnOnPings": "فعّل pings",
+  "onboardingButtonNotNow": "مش دلوقتي",
+  "onboardingLegalTitle": "كده تقريباً!",
+  "onboardingLegalAgeRequirement": "لازم تكون 13 سنة أو أكبر",
+  "onboardingLegalAgeSubtitle": "ping & wink للمراهقين وأكبر",
+  "onboardingLegalConsent": "بالضغط على استمرار، بتأكد إن عمرك 13+ وموافق على",
+  "onboardingLegalTerms": "الشروط",
+  "onboardingLegalAnd": " و ",
+  "onboardingLegalPrivacyPolicy": "سياسة الخصوصية",
+  "onboardingLegalSafetyFeature1": "vibes مجهولة بس",
+  "onboardingLegalSafetyFeature2": "حظر وإبلاغ فوري",
+  "onboardingLegalSafetyFeature3": "إيقاف 20 دقيقة للسلوك السيء",
+  "onboardingButtonImAge13AndAgree": "عندي 13+ وموافق",
+  "onboardingButtonImUnder13": "عندي أقل من 13",
+  "onboardingLocationDeniedTitle": "هتفوتك كل PW sparks",
+  "onboardingLocationDeniedMessage": "من غير الموقع، مش هتقدر:\n• تشوف مين قريب\n• تبعت ping\n• تاخد wink\n• PW spark connections",
+  "onboardingButtonGoBack": "ارجع",
+  "onboardingButtonExitApp": "اخرج من التطبيق",
+  "onboardingNotificationDeniedTitle": "هتفوتك كل المتعة",
+  "onboardingNotificationDeniedMessage": "من غير الإشعارات:\n• محدش هيقدر يبعتلك ping\n• هتفوتك PW sparks القريبة\n• صفر اتصالات\n\nالمستخدمين بتوعنا بيفعلوا الإشعارات",
+  "onboardingButtonLetMeReconsider": "خليني أفكر تاني",
+  "onboardingButtonContinueAnyway": "كمل برضه",
+  "onboardingAgeDialogTitle": "نتقابل بعدين!",
+  "onboardingAgeDialogMessage": "ping & wink للمستخدمين 13 سنة وأكبر. ارجع لما تكبر!",
+  "onboardingButtonUnderstood": "فهمت",
+  "onboardingNotificationExampleTitle": "ping & wink",
+  "onboardingNotificationExampleNow": "دلوقتي",
+  "onboardingNotificationExamplePing": "ping جديد على بعد 230م",
+  "onboardingNotificationExampleMessage": "حد بنفس vibe بتاعك",
+  "onboardingMapNotification": "حد عمل spark على بعد 753م",
+  "onboardingLocationPrivacyFormatted": "• بس لما التطبيق يكون مفتوح\n• مفيش تتبع في الخلفية\n• vibes مجهولة بس",
+  "onboardingLocationDeniedFormatted": "من غير الموقع، مش هتقدر:\n• تشوف مين قريب\n• تبعت ping\n• تاخد wink\n• spark connections",
+  "onboardingNotificationDeniedFormatted": "من غير الإشعارات:\n• محدش هيقدر يبعتلك ping\n• هتفوتك vibes القريبة\n• صفر اتصالات\n\nالمستخدمين بتوعنا بيفعلوا الإشعارات",
+
+
+
+  "settingsTitle": "الإعدادات",
+  "settingsAppName": "Ping&Wink",
+  "settingsAppTagline": "اتواصل بالمشاعر",
+  "settingsShareTitle": "شارك مع أصحابك",
+  "settingsShareSubtitle": "عزم الناس يكتشفوا vibes",
+  "settingsSectionPreferences": "التفضيلات",
+  "settingsSectionLegal": "قانوني",
+  "settingsSectionSupport": "الدعم",
+  "settingsSectionDataManagement": "إدارة البيانات",
+  "settingsNotificationsTitle": "الإشعارات",
+  "settingsNotificationsEnabled": "مفعلة",
+  "settingsNotificationsDisabled": "مغلقة",
+  "settingsMapThemeTitle": "ثيم الخريطة",
+  "settingsMapThemeCyberpunk": "Cyberpunk",
+  "settingsMapThemeMinimalist": "بسيط",
+  "settingsLocationModeTitle": "وضع الموقع",
+  "settingsLocationModeSoft": "الموقع يتحرك شوية، للأناقة",
+  "settingsLocationModeExact": "vibe بتاعك بالظبط مكان ما يحصل",
+  "settingsDeleteVibeTitle": "احذف vibe بتاعي",
+  "settingsDeleteVibeSubtitle": "شيل مشاعرك من الخريطة",
+  "settingsPrivacyTitle": "سياسة الخصوصية",
+  "settingsPrivacySubtitle": "إزاي بنحمي بياناتك",
+  "settingsTermsTitle": "شروط الخدمة",
+  "settingsTermsSubtitle": "قواعد استخدام التطبيق",
+  "settingsHelpTitle": "مركز المساعدة",
+  "settingsHelpSubtitle": "الأسئلة والأدلة",
+  "settingsContactTitle": "اتصل بينا",
+  "settingsContactEmail": "hello@pingandwink.com",
+  "settingsDeleteAccountTitle": "احذف حسابي",
+  "settingsDeleteAccountSubtitle": "امسح كل بياناتك",
+  "settingsFooterTagline": "Ping & Wink - Just Vibes",
+  "settingsFooterCopyright": "© 2025 Ping and Wink",
+  "settingsDeviceIdPrefix": "ID الجهاز: {id}...",
+  "@settingsDeviceIdPrefix": {
+    "placeholders": {
+      "id": {"type": "String"}
+    }
+  },
+  "settingsDeleteVibeDialogTitle": "احذف vibe بتاعك؟",
+  "settingsDeleteVibeDialogMessage": "مشاعرك هتتشال من الخريطة",
+  "settingsVibeDeletedSuccess": "vibe بتاعك اتحذف",
+  "settingsVibeDeleteError": "خطأ في حذف vibe",
+  "settingsNotificationWarningTitle": "انتبه!",
+  "settingsNotificationWarningMessage": "لو قفلت الإشعارات، مش هتقدر تستقبل PINGS من المستخدمين التانيين.\n\nPW chats (الاتصالات) مش هتشتغل.\n\nمتأكد عايز تقفلها؟",
+  "settingsNotificationWarningCancel": "إلغاء",
+  "settingsNotificationWarningDisable": "قفل برضه",
+  "settingsNotificationsDisabledMessage": "⚠️ الإشعارات مقفولة - مش هتستقبل أي ping",
+  "settingsNotificationsEnabledMessage": "✅ الإشعارات شغالة - تقدر تستقبل pings",
+  "settingsMapThemeCyberpunkActivated": "وضع Cyberpunk شغال 🌃",
+  "settingsMapThemeDayActivated": "وضع النهار شغال ☀️",
+  "settingsSoftModeEnabled": "الوضع الناعم شغال! vibe بتاعك اتحرك 🌊",
+  "settingsNormalModeEnabled": "الوضع العادي شغال! موقع دقيق 📍",
+  "settingsIdCopied": "ID اتنسخ",
+  "settingsDeleteAccountDialogTitle": "⚠️ حذف الحساب",
+  "settingsDeleteAccountDialogMessage": "العملية دي مش هتتراجع. كل مشاعرك وبياناتك هتتحذف للأبد.\n\nمتأكد؟",
+  "settingsDeleteAccountDialogDelete": "احذف",
+  "settingsDeleteAccountError": "خطأ في حذف الحساب",
+  "settingsModerationPanelTitle": "🔍 لوحة الإشراف",
+  "settingsModerationPanelSubtitle": "لمراجعة App Store بس",
+  "settingsModerationActiveBans": "الحظر النشط",
+  "settingsModerationReports": "البلاغات",
+  "settingsModerationClearData": "امسح بيانات الاختبار",
+  "settingsModerationDataCleared": "بيانات الاختبار اتمسحت",
+
+
+
+  "sparkConnectingToChat": "بيتصل بـ PW chat...",
+  "sparkChatTitle": "PW Chat",
+  "sparkChatEnded": "انتهى",
+  "sparkSendFirstMessage": "ابعت أول رسالة!",
+  "sparkWaitingForMate": "مستني PW mate...",
+  "sparkMessagePlaceholder": "رسالة...",
+  "sparkWaitForReply": "استنى الرد...",
+  "sparkChatEndedPlaceholder": "المحادثة انتهت",
+  "sparkLeaveChat": "تسيب PW chat؟",
+  "sparkChatEndForBoth": "المحادثة هتنتهي للاتنين",
+  "sparkStay": "اقعد",
+  "sparkLeave": "اطلع",
+  "sparkExtended": "اتمدت! +3 دقائق ⚡",
+  "sparkWaitingForOther": "مستني PW mate...",
+  "sparkMaxExtensionsReached": "وصلت للحد الأقصى من التمديدات",
+  "sparkFailedToExtend": "فشل التمديد",
+  "sparkFailedToSend": "فشل الإرسال",
+  "sparkMessageTooLong": "الرسالة طويلة أوي (أقصى 199)",
+  "sparkErrorInitializing": "خطأ في بدء المحادثة: {error}",
+  "@sparkErrorInitializing": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "sparkUserBanned": "المستخدم محظور 7 دقائق",
+  "sparkRestrictedForBanning": "انت محظور بسبب الحظر المفرط",
+  "sparkReportSubmitted": "البلاغ اتبعت",
+  "sparkBehaviorRestriction": "انت محظور بسبب سلوك غير لائق",
+
+
+
+  "splashTitlePing": "PING",
+  "splashTitleAmpersand": "&",
+  "splashTitleWink": "WINK",
+  "splashTagline": "ولّع اللحظة",
+
+
+
+  "trendsEmotionalPulse": "النبض العاطفي {time}",
+  "@trendsEmotionalPulse": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "trendsTimeMorning": "الصبح ده",
+  "trendsTimeAfternoon": "بعد الضهر",
+  "trendsTimeEvening": "الليلة دي",
+  "trendsTimeLateNight": "آخر الليل",
+  "trendsActiveVibes": "Vibes نشطة",
+  "trendsSparkers": "PW mates",
+  "trendsDominantEmotion": "المشاعر السائدة",
+  "trendsPercentOfSparkers": "{percent}% من PW mates",
+  "@trendsPercentOfSparkers": {
+    "placeholders": {
+      "percent": {"type": "int"}
+    }
+  },
+  "trendsEmotionDistribution": "توزيع المشاعر",
+  "trendsQuote1": "كل مشاعر متشاركة بتخلق اتصال ✨",
+  "trendsQuote2": "مع بعض بنعمل خريطة المشاعر 🗺️",
+  "trendsQuote3": "vibe بتاعك ممكن يغير يوم حد 💫",
+  "trendsQuote4": "PW chats بتبدأ بـ ping بسيط ⚡",
+
+
+
+  "banOverlayTitle": "قيد مؤقت",
+  "banOverlayMessage": "PW mate بتاعك شاف رسالتك غير مناسبة",
+  "banOverlayRestrictionInfo": "مش هتقدر تشارك vibes خلال الوقت ده",
+
+
+
+  "bottomNavMap": "الخريطة",
+  "bottomNavHistory": "السجل",
+  "bottomNavTrends": "الترندات",
+  "bottomNavSettings": "الإعدادات",
+
+
+
+  "guidelinesTitle": "قواعد المجتمع",
+  "guidelinesRespectTitle": "كن محترماً",
+  "guidelinesRespectSubtitle": "عامل الكل بلطف",
+  "guidelinesNoHarassmentTitle": "لا للمضايقات",
+  "guidelinesNoHarassmentSubtitle": "متبعتش رسائل غير لائقة",
+  "guidelinesKeepRealTitle": "كن حقيقي",
+  "guidelinesKeepRealSubtitle": "شارك vibes حقيقية بس",
+  "guidelinesHaveFunTitle": "استمتع",
+  "guidelinesHaveFunSubtitle": "استمتع باتصالات PW!",
+  "guidelinesViolationWarning": "المخالفات ممكن تؤدي لقيود مؤقتة أو دائمة",
+  "guidelinesButtonUnderstand": "فهمت",
+
+
+
+  "emotionSelectorStreakDay": "يوم {day} - حافظ على السلسلة!",
+  "@emotionSelectorStreakDay": {
+    "placeholders": {
+      "day": {"type": "int"}
+    }
+  },
+  "emotionSelectorTapYourVibe": "دوس على VIBE بتاعك",
+  "emotionSelectorWhatsYourVibe": "إيه vibe بتاعك دلوقتي؟",
+  "emotionSelectorActiveNow": "{count} نشط دلوقتي",
+  "@emotionSelectorActiveNow": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+
+
+  "miniBarSendNewPing": "ابعت ping جديد",
+  "miniBarPingActive": "ping بتاعك نشط",
+
+
+
+  "moderationBanTitle": "حظر 7 دقائق",
+  "moderationBanSubtitle": "قيد المستخدم ده مؤقتاً",
+  "moderationReportTitle": "بلاغ",
+  "moderationReportSubtitle": "بلغ عن سلوك غير لائق",
+  "moderationEndChatTitle": "إنهاء المحادثة",
+  "moderationEndChatSubtitle": "اطلع من جلسة PW دي",
+  "moderationReportDialogTitle": "بلغ عن المستخدم",
+  "moderationReportReasonHarassment": "مضايقة",
+  "moderationReportReasonSpam": "سبام",
+  "moderationReportReasonHateSpeech": "خطاب كراهية",
+  "moderationReportReasonOther": "غير ذلك",
+  "moderationReportSendButton": "ابعت البلاغ",
+
+
+
+  "pingBottomVibeTooFar": "Vibe بعيد أوي (أقصى 3كم)",
+  "pingBottomVibeTooFarMessage": "Vibe بعيد - أقصى 3كم للـ ping",
+  "pingBottomTooFar": "بعيد أوي",
+  "pingBottomPing": "PING",
+  "pingBottomDistanceVeryClose": "قريب أوي",
+  "pingBottomDistanceMeters": "{meters}م",
+  "@pingBottomDistanceMeters": {
+    "placeholders": {
+      "meters": {"type": "int"}
+    }
+  },
+  "pingBottomDistanceKilometers": "{km}كم",
+  "@pingBottomDistanceKilometers": {
+    "placeholders": {
+      "km": {"type": "String"}
+    }
+  },
+  "pingBottomTimeNow": "دلوقتي",
+  "pingBottomTimeMinutes": "{minutes}د",
+  "@pingBottomTimeMinutes": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "pingBottomTimeHours": "{hours}س",
+  "@pingBottomTimeHours": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+
+
+
+  "vibeAnimBrainEnergy": "قوة عقلية",
+  "vibeAnimCozy": "VIBE: مرتاح",
+  "vibeAnimSweatSlay": "عرق. فوز. كرر",
+  "vibeAnimLostInBeat": "ضايع في الإيقاع",
+  "vibeAnimCityLights": "أضواء المدينة",
+  "vibeAnimLightsCameraVibes": "أضواء. كاميرا. VIBES.",
+  "vibeAnimEveningVibes": "أجواء المساء",
+  "vibeAnimPartyMode": "وضع الحفلة: شغال",
+  "vibeAnimSubBrainTime": "وقت التفكير 🧠",
+  "vibeAnimSubCaffeine": "أجواء القهوة ☕",
+  "vibeAnimSubNoDaysOff": "مفيش إجازات 🔥",
+  "vibeAnimSubVolumeMax": "الصوت: أقصى 🎧",
+  "vibeAnimSubUrbanExplorer": "مستكشف المدينة 🌃",
+  "vibeAnimSubCreateGlow": "ابدع واتألق 📸",
+  "vibeAnimSubNightFlow": "إيقاع الليل 🌙",
+  "vibeAnimSubUnleashChaos": "اطلق الفوضى 🎉",
+  "vibeAnimDefaultMessage": "VIBE محدد",
+  "vibeAnimDefaultSubMessage": "يلا نبدأ!",
+
+
+
+  "viralShareFailed": "فشلت المشاركة",
+  "viralShareTextNight": "الكل نايم. بس في حاجة بتحصل\npingandwink.com",
+  "viralShareTextEvening": "بالليل. أحسن وقت\npingandwink.com",
+  "viralShareTextDefault": "إيه اللي بيحصل دلوقتي؟\npingandwink.com",
+  "viralShareMainText": "إيه اللي بيحصل\nوانت بتقرأ ده؟",
+  "viralShareFindOut": "اكتشف",
+  "viralShareLogo": "ping&wink",
+  "viralShareButton": "شارك →",
+
+
+
+  "winkBannerPing": "PING {distance}",
+  "@winkBannerPing": {
+    "placeholders": {
+      "distance": {"type": "String"}
+    }
+  },
+  "winkBannerSparkmateWants": "PW mate عايز يتواصل",
+  "winkBannerWinkBack": "WINK BACK"
+
+}

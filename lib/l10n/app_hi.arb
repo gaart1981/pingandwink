@@ -1,0 +1,634 @@
+{
+  "@@locale": "hi",
+  
+  "commonCancel": "Cancel karo",
+  "commonClose": "Band karo",
+  "commonOk": "Theek hai",
+  "commonYes": "Haan",
+  "commonNo": "Nahi",
+  "commonSave": "Save karo",
+  "commonDelete": "Delete",
+  "commonShare": "Share karo",
+  "commonLoading": "Loading...",
+  "commonError": "Kuch gadbad hai",
+  "commonSuccess": "Ho gaya!",
+  "commonRetry": "Phir try karo",
+  "commonNext": "Aage",
+  "commonBack": "Peeche",
+  "commonSkip": "Skip",
+  "commonDone": "Done",
+  "commonContinue": "Aage badho",
+  "commonConfirm": "Pakka?",
+  
+
+
+
+  "emptyStateMorningStoryMain": "sheher abhi bhi jaag raha hai, dheere-dheere stretch kar raha\nsab apni subah ki rituals mein\ncoffee, aana-jaana, kaam karne ka natak\nlekin wo abhi tak nahi jaante:\naaj raat 7 baje, ye map poori tarah badal jaata hai",
+  "emptyStateMorningStorySub": "abhi alarm set karo, baad mein khud ko thank karo ⏰",
+  "emptyStateMorningCuriosityMain": "tumne map ko uski shaant phase mein pakda\ndopahar ke night club jaisa - khaali lekin potential se bhara\naaj tumse pehle 3 log check kar chuke\nsabne shaam 7 baje ke liye reminder set kiya\nittefaq? ya wo kuch jaante hain?",
+  "emptyStateMorningCuriositySub": "jawab sunset pe khulega 🌅",
+  "emptyStateMorningSocialMain": "monday subah ki sacchai:\nsab abhi kaam karne ka natak kar rahe\nspreadsheets khuli, dimaag kahin aur\ndopahar se pehle check karne wale 7 mein se 1 ho\nye tumhe special banata hai, ya pagal, ya dono",
+  "emptyStateMorningSocialSub": "kya pata karne shaam 7 baje wapas aao",
+  "emptyStateFridayMain": "friday dopahar ka paradox:\nsab mentally nikal chuke lekin physically phase\nazaadi tak ghante gin rahe ({hours} baaki)\nshaam 5 baje transformation shuru hota hai\nkaam ke zombies se weekend warriors banna",
+  "@emptyStateFridayMain": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+  "emptyStateFridaySub": "ise dekhne ke liye jaldi aa gaye 🦋",
+  "emptyStateAfternoonReturningMain": "tum is time wapas aate rehte ho\nkuch khoj rahe jo abhi yahan nahi... abhi tak\nzidd ya pagalpan?\nuniverse dekh raha hai\naur patience ka reward deta hai",
+  "emptyStateAfternoonReturningSub": "ignition tak lagbhag {hours} ghante 🚀",
+  "@emptyStateAfternoonReturningSub": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+  "emptyStateAfternoonFirstMain": "kabhi 2:47 baje hota hai\nkabhi 6:13 baje\nlekin hamesha hota hai\nmurda se zinda mein transformation\nkhaali se electric mein",
+  "emptyStateAfternoonFirstSub": "sawal hai: jab hoga tab yahan hoge?",
+  "emptyStatePrimetimeFirstMain": "kuch bade ke kinaare pe swagat hai\n23 minute mein, ye khaali map phatta hai\nsaikdon vibes sitaron ki tarah dikhte hain\nhar ek asli insaan, asli emotion, asli pal\ntum bheed se pehle yahan ho",
+  "emptyStatePrimetimeFirstSub": "ye ya to genius hai ya kismat ⚡",
+  "emptyStatePrimetimeReturnMain": "toofan se pehle game se pehle ki chuppi\ntum jaante ho kya aa raha hai\nshaam 7 baje is map pe alag tarah se maarta hai\nkaam ka stress weekend energy mein badal jaata hai\nreal-time mein dekho",
+  "emptyStatePrimetimeReturnSub": "ya app band karo aur hamesha sochte raho",
+  "emptyStateWeekendEveningMain": "saturday raat ka phenomenon:\nsab bahar apni best life jee rahe\nya instagram pe dikhaawa kar rahe\nlekin tumne sheher ki asli dhadkan paayi\nbina filter, bina edit, bina censor emotions",
+  "emptyStateWeekendEveningSub": "sacchai ke liye 5 minute mein refresh karo 🌃",
+  "emptyStateWeekendMorningMain": "sheher hangover mein hai\ndheere-dheere kal raat ko jod raha\nnuksaan check kar raha, pachtaave gin raha\nmap dopahar 2 baje tak sota hai\nlekin jab jaagta hai...",
+  "emptyStateWeekendMorningSub": "chaos round 2 shuru hota hai 🎭",
+  "emptyStateLateNightMain": "subah 2 baje ki clarity alag tarah se maarti hai\njab shor rukta hai, sacchai ubharti hai\nsirf asli abhi jaage hain\n3 baje ke thoughts share kar rahe\nkaccha, imaandaar, bina filter",
+  "emptyStateLateNightSub": "andhere mein akele nahi ho 🌙",
+  "emptyStatePush1Title": "ping&wink",
+  "emptyStatePush1Body": "map jaag raha hai 👀",
+  "emptyStatePush2Title": "ping&wink",
+  "emptyStatePush2Body": "peak vibes abhi ⚡",
+  "emptyStatePush3Title": "ping&wink",
+  "emptyStatePush3Body": "kal tumne 47 vibes miss kiye. aaj?",
+  "emptyStateNotificationEnabled": "Notifications on! Vibes dikhne pe pata chalega 🔔",
+  "emptyStateTapToClose": "band karne ke liye tap karo",
+  "emptyStateAfternoonReturningHours": "ignition tak lagbhag {hours} ghante 🚀",
+  "@emptyStateAfternoonReturningHours": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+
+
+
+  "vibeLabelBrainMode": "Padhai Mode",
+  "vibeLabelLatteBreak": "Coffee Time",
+  "vibeLabelSportMode": "Gym Vibes",
+  "vibeLabelSoundLoop": "Music mein khoya",
+  "vibeLabelCityWalk": "Ghumte hue",
+  "vibeLabelContentMode": "Creator Mode",
+  "vibeLabelChillNight": "Chill Scene",
+  "vibeLabelPartyMode": "Party Chal Rahi",
+  
+  "scanYourVibe": "Apna vibe set karo ⚡",
+  "pickYourMood": "Mood batao aur dekho kya scene hai abhi 👀",
+  "waitMinutes": "{minutes} min ruko ⏰",
+  "@waitMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "swipeDownToMap": "↓ Neeche swipe kar ke map dekho",
+  "changeYourMood": "Mood change karo",
+  "swipeUp": "Upar swipe karo ↑",
+  "youAreNotAlone": "Tum akele nahi ho!",
+  "you": "TUM",
+  "others": "aur log",
+  "days": "din",
+  "streak": "🔥 Streak: {days} din",
+  "@streak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "shareMyVibe": "📤 Mera vibe share karo",
+  "close": "Band karo",
+  "happy": "khush",
+  "nearby": "paas mein",
+  "enableLocationSettings": "Settings mein location on karo",
+  "errorTryAgain": "Error aa gaya, phir try karo",
+  "networkError": "Network nahi hai",
+  "missingConfiguration": "Setup missing hai",
+  "shareMessage": "sach mein {emotion} feel kar raha hun abhi 💭 aur kaun? check karo -> moodmap.cloud  #MoodMap #VibeCheck",
+  "@shareMessage": {
+    "placeholders": {
+      "emotion": {
+        "type": "String"
+      },
+      "emotionName": {
+        "type": "String"
+      },
+      "nearbyCount": {
+        "type": "int"
+      },
+      "streakDays": {
+        "type": "int"
+      },
+      "happinessPercent": {
+        "type": "int"
+      }
+    }
+  },
+  "shareSubject": "Mera vibe MoodMap pe! 🌟",
+
+
+
+  "pingErrorYourVibeExpired": "Tumhara vibe expire ho gaya, naya dalo",
+  "pingSentSuccess": "Ping bhej diya! ⚡ 60s mein Wink milega",
+  "pingWaitSeconds": "{seconds} second ruko",
+  "@pingWaitSeconds": {
+    "placeholders": {
+      "seconds": {"type": "int"}
+    }
+  },
+  "pingSomeoneAlreadySent": "Kisi ne pehle hi ping bhej diya",
+  "pingPersonInSpark": "Ye banda PW chat mein busy hai",
+  "pingThisVibeExpired": "Ye vibe purana ho gaya",
+  "pingFailedToSend": "Send nahi hua",
+  "pingSendingError": "Bhejne mein error",
+  "pingCancelled": "Ping cancel ho gaya",
+  "pingCancelledBySender": "Sender ne ping cancel kar diya",
+  "pingErrorConnecting": "PW mate se connect nahi ho raha",
+  "pingErrorStartingChat": "Chat start nahi ho raha",
+
+
+
+  "chatTimeNow": "abhi",
+  "chatTimeMinutes": "{minutes}m",
+  "@chatTimeMinutes": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "chatTimeHours": "{hours}h",
+  "@chatTimeHours": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+
+
+
+  "distanceVeryClose": "ekdum paas",
+  "distanceMeters": "{meters}m",
+  "@distanceMeters": {
+    "placeholders": {
+      "meters": {"type": "int"}
+    }
+  },
+  "distanceKilometers": "{km}km",
+  "@distanceKilometers": {
+    "placeholders": {
+      "km": {"type": "String"}
+    }
+  },
+
+
+
+  "sparkDefaultAlias1": "PW mate 1",
+  "sparkDefaultAlias2": "PW mate 2",
+
+
+
+  "birthYearTitle": "kab paida hue the",
+  "birthYearPrivacyText": "private • kisi ko nahi dikhega",
+  "birthYearDefaultGeneration": "Cool Generation ⭐",
+  "genLabel2012": "iPad Babies 📱",
+  "genLabel2011": "Minecraft OGs ⛏️",
+  "genLabel2010": "Angry Birds 🦅",
+  "genLabel2009": "Insta Kids 📸",
+  "genLabel2008": "Musical.ly 🎵",
+  "genLabel2007": "TikTok Gen 🎬",
+  "genLabel2006": "YouTube Wale 🎮",
+  "genLabel2005": "Facebook Era 👍",
+  "genLabel2004": "Snapchat 👻",
+  "genLabel2003": "Orkut Times 💬",
+  "genLabel2002": "iPod Wale 🎧",
+  "genLabel2001": "Harry Potter Fans ⚡",
+  "genLabel2000": "Y2K Kids 🌐",
+  "genLabel1999": "Matrix Gen 💊",
+  "genLabel1998": "Game Boy 🎮",
+  "genLabel1997": "Pokémon 🔴",
+  "genLabel1996": "Internet Start 💻",
+  "genLabel1995": "Windows 95 🪟",
+  "genLabel1994": "F.R.I.E.N.D.S ☕",
+  "genLabel1993": "Sonic Gen 💨",
+  "genLabel1992": "Cartoon Network 📺",
+  "genLabel1991": "Video Game Era 🎮",
+  "genLabel1990": "MTV Gen 🎸",
+  "genLabel1989": "Nintendo Era 🕹️",
+  "genLabel1988": "Walkman 🎧",
+  "genLabel1987": "VHS Kids 📼",
+  "genLabel1986": "Arcade Gen 👾",
+  "genLabel1985": "Back to Future ⏰",
+  "genLabel1984": "Apple Start 🍎",
+  "genLabel1983": "Star Wars ⚔️",
+  "genLabel1982": "E.T. Gen 👽",
+  "genLabel1981": "MTV Launch 📺",
+  "genLabel1980": "Pac-Man 👾",
+  "genLabel1979": "Disco Era 🪩",
+  "genLabel1978": "Space Invaders 🚀",
+  "genLabel1977": "Star Wars OG 🌟",
+  "genLabel1976": "Punk Rock 🎸",
+  "genLabel1975": "Jaws Gen 🦈",
+  "genLabel1974": "Disco Start 💃",
+  "genLabel1973": "Pink Floyd 🌈",
+  "genLabel1972": "Pong Era 🏓",
+  "genLabel1971": "Led Zeppelin 🎸",
+  "genLabel1970": "Beatles Gen 🎵",
+  "genLabel1969": "Legends 👑",
+  "birthYear1969Plus": "1969+",
+
+
+
+  "historyTitle": "History",
+  "historyEmptyTitle": "Abhi tak kuch nahi",
+  "historyEmptySubtitle": "Apne moods share karo\nhistory dekhne ke liye",
+  "historyMyEmotions": "Mere emotions",
+  "historyStatTotal": "Total",
+  "historyStatDominant": "Sabse zyada",
+  "historyToday": "Aaj",
+  "historyTimeFormat": "{date} • {time}",
+  "@historyTimeFormat": {
+    "placeholders": {
+      "date": {"type": "String"},
+      "time": {"type": "String"}
+    }
+  },
+  "historyTodayFormat": "{today} • {time}",
+  "@historyTodayFormat": {
+    "placeholders": {
+      "today": {"type": "String"},
+      "time": {"type": "String"}
+    }
+  },
+
+
+
+  "trendsTitle": "Trends",
+  "trendsSubtitle": "Sheher ke stats aa rahe hain",
+  "trendsEmoji": "📊",
+
+
+
+  "mapToastYourOwnVibe": "Ye tumhara hi vibe hai",
+  "mapErrorNeedActiveVibeToPing": "Ping bhejne ke liye pehle vibe set karo", 
+  "mapErrorAlreadyHavePingOrUnavailable": "Already ping bheja hai ya vibe available nahi",
+  "mapBanRestrictionMessage": "Tum {time} ke liye restricted ho",
+  "@mapBanRestrictionMessage": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "mapBanRestrictionLifted": "Ban hat gaya! Phir se vibes share kar sakte ho",
+  "mapSuccessVibeSent": "Vibe bhej diya! {count} aur log paas mein 🎉",
+  "@mapSuccessVibeSent": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "mapTutorialTapToSpark": "kisi ke vibe pe tap karo • 60s mein PW chat",
+  "mapActivePingStatus": "Ping active hai ({seconds}s) - Cancel karne ke liye tap karo",
+  "@mapActivePingStatus": {
+    "placeholders": {
+      "seconds": {"type": "int"}
+    }
+  },
+
+
+
+  "onboardingTitlePingWink": "ping & wink",
+  "onboardingSubtitleSeeWhatsPoppin": "dekho aas-paas kya scene chal raha hai",
+  "onboardingButtonLetsGo": "chalo shuru karte hain",
+  "onboardingBadgeAge13Plus": "sirf 13+ ke liye",
+  "onboardingValueTitleInstantSparks": "instant PW chat",
+  "onboardingValueSubtitleConnect60Sec": "60 second mein connect",
+  "onboardingValueTitleHyperlocalVibes": "ekdum local vibes",
+  "onboardingValueSubtitleOnly2kmRadius": "sirf 3km radius",
+  "onboardingValueTitleNoProfiles": "koi profile nahi",
+  "onboardingValueSubtitleJustPureMoments": "bas real moments",
+  "onboardingButtonImReady": "main ready hun",
+  "onboardingLocationTitle": "apna area unlock karo",
+  "onboardingLocationSubtitle": "3km mein sabke moods dekho",
+  "onboardingLocationPrivacyTitle": "privacy pehle",
+  "onboardingLocationPrivacyBullet1": "sirf jab app khuli ho",
+  "onboardingLocationPrivacyBullet2": "background mein tracking nahi",
+  "onboardingLocationPrivacyBullet3": "bas anonymous vibes",
+  "onboardingButtonEnableRadar": "radar on karo",
+  "onboardingButtonMaybeLater": "baad mein",
+  "onboardingNotificationTitle": "koi PW chat miss mat karo",
+  "onboardingNotificationSubtitle": "jab paas mein kuch ho to ping milega",
+  "onboardingNotificationFeature1": "instant pings jab koi vibe kare",
+  "onboardingNotificationFeature2": "daily vibe reminders",
+  "onboardingNotificationFeature3": "hot spot alerts",
+  "onboardingButtonTurnOnPings": "pings on karo",
+  "onboardingButtonNotNow": "abhi nahi",
+  "onboardingLegalTitle": "bas thoda aur!",
+  "onboardingLegalAgeRequirement": "13 saal ya usse zyada hone chahiye",
+  "onboardingLegalAgeSubtitle": "ping & wink teens aur bado ke liye hai",
+  "onboardingLegalConsent": "continue karke confirm kar rahe ho ki tum 13+ ho aur ye agree karte ho",
+  "onboardingLegalTerms": "terms",
+  "onboardingLegalAnd": " aur ",
+  "onboardingLegalPrivacyPolicy": "privacy policy",
+  "onboardingLegalSafetyFeature1": "sirf anonymous vibes",
+  "onboardingLegalSafetyFeature2": "instant block aur report",
+  "onboardingLegalSafetyFeature3": "galat behavior pe 20 min timeout",
+  "onboardingButtonImAge13AndAgree": "main 13+ hun aur agree karta hun",
+  "onboardingButtonImUnder13": "main 13 se kam hun",
+  "onboardingLocationDeniedTitle": "saare PW sparks miss karoge",
+  "onboardingLocationDeniedMessage": "location ke bina nahi kar sakte:\n• dekh nahi sakte kaun paas hai\n• ping nahi bhej sakte\n• winks nahi mil sakte\n• PW connections nahi",
+  "onboardingButtonGoBack": "wapas jao",
+  "onboardingButtonExitApp": "app band karo",
+  "onboardingNotificationDeniedTitle": "saara maza miss karoge",
+  "onboardingNotificationDeniedMessage": "notifications ke bina:\n• koi ping nahi bhej sakta\n• paas ke PW sparks miss karoge\n• zero connections\n\nhamare users notifications on rakhte hain",
+  "onboardingButtonLetMeReconsider": "phir se sochne do",
+  "onboardingButtonContinueAnyway": "phir bhi aage badho",
+  "onboardingAgeDialogTitle": "baad mein milte hain!",
+  "onboardingAgeDialogMessage": "ping & wink 13+ users ke liye hai. jab bade ho jao tab aana!",
+  "onboardingButtonUnderstood": "samajh gaya",
+  "onboardingNotificationExampleTitle": "ping & wink",
+  "onboardingNotificationExampleNow": "abhi",
+  "onboardingNotificationExamplePing": "naya ping 230m door",
+  "onboardingNotificationExampleMessage": "koi tumhare jaise vibe kar raha",
+  "onboardingMapNotification": "kisi ne 753m door spark kiya",
+  "onboardingLocationPrivacyFormatted": "• sirf jab app khuli ho\n• background tracking nahi\n• sirf anonymous vibes",
+  "onboardingLocationDeniedFormatted": "location ke bina nahi kar sakte:\n• dekh nahi sakte kaun paas hai\n• ping nahi bhej sakte\n• winks nahi mil sakte\n• spark connections nahi",
+  "onboardingNotificationDeniedFormatted": "notifications ke bina:\n• koi ping nahi bhej sakta\n• paas ke vibes miss karoge\n• zero connections\n\nhamare users notifications on rakhte hain",
+
+
+
+  "settingsTitle": "Settings",
+  "settingsAppName": "Ping&Wink",
+  "settingsAppTagline": "Emotions se connect karo",
+  "settingsShareTitle": "Dosto ke saath share karo",
+  "settingsShareSubtitle": "Aur logo ko vibes discover karne do",
+  "settingsSectionPreferences": "Preferences",
+  "settingsSectionLegal": "Legal",
+  "settingsSectionSupport": "Support",
+  "settingsSectionDataManagement": "Data Management",
+  "settingsNotificationsTitle": "Notifications",
+  "settingsNotificationsEnabled": "On hai",
+  "settingsNotificationsDisabled": "Off hai",
+  "settingsMapThemeTitle": "Map theme",
+  "settingsMapThemeCyberpunk": "Cyberpunk",
+  "settingsMapThemeMinimalist": "Simple",
+  "settingsLocationModeTitle": "Location mode",
+  "settingsLocationModeSoft": "Thoda shift karke dikhao, style ke liye",
+  "settingsLocationModeExact": "Exact jagah pe dikhao",
+  "settingsDeleteVibeTitle": "Mera vibe delete karo",
+  "settingsDeleteVibeSubtitle": "Map se emotion hata do",
+  "settingsPrivacyTitle": "Privacy Policy",
+  "settingsPrivacySubtitle": "Tumhara data kaise safe rakhte hain",
+  "settingsTermsTitle": "Terms of Service",
+  "settingsTermsSubtitle": "App use karne ke rules",
+  "settingsHelpTitle": "Help Center",
+  "settingsHelpSubtitle": "FAQ aur guides",
+  "settingsContactTitle": "Contact",
+  "settingsContactEmail": "hello@pingandwink.com",
+  "settingsDeleteAccountTitle": "Account delete karo",
+  "settingsDeleteAccountSubtitle": "Saara data mita do",
+  "settingsFooterTagline": "Ping & Wink - Just Vibes",
+  "settingsFooterCopyright": "© 2025 Ping and Wink",
+  "settingsDeviceIdPrefix": "Device ID: {id}...",
+  "@settingsDeviceIdPrefix": {
+    "placeholders": {
+      "id": {"type": "String"}
+    }
+  },
+  "settingsDeleteVibeDialogTitle": "Vibe delete karna hai?",
+  "settingsDeleteVibeDialogMessage": "Tumhara emotion map se hat jayega",
+  "settingsVibeDeletedSuccess": "Vibe delete ho gaya",
+  "settingsVibeDeleteError": "Delete karne mein error",
+  "settingsNotificationWarningTitle": "Dhyan do!",
+  "settingsNotificationWarningMessage": "Notifications off karoge to PINGS nahi mil payenge.\n\nPW chats (connections) nahi ban payenge.\n\nPakka off karna hai?",
+  "settingsNotificationWarningCancel": "Rehne do",
+  "settingsNotificationWarningDisable": "Phir bhi off karo",
+  "settingsNotificationsDisabledMessage": "⚠️ Notifications off - Koi ping nahi milega",
+  "settingsNotificationsEnabledMessage": "✅ Notifications on - Pings mil sakte hain",
+  "settingsMapThemeCyberpunkActivated": "Cyberpunk mode on 🌃",
+  "settingsMapThemeDayActivated": "Day mode on ☀️",
+  "settingsSoftModeEnabled": "Soft mode on! Location shift ho gayi 🌊",
+  "settingsNormalModeEnabled": "Normal mode on! Exact location 📍",
+  "settingsIdCopied": "ID copy ho gaya",
+  "settingsDeleteAccountDialogTitle": "⚠️ Account delete",
+  "settingsDeleteAccountDialogMessage": "Ye wapas nahi ho sakta. Saare emotions aur data hamesha ke liye mit jayenge.\n\nPakka karna hai?",
+  "settingsDeleteAccountDialogDelete": "Delete karo",
+  "settingsDeleteAccountError": "Account delete nahi hua",
+  "settingsModerationPanelTitle": "🔍 Moderation Panel",
+  "settingsModerationPanelSubtitle": "Sirf App Store Review ke liye",
+  "settingsModerationActiveBans": "Active Bans",
+  "settingsModerationReports": "Reports",
+  "settingsModerationClearData": "Test Data Clear karo",
+  "settingsModerationDataCleared": "Test data clear ho gaya",
+
+
+
+  "sparkConnectingToChat": "PW chat se connect ho raha hai...",
+  "sparkChatTitle": "PW Chat",
+  "sparkChatEnded": "Khatam",
+  "sparkSendFirstMessage": "Pehla message bhejo!",
+  "sparkWaitingForMate": "PW mate ka wait kar rahe...",
+  "sparkMessagePlaceholder": "Message...",
+  "sparkWaitForReply": "Reply ka wait karo...",
+  "sparkChatEndedPlaceholder": "Chat khatam",
+  "sparkLeaveChat": "PW chat chhod rahe ho?",
+  "sparkChatEndForBoth": "Dono PW mates ke liye chat band ho jayegi",
+  "sparkStay": "Ruko",
+  "sparkLeave": "Chhod do",
+  "sparkExtended": "Extend ho gaya! +3 min ⚡",
+  "sparkWaitingForOther": "PW mate ka wait...",
+  "sparkMaxExtensionsReached": "Maximum extend ho chuka",
+  "sparkFailedToExtend": "Extend nahi hua",
+  "sparkFailedToSend": "Send nahi hua",
+  "sparkMessageTooLong": "Message bahut lamba hai (max 199)",
+  "sparkErrorInitializing": "Chat start nahi hua: {error}",
+  "@sparkErrorInitializing": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "sparkUserBanned": "User 7 minute ke liye ban",
+  "sparkRestrictedForBanning": "Zyada ban karne pe tum restricted ho",
+  "sparkReportSubmitted": "Report bhej diya",
+  "sparkBehaviorRestriction": "Galat behavior ke liye restricted ho",
+
+
+
+  "splashTitlePing": "PING",
+  "splashTitleAmpersand": "&",
+  "splashTitleWink": "WINK",
+  "splashTagline": "MOMENT KO SPARK KARO",
+
+
+
+  "trendsEmotionalPulse": "Emotional pulse {time}",
+  "@trendsEmotionalPulse": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "trendsTimeMorning": "aaj subah",
+  "trendsTimeAfternoon": "dopahar mein",
+  "trendsTimeEvening": "aaj shaam",
+  "trendsTimeLateNight": "late night",
+  "trendsActiveVibes": "Active vibes",
+  "trendsSparkers": "PW mates",
+  "trendsDominantEmotion": "Sabse zyada emotion",
+  "trendsPercentOfSparkers": "{percent}% PW mates",
+  "@trendsPercentOfSparkers": {
+    "placeholders": {
+      "percent": {"type": "int"}
+    }
+  },
+  "trendsEmotionDistribution": "Emotions ka distribution",
+  "trendsQuote1": "Har shared emotion ek connection banata hai ✨",
+  "trendsQuote2": "Milke emotion map banate hain 🗺️",
+  "trendsQuote3": "Tumhara vibe kisi ka din badal sakta hai 💫",
+  "trendsQuote4": "PW chats ek simple ping se shuru hote hain ⚡",
+
+
+
+  "banOverlayTitle": "Thode time ke liye ban",
+  "banOverlayMessage": "Tumhare PW mate ko message sahi nahi laga",
+  "banOverlayRestrictionInfo": "Is time vibes share nahi kar sakte",
+
+
+
+  "bottomNavMap": "Map",
+  "bottomNavHistory": "History",
+  "bottomNavTrends": "Trends",
+  "bottomNavSettings": "Settings",
+
+
+
+  "guidelinesTitle": "Community Rules",
+  "guidelinesRespectTitle": "Respect karo",
+  "guidelinesRespectSubtitle": "Sabke saath achhe se pesh aao",
+  "guidelinesNoHarassmentTitle": "Harassment nahi",
+  "guidelinesNoHarassmentSubtitle": "Galat messages mat bhejo",
+  "guidelinesKeepRealTitle": "Real raho",
+  "guidelinesKeepRealSubtitle": "Sirf genuine vibes share karo",
+  "guidelinesHaveFunTitle": "Maza karo",
+  "guidelinesHaveFunSubtitle": "PW connections enjoy karo!",
+  "guidelinesViolationWarning": "Rules todne pe temporary ya permanent ban ho sakta hai",
+  "guidelinesButtonUnderstand": "Samajh gaya",
+
+
+
+  "emotionSelectorStreakDay": "Day {day} - Streak continue rakho!",
+  "@emotionSelectorStreakDay": {
+    "placeholders": {
+      "day": {"type": "int"}
+    }
+  },
+  "emotionSelectorTapYourVibe": "VIBE PE TAP KARO",
+  "emotionSelectorWhatsYourVibe": "abhi kya vibe hai?",
+  "emotionSelectorActiveNow": "{count} log active",
+  "@emotionSelectorActiveNow": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+
+
+  "miniBarSendNewPing": "Naya ping bhejo",
+  "miniBarPingActive": "Tumhara ping active hai",
+
+
+
+  "moderationBanTitle": "7 min ban",
+  "moderationBanSubtitle": "Is user ko thode time ke liye rok do",
+  "moderationReportTitle": "Report",
+  "moderationReportSubtitle": "Galat behavior report karo",
+  "moderationEndChatTitle": "Chat band karo",
+  "moderationEndChatSubtitle": "Is PW session se niklo",
+  "moderationReportDialogTitle": "User ko report karo",
+  "moderationReportReasonHarassment": "Harassment",
+  "moderationReportReasonSpam": "Spam",
+  "moderationReportReasonHateSpeech": "Hate speech",
+  "moderationReportReasonOther": "Kuch aur",
+  "moderationReportSendButton": "Report bhejo",
+
+
+
+  "pingBottomVibeTooFar": "Vibe bahut door hai (max 3km)",
+  "pingBottomVibeTooFarMessage": "Vibe door hai - ping ke liye max 3km",
+  "pingBottomTooFar": "BAHUT DOOR",
+  "pingBottomPing": "PING",
+  "pingBottomDistanceVeryClose": "ekdum paas",
+  "pingBottomDistanceMeters": "{meters}m",
+  "@pingBottomDistanceMeters": {
+    "placeholders": {
+      "meters": {"type": "int"}
+    }
+  },
+  "pingBottomDistanceKilometers": "{km}km",
+  "@pingBottomDistanceKilometers": {
+    "placeholders": {
+      "km": {"type": "String"}
+    }
+  },
+  "pingBottomTimeNow": "abhi",
+  "pingBottomTimeMinutes": "{minutes}min",
+  "@pingBottomTimeMinutes": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "pingBottomTimeHours": "{hours}h",
+  "@pingBottomTimeHours": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+
+
+
+  "vibeAnimBrainEnergy": "DIMAAG FULL POWER",
+  "vibeAnimCozy": "VIBE: SUKOON",
+  "vibeAnimSweatSlay": "MEHNAT. JEET. REPEAT",
+  "vibeAnimLostInBeat": "BEAT MEIN KHOYA",
+  "vibeAnimCityLights": "CITY KI LIGHTS",
+  "vibeAnimLightsCameraVibes": "LIGHTS. CAMERA. VIBES.",
+  "vibeAnimEveningVibes": "SHAAM KE VIBES",
+  "vibeAnimPartyMode": "PARTY MODE: ON",
+  "vibeAnimSubBrainTime": "Dimaag ka time 🧠",
+  "vibeAnimSubCaffeine": "Coffee ke vibes ☕",
+  "vibeAnimSubNoDaysOff": "Koi break nahi 🔥",
+  "vibeAnimSubVolumeMax": "Volume: FULL 🎧",
+  "vibeAnimSubUrbanExplorer": "Sheher ghoomte hue 🌃",
+  "vibeAnimSubCreateGlow": "Create aur chamko 📸",
+  "vibeAnimSubNightFlow": "Raat ka flow 🌙",
+  "vibeAnimSubUnleashChaos": "Chaos shuru karo 🎉",
+  "vibeAnimDefaultMessage": "VIBE SET",
+  "vibeAnimDefaultSubMessage": "Chalo shuru karte hain!",
+
+
+
+  "viralShareFailed": "Share nahi hua",
+  "viralShareTextNight": "sab so rahe hain. lekin kuch ho raha hai\npingandwink.com",
+  "viralShareTextEvening": "shaam. best time\npingandwink.com",
+  "viralShareTextDefault": "abhi kya chal raha hai?\npingandwink.com",
+  "viralShareMainText": "kya ho raha hai\njab tum ye padh rahe ho?",
+  "viralShareFindOut": "pata karo",
+  "viralShareLogo": "ping&wink",
+  "viralShareButton": "share karo →",
+
+
+
+  "winkBannerPing": "PING {distance}",
+  "@winkBannerPing": {
+    "placeholders": {
+      "distance": {"type": "String"}
+    }
+  },
+  "winkBannerSparkmateWants": "PW mate connect karna chahta hai",
+  "winkBannerWinkBack": "WINK BACK"
+
+}

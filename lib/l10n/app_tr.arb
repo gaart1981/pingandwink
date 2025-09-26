@@ -1,0 +1,633 @@
+{
+  "@@locale": "tr",
+  
+  "commonCancel": "İptal",
+  "commonClose": "Kapat",
+  "commonOk": "Tamam",
+  "commonYes": "Evet",
+  "commonNo": "Hayır",
+  "commonSave": "Kaydet",
+  "commonDelete": "Sil",
+  "commonShare": "Paylaş",
+  "commonLoading": "Yükleniyor...",
+  "commonError": "Bi' hata oldu",
+  "commonSuccess": "Başardın!",
+  "commonRetry": "Tekrar dene",
+  "commonNext": "İleri",
+  "commonBack": "Geri",
+  "commonSkip": "Geç",
+  "commonDone": "Bitti",
+  "commonContinue": "Devam et",
+  "commonConfirm": "Emin misin?",
+  
+
+
+  "emptyStateMorningStoryMain": "şehir hala uyanıyor, yavaşça geriniyor\nherkes sabah ritüellerinde\nkahve, işe gidiş, çalışıyormuş gibi yapmak\nama işte henüz bilmedikleri:\nbu akşam saat 7'de, bu harita tamamen dönüşüyor",
+  "emptyStateMorningStorySub": "alarmını şimdi kur, sonra kendine teşekkür et ⏰",
+  "emptyStateMorningCuriosityMain": "haritayı sessiz evresinde yakaladın\nöğlen vakti gece kulübü gibi - boş ama potansiyel dolu\nbugün senden önce 3 kişi kontrol etti\nhepsi akşam 7 için hatırlatıcı kurdu\ntesadüf mü? yoksa bir şey mi biliyorlar?",
+  "emptyStateMorningCuriositySub": "cevap gün batımında ortaya çıkıyor 🌅",
+  "emptyStateMorningSocialMain": "pazartesi sabahı gerçeği:\nherkes şu anda çalışıyormuş gibi yapıyor\ntablolar açık, akıllar başka yerde\nöğleden önce kontrol eden 7 kişiden 1'isin\nbu seni özel yapıyor, ya da deli, ya da ikisi birden",
+  "emptyStateMorningSocialSub": "hangisi olduğunu öğrenmek için akşam 7'de geri dön",
+  "emptyStateFridayMain": "cuma öğleden sonra paradoksu:\nherkes zihinsel olarak çıkmış ama fiziksel olarak tıkılmış\nözgürlüğe kadar saatleri sayıyor ({hours} kaldı)\nsaat 5'te metamorfoz başlıyor\niş zombilerinden hafta sonu savaşçılarına",
+  "@emptyStateFridayMain": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+  "emptyStateFridaySub": "buna tanık olmak için erken geldin 🦋",
+  "emptyStateAfternoonReturningMain": "bu saatte gelmeye devam ediyorsun\nhenüz burada olmayan bir şey arıyorsun... henüz\nısrar mı delilik mi?\nevren izliyor\nve sabrı ödüllendiriyor",
+  "emptyStateAfternoonReturningSub": "ateşlemeye yaklaşık {hours} saat 🚀",
+  "@emptyStateAfternoonReturningSub": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+  "emptyStateAfternoonFirstMain": "bazen saat 2:47'de oluyor\nbazen 6:13'te\nama her zaman oluyor\nölüden diriye dönüşüm\nboştan elektriğe",
+  "emptyStateAfternoonFirstSub": "soru şu: olduğunda burada olacak mısın?",
+  "emptyStatePrimetimeFirstMain": "büyük bir şeyin eşiğine hoş geldin\n23 dakika içinde, bu boş harita patlıyor\nyüzlerce vibe yıldızlar gibi beliriyor\nher biri gerçek bir insan, gerçek duygu, gerçek an\nkalabalıktan önce buradasın",
+  "emptyStatePrimetimeFirstSub": "bu ya dehalık ya da şans ⚡",
+  "emptyStatePrimetimeReturnMain": "fırtına öncesi maç öncesi sessizlik\nne geleceğini biliyorsun\nakşam 7 bu haritada farklı vuruyor\niş stresi hafta sonu enerjisine dönüşüyor\ngerçek zamanlı olarak izle",
+  "emptyStatePrimetimeReturnSub": "ya da uygulamayı kapat ve sonsuza kadar merak et",
+  "emptyStateWeekendEveningMain": "cumartesi gecesi fenomeni:\nherkes dışarıda en iyi hayatını yaşıyor\nya da instagramda öyle yapıyor\nama sen şehrin gerçek nabzını buldun\nfiltresiz, düzenlenmemiş, sansürsüz duygular",
+  "emptyStateWeekendEveningSub": "gerçek için 5 dakika sonra yenile 🌃",
+  "emptyStateWeekendMorningMain": "şehir akşamdan kalma\ndün geceyi yavaşça birleştiriyor\nhasarı kontrol ediyor, pişmanlıkları sayıyor\nharita öğlen 2'ye kadar uyuyor\nama uyandığında...",
+  "emptyStateWeekendMorningSub": "kaos 2. raund başlıyor 🎭",
+  "emptyStateLateNightMain": "sabah 2 berraklığı farklı vuruyor\ngürültü durduğunda, gerçek ortaya çıkıyor\nsadece gerçekler şimdi uyanık\nsabah 3 düşüncelerini paylaşıyor\nham, dürüst, filtresiz",
+  "emptyStateLateNightSub": "karanlıkta yalnız değilsin 🌙",
+  "emptyStatePush1Title": "ping&wink",
+  "emptyStatePush1Body": "harita uyanıyor 👀",
+  "emptyStatePush2Title": "ping&wink",
+  "emptyStatePush2Body": "zirve vibe'lar şu anda ⚡",
+  "emptyStatePush3Title": "ping&wink",
+  "emptyStatePush3Body": "dün 47 vibe'ı kaçırdın. bugün?",
+  "emptyStateNotificationEnabled": "Bildirimler açık! Vibe'lar göründüğünde bileceksin 🔔",
+  "emptyStateTapToClose": "kapatmak için dokun",
+  "emptyStateAfternoonReturningHours": "ateşlemeye yaklaşık {hours} saat 🚀",
+  "@emptyStateAfternoonReturningHours": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+
+
+
+  "vibeLabelBrainMode": "Kafa Çalışıyor",
+  "vibeLabelLatteBreak": "Kahve Molası",
+  "vibeLabelSportMode": "Spor Modu",
+  "vibeLabelSoundLoop": "Müzik Döngüsü",
+  "vibeLabelCityWalk": "Şehir Turu",
+  "vibeLabelContentMode": "İçerik Modu",
+  "vibeLabelChillNight": "Sakin Gece",
+  "vibeLabelPartyMode": "Parti Modu",
+  
+  "scanYourVibe": "Vibe'ını belirle ⚡",
+  "pickYourMood": "Ruh halini seç & şu an neler oluyor gör 👀",
+  "waitMinutes": "{minutes} dk bekle ⏰",
+  "@waitMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "swipeDownToMap": "↓ Haritayı görmek için aşağı kaydır",
+  "changeYourMood": "Ruh halini değiştir",
+  "swipeUp": "Yukarı kaydır ↑",
+  "youAreNotAlone": "Yalnız değilsin!",
+  "you": "SEN",
+  "others": "kişi daha",
+  "days": "gün",
+  "streak": "🔥 Seri: {days} gün",
+  "@streak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "shareMyVibe": "📤 Vibe'ımı paylaş",
+  "close": "Kapat",
+  "happy": "mutlu",
+  "nearby": "yakında",
+  "enableLocationSettings": "Ayarlardan konumu aç",
+  "errorTryAgain": "Hata oldu, tekrar dene",
+  "networkError": "Ağ hatası",
+  "missingConfiguration": "Yapılandırma eksik",
+  "shareMessage": "şu an harbiden {emotion} hissediyorum 💭 başka kim var? bak -> moodmap.cloud  #MoodMap #VibeCheck",
+  "@shareMessage": {
+    "placeholders": {
+      "emotion": {
+        "type": "String"
+      },
+      "emotionName": {
+        "type": "String"
+      },
+      "nearbyCount": {
+        "type": "int"
+      },
+      "streakDays": {
+        "type": "int"
+      },
+      "happinessPercent": {
+        "type": "int"
+      }
+    }
+  },
+  "shareSubject": "MoodMap'teki vibe'ım! 🌟",
+
+
+
+  "pingErrorYourVibeExpired": "Vibe'ın süresi dolmuş, yeni koy",
+  "pingSentSuccess": "Ping gönderildi! ⚡ Wink için 60 saniye",
+  "pingWaitSeconds": "{seconds} saniye bekle",
+  "@pingWaitSeconds": {
+    "placeholders": {
+      "seconds": {"type": "int"}
+    }
+  },
+  "pingSomeoneAlreadySent": "Biri zaten ping göndermiş",
+  "pingPersonInSpark": "Bu kişi PW chat'te meşgul",
+  "pingThisVibeExpired": "Bu vibe'ın süresi dolmuş",
+  "pingFailedToSend": "Gönderilemedi",
+  "pingSendingError": "Gönderme hatası",
+  "pingCancelled": "Ping iptal edildi",
+  "pingCancelledBySender": "Gönderen ping'i iptal etti",
+  "pingErrorConnecting": "PW mate'e bağlanma hatası",
+  "pingErrorStartingChat": "Sohbet başlatma hatası",
+
+
+
+  "chatTimeNow": "şimdi",
+  "chatTimeMinutes": "{minutes}dk",
+  "@chatTimeMinutes": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "chatTimeHours": "{hours}sa",
+  "@chatTimeHours": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+
+
+
+  "distanceVeryClose": "çok yakın",
+  "distanceMeters": "{meters}m",
+  "@distanceMeters": {
+    "placeholders": {
+      "meters": {"type": "int"}
+    }
+  },
+  "distanceKilometers": "{km}km",
+  "@distanceKilometers": {
+    "placeholders": {
+      "km": {"type": "String"}
+    }
+  },
+
+
+
+  "sparkDefaultAlias1": "PW mate 1",
+  "sparkDefaultAlias2": "PW mate 2",
+
+
+
+  "birthYearTitle": "doğum yılın",
+  "birthYearPrivacyText": "gizli • kimseye gösterilmez",
+  "birthYearDefaultGeneration": "Havalı Nesil ⭐",
+  "genLabel2012": "iPad Çocukları 📱",
+  "genLabel2011": "Minecraft OG'leri ⛏️",
+  "genLabel2010": "Angry Birds 🦅",
+  "genLabel2009": "Instagram Nesli 📸",
+  "genLabel2008": "Musical.ly 🎵",
+  "genLabel2007": "TikTok Çocukları 🎬",
+  "genLabel2006": "YouTube Nesli 🎮",
+  "genLabel2005": "Facebook Dönemi 👍",
+  "genLabel2004": "Snapchat 👻",
+  "genLabel2003": "MSN Zamanı 💬",
+  "genLabel2002": "iPod Nesli 🎧",
+  "genLabel2001": "Harry Potter Hayranları ⚡",
+  "genLabel2000": "Y2K Çocukları 🌐",
+  "genLabel1999": "Matrix Nesli 💊",
+  "genLabel1998": "Game Boy 🎮",
+  "genLabel1997": "Pokémon 🔴",
+  "genLabel1996": "İnternet Çocukları 💻",
+  "genLabel1995": "Windows 95 🪟",
+  "genLabel1994": "Friends Dönemi ☕",
+  "genLabel1993": "Sonic Nesli 💨",
+  "genLabel1992": "TRT Çocuk 📺",
+  "genLabel1991": "SNES Çocukları 🎮",
+  "genLabel1990": "MTV Nesli 🎸",
+  "genLabel1989": "Nintendo Dönemi 🕹️",
+  "genLabel1988": "Walkman 🎧",
+  "genLabel1987": "VHS Çocukları 📼",
+  "genLabel1986": "Atari Nesli 👾",
+  "genLabel1985": "Geleceğe Dönüş ⏰",
+  "genLabel1984": "Mac Çocukları 🍎",
+  "genLabel1983": "Star Wars ⚔️",
+  "genLabel1982": "E.T. Nesli 👽",
+  "genLabel1981": "MTV Başlangıcı 📺",
+  "genLabel1980": "Pac-Man 👾",
+  "genLabel1979": "Disko Dönemi 🪩",
+  "genLabel1978": "Space Invaders 🚀",
+  "genLabel1977": "Star Wars OG 🌟",
+  "genLabel1976": "Punk Rock 🎸",
+  "genLabel1975": "Jaws Nesli 🦈",
+  "genLabel1974": "Disko Başlangıcı 💃",
+  "genLabel1973": "Pink Floyd 🌈",
+  "genLabel1972": "Pong Dönemi 🏓",
+  "genLabel1971": "Led Zeppelin 🎸",
+  "genLabel1970": "Beatles Nesli 🎵",
+  "genLabel1969": "Efsaneler 👑",
+  "birthYear1969Plus": "1969+",
+
+
+
+  "historyTitle": "Geçmiş",
+  "historyEmptyTitle": "Henüz duygu yok",
+  "historyEmptySubtitle": "Ruh hallerini paylaşmaya başla\ngeçmişini görmek için",
+  "historyMyEmotions": "Duygularım",
+  "historyStatTotal": "Toplam",
+  "historyStatDominant": "En çok",
+  "historyToday": "Bugün",
+  "historyTimeFormat": "{date} • {time}",
+  "@historyTimeFormat": {
+    "placeholders": {
+      "date": {"type": "String"},
+      "time": {"type": "String"}
+    }
+  },
+  "historyTodayFormat": "{today} • {time}",
+  "@historyTodayFormat": {
+    "placeholders": {
+      "today": {"type": "String"},
+      "time": {"type": "String"}
+    }
+  },
+
+
+
+  "trendsTitle": "Trendler",
+  "trendsSubtitle": "Şehir istatistikleri toplanıyor",
+  "trendsEmoji": "📊",
+
+
+
+  "mapToastYourOwnVibe": "Bu senin kendi vibe'ın",
+  "mapErrorNeedActiveVibeToPing": "Ping göndermek için aktif vibe gerek", 
+  "mapErrorAlreadyHavePingOrUnavailable": "Zaten aktif ping var ya da vibe müsait değil",
+  "mapBanRestrictionMessage": "{time} süreyle kısıtlandın",
+  "@mapBanRestrictionMessage": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "mapBanRestrictionLifted": "Kısıtlama kalktı! Tekrar vibe paylaşabilirsin",
+  "mapSuccessVibeSent": "Vibe gönderildi! Yakında {count} kişi daha var 🎉",
+  "@mapSuccessVibeSent": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "mapTutorialTapToSpark": "birinin vibe'ına dokun • 60 saniyede PW chat",
+  "mapActivePingStatus": "Aktif ping ({seconds}sn) - İptal için dokun",
+  "@mapActivePingStatus": {
+    "placeholders": {
+      "seconds": {"type": "int"}
+    }
+  },
+
+
+
+  "onboardingTitlePingWink": "ping & wink",
+  "onboardingSubtitleSeeWhatsPoppin": "çevrende neler dönüyor gör",
+  "onboardingButtonLetsGo": "hadi başlayalım",
+  "onboardingBadgeAge13Plus": "sadece 13+",
+  "onboardingValueTitleInstantSparks": "anında PW chat",
+  "onboardingValueSubtitleConnect60Sec": "60 saniyede bağlan",
+  "onboardingValueTitleHyperlocalVibes": "süper lokal vibe'lar",
+  "onboardingValueSubtitleOnly2kmRadius": "sadece 3km çap",
+  "onboardingValueTitleNoProfiles": "profil yok",
+  "onboardingValueSubtitleJustPureMoments": "sadece gerçek anlar",
+  "onboardingButtonImReady": "hazırım",
+  "onboardingLocationTitle": "bölgeni aç",
+  "onboardingLocationSubtitle": "3km içindeki ruh hallerini gör",
+  "onboardingLocationPrivacyTitle": "gizlilik önce",
+  "onboardingLocationPrivacyBullet1": "sadece uygulama açıkken",
+  "onboardingLocationPrivacyBullet2": "arka planda takip yok",
+  "onboardingLocationPrivacyBullet3": "sadece anonim vibe'lar",
+  "onboardingButtonEnableRadar": "radarı aç",
+  "onboardingButtonMaybeLater": "belki sonra",
+  "onboardingNotificationTitle": "hiçbir PW chat'i kaçırma",
+  "onboardingNotificationSubtitle": "yakında biri vibe'larken ping al",
+  "onboardingNotificationFeature1": "biri vibe yaptığında anında ping",
+  "onboardingNotificationFeature2": "günlük vibe hatırlatıcıları",
+  "onboardingNotificationFeature3": "popüler nokta uyarıları",
+  "onboardingButtonTurnOnPings": "ping'leri aç",
+  "onboardingButtonNotNow": "şimdi değil",
+  "onboardingLegalTitle": "neredeyse bitti!",
+  "onboardingLegalAgeRequirement": "13 yaşında veya daha büyük olmalısın",
+  "onboardingLegalAgeSubtitle": "ping & wink gençler ve üstü için",
+  "onboardingLegalConsent": "devam ederek 13+ olduğunu onaylıyor ve kabul ediyorsun",
+  "onboardingLegalTerms": "şartlar",
+  "onboardingLegalAnd": " ve ",
+  "onboardingLegalPrivacyPolicy": "gizlilik politikası",
+  "onboardingLegalSafetyFeature1": "sadece anonim vibe'lar",
+  "onboardingLegalSafetyFeature2": "anında engelleme ve raporlama",
+  "onboardingLegalSafetyFeature3": "kötü davranış için 20 dk mola",
+  "onboardingButtonImAge13AndAgree": "13+ yaşındayım ve kabul ediyorum",
+  "onboardingButtonImUnder13": "13'ten küçüğüm",
+  "onboardingLocationDeniedTitle": "tüm PW spark'ları kaçıracaksın",
+  "onboardingLocationDeniedMessage": "konum olmadan yapamazsın:\n• kimlerin yakında olduğunu göremezsin\n• ping gönderemezsin\n• wink alamazsın\n• PW spark bağlantıları",
+  "onboardingButtonGoBack": "geri dön",
+  "onboardingButtonExitApp": "uygulamadan çık",
+  "onboardingNotificationDeniedTitle": "tüm eğlenceyi kaçıracaksın",
+  "onboardingNotificationDeniedMessage": "bildirimler olmadan:\n• kimse sana ping atamaz\n• yakındaki PW spark'ları kaçırırsın\n• sıfır bağlantı\n\nkullanıcılarımız bildirimleri açıyor",
+  "onboardingButtonLetMeReconsider": "tekrar düşüneyim",
+  "onboardingButtonContinueAnyway": "yine de devam et",
+  "onboardingAgeDialogTitle": "sonra görüşürüz!",
+  "onboardingAgeDialogMessage": "ping & wink 13 yaş ve üzeri kullanıcılar için. yaşın yetince geri gel!",
+  "onboardingButtonUnderstood": "anladım",
+  "onboardingNotificationExampleTitle": "ping & wink",
+  "onboardingNotificationExampleNow": "şimdi",
+  "onboardingNotificationExamplePing": "230m uzakta yeni ping",
+  "onboardingNotificationExampleMessage": "biri seninle aynı vibe'da",
+  "onboardingMapNotification": "biri 753m uzakta spark yaptı",
+  "onboardingLocationPrivacyFormatted": "• sadece uygulama açıkken\n• arka planda takip yok\n• sadece anonim vibe'lar",
+  "onboardingLocationDeniedFormatted": "konum olmadan yapamazsın:\n• kimlerin yakında olduğunu göremezsin\n• ping gönderemezsin\n• wink alamazsın\n• spark bağlantıları",
+  "onboardingNotificationDeniedFormatted": "bildirimler olmadan:\n• kimse sana ping atamaz\n• yakındaki vibe'ları kaçırırsın\n• sıfır bağlantı\n\nkullanıcılarımız bildirimleri açıyor",
+
+
+
+  "settingsTitle": "Ayarlar",
+  "settingsAppName": "Ping&Wink",
+  "settingsAppTagline": "Duygularla bağlan",
+  "settingsShareTitle": "Arkadaşlarla paylaş",
+  "settingsShareSubtitle": "Başkalarını vibe'ları keşfetmeye davet et",
+  "settingsSectionPreferences": "Tercihler",
+  "settingsSectionLegal": "Yasal",
+  "settingsSectionSupport": "Destek",
+  "settingsSectionDataManagement": "Veri Yönetimi",
+  "settingsNotificationsTitle": "Bildirimler",
+  "settingsNotificationsEnabled": "Açık",
+  "settingsNotificationsDisabled": "Kapalı",
+  "settingsMapThemeTitle": "Harita teması",
+  "settingsMapThemeCyberpunk": "Cyberpunk",
+  "settingsMapThemeMinimalist": "Minimalist",
+  "settingsLocationModeTitle": "Konum modu",
+  "settingsLocationModeSoft": "Konum biraz kaydırılır, stil için",
+  "settingsLocationModeExact": "Vibe'ın tam olduğu yerde",
+  "settingsDeleteVibeTitle": "Vibe'ımı sil",
+  "settingsDeleteVibeSubtitle": "Duygunu haritadan kaldır",
+  "settingsPrivacyTitle": "Gizlilik Politikası",
+  "settingsPrivacySubtitle": "Verilerini nasıl koruyoruz",
+  "settingsTermsTitle": "Kullanım Şartları",
+  "settingsTermsSubtitle": "Uygulama kullanım kuralları",
+  "settingsHelpTitle": "Yardım Merkezi",
+  "settingsHelpSubtitle": "SSS ve kılavuzlar",
+  "settingsContactTitle": "İletişim",
+  "settingsContactEmail": "hello@pingandwink.com",
+  "settingsDeleteAccountTitle": "Hesabımı sil",
+  "settingsDeleteAccountSubtitle": "Tüm verilerini sil",
+  "settingsFooterTagline": "Ping & Wink - Just Vibes",
+  "settingsFooterCopyright": "© 2025 Ping and Wink",
+  "settingsDeviceIdPrefix": "Cihaz ID: {id}...",
+  "@settingsDeviceIdPrefix": {
+    "placeholders": {
+      "id": {"type": "String"}
+    }
+  },
+  "settingsDeleteVibeDialogTitle": "Vibe'ını sil?",
+  "settingsDeleteVibeDialogMessage": "Duygun haritadan silinecek",
+  "settingsVibeDeletedSuccess": "Vibe'ın silindi",
+  "settingsVibeDeleteError": "Vibe silme hatası",
+  "settingsNotificationWarningTitle": "Dikkat!",
+  "settingsNotificationWarningMessage": "Bildirimleri kapatırsan diğer kullanıcılardan PING alamazsın.\n\nPW chat'ler (bağlantılar) kurulamaz.\n\nGerçekten kapatmak istiyor musun?",
+  "settingsNotificationWarningCancel": "İptal",
+  "settingsNotificationWarningDisable": "Yine de kapat",
+  "settingsNotificationsDisabledMessage": "⚠️ Bildirimler kapalı - Hiç ping almayacaksın",
+  "settingsNotificationsEnabledMessage": "✅ Bildirimler açık - Ping alabilirsin",
+  "settingsMapThemeCyberpunkActivated": "Cyberpunk modu aktif 🌃",
+  "settingsMapThemeDayActivated": "Gündüz modu aktif ☀️",
+  "settingsSoftModeEnabled": "Yumuşak mod açık! Vibe'ın kaydırıldı 🌊",
+  "settingsNormalModeEnabled": "Normal mod açık! Tam konum 📍",
+  "settingsIdCopied": "ID kopyalandı",
+  "settingsDeleteAccountDialogTitle": "⚠️ Hesabı sil",
+  "settingsDeleteAccountDialogMessage": "Bu işlem geri alınamaz. Tüm duyguların ve verilerin kalıcı olarak silinecek.\n\nEmin misin?",
+  "settingsDeleteAccountDialogDelete": "Sil",
+  "settingsDeleteAccountError": "Hesap silme hatası",
+  "settingsModerationPanelTitle": "🔍 Moderasyon Paneli",
+  "settingsModerationPanelSubtitle": "Sadece App Store İncelemesi İçin",
+  "settingsModerationActiveBans": "Aktif Yasaklar",
+  "settingsModerationReports": "Raporlar",
+  "settingsModerationClearData": "Test Verilerini Temizle",
+  "settingsModerationDataCleared": "Test verileri temizlendi",
+
+
+
+  "sparkConnectingToChat": "PW chat'e bağlanılıyor...",
+  "sparkChatTitle": "PW Chat",
+  "sparkChatEnded": "Bitti",
+  "sparkSendFirstMessage": "İlk mesajı gönder!",
+  "sparkWaitingForMate": "PW mate bekleniyor...",
+  "sparkMessagePlaceholder": "Mesaj...",
+  "sparkWaitForReply": "Cevabı bekle...",
+  "sparkChatEndedPlaceholder": "Sohbet bitti",
+  "sparkLeaveChat": "PW chat'ten çık?",
+  "sparkChatEndForBoth": "Sohbet her iki PW mate için de bitecek",
+  "sparkStay": "Kal",
+  "sparkLeave": "Çık",
+  "sparkExtended": "Uzatıldı! +3 dk ⚡",
+  "sparkWaitingForOther": "PW mate bekleniyor...",
+  "sparkMaxExtensionsReached": "Maksimum uzatmaya ulaşıldı",
+  "sparkFailedToExtend": "Uzatılamadı",
+  "sparkFailedToSend": "Gönderilemedi",
+  "sparkMessageTooLong": "Mesaj çok uzun (maks 199)",
+  "sparkErrorInitializing": "Sohbet başlatma hatası: {error}",
+  "@sparkErrorInitializing": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "sparkUserBanned": "Kullanıcı 7 dakika yasaklandı",
+  "sparkRestrictedForBanning": "Çok fazla yasaklama yaptığın için kısıtlandın",
+  "sparkReportSubmitted": "Rapor gönderildi",
+  "sparkBehaviorRestriction": "Uygunsuz davranış nedeniyle kısıtlandın",
+
+
+
+  "splashTitlePing": "PING",
+  "splashTitleAmpersand": "&",
+  "splashTitleWink": "WINK",
+  "splashTagline": "ANI ATEŞLE",
+
+
+
+  "trendsEmotionalPulse": "Duygusal nabız {time}",
+  "@trendsEmotionalPulse": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "trendsTimeMorning": "bu sabah",
+  "trendsTimeAfternoon": "bu öğleden sonra",
+  "trendsTimeEvening": "bu akşam",
+  "trendsTimeLateNight": "gece geç saatte",
+  "trendsActiveVibes": "Aktif vibe'lar",
+  "trendsSparkers": "PW mate'ler",
+  "trendsDominantEmotion": "Baskın duygu",
+  "trendsPercentOfSparkers": "%{percent} PW mate",
+  "@trendsPercentOfSparkers": {
+    "placeholders": {
+      "percent": {"type": "int"}
+    }
+  },
+  "trendsEmotionDistribution": "Duygu dağılımı",
+  "trendsQuote1": "Paylaşılan her duygu bir bağlantı yaratır ✨",
+  "trendsQuote2": "Birlikte duygu haritası oluşturuyoruz 🗺️",
+  "trendsQuote3": "Senin vibe'ın birinin gününü değiştirebilir 💫",
+  "trendsQuote4": "PW chat'ler basit bir ping ile başlar ⚡",
+
+
+
+  "banOverlayTitle": "Geçici Kısıtlama",
+  "banOverlayMessage": "PW mate'in mesajını uygunsuz buldu",
+  "banOverlayRestrictionInfo": "Bu süre boyunca vibe paylaşamazsın",
+
+
+
+  "bottomNavMap": "Harita",
+  "bottomNavHistory": "Geçmiş",
+  "bottomNavTrends": "Trendler",
+  "bottomNavSettings": "Ayarlar",
+
+
+
+  "guidelinesTitle": "Topluluk Kuralları",
+  "guidelinesRespectTitle": "Saygılı ol",
+  "guidelinesRespectSubtitle": "Herkese nezaketle davran",
+  "guidelinesNoHarassmentTitle": "Taciz yok",
+  "guidelinesNoHarassmentSubtitle": "Uygunsuz mesaj gönderme",
+  "guidelinesKeepRealTitle": "Gerçek ol",
+  "guidelinesKeepRealSubtitle": "Sadece gerçek vibe'ları paylaş",
+  "guidelinesHaveFunTitle": "Eğlen",
+  "guidelinesHaveFunSubtitle": "PW bağlantılarının tadını çıkar!",
+  "guidelinesViolationWarning": "İhlaller geçici veya kalıcı kısıtlamalarla sonuçlanabilir",
+  "guidelinesButtonUnderstand": "Anladım",
+
+
+
+  "emotionSelectorStreakDay": "{day}. Gün - Serini koru!",
+  "@emotionSelectorStreakDay": {
+    "placeholders": {
+      "day": {"type": "int"}
+    }
+  },
+  "emotionSelectorTapYourVibe": "VIBE'INA DOKUN",
+  "emotionSelectorWhatsYourVibe": "şu an vibe'ın ne?",
+  "emotionSelectorActiveNow": "{count} kişi aktif",
+  "@emotionSelectorActiveNow": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+
+
+  "miniBarSendNewPing": "Yeni ping gönder",
+  "miniBarPingActive": "Ping'in aktif",
+
+
+
+  "moderationBanTitle": "7 dk yasakla",
+  "moderationBanSubtitle": "Bu kullanıcıyı geçici olarak kısıtla",
+  "moderationReportTitle": "Rapor et",
+  "moderationReportSubtitle": "Uygunsuz davranışı bildir",
+  "moderationEndChatTitle": "Sohbeti Bitir",
+  "moderationEndChatSubtitle": "Bu PW oturumundan ayrıl",
+  "moderationReportDialogTitle": "Kullanıcıyı Rapor Et",
+  "moderationReportReasonHarassment": "Taciz",
+  "moderationReportReasonSpam": "Spam",
+  "moderationReportReasonHateSpeech": "Nefret söylemi",
+  "moderationReportReasonOther": "Diğer",
+  "moderationReportSendButton": "Raporu Gönder",
+
+
+
+  "pingBottomVibeTooFar": "Vibe çok uzak (maks 3km)",
+  "pingBottomVibeTooFarMessage": "Vibe çok uzak - ping için maks 3km",
+  "pingBottomTooFar": "ÇOK UZAK",
+  "pingBottomPing": "PING",
+  "pingBottomDistanceVeryClose": "çok yakın",
+  "pingBottomDistanceMeters": "{meters}m",
+  "@pingBottomDistanceMeters": {
+    "placeholders": {
+      "meters": {"type": "int"}
+    }
+  },
+  "pingBottomDistanceKilometers": "{km}km",
+  "@pingBottomDistanceKilometers": {
+    "placeholders": {
+      "km": {"type": "String"}
+    }
+  },
+  "pingBottomTimeNow": "şimdi",
+  "pingBottomTimeMinutes": "{minutes}dk",
+  "@pingBottomTimeMinutes": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "pingBottomTimeHours": "{hours}sa",
+  "@pingBottomTimeHours": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+
+
+
+  "vibeAnimBrainEnergy": "BEYİN GÜCÜ",
+  "vibeAnimCozy": "VIBE: RAHAT",
+  "vibeAnimSweatSlay": "TER DÖK. KAZAN. TEKRAR",
+  "vibeAnimLostInBeat": "RİTİMDE KAYIP",
+  "vibeAnimCityLights": "ŞEHİR IŞIKLARI",
+  "vibeAnimLightsCameraVibes": "IŞIK. KAMERA. VIBE'LAR.",
+  "vibeAnimEveningVibes": "AKŞAM VIBE'LARI",
+  "vibeAnimPartyMode": "PARTİ MODU: AÇIK",
+  "vibeAnimSubBrainTime": "Beyin zamanı 🧠",
+  "vibeAnimSubCaffeine": "Kafein vibe'ları ☕",
+  "vibeAnimSubNoDaysOff": "İzin günü yok 🔥",
+  "vibeAnimSubVolumeMax": "Ses: FULL 🎧",
+  "vibeAnimSubUrbanExplorer": "Şehir kaşifi 🌃",
+  "vibeAnimSubCreateGlow": "Yarat ve parla 📸",
+  "vibeAnimSubNightFlow": "Gece akışı 🌙",
+  "vibeAnimSubUnleashChaos": "Kaosu serbest bırak 🎉",
+  "vibeAnimDefaultMessage": "VIBE AYARLANDI",
+  "vibeAnimDefaultSubMessage": "Hadi başlayalım!",
+
+
+
+  "viralShareFailed": "Paylaşılamadı",
+  "viralShareTextNight": "herkes uyuyor. ama bir şeyler oluyor\npingandwink.com",
+  "viralShareTextEvening": "akşam. en iyi zaman\npingandwink.com",
+  "viralShareTextDefault": "şu an neler oluyor?\npingandwink.com",
+  "viralShareMainText": "sen bunu okurken\nneler oluyor?",
+  "viralShareFindOut": "öğren",
+  "viralShareLogo": "ping&wink",
+  "viralShareButton": "paylaş →",
+
+
+
+  "winkBannerPing": "PING {distance}",
+  "@winkBannerPing": {
+    "placeholders": {
+      "distance": {"type": "String"}
+    }
+  },
+  "winkBannerSparkmateWants": "PW mate bağlanmak istiyor",
+  "winkBannerWinkBack": "WINK BACK"
+
+}

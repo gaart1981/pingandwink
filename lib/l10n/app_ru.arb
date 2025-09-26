@@ -1,0 +1,631 @@
+{
+  "@@locale": "ru",
+  
+  "commonCancel": "Отмена",
+  "commonClose": "Закрыть",
+  "commonOk": "ОК",
+  "commonYes": "Да",
+  "commonNo": "Нет",
+  "commonSave": "Сохранить",
+  "commonDelete": "Удалить",
+  "commonShare": "Поделиться",
+  "commonLoading": "Загрузка...",
+  "commonError": "Ошибка",
+  "commonSuccess": "Готово",
+  "commonRetry": "Ещё раз",
+  "commonNext": "Далее",
+  "commonBack": "Назад",
+  "commonSkip": "Пропустить",
+  "commonDone": "Готово",
+  "commonContinue": "Продолжить",
+  "commonConfirm": "Подтвердить",
+  
+
+
+  "emptyStateMorningStoryMain": "город ещё просыпается, медленно потягивается\nвсе в своих утренних ритуалах\nкофе, дорога, притворство работы\nно вот чего они ещё не знают:\nсегодня в 19:00 эта карта полностью преобразится",
+  "emptyStateMorningStorySub": "поставь будильник сейчас, поблагодаришь себя позже ⏰",
+  "emptyStateMorningCuriosityMain": "ты поймал карту в тихой фазе\nкак ночной клуб днём - пусто, но полно потенциала\n3 человека проверили до тебя сегодня\nвсе поставили напоминания на 19:00\nсовпадение? или они что-то знают?",
+  "emptyStateMorningCuriositySub": "ответ откроется на закате 🌅",
+  "emptyStateMorningSocialMain": "правда понедельника утром:\nвсе притворяются, что работают сейчас\nтаблицы открыты, мысли где-то ещё\nты 1 из 7 человек, кто проверил до полудня\nэто делает тебя особенным, или сумасшедшим, или и то и другое",
+  "emptyStateMorningSocialSub": "вернись в 19:00 чтобы узнать что именно",
+  "emptyStateFridayMain": "парадокс пятницы днём:\nвсе ментально отключились, но физически застряли\nсчитают часы до свободы (ещё {hours})\nв 17:00 начинается метаморфоза\nиз рабочих зомби в воинов выходных",
+  "@emptyStateFridayMain": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+  "emptyStateFridaySub": "ты рано пришёл это увидеть 🦋",
+  "emptyStateAfternoonReturningMain": "ты продолжаешь возвращаться в это время\nища что-то, чего здесь нет... пока\nупорство или безумие?\nвселенная наблюдает\nи она вознаграждает терпение",
+  "@emptyStateAfternoonReturningSub": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+  "emptyStateAfternoonFirstMain": "иногда это происходит в 14:47\nиногда в 18:13\nно это всегда происходит\nпревращение из мёртвого в живое\nиз пустого в электрическое",
+  "emptyStateAfternoonFirstSub": "вопрос в том: будешь ли ты здесь когда это случится?",
+  "emptyStatePrimetimeFirstMain": "добро пожаловать на грань чего-то большого\nчерез 23 минуты эта пустая карта взорвётся\nсотни вайбов появятся как звёзды\nкаждый - реальный человек, реальная эмоция, реальный момент\nты здесь до толпы",
+  "emptyStatePrimetimeFirstSub": "это либо гениальность, либо удача ⚡",
+  "emptyStatePrimetimeReturnMain": "тишина перед игрой перед бурей\nты знаешь что грядёт\n19:00 бьёт по-другому на этой карте\nрабочий стресс превращается в энергию выходных\nсмотри как это происходит в реальном времени",
+  "emptyStatePrimetimeReturnSub": "или закрой приложение и гадай вечно",
+  "emptyStateWeekendEveningMain": "феномен субботнего вечера:\nвсе там живут лучшей жизнью\nили притворяются в инстаграме\nно ты нашёл настоящий пульс города\nэмоции без фильтров, без редактуры, без цензуры",
+  "emptyStateWeekendEveningSub": "обнови через 5 минут для правды 🌃",
+  "emptyStateWeekendMorningMain": "город с похмелья\nмедленно собирает вчерашнюю ночь\nпроверяет ущерб, считает сожаления\nкарта спит до 14:00\nно когда проснётся...",
+  "emptyStateWeekendMorningSub": "хаос раунд 2 начинается 🎭",
+  "emptyStateLateNightMain": "ясность 2 часов ночи бьёт по-другому\nкогда шум останавливается, правда появляется\nтолько настоящие бодрствуют сейчас\nделятся мыслями 3 часов ночи\nсырые, честные, без фильтров",
+  "emptyStateLateNightSub": "ты не один в темноте 🌙",
+  "emptyStatePush1Title": "ping&wink",
+  "emptyStatePush1Body": "карта просыпается 👀",
+  "emptyStatePush2Title": "ping&wink",
+  "emptyStatePush2Body": "пик вайбов прямо сейчас ⚡",
+  "emptyStatePush3Title": "ping&wink",
+  "emptyStatePush3Body": "вчера ты пропустил 47 вайбов. сегодня?",
+  "emptyStateNotificationEnabled": "Уведомления включены! Ты узнаешь когда появятся вайбы 🔔",
+  "emptyStateTapToClose": "нажми чтобы закрыть",
+  "emptyStateAfternoonReturningHours": "примерно {hours} часов до зажигания 🚀",
+  "@emptyStateAfternoonReturningHours": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+
+
+  "vibeLabelBrainMode": "Фокус",
+  "vibeLabelLatteBreak": "Кофе-тайм",
+  "vibeLabelSportMode": "Спорт",
+  "vibeLabelSoundLoop": "Музыка",
+  "vibeLabelCityWalk": "На районе",
+  "vibeLabelContentMode": "Контент",
+  "vibeLabelChillNight": "Чилл",
+  "vibeLabelPartyMode": "Движ",
+  
+  "scanYourVibe": "Зафиксируй вайб ⚡",
+  "pickYourMood": "Выбери настроение и смотри, что происходит сейчас 👀",
+  "waitMinutes": "Подожди {minutes} мин ⏰",
+  "@waitMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "swipeDownToMap": "↓ Свайпни вниз к карте",
+  "changeYourMood": "Изменить настроение",
+  "swipeUp": "Свайпни вверх ↑",
+  "youAreNotAlone": "Ты не один!",
+  "you": "ТЫ",
+  "others": "человек",
+  "days": "дней",
+  "streak": "🔥 Серия: {days} дн.",
+  "@streak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "shareMyVibe": "📤 Поделиться вайбом",
+  "close": "Закрыть",
+  "happy": "кайфуют",
+  "nearby": "рядом",
+  "enableLocationSettings": "Включи геолокацию в настройках",
+  "errorTryAgain": "Ошибка, попробуй ещё",
+  "networkError": "Проблема с сетью",
+  "missingConfiguration": "Нет настроек",
+  "shareMessage": "чувствую {emotion} прям сейчас 💭 кто ещё? чекни -> moodmap.cloud  #MoodMap #VibeCheck",
+  "@shareMessage": {
+    "placeholders": {
+      "emotion": {
+        "type": "String"
+      },
+      "emotionName": {
+        "type": "String"
+      },
+      "nearbyCount": {
+        "type": "int"
+      },
+      "streakDays": {
+        "type": "int"
+      },
+      "happinessPercent": {
+        "type": "int"
+      }
+    }
+  },
+  "shareSubject": "Мой вайб на MoodMap! 🌟",
+
+
+
+  "pingErrorYourVibeExpired": "Твой вайб истёк, поставь новый",
+  "pingSentSuccess": "Ping отправлен! ⚡ 60 сек на Wink",
+  "pingWaitSeconds": "Подожди {seconds} сек",
+  "@pingWaitSeconds": {
+    "placeholders": {
+      "seconds": {"type": "int"}
+    }
+  },
+  "pingSomeoneAlreadySent": "Кто-то уже отправил ping",
+  "pingPersonInSpark": "Человек уже в PW чате",
+  "pingThisVibeExpired": "Этот вайб уже истёк",
+  "pingFailedToSend": "Не удалось отправить",
+  "pingSendingError": "Ошибка отправки",
+  "pingCancelled": "Ping отменён",
+  "pingCancelledBySender": "Ping отменён отправителем",
+  "pingErrorConnecting": "Ошибка соединения с PW mate",
+  "pingErrorStartingChat": "Ошибка запуска чата",
+
+
+
+  "chatTimeNow": "сейчас",
+  "chatTimeMinutes": "{minutes}м",
+  "@chatTimeMinutes": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "chatTimeHours": "{hours}ч",
+  "@chatTimeHours": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+
+
+
+  "distanceVeryClose": "очень близко",
+  "distanceMeters": "{meters}м",
+  "@distanceMeters": {
+    "placeholders": {
+      "meters": {"type": "int"}
+    }
+  },
+  "distanceKilometers": "{km}км",
+  "@distanceKilometers": {
+    "placeholders": {
+      "km": {"type": "String"}
+    }
+  },
+
+
+
+  "sparkDefaultAlias1": "PW mate 1",
+  "sparkDefaultAlias2": "PW mate 2",
+
+
+
+  "birthYearTitle": "твой год рождения",
+  "birthYearPrivacyText": "приватно • никому не покажем",
+  "birthYearDefaultGeneration": "Крутое поколение ⭐",
+  "genLabel2012": "Дети iPad 📱",
+  "genLabel2011": "OG Minecraft ⛏️",
+  "genLabel2010": "Angry Birds 🦅",
+  "genLabel2009": "Поколение Instagram 📸",
+  "genLabel2008": "Musical.ly 🎵",
+  "genLabel2007": "Дети TikTok 🎬",
+  "genLabel2006": "Поколение YouTube 🎮",
+  "genLabel2005": "Эра Facebook 👍",
+  "genLabel2004": "Snapchat 👻",
+  "genLabel2003": "Эра ICQ 💬",
+  "genLabel2002": "Поколение iPod 🎧",
+  "genLabel2001": "Поттероманы ⚡",
+  "genLabel2000": "Дети Y2K 🌐",
+  "genLabel1999": "Поколение Matrix 💊",
+  "genLabel1998": "Game Boy 🎮",
+  "genLabel1997": "Pokémon 🔴",
+  "genLabel1996": "Дети Dial-Up 💻",
+  "genLabel1995": "Windows 95 🪟",
+  "genLabel1994": "Эра Друзей ☕",
+  "genLabel1993": "Поколение Sonic 💨",
+  "genLabel1992": "Cartoon Network 📺",
+  "genLabel1991": "Дети Dendy 🎮",
+  "genLabel1990": "Поколение MTV 🎸",
+  "genLabel1989": "Эра Тетрис 🕹️",
+  "genLabel1988": "Walkman 🎧",
+  "genLabel1987": "Дети VHS 📼",
+  "genLabel1986": "Поколение Arcade 👾",
+  "genLabel1985": "Эра BTTF ⏰",
+  "genLabel1984": "Дети Mac 🍎",
+  "genLabel1983": "Star Wars ⚔️",
+  "genLabel1982": "Поколение E.T. 👽",
+  "genLabel1981": "Старт MTV 📺",
+  "genLabel1980": "Pac-Man 👾",
+  "genLabel1979": "Эра Диско 🪩",
+  "genLabel1978": "Space Invaders 🚀",
+  "genLabel1977": "Star Wars OG 🌟",
+  "genLabel1976": "Punk Rock 🎸",
+  "genLabel1975": "Поколение Jaws 🦈",
+  "genLabel1974": "Старт Диско 💃",
+  "genLabel1973": "Pink Floyd 🌈",
+  "genLabel1972": "Эра Pong 🏓",
+  "genLabel1971": "Zeppelin 🎸",
+  "genLabel1970": "Поколение Beatles 🎵",
+  "genLabel1969": "Легенды 👑",
+  "birthYear1969Plus": "1969+",
+
+
+
+  "historyTitle": "История",
+  "historyEmptyTitle": "Пока пусто",
+  "historyEmptySubtitle": "Начни делиться вайбами\nчтобы увидеть историю",
+  "historyMyEmotions": "Мои эмоции",
+  "historyStatTotal": "Всего",
+  "historyStatDominant": "Главная",
+  "historyToday": "Сегодня",
+  "historyTimeFormat": "{date} • {time}",
+  "@historyTimeFormat": {
+    "placeholders": {
+      "date": {"type": "String"},
+      "time": {"type": "String"}
+    }
+  },
+  "historyTodayFormat": "{today} • {time}",
+  "@historyTodayFormat": {
+    "placeholders": {
+      "today": {"type": "String"},
+      "time": {"type": "String"}
+    }
+  },
+
+
+
+  "trendsTitle": "Тренды",
+  "trendsSubtitle": "Статистика города собирается",
+  "trendsEmoji": "📊",
+
+
+
+  "mapToastYourOwnVibe": "Это твой вайб",
+  "mapErrorNeedActiveVibeToPing": "Нужен активный вайб для отправки ping", 
+  "mapErrorAlreadyHavePingOrUnavailable": "У тебя уже есть активный ping или вайб недоступен",
+  "mapBanRestrictionMessage": "Ты ограничен на {time}",
+  "@mapBanRestrictionMessage": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "mapBanRestrictionLifted": "Ограничение снято! Можешь снова делиться вайбами",
+  "mapSuccessVibeSent": "Вайб отправлен! Ещё {count} рядом 🎉",
+  "@mapSuccessVibeSent": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "mapTutorialTapToSpark": "тапни на вайб • получи PW чат за 60 сек",
+  "mapActivePingStatus": "Активный ping ({seconds}с) - Тапни для отмены",
+  "@mapActivePingStatus": {
+    "placeholders": {
+      "seconds": {"type": "int"}
+    }
+  },
+
+
+
+  "onboardingTitlePingWink": "ping & wink",
+  "onboardingSubtitleSeeWhatsPoppin": "смотри что происходит рядом прям сейчас",
+  "onboardingButtonLetsGo": "погнали",
+  "onboardingBadgeAge13Plus": "13+ только",
+  "onboardingValueTitleInstantSparks": "мгновенный PW чат",
+  "onboardingValueSubtitleConnect60Sec": "коннект за 60 сек",
+  "onboardingValueTitleHyperlocalVibes": "гиперлокальные вайбы",
+  "onboardingValueSubtitleOnly2kmRadius": "только 2км радиус",
+  "onboardingValueTitleNoProfiles": "никаких профилей",
+  "onboardingValueSubtitleJustPureMoments": "только чистые моменты",
+  "onboardingButtonImReady": "я готов",
+  "onboardingLocationTitle": "открой свой район",
+  "onboardingLocationSubtitle": "смотри вайбы в радиусе 2км",
+  "onboardingLocationPrivacyTitle": "приватность важна",
+  "onboardingLocationPrivacyBullet1": "только когда приложение открыто",
+  "onboardingLocationPrivacyBullet2": "без фонового отслеживания",
+  "onboardingLocationPrivacyBullet3": "только анонимные вайбы",
+  "onboardingButtonEnableRadar": "включить радар",
+  "onboardingButtonMaybeLater": "может позже",
+  "onboardingNotificationTitle": "не пропусти PW чат",
+  "onboardingNotificationSubtitle": "получай пинги когда рядом движ",
+  "onboardingNotificationFeature1": "мгновенные пинги от вайберов",
+  "onboardingNotificationFeature2": "ежедневные напоминания о вайбе",
+  "onboardingNotificationFeature3": "алерты о горячих точках",
+  "onboardingButtonTurnOnPings": "включить пинги",
+  "onboardingButtonNotNow": "не сейчас",
+  "onboardingLegalTitle": "почти готово!",
+  "onboardingLegalAgeRequirement": "тебе должно быть 13 или больше",
+  "onboardingLegalAgeSubtitle": "ping & wink для подростков и старше",
+  "onboardingLegalConsent": "нажимая продолжить, ты подтверждаешь что тебе 13+ и соглашаешься с",
+  "onboardingLegalTerms": "условиями",
+  "onboardingLegalAnd": " и ",
+  "onboardingLegalPrivacyPolicy": "политикой приватности",
+  "onboardingLegalSafetyFeature1": "только анонимные вайбы",
+  "onboardingLegalSafetyFeature2": "мгновенная блокировка и репорты",
+  "onboardingLegalSafetyFeature3": "таймаут 20 мин за плохое поведение",
+  "onboardingButtonImAge13AndAgree": "мне 13+ и я согласен",
+  "onboardingButtonImUnder13": "мне меньше 13",
+  "onboardingLocationDeniedTitle": "пропустишь все PW искры",
+  "onboardingLocationDeniedMessage": "без геолокации не сможешь:\n• видеть кто рядом\n• отправлять пинги\n• получать винки\n• создавать PW искры",
+  "onboardingButtonGoBack": "назад",
+  "onboardingButtonExitApp": "выйти",
+  "onboardingNotificationDeniedTitle": "пропустишь весь движ",
+  "onboardingNotificationDeniedMessage": "без уведомлений:\n• никто не сможет пингануть\n• пропустишь PW искры рядом\n• ноль коннектов\n\nнаши пользователи включают уведомления",
+  "onboardingButtonLetMeReconsider": "дай подумать",
+  "onboardingButtonContinueAnyway": "продолжить всё равно",
+  "onboardingAgeDialogTitle": "увидимся позже!",
+  "onboardingAgeDialogMessage": "ping & wink для пользователей 13 лет и старше. возвращайся когда подрастёшь!",
+  "onboardingButtonUnderstood": "понятно",
+  "onboardingNotificationExampleTitle": "ping & wink",
+  "onboardingNotificationExampleNow": "сейчас",
+  "onboardingNotificationExamplePing": "новый пинг 230м",
+  "onboardingNotificationExampleMessage": "кто-то вайбит с тобой",
+  "onboardingMapNotification": "кто-то загорелся в 753м",
+  "onboardingLocationPrivacyFormatted": "• только когда приложение открыто\n• без фонового отслеживания\n• только анонимные вайбы",
+  "onboardingLocationDeniedFormatted": "без геолокации не сможешь:\n• видеть кто рядом\n• отправлять пинги\n• получать винки\n• создавать искры",
+  "onboardingNotificationDeniedFormatted": "без уведомлений:\n• никто не сможет пингануть\n• пропустишь вайбы рядом\n• ноль коннектов\n\nнаши пользователи включают уведомления",
+
+
+
+  "settingsTitle": "Настройки",
+  "settingsAppName": "Ping&Wink",
+  "settingsAppTagline": "Коннект через эмоции",
+  "settingsShareTitle": "Поделись с друзьями",
+  "settingsShareSubtitle": "Пригласи других открыть вайбы",
+  "settingsSectionPreferences": "Настройки",
+  "settingsSectionLegal": "Правовое",
+  "settingsSectionSupport": "Поддержка",
+  "settingsSectionDataManagement": "Управление данными",
+  "settingsNotificationsTitle": "Уведомления",
+  "settingsNotificationsEnabled": "Включены",
+  "settingsNotificationsDisabled": "Выключены",
+  "settingsMapThemeTitle": "Тема карты",
+  "settingsMapThemeCyberpunk": "Киберпанк",
+  "settingsMapThemeMinimalist": "Минимализм",
+  "settingsLocationModeTitle": "Режим локации",
+  "settingsLocationModeSoft": "Локация сдвинута, просто для стиля",
+  "settingsLocationModeExact": "Твой вайб точно там где ты",
+  "settingsDeleteVibeTitle": "Удалить мой вайб",
+  "settingsDeleteVibeSubtitle": "Убрать твою эмоцию с карты",
+  "settingsPrivacyTitle": "Политика приватности",
+  "settingsPrivacySubtitle": "Как мы защищаем твои данные",
+  "settingsTermsTitle": "Условия использования",
+  "settingsTermsSubtitle": "Правила использования приложения",
+  "settingsHelpTitle": "Центр помощи",
+  "settingsHelpSubtitle": "FAQ и гайды",
+  "settingsContactTitle": "Контакт",
+  "settingsContactEmail": "hello@pingandwink.com",
+  "settingsDeleteAccountTitle": "Удалить аккаунт",
+  "settingsDeleteAccountSubtitle": "Стереть все твои данные",
+  "settingsFooterTagline": "Ping & Wink - Просто вайбы",
+  "settingsFooterCopyright": "© 2025 Ping and Wink",
+  "settingsDeviceIdPrefix": "ID устройства: {id}...",
+  "@settingsDeviceIdPrefix": {
+    "placeholders": {
+      "id": {"type": "String"}
+    }
+  },
+  "settingsDeleteVibeDialogTitle": "Удалить твой вайб?",
+  "settingsDeleteVibeDialogMessage": "Твоя эмоция исчезнет с карты",
+  "settingsVibeDeletedSuccess": "Твой вайб удалён",
+  "settingsVibeDeleteError": "Ошибка удаления вайба",
+  "settingsNotificationWarningTitle": "Внимание!",
+  "settingsNotificationWarningMessage": "Если выключишь уведомления, не сможешь получать ПИНГИ от других.\n\nPW чаты (коннекты) будут недоступны.\n\nТочно выключить?",
+  "settingsNotificationWarningCancel": "Отмена",
+  "settingsNotificationWarningDisable": "Всё равно выключить",
+  "settingsNotificationsDisabledMessage": "⚠️ Уведомления выключены - Не получишь никаких пингов",
+  "settingsNotificationsEnabledMessage": "✅ Уведомления включены - Можешь получать пинги",
+  "settingsMapThemeCyberpunkActivated": "Режим киберпанк активирован 🌃",
+  "settingsMapThemeDayActivated": "Дневной режим активирован ☀️",
+  "settingsSoftModeEnabled": "Soft режим! Твой вайб сдвинут 🌊",
+  "settingsNormalModeEnabled": "Обычный режим! Точная локация 📍",
+  "settingsIdCopied": "ID скопирован",
+  "settingsDeleteAccountDialogTitle": "⚠️ Удалить аккаунт",
+  "settingsDeleteAccountDialogMessage": "Это действие необратимо. Все твои эмоции и данные будут удалены навсегда.\n\nТы уверен?",
+  "settingsDeleteAccountDialogDelete": "Удалить",
+  "settingsDeleteAccountError": "Ошибка удаления аккаунта",
+  "settingsModerationPanelTitle": "🔍 Панель модерации",
+  "settingsModerationPanelSubtitle": "Только для проверки App Store",
+  "settingsModerationActiveBans": "Активные баны",
+  "settingsModerationReports": "Репорты",
+  "settingsModerationClearData": "Очистить тестовые данные",
+  "settingsModerationDataCleared": "Тестовые данные очищены",
+
+
+
+  "sparkConnectingToChat": "Подключаемся к PW чату...",
+  "sparkChatTitle": "PW Чат",
+  "sparkChatEnded": "Завершён",
+  "sparkSendFirstMessage": "Отправь первое сообщение!",
+  "sparkWaitingForMate": "Жду PW mate...",
+  "sparkMessagePlaceholder": "Сообщение...",
+  "sparkWaitForReply": "Жди ответа...",
+  "sparkChatEndedPlaceholder": "Чат завершён",
+  "sparkLeaveChat": "Покинуть PW чат?",
+  "sparkChatEndForBoth": "Чат завершится для обоих PW mates",
+  "sparkStay": "Остаться",
+  "sparkLeave": "Выйти",
+  "sparkExtended": "Продлено! +3 мин ⚡",
+  "sparkWaitingForOther": "Жду PW mate...",
+  "sparkMaxExtensionsReached": "Максимум продлений",
+  "sparkFailedToExtend": "Не удалось продлить",
+  "sparkFailedToSend": "Не удалось отправить",
+  "sparkMessageTooLong": "Сообщение слишком длинное (макс 199)",
+  "sparkErrorInitializing": "Ошибка инициализации чата: {error}",
+  "@sparkErrorInitializing": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "sparkUserBanned": "Пользователь забанен на 7 минут",
+  "sparkRestrictedForBanning": "Ты ограничен за частые баны",
+  "sparkReportSubmitted": "Жалоба отправлена",
+  "sparkBehaviorRestriction": "Ты ограничен за неподобающее поведение",
+
+
+
+  "splashTitlePing": "PING",
+  "splashTitleAmpersand": "&",
+  "splashTitleWink": "WINK",
+  "splashTagline": "ЗАЖГИ МОМЕНТ",
+
+
+
+  "trendsEmotionalPulse": "Эмоциональный пульс {time}",
+  "@trendsEmotionalPulse": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "trendsTimeMorning": "этим утром",
+  "trendsTimeAfternoon": "днём",
+  "trendsTimeEvening": "вечером",
+  "trendsTimeLateNight": "поздней ночью",
+  "trendsActiveVibes": "Активные вайбы",
+  "trendsSparkers": "PW mates",
+  "trendsDominantEmotion": "Главная эмоция",
+  "trendsPercentOfSparkers": "{percent}% PW mates",
+  "@trendsPercentOfSparkers": {
+    "placeholders": {
+      "percent": {"type": "int"}
+    }
+  },
+  "trendsEmotionDistribution": "Распределение эмоций",
+  "trendsQuote1": "Каждая эмоция создаёт связь ✨",
+  "trendsQuote2": "Вместе мы создаём карту эмоций 🗺️",
+  "trendsQuote3": "Твой вайб может изменить чей-то день 💫",
+  "trendsQuote4": "PW чаты начинаются с простого пинга ⚡",
+
+
+
+  "banOverlayTitle": "Временное ограничение",
+  "banOverlayMessage": "Твой PW mate счёл сообщение неуместным",
+  "banOverlayRestrictionInfo": "Ты не можешь делиться вайбами в это время",
+
+
+
+  "bottomNavMap": "Карта",
+  "bottomNavHistory": "История",
+  "bottomNavTrends": "Тренды",
+  "bottomNavSettings": "Настройки",
+
+
+
+  "guidelinesTitle": "Правила сообщества",
+  "guidelinesRespectTitle": "Будь уважительным",
+  "guidelinesRespectSubtitle": "Относись ко всем с добротой",
+  "guidelinesNoHarassmentTitle": "Никаких домогательств",
+  "guidelinesNoHarassmentSubtitle": "Не отправляй неуместные сообщения",
+  "guidelinesKeepRealTitle": "Будь настоящим",
+  "guidelinesKeepRealSubtitle": "Делись только искренними вайбами",
+  "guidelinesHaveFunTitle": "Веселись",
+  "guidelinesHaveFunSubtitle": "Наслаждайся PW искрами!",
+  "guidelinesViolationWarning": "Нарушения могут привести к временным или постоянным ограничениям",
+  "guidelinesButtonUnderstand": "Понятно",
+
+
+
+  "emotionSelectorStreakDay": "День {day} - Держи серию!",
+  "@emotionSelectorStreakDay": {
+    "placeholders": {
+      "day": {"type": "int"}
+    }
+  },
+  "emotionSelectorTapYourVibe": "ТАПНИ СВОЙ ВАЙБ",
+  "emotionSelectorWhatsYourVibe": "какой вайб прям сейчас?",
+  "emotionSelectorActiveNow": "{count} активно сейчас",
+  "@emotionSelectorActiveNow": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+
+
+  "miniBarSendNewPing": "Отправь новый пинг",
+  "miniBarPingActive": "Твой пинг активен",
+
+
+
+  "moderationBanTitle": "Бан на 7 мин",
+  "moderationBanSubtitle": "Временно ограничить пользователя",
+  "moderationReportTitle": "Пожаловаться",
+  "moderationReportSubtitle": "Сообщить о неподобающем поведении",
+  "moderationEndChatTitle": "Завершить чат",
+  "moderationEndChatSubtitle": "Покинуть эту PW сессию",
+  "moderationReportDialogTitle": "Жалоба на пользователя",
+  "moderationReportReasonHarassment": "Домогательства",
+  "moderationReportReasonSpam": "Спам",
+  "moderationReportReasonHateSpeech": "Язык вражды",
+  "moderationReportReasonOther": "Другое",
+  "moderationReportSendButton": "Отправить жалобу",
+
+
+
+  "pingBottomVibeTooFar": "Вайб слишком далеко (макс 3км)",
+  "pingBottomVibeTooFarMessage": "Вайб слишком далеко - макс 3км для пинга",
+  "pingBottomTooFar": "ДАЛЕКО",
+  "pingBottomPing": "PING",
+  "pingBottomDistanceVeryClose": "очень близко",
+  "pingBottomDistanceMeters": "{meters}м",
+  "@pingBottomDistanceMeters": {
+    "placeholders": {
+      "meters": {"type": "int"}
+    }
+  },
+  "pingBottomDistanceKilometers": "{km}км",
+  "@pingBottomDistanceKilometers": {
+    "placeholders": {
+      "km": {"type": "String"}
+    }
+  },
+  "pingBottomTimeNow": "сейчас",
+  "pingBottomTimeMinutes": "{minutes}мин",
+  "@pingBottomTimeMinutes": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "pingBottomTimeHours": "{hours}ч",
+  "@pingBottomTimeHours": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+
+
+
+  "vibeAnimBrainEnergy": "МОЗГИ КИПЯТ",
+  "vibeAnimCozy": "ВАЙБ: УЮТ",
+  "vibeAnimSweatSlay": "КРОСС ФИТ ЗАРЯЖАЕТ",
+  "vibeAnimLostInBeat": "ПОТЕРЯН В БИТЕ",
+  "vibeAnimCityLights": "ГОРОД ЖИВЕТ",
+  "vibeAnimLightsCameraVibes": "СВЕТ. КАМЕРА. ВАЙБЫ.",
+  "vibeAnimEveningVibes": "ВЕЧЕРНИЙ ВАЙБ",
+  "vibeAnimPartyMode": "РЕЖИМ: ДВИ́Ж",
+  "vibeAnimSubBrainTime": "Время думать 🧠",
+  "vibeAnimSubCaffeine": "Кофейный вайб ☕",
+  "vibeAnimSubNoDaysOff": "Без выходных 🔥",
+  "vibeAnimSubVolumeMax": "Громкость: МАКС 🎧",
+  "vibeAnimSubUrbanExplorer": "Исследую город 🌃",
+  "vibeAnimSubCreateGlow": "Творю и свечусь 📸",
+  "vibeAnimSubNightFlow": "Ночной флоу 🌙",
+  "vibeAnimSubUnleashChaos": "Выпусти хаос 🎉",
+  "vibeAnimDefaultMessage": "ВАЙБ УСТАНОВЛЕН",
+  "vibeAnimDefaultSubMessage": "Погнали!",
+
+
+
+  "viralShareFailed": "Не удалось поделиться",
+  "viralShareTextNight": "все спят. но что-то происходит\npingandwink.com",
+  "viralShareTextEvening": "вечер. лучшее время\npingandwink.com",
+  "viralShareTextDefault": "что происходит прямо сейчас?\npingandwink.com",
+  "viralShareMainText": "что происходит\nпока ты это читаешь?",
+  "viralShareFindOut": "узнай",
+  "viralShareLogo": "ping&wink",
+  "viralShareButton": "поделиться →",
+
+
+
+  "winkBannerPing": "PING {distance}",
+  "@winkBannerPing": {
+    "placeholders": {
+      "distance": {"type": "String"}
+    }
+  },
+  "winkBannerSparkmateWants": "PW mate хочет коннект",
+  "winkBannerWinkBack": "WINK НАЗАД"
+
+}

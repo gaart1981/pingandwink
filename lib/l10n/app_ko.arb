@@ -1,0 +1,632 @@
+{
+  "@@locale": "ko",
+  
+  "commonCancel": "취소",
+  "commonClose": "닫기",
+  "commonOk": "확인",
+  "commonYes": "응",
+  "commonNo": "아니",
+  "commonSave": "저장",
+  "commonDelete": "삭제",
+  "commonShare": "공유",
+  "commonLoading": "로딩중...",
+  "commonError": "에러났어",
+  "commonSuccess": "성공!",
+  "commonRetry": "다시 시도",
+  "commonNext": "다음",
+  "commonBack": "뒤로",
+  "commonSkip": "건너뛰기",
+  "commonDone": "완료",
+  "commonContinue": "계속",
+  "commonConfirm": "확실해?",
+  
+
+
+  "emptyStateMorningStoryMain": "도시가 아직 깨어나고 있어, 천천히 기지개를 켜\n모두가 아침 루틴 중\n커피, 출근, 일하는 척\n하지만 그들이 아직 모르는 건:\n오늘 저녁 7시, 이 지도가 완전히 변신해",
+  "emptyStateMorningStorySub": "지금 알람 설정해, 나중에 고마워할 거야 ⏰",
+  "emptyStateMorningCuriosityMain": "조용한 단계의 지도를 잡았네\n낮의 나이트클럽처럼 - 비어있지만 잠재력으로 가득\n오늘 너보다 먼저 3명이 체크했어\n모두 오후 7시 알림을 설정했지\n우연일까? 아니면 뭔가 알고 있을까?",
+  "emptyStateMorningCuriositySub": "답은 해질녘에 드러나 🌅",
+  "emptyStateMorningSocialMain": "월요일 아침의 진실:\n모두가 지금 일하는 척 중\n스프레드시트는 열려있고, 마음은 딴 곳에\n정오 전에 체크한 7명 중 1명이야\n이게 널 특별하게 만들어, 아니면 미쳤거나, 아니면 둘 다",
+  "emptyStateMorningSocialSub": "뭔지 알아보려면 저녁 7시에 돌아와",
+  "emptyStateFridayMain": "금요일 오후 패러독스:\n모두가 정신적으로는 퇴근했지만 육체적으로는 갇혀있어\n자유까지 시간을 세고 있어 ({hours} 남음)\n오후 5시에 변신이 시작돼\n일 좀비에서 주말 전사로",
+  "@emptyStateFridayMain": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+  "emptyStateFridaySub": "목격하기 위해 일찍 왔네 🦋",
+  "emptyStateAfternoonReturningMain": "이 시간에 계속 돌아와\n아직 여기 없는 뭔가를 찾고 있어... 아직\n끈기일까 광기일까?\n우주가 지켜보고 있어\n그리고 인내를 보상해",
+  "emptyStateAfternoonReturningSub": "점화까지 약 {hours}시간 🚀",
+  "@emptyStateAfternoonReturningSub": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+  "emptyStateAfternoonFirstMain": "가끔 오후 2:47에 일어나\n가끔 6:13에\n하지만 항상 일어나\n죽음에서 삶으로의 변화\n텅 빔에서 전기로",
+  "emptyStateAfternoonFirstSub": "질문은: 일어날 때 여기 있을 거야?",
+  "emptyStatePrimetimeFirstMain": "큰 무언가의 가장자리에 온 걸 환영해\n23분 후, 이 빈 지도가 폭발해\n수백 개의 바이브가 별처럼 나타나\n각각 진짜 사람, 진짜 감정, 진짜 순간\n군중보다 먼저 왔네",
+  "emptyStatePrimetimeFirstSub": "이건 천재 아니면 운 ⚡",
+  "emptyStatePrimetimeReturnMain": "폭풍 전 경기 전 침묵\n뭐가 올지 알고 있지\n저녁 7시는 이 지도에서 다르게 때려\n업무 스트레스가 주말 에너지로 변해\n실시간으로 일어나는 걸 봐",
+  "emptyStatePrimetimeReturnSub": "아니면 앱을 닫고 영원히 궁금해해",
+  "emptyStateWeekendEveningMain": "토요일 밤 현상:\n모두가 밖에서 최고의 삶을 살고 있어\n아니면 인스타그램에서 그런 척\n하지만 넌 도시의 진짜 맥박을 찾았어\n필터 없는, 편집 안 된, 검열 안 된 감정들",
+  "emptyStateWeekendEveningSub": "진실을 위해 5분 후 새로고침 🌃",
+  "emptyStateWeekendMorningMain": "도시가 숙취 중\n어젯밤을 천천히 맞춰가고 있어\n피해 확인, 후회 세기\n지도는 오후 2시까지 자\n하지만 깨어나면...",
+  "emptyStateWeekendMorningSub": "카오스 라운드 2가 시작돼 🎭",
+  "emptyStateLateNightMain": "새벽 2시 명료함이 다르게 때려\n소음이 멈추면, 진실이 나타나\n진짜들만 지금 깨어있어\n새벽 3시 생각들을 공유해\n날것, 정직한, 필터 없는",
+  "emptyStateLateNightSub": "어둠 속에 혼자가 아니야 🌙",
+  "emptyStatePush1Title": "ping&wink",
+  "emptyStatePush1Body": "지도가 깨어나고 있어 👀",
+  "emptyStatePush2Title": "ping&wink",
+  "emptyStatePush2Body": "지금 피크 바이브 ⚡",
+  "emptyStatePush3Title": "ping&wink",
+  "emptyStatePush3Body": "어제 47개 바이브를 놓쳤어. 오늘은?",
+  "emptyStateNotificationEnabled": "알림 켜짐! 바이브가 나타나면 알게 될 거야 🔔",
+  "emptyStateTapToClose": "닫으려면 탭",
+  "emptyStateAfternoonReturningHours": "점화까지 약 {hours}시간 🚀",
+  "@emptyStateAfternoonReturningHours": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+
+
+  "vibeLabelBrainMode": "공부 모드",
+  "vibeLabelLatteBreak": "카페 타임",
+  "vibeLabelSportMode": "운동 중",
+  "vibeLabelSoundLoop": "음악 속",
+  "vibeLabelCityWalk": "산책 중",
+  "vibeLabelContentMode": "콘텐츠 제작",
+  "vibeLabelChillNight": "칠링 나이트",
+  "vibeLabelPartyMode": "파티 모드",
+  
+  "scanYourVibe": "네 vibe 설정해 ⚡",
+  "pickYourMood": "기분 선택하고 지금 뭐 하는지 봐 👀",
+  "waitMinutes": "{minutes}분 기다려 ⏰",
+  "@waitMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "swipeDownToMap": "↓ 아래로 스와이프해서 지도 봐",
+  "changeYourMood": "기분 바꾸기",
+  "swipeUp": "위로 스와이프 ↑",
+  "youAreNotAlone": "너 혼자가 아니야!",
+  "you": "너",
+  "others": "명 더",
+  "days": "일",
+  "streak": "🔥 연속: {days}일",
+  "@streak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "shareMyVibe": "📤 내 vibe 공유",
+  "close": "닫기",
+  "happy": "행복",
+  "nearby": "근처",
+  "enableLocationSettings": "설정에서 위치 켜줘",
+  "errorTryAgain": "에러, 다시 해봐",
+  "networkError": "네트워크 에러",
+  "missingConfiguration": "설정 누락",
+  "shareMessage": "지금 진짜 {emotion} 느끼는 중 💭 또 누구? 체크 -> moodmap.cloud  #MoodMap #VibeCheck",
+  "@shareMessage": {
+    "placeholders": {
+      "emotion": {
+        "type": "String"
+      },
+      "emotionName": {
+        "type": "String"
+      },
+      "nearbyCount": {
+        "type": "int"
+      },
+      "streakDays": {
+        "type": "int"
+      },
+      "happinessPercent": {
+        "type": "int"
+      }
+    }
+  },
+  "shareSubject": "MoodMap에서 내 vibe! 🌟",
+
+
+
+  "pingErrorYourVibeExpired": "네 vibe 만료됐어, 새로 놓아",
+  "pingSentSuccess": "Ping 보냈어! ⚡ Wink까지 60초",
+  "pingWaitSeconds": "{seconds}초 기다려",
+  "@pingWaitSeconds": {
+    "placeholders": {
+      "seconds": {"type": "int"}
+    }
+  },
+  "pingSomeoneAlreadySent": "누가 이미 ping 보냈어",
+  "pingPersonInSpark": "이 사람 PW chat 중이야",
+  "pingThisVibeExpired": "이 vibe 만료됐어",
+  "pingFailedToSend": "보내기 실패",
+  "pingSendingError": "전송 에러",
+  "pingCancelled": "Ping 취소됨",
+  "pingCancelledBySender": "보낸 사람이 ping 취소함",
+  "pingErrorConnecting": "PW mate 연결 에러",
+  "pingErrorStartingChat": "채팅 시작 에러",
+
+
+
+  "chatTimeNow": "지금",
+  "chatTimeMinutes": "{minutes}분",
+  "@chatTimeMinutes": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "chatTimeHours": "{hours}시간",
+  "@chatTimeHours": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+
+
+
+  "distanceVeryClose": "완전 가까움",
+  "distanceMeters": "{meters}m",
+  "@distanceMeters": {
+    "placeholders": {
+      "meters": {"type": "int"}
+    }
+  },
+  "distanceKilometers": "{km}km",
+  "@distanceKilometers": {
+    "placeholders": {
+      "km": {"type": "String"}
+    }
+  },
+
+
+
+  "sparkDefaultAlias1": "PW mate 1",
+  "sparkDefaultAlias2": "PW mate 2",
+
+
+
+  "birthYearTitle": "태어난 년도",
+  "birthYearPrivacyText": "비공개 • 아무도 못 봄",
+  "birthYearDefaultGeneration": "쿨한 세대 ⭐",
+  "genLabel2012": "아이패드 키즈 📱",
+  "genLabel2011": "마크 OG ⛏️",
+  "genLabel2010": "앵그리버드 🦅",
+  "genLabel2009": "인스타 세대 📸",
+  "genLabel2008": "뮤지컬리 🎵",
+  "genLabel2007": "틱톡 키즈 🎬",
+  "genLabel2006": "유튜브 세대 🎮",
+  "genLabel2005": "페북 시대 👍",
+  "genLabel2004": "스냅챗 👻",
+  "genLabel2003": "싸이월드 시대 💬",
+  "genLabel2002": "아이팟 세대 🎧",
+  "genLabel2001": "해리포터 팬 ⚡",
+  "genLabel2000": "Y2K 키즈 🌐",
+  "genLabel1999": "매트릭스 세대 💊",
+  "genLabel1998": "게임보이 🎮",
+  "genLabel1997": "포켓몬 🔴",
+  "genLabel1996": "PC통신 키즈 💻",
+  "genLabel1995": "윈도우95 🪟",
+  "genLabel1994": "프렌즈 시대 ☕",
+  "genLabel1993": "소닉 세대 💨",
+  "genLabel1992": "서울 올림픽 📺",
+  "genLabel1991": "슈퍼패미컴 🎮",
+  "genLabel1990": "MTV 세대 🎸",
+  "genLabel1989": "닌텐도 시대 🕹️",
+  "genLabel1988": "워크맨 🎧",
+  "genLabel1987": "VHS 키즈 📼",
+  "genLabel1986": "오락실 세대 👾",
+  "genLabel1985": "백투더퓨처 ⏰",
+  "genLabel1984": "맥 키즈 🍎",
+  "genLabel1983": "스타워즈 ⚔️",
+  "genLabel1982": "E.T. 세대 👽",
+  "genLabel1981": "MTV 시작 📺",
+  "genLabel1980": "팩맨 👾",
+  "genLabel1979": "디스코 시대 🪩",
+  "genLabel1978": "스페이스 인베이더 🚀",
+  "genLabel1977": "스타워즈 OG 🌟",
+  "genLabel1976": "펑크 록 🎸",
+  "genLabel1975": "죠스 세대 🦈",
+  "genLabel1974": "디스코 시작 💃",
+  "genLabel1973": "핑크 플로이드 🌈",
+  "genLabel1972": "퐁 시대 🏓",
+  "genLabel1971": "레드 제플린 🎸",
+  "genLabel1970": "비틀즈 세대 🎵",
+  "genLabel1969": "레전드 👑",
+  "birthYear1969Plus": "1969+",
+
+
+
+  "historyTitle": "히스토리",
+  "historyEmptyTitle": "아직 감정 없어",
+  "historyEmptySubtitle": "기분 공유 시작해\n히스토리 보려면",
+  "historyMyEmotions": "내 감정들",
+  "historyStatTotal": "전체",
+  "historyStatDominant": "제일 많은",
+  "historyToday": "오늘",
+  "historyTimeFormat": "{date} • {time}",
+  "@historyTimeFormat": {
+    "placeholders": {
+      "date": {"type": "String"},
+      "time": {"type": "String"}
+    }
+  },
+  "historyTodayFormat": "{today} • {time}",
+  "@historyTodayFormat": {
+    "placeholders": {
+      "today": {"type": "String"},
+      "time": {"type": "String"}
+    }
+  },
+
+
+
+  "trendsTitle": "트렌드",
+  "trendsSubtitle": "도시 통계 모으는 중",
+  "trendsEmoji": "📊",
+
+
+
+  "mapToastYourOwnVibe": "이건 네 vibe야",
+  "mapErrorNeedActiveVibeToPing": "ping 보내려면 활성 vibe 필요해", 
+  "mapErrorAlreadyHavePingOrUnavailable": "이미 활성 ping 있거나 vibe 사용 불가",
+  "mapBanRestrictionMessage": "{time} 동안 제한됨",
+  "@mapBanRestrictionMessage": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "mapBanRestrictionLifted": "제한 풀렸어! 다시 vibe 공유 가능",
+  "mapSuccessVibeSent": "Vibe 보냈어! 근처에 {count}명 더 있어 🎉",
+  "@mapSuccessVibeSent": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "mapTutorialTapToSpark": "누군가의 vibe 탭 • 60초 안에 PW chat",
+  "mapActivePingStatus": "활성 ping ({seconds}초) - 취소하려면 탭",
+  "@mapActivePingStatus": {
+    "placeholders": {
+      "seconds": {"type": "int"}
+    }
+  },
+
+
+
+  "onboardingTitlePingWink": "ping & wink",
+  "onboardingSubtitleSeeWhatsPoppin": "주변에 뭐 일어나는지 봐",
+  "onboardingButtonLetsGo": "가보자고",
+  "onboardingBadgeAge13Plus": "13세 이상만",
+  "onboardingValueTitleInstantSparks": "즉시 PW chat",
+  "onboardingValueSubtitleConnect60Sec": "60초 안에 연결",
+  "onboardingValueTitleHyperlocalVibes": "완전 로컬 vibe",
+  "onboardingValueSubtitleOnly2kmRadius": "반경 3km만",
+  "onboardingValueTitleNoProfiles": "프로필 없음",
+  "onboardingValueSubtitleJustPureMoments": "순수한 순간만",
+  "onboardingButtonImReady": "준비됐어",
+  "onboardingLocationTitle": "네 지역 열어",
+  "onboardingLocationSubtitle": "3km 안의 무드 봐",
+  "onboardingLocationPrivacyTitle": "프라이버시 우선",
+  "onboardingLocationPrivacyBullet1": "앱 열었을 때만",
+  "onboardingLocationPrivacyBullet2": "백그라운드 추적 없음",
+  "onboardingLocationPrivacyBullet3": "익명 vibe만",
+  "onboardingButtonEnableRadar": "레이더 켜기",
+  "onboardingButtonMaybeLater": "나중에",
+  "onboardingNotificationTitle": "PW chat 놓치지 마",
+  "onboardingNotificationSubtitle": "근처 핫한 곳 있으면 ping 받아",
+  "onboardingNotificationFeature1": "누가 vibe하면 즉시 ping",
+  "onboardingNotificationFeature2": "매일 vibe 리마인더",
+  "onboardingNotificationFeature3": "핫스팟 알림",
+  "onboardingButtonTurnOnPings": "ping 켜기",
+  "onboardingButtonNotNow": "지금 말고",
+  "onboardingLegalTitle": "거의 다 됐어!",
+  "onboardingLegalAgeRequirement": "13세 이상이어야 해",
+  "onboardingLegalAgeSubtitle": "ping & wink는 청소년 이상용",
+  "onboardingLegalConsent": "계속하면 13세 이상이고 동의한다는 거야",
+  "onboardingLegalTerms": "이용약관",
+  "onboardingLegalAnd": " & ",
+  "onboardingLegalPrivacyPolicy": "개인정보처리방침",
+  "onboardingLegalSafetyFeature1": "익명 vibe만",
+  "onboardingLegalSafetyFeature2": "즉시 차단 & 신고",
+  "onboardingLegalSafetyFeature3": "나쁜 행동에 20분 타임아웃",
+  "onboardingButtonImAge13AndAgree": "13세 이상이고 동의해",
+  "onboardingButtonImUnder13": "13세 미만이야",
+  "onboardingLocationDeniedTitle": "모든 PW sparks 놓칠 거야",
+  "onboardingLocationDeniedMessage": "위치 없으면 못해:\n• 누가 근처인지 못 봐\n• ping 못 보내\n• wink 못 받아\n• PW spark 연결",
+  "onboardingButtonGoBack": "돌아가기",
+  "onboardingButtonExitApp": "앱 나가기",
+  "onboardingNotificationDeniedTitle": "모든 재미 놓칠 거야",
+  "onboardingNotificationDeniedMessage": "알림 없으면:\n• 아무도 ping 못 보내\n• 근처 PW sparks 놓쳐\n• 연결 제로\n\n우리 유저들은 알림 켜",
+  "onboardingButtonLetMeReconsider": "다시 생각해볼게",
+  "onboardingButtonContinueAnyway": "그래도 계속",
+  "onboardingAgeDialogTitle": "나중에 봐!",
+  "onboardingAgeDialogMessage": "ping & wink는 13세 이상 유저용. 나이 되면 돌아와!",
+  "onboardingButtonUnderstood": "알겠어",
+  "onboardingNotificationExampleTitle": "ping & wink",
+  "onboardingNotificationExampleNow": "지금",
+  "onboardingNotificationExamplePing": "230m 떨어진 곳 새 ping",
+  "onboardingNotificationExampleMessage": "누가 너랑 같은 vibe",
+  "onboardingMapNotification": "누가 753m 떨어진 곳에서 spark",
+  "onboardingLocationPrivacyFormatted": "• 앱 열었을 때만\n• 백그라운드 추적 없음\n• 익명 vibe만",
+  "onboardingLocationDeniedFormatted": "위치 없으면 못해:\n• 누가 근처인지 못 봐\n• ping 못 보내\n• wink 못 받아\n• spark 연결",
+  "onboardingNotificationDeniedFormatted": "알림 없으면:\n• 아무도 ping 못 보내\n• 근처 vibe 놓쳐\n• 연결 제로\n\n우리 유저들은 알림 켜",
+
+
+
+  "settingsTitle": "설정",
+  "settingsAppName": "Ping&Wink",
+  "settingsAppTagline": "감정으로 연결",
+  "settingsShareTitle": "친구랑 공유",
+  "settingsShareSubtitle": "다른 사람도 vibe 발견하게 초대",
+  "settingsSectionPreferences": "환경설정",
+  "settingsSectionLegal": "법적",
+  "settingsSectionSupport": "지원",
+  "settingsSectionDataManagement": "데이터 관리",
+  "settingsNotificationsTitle": "알림",
+  "settingsNotificationsEnabled": "켜짐",
+  "settingsNotificationsDisabled": "꺼짐",
+  "settingsMapThemeTitle": "지도 테마",
+  "settingsMapThemeCyberpunk": "사이버펑크",
+  "settingsMapThemeMinimalist": "미니멀",
+  "settingsLocationModeTitle": "위치 모드",
+  "settingsLocationModeSoft": "위치 살짝 이동, 스타일용",
+  "settingsLocationModeExact": "네 vibe 정확한 위치",
+  "settingsDeleteVibeTitle": "내 vibe 삭제",
+  "settingsDeleteVibeSubtitle": "지도에서 감정 제거",
+  "settingsPrivacyTitle": "개인정보처리방침",
+  "settingsPrivacySubtitle": "데이터 보호 방법",
+  "settingsTermsTitle": "이용약관",
+  "settingsTermsSubtitle": "앱 사용 규칙",
+  "settingsHelpTitle": "도움말 센터",
+  "settingsHelpSubtitle": "FAQ 및 가이드",
+  "settingsContactTitle": "연락처",
+  "settingsContactEmail": "hello@pingandwink.com",
+  "settingsDeleteAccountTitle": "계정 삭제",
+  "settingsDeleteAccountSubtitle": "모든 데이터 지우기",
+  "settingsFooterTagline": "Ping & Wink - Just Vibes",
+  "settingsFooterCopyright": "© 2025 Ping and Wink",
+  "settingsDeviceIdPrefix": "기기 ID: {id}...",
+  "@settingsDeviceIdPrefix": {
+    "placeholders": {
+      "id": {"type": "String"}
+    }
+  },
+  "settingsDeleteVibeDialogTitle": "네 vibe 삭제?",
+  "settingsDeleteVibeDialogMessage": "감정이 지도에서 제거돼",
+  "settingsVibeDeletedSuccess": "네 vibe 삭제됨",
+  "settingsVibeDeleteError": "vibe 삭제 에러",
+  "settingsNotificationWarningTitle": "주의!",
+  "settingsNotificationWarningMessage": "알림 끄면 다른 유저한테 PING 못 받아.\n\nPW chats (연결) 못 해.\n\n진짜 끌래?",
+  "settingsNotificationWarningCancel": "취소",
+  "settingsNotificationWarningDisable": "그래도 끄기",
+  "settingsNotificationsDisabledMessage": "⚠️ 알림 꺼짐 - ping 안 받아",
+  "settingsNotificationsEnabledMessage": "✅ 알림 켜짐 - ping 받을 수 있어",
+  "settingsMapThemeCyberpunkActivated": "사이버펑크 모드 활성화 🌃",
+  "settingsMapThemeDayActivated": "낮 모드 활성화 ☀️",
+  "settingsSoftModeEnabled": "소프트 모드 켜짐! vibe 이동됨 🌊",
+  "settingsNormalModeEnabled": "일반 모드 켜짐! 정확한 위치 📍",
+  "settingsIdCopied": "ID 복사됨",
+  "settingsDeleteAccountDialogTitle": "⚠️ 계정 삭제",
+  "settingsDeleteAccountDialogMessage": "되돌릴 수 없어. 모든 감정과 데이터가 영구 삭제돼.\n\n확실해?",
+  "settingsDeleteAccountDialogDelete": "삭제",
+  "settingsDeleteAccountError": "계정 삭제 에러",
+  "settingsModerationPanelTitle": "🔍 관리자 패널",
+  "settingsModerationPanelSubtitle": "앱스토어 리뷰용만",
+  "settingsModerationActiveBans": "활성 차단",
+  "settingsModerationReports": "신고",
+  "settingsModerationClearData": "테스트 데이터 지우기",
+  "settingsModerationDataCleared": "테스트 데이터 지워짐",
+
+
+
+  "sparkConnectingToChat": "PW chat 연결 중...",
+  "sparkChatTitle": "PW Chat",
+  "sparkChatEnded": "종료",
+  "sparkSendFirstMessage": "첫 메시지 보내!",
+  "sparkWaitingForMate": "PW mate 기다리는 중...",
+  "sparkMessagePlaceholder": "메시지...",
+  "sparkWaitForReply": "답장 기다려...",
+  "sparkChatEndedPlaceholder": "채팅 종료",
+  "sparkLeaveChat": "PW chat 나갈래?",
+  "sparkChatEndForBoth": "둘 다 채팅 끝나",
+  "sparkStay": "있어",
+  "sparkLeave": "나가",
+  "sparkExtended": "연장! +3분 ⚡",
+  "sparkWaitingForOther": "PW mate 기다리는 중...",
+  "sparkMaxExtensionsReached": "최대 연장 도달",
+  "sparkFailedToExtend": "연장 실패",
+  "sparkFailedToSend": "전송 실패",
+  "sparkMessageTooLong": "메시지 너무 길어 (최대 199)",
+  "sparkErrorInitializing": "채팅 시작 에러: {error}",
+  "@sparkErrorInitializing": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "sparkUserBanned": "유저 7분 차단",
+  "sparkRestrictedForBanning": "과도한 차단으로 제한됨",
+  "sparkReportSubmitted": "신고 제출됨",
+  "sparkBehaviorRestriction": "부적절한 행동으로 제한됨",
+
+
+
+  "splashTitlePing": "PING",
+  "splashTitleAmpersand": "&",
+  "splashTitleWink": "WINK",
+  "splashTagline": "순간을 SPARK해",
+
+
+
+  "trendsEmotionalPulse": "감정 펄스 {time}",
+  "@trendsEmotionalPulse": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "trendsTimeMorning": "오늘 아침",
+  "trendsTimeAfternoon": "오늘 오후",
+  "trendsTimeEvening": "오늘 저녁",
+  "trendsTimeLateNight": "늦은 밤",
+  "trendsActiveVibes": "활성 vibe",
+  "trendsSparkers": "PW mates",
+  "trendsDominantEmotion": "지배적 감정",
+  "trendsPercentOfSparkers": "{percent}% PW mates",
+  "@trendsPercentOfSparkers": {
+    "placeholders": {
+      "percent": {"type": "int"}
+    }
+  },
+  "trendsEmotionDistribution": "감정 분포",
+  "trendsQuote1": "공유된 모든 감정이 연결을 만들어 ✨",
+  "trendsQuote2": "함께 감정 지도를 만들어 🗺️",
+  "trendsQuote3": "네 vibe가 누군가의 하루를 바꿀 수 있어 💫",
+  "trendsQuote4": "PW chat은 간단한 ping으로 시작해 ⚡",
+
+
+
+  "banOverlayTitle": "일시 제한",
+  "banOverlayMessage": "PW mate가 메시지 부적절하다고 함",
+  "banOverlayRestrictionInfo": "이 시간 동안 vibe 공유 못해",
+
+
+
+  "bottomNavMap": "지도",
+  "bottomNavHistory": "히스토리",
+  "bottomNavTrends": "트렌드",
+  "bottomNavSettings": "설정",
+
+
+
+  "guidelinesTitle": "커뮤니티 가이드라인",
+  "guidelinesRespectTitle": "존중해",
+  "guidelinesRespectSubtitle": "모두에게 친절하게",
+  "guidelinesNoHarassmentTitle": "괴롭힘 금지",
+  "guidelinesNoHarassmentSubtitle": "부적절한 메시지 보내지 마",
+  "guidelinesKeepRealTitle": "진짜가 되어",
+  "guidelinesKeepRealSubtitle": "진짜 vibe만 공유",
+  "guidelinesHaveFunTitle": "재밌게 놀아",
+  "guidelinesHaveFunSubtitle": "PW 연결 즐겨!",
+  "guidelinesViolationWarning": "위반하면 일시적 또는 영구 제한 받을 수 있어",
+  "guidelinesButtonUnderstand": "이해했어",
+
+
+
+  "emotionSelectorStreakDay": "{day}일째 - 연속 유지해!",
+  "@emotionSelectorStreakDay": {
+    "placeholders": {
+      "day": {"type": "int"}
+    }
+  },
+  "emotionSelectorTapYourVibe": "네 VIBE 탭해",
+  "emotionSelectorWhatsYourVibe": "지금 vibe 뭐야?",
+  "emotionSelectorActiveNow": "{count}명 활성",
+  "@emotionSelectorActiveNow": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+
+
+  "miniBarSendNewPing": "새 ping 보내",
+  "miniBarPingActive": "네 ping 활성",
+
+
+
+  "moderationBanTitle": "7분 차단",
+  "moderationBanSubtitle": "이 유저 일시 제한",
+  "moderationReportTitle": "신고",
+  "moderationReportSubtitle": "부적절한 행동 신고",
+  "moderationEndChatTitle": "채팅 종료",
+  "moderationEndChatSubtitle": "이 PW 세션 나가기",
+  "moderationReportDialogTitle": "유저 신고",
+  "moderationReportReasonHarassment": "괴롭힘",
+  "moderationReportReasonSpam": "스팸",
+  "moderationReportReasonHateSpeech": "혐오 발언",
+  "moderationReportReasonOther": "기타",
+  "moderationReportSendButton": "신고 보내기",
+
+
+
+  "pingBottomVibeTooFar": "Vibe 너무 멀어 (최대 3km)",
+  "pingBottomVibeTooFarMessage": "Vibe 너무 멀어 - ping 최대 3km",
+  "pingBottomTooFar": "너무 멀어",
+  "pingBottomPing": "PING",
+  "pingBottomDistanceVeryClose": "완전 가까움",
+  "pingBottomDistanceMeters": "{meters}m",
+  "@pingBottomDistanceMeters": {
+    "placeholders": {
+      "meters": {"type": "int"}
+    }
+  },
+  "pingBottomDistanceKilometers": "{km}km",
+  "@pingBottomDistanceKilometers": {
+    "placeholders": {
+      "km": {"type": "String"}
+    }
+  },
+  "pingBottomTimeNow": "지금",
+  "pingBottomTimeMinutes": "{minutes}분",
+  "@pingBottomTimeMinutes": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "pingBottomTimeHours": "{hours}시간",
+  "@pingBottomTimeHours": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+
+
+
+  "vibeAnimBrainEnergy": "빅 브레인 에너지",
+  "vibeAnimCozy": "VIBE: 아늑",
+  "vibeAnimSweatSlay": "땀. 승리. 반복",
+  "vibeAnimLostInBeat": "비트에 빠짐",
+  "vibeAnimCityLights": "도시의 불빛",
+  "vibeAnimLightsCameraVibes": "라이트. 카메라. VIBES.",
+  "vibeAnimEveningVibes": "저녁 VIBES",
+  "vibeAnimPartyMode": "파티 모드: ON",
+  "vibeAnimSubBrainTime": "브레인 타임 🧠",
+  "vibeAnimSubCaffeine": "카페인 vibes ☕",
+  "vibeAnimSubNoDaysOff": "쉬는 날 없어 🔥",
+  "vibeAnimSubVolumeMax": "볼륨: MAX 🎧",
+  "vibeAnimSubUrbanExplorer": "도시 탐험가 🌃",
+  "vibeAnimSubCreateGlow": "창작 & 빛나기 📸",
+  "vibeAnimSubNightFlow": "나이트 플로우 🌙",
+  "vibeAnimSubUnleashChaos": "카오스 해방 🎉",
+  "vibeAnimDefaultMessage": "VIBE 설정됨",
+  "vibeAnimDefaultSubMessage": "가보자고!",
+
+
+
+  "viralShareFailed": "공유 실패",
+  "viralShareTextNight": "다들 자. 근데 뭔가 일어나고 있어\npingandwink.com",
+  "viralShareTextEvening": "저녁. 최고의 시간\npingandwink.com",
+  "viralShareTextDefault": "지금 뭐 일어나고 있지?\npingandwink.com",
+  "viralShareMainText": "이거 읽는 동안\n뭐 일어나고 있지?",
+  "viralShareFindOut": "알아봐",
+  "viralShareLogo": "ping&wink",
+  "viralShareButton": "공유 →",
+
+
+
+  "winkBannerPing": "PING {distance}",
+  "@winkBannerPing": {
+    "placeholders": {
+      "distance": {"type": "String"}
+    }
+  },
+  "winkBannerSparkmateWants": "PW mate가 연결하고 싶어해",
+  "winkBannerWinkBack": "WINK BACK"
+
+}

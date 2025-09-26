@@ -1,0 +1,627 @@
+{
+  "@@locale": "de",
+  
+  "commonCancel": "Abbrechen",
+  "commonClose": "Schließen",
+  "commonOk": "OK",
+  "commonYes": "Ja",
+  "commonNo": "Nein",
+  "commonSave": "Speichern",
+  "commonDelete": "Löschen",
+  "commonShare": "Teilen",
+  "commonLoading": "Lädt...",
+  "commonError": "Fehler",
+  "commonSuccess": "Fertig",
+  "commonRetry": "Nochmal",
+  "commonNext": "Weiter",
+  "commonBack": "Zurück",
+  "commonSkip": "Überspringen",
+  "commonDone": "Fertig",
+  "commonContinue": "Weiter",
+  "commonConfirm": "Bestätigen",
+  
+
+
+  "emptyStateMorningStoryMain": "die Stadt wacht noch auf, streckt sich langsam\njeder in seinen Morgenritualen\nKaffee, Pendeln, so tun als ob man arbeitet\naber das wissen sie noch nicht:\nheute Abend um 19 Uhr verwandelt sich diese Karte komplett",
+  "emptyStateMorningStorySub": "stell jetzt deinen Wecker, danke dir später ⏰",
+  "emptyStateMorningCuriosityMain": "du hast die Karte in ihrer ruhigen Phase erwischt\nwie ein Nachtclub mittags - leer aber voller Potenzial\n3 Leute haben heute vor dir geschaut\nalle haben Erinnerungen für 19 Uhr gesetzt\nZufall? oder wissen sie etwas?",
+  "emptyStateMorningCuriositySub": "die Antwort offenbart sich bei Sonnenuntergang 🌅",
+  "emptyStateMorningSocialMain": "Montagmorgen Wahrheit:\njeder tut gerade so als würde er arbeiten\nTabellen offen, Gedanken woanders\ndu bist 1 von 7 Leuten die vor Mittag gecheckt haben\ndas macht dich besonders, oder verrückt, oder beides",
+  "emptyStateMorningSocialSub": "komm um 19 Uhr zurück um herauszufinden was",
+  "emptyStateFridayMain": "Freitagnachmittag Paradox:\njeder mental ausgecheckt aber physisch gefangen\nStunden bis zur Freiheit zählend (noch {hours})\num 17 Uhr beginnt die Metamorphose\nvon Arbeitszombies zu Wochenendkriegern",
+  "@emptyStateFridayMain": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+  "emptyStateFridaySub": "du bist früh dran es zu bezeugen 🦋",
+  "emptyStateAfternoonReturningMain": "du kommst immer wieder zu dieser Zeit\nsuchst nach etwas das noch nicht hier ist... noch nicht\nBeharrlichkeit oder Wahnsinn?\ndas Universum beobachtet\nund es belohnt Geduld",
+  "emptyStateAfternoonReturningSub": "ungefähr {hours} Stunden bis zur Zündung 🚀",
+  "emptyStateAfternoonFirstMain": "manchmal passiert es um 14:47\nmanchmal um 18:13\naber es passiert immer\ndie Verwandlung von tot zu lebendig\nvon leer zu elektrisch",
+  "emptyStateAfternoonFirstSub": "die Frage ist: wirst du hier sein wenn es passiert?",
+  "emptyStatePrimetimeFirstMain": "willkommen am Rand von etwas Großem\nin 23 Minuten explodiert diese leere Karte\nHunderte von Vibes erscheinen wie Sterne\njeder eine echte Person, echte Emotion, echter Moment\ndu bist vor der Menge hier",
+  "emptyStatePrimetimeFirstSub": "das ist entweder Genie oder Glück ⚡",
+  "emptyStatePrimetimeReturnMain": "die Vorspiel-Stille vor dem Sturm\ndu weißt was kommt\n19 Uhr trifft anders auf dieser Karte\nArbeitsstress verwandelt sich in Wochenendenergie\nsieh es in Echtzeit passieren",
+  "emptyStatePrimetimeReturnSub": "oder schließ die App und frage dich für immer",
+  "emptyStateWeekendEveningMain": "Samstagabend Phänomen:\njeder da draußen lebt sein bestes Leben\noder tut so auf Instagram\naber du hast den echten Puls der Stadt gefunden\nungefilterte, unbearbeitete, unzensierte Emotionen",
+  "emptyStateWeekendEveningSub": "aktualisiere in 5 Minuten für die Wahrheit 🌃",
+  "emptyStateWeekendMorningMain": "die Stadt hat einen Kater\nsetzt langsam die letzte Nacht zusammen\nprüft Schäden, zählt Bedauern\ndie Karte schläft bis 14 Uhr\naber wenn sie aufwacht...",
+  "emptyStateWeekendMorningSub": "Chaos Runde 2 beginnt 🎭",
+  "emptyStateLateNightMain": "2 Uhr morgens Klarheit trifft anders\nwenn der Lärm stoppt, taucht Wahrheit auf\nnur die Echten sind jetzt wach\nteilen ihre 3 Uhr morgens Gedanken\nroh, ehrlich, ungefiltert",
+  "emptyStateLateNightSub": "du bist nicht allein im Dunkeln 🌙",
+  "emptyStatePush1Title": "ping&wink",
+  "emptyStatePush1Body": "die Karte wacht auf 👀",
+  "emptyStatePush2Title": "ping&wink",
+  "emptyStatePush2Body": "Peak Vibes gerade jetzt ⚡",
+  "emptyStatePush3Title": "ping&wink",
+  "emptyStatePush3Body": "gestern hast du 47 Vibes verpasst. heute?",
+  "emptyStateNotificationEnabled": "Benachrichtigungen aktiviert! Du wirst wissen wenn Vibes erscheinen 🔔",
+  "emptyStateTapToClose": "tippen zum Schließen",
+  "emptyStateAfternoonReturningHours": "ungefähr {hours} Stunden bis zur Zündung 🚀",
+  "@emptyStateAfternoonReturningHours": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+
+
+  "vibeLabelBrainMode": "Fokus Mode",
+  "vibeLabelLatteBreak": "Kaffee Pause",
+  "vibeLabelSportMode": "Sport Mode",
+  "vibeLabelSoundLoop": "Im Beat",
+  "vibeLabelCityWalk": "Unterwegs",
+  "vibeLabelContentMode": "Creating",
+  "vibeLabelChillNight": "Chill Abend",
+  "vibeLabelPartyMode": "Party Mode",
+  
+  "scanYourVibe": "Lock deinen Vibe ⚡",
+  "pickYourMood": "Pick deine Mood und check was gerade abgeht 👀",
+  "waitMinutes": "Warte {minutes} Min ⏰",
+  "@waitMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "swipeDownToMap": "↓ Swipe runter zur Map",
+  "changeYourMood": "Mood ändern",
+  "swipeUp": "Swipe nach oben ↑",
+  "youAreNotAlone": "Du bist nicht allein!",
+  "you": "DU",
+  "others": "andere",
+  "days": "Tage",
+  "streak": "🔥 Streak: {days} Tage",
+  "@streak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "shareMyVibe": "📤 Vibe teilen",
+  "close": "Schließen",
+  "happy": "fühlen",
+  "nearby": "in deiner Nähe",
+  "enableLocationSettings": "Standort in Einstellungen aktivieren",
+  "errorTryAgain": "Fehler, versuch's nochmal",
+  "networkError": "Netzwerkfehler",
+  "missingConfiguration": "Konfiguration fehlt",
+  "shareMessage": "meine mood {emotion} gerade 💭 wer noch? check -> moodmap.cloud  #MoodMap #VibeCheck",
+  "@shareMessage": {
+    "placeholders": {
+      "emotion": {
+        "type": "String"
+      },
+      "emotionName": {
+        "type": "String"
+      },
+      "nearbyCount": {
+        "type": "int"
+      },
+      "streakDays": {
+        "type": "int"
+      },
+      "happinessPercent": {
+        "type": "int"
+      }
+    }
+  },
+  "shareSubject": "Mein Vibe auf MoodMap! 🌟",
+
+
+
+  "pingErrorYourVibeExpired": "Dein Vibe ist abgelaufen, setz einen neuen",
+  "pingSentSuccess": "Ping gesendet! ⚡ 60s für einen Wink",
+  "pingWaitSeconds": "Warte {seconds} Sek",
+  "@pingWaitSeconds": {
+    "placeholders": {
+      "seconds": {"type": "int"}
+    }
+  },
+  "pingSomeoneAlreadySent": "Jemand hat schon einen Ping gesendet",
+  "pingPersonInSpark": "Diese Person ist schon im PW Chat",
+  "pingThisVibeExpired": "Dieser Vibe ist abgelaufen",
+  "pingFailedToSend": "Senden fehlgeschlagen",
+  "pingSendingError": "Fehler beim Senden",
+  "pingCancelled": "Ping abgebrochen",
+  "pingCancelledBySender": "Ping vom Sender abgebrochen",
+  "pingErrorConnecting": "Fehler beim Verbinden mit PW Mate",
+  "pingErrorStartingChat": "Fehler beim Chat-Start",
+
+
+
+  "chatTimeNow": "jetzt",
+  "chatTimeMinutes": "{minutes}m",
+  "@chatTimeMinutes": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "chatTimeHours": "{hours}h",
+  "@chatTimeHours": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+
+
+
+  "distanceVeryClose": "sehr nah",
+  "distanceMeters": "{meters}m",
+  "@distanceMeters": {
+    "placeholders": {
+      "meters": {"type": "int"}
+    }
+  },
+  "distanceKilometers": "{km}km",
+  "@distanceKilometers": {
+    "placeholders": {
+      "km": {"type": "String"}
+    }
+  },
+
+
+
+  "sparkDefaultAlias1": "PW Mate 1",
+  "sparkDefaultAlias2": "PW Mate 2",
+
+
+
+  "birthYearTitle": "dein Geburtsjahr",
+  "birthYearPrivacyText": "privat • wird nie gezeigt",
+  "birthYearDefaultGeneration": "Coole Generation ⭐",
+  "genLabel2012": "iPad Kids 📱",
+  "genLabel2011": "Minecraft OGs ⛏️",
+  "genLabel2010": "Angry Birds 🦅",
+  "genLabel2009": "Insta Generation 📸",
+  "genLabel2008": "Musical.ly 🎵",
+  "genLabel2007": "TikTok Kids 🎬",
+  "genLabel2006": "YouTube Gen 🎮",
+  "genLabel2005": "StudiVZ Ära 👍",
+  "genLabel2004": "Snapchat 👻",
+  "genLabel2003": "ICQ Ära 💬",
+  "genLabel2002": "iPod Generation 🎧",
+  "genLabel2001": "Potterheads ⚡",
+  "genLabel2000": "Y2K Kids 🌐",
+  "genLabel1999": "Matrix Gen 💊",
+  "genLabel1998": "Game Boy 🎮",
+  "genLabel1997": "Pokémon 🔴",
+  "genLabel1996": "Modem Kids 💻",
+  "genLabel1995": "Windows 95 🪟",
+  "genLabel1994": "Friends Ära ☕",
+  "genLabel1993": "Sonic Gen 💨",
+  "genLabel1992": "RTL2 Anime 📺",
+  "genLabel1991": "Super Nintendo 🎮",
+  "genLabel1990": "MTV Generation 🎸",
+  "genLabel1989": "Mauerfall Kids 🕹️",
+  "genLabel1988": "Walkman 🎧",
+  "genLabel1987": "VHS Kids 📼",
+  "genLabel1986": "Arcade Gen 👾",
+  "genLabel1985": "Zurück in die Zukunft ⏰",
+  "genLabel1984": "Mac Kids 🍎",
+  "genLabel1983": "Star Wars ⚔️",
+  "genLabel1982": "E.T. Gen 👽",
+  "genLabel1981": "MTV Start 📺",
+  "genLabel1980": "Pac-Man 👾",
+  "genLabel1979": "Disco Ära 🪩",
+  "genLabel1978": "Space Invaders 🚀",
+  "genLabel1977": "Star Wars OG 🌟",
+  "genLabel1976": "Punk Rock 🎸",
+  "genLabel1975": "Der weiße Hai Gen 🦈",
+  "genLabel1974": "Disco Start 💃",
+  "genLabel1973": "Pink Floyd 🌈",
+  "genLabel1972": "Pong Ära 🏓",
+  "genLabel1971": "Zeppelin 🎸",
+  "genLabel1970": "Beatles Gen 🎵",
+  "genLabel1969": "Legenden 👑",
+  "birthYear1969Plus": "1969+",
+
+
+
+  "historyTitle": "Verlauf",
+  "historyEmptyTitle": "Noch keine Emotionen",
+  "historyEmptySubtitle": "Teile deine Vibes\num deinen Verlauf zu sehen",
+  "historyMyEmotions": "Meine Emotionen",
+  "historyStatTotal": "Gesamt",
+  "historyStatDominant": "Dominant",
+  "historyToday": "Heute",
+  "historyTimeFormat": "{date} • {time}",
+  "@historyTimeFormat": {
+    "placeholders": {
+      "date": {"type": "String"},
+      "time": {"type": "String"}
+    }
+  },
+  "historyTodayFormat": "{today} • {time}",
+  "@historyTodayFormat": {
+    "placeholders": {
+      "today": {"type": "String"},
+      "time": {"type": "String"}
+    }
+  },
+
+
+
+  "trendsTitle": "Trends",
+  "trendsSubtitle": "City-Stats werden geladen",
+  "trendsEmoji": "📊",
+
+
+
+  "mapToastYourOwnVibe": "Das ist dein eigener Vibe",
+  "mapErrorNeedActiveVibeToPing": "Du brauchst einen aktiven Vibe für Pings", 
+  "mapErrorAlreadyHavePingOrUnavailable": "Du hast schon einen aktiven Ping oder Vibe ist nicht verfügbar",
+  "mapBanRestrictionMessage": "Du bist eingeschränkt für {time}",
+  "@mapBanRestrictionMessage": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "mapBanRestrictionLifted": "Einschränkung aufgehoben! Du kannst wieder Vibes teilen",
+  "mapSuccessVibeSent": "Vibe gesendet! {count} andere nearby 🎉",
+  "@mapSuccessVibeSent": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "mapTutorialTapToSpark": "tipp auf einen Vibe • PW Chat in 60s",
+  "mapActivePingStatus": "Aktiver Ping ({seconds}s) - Tippen zum Abbrechen",
+  "@mapActivePingStatus": {
+    "placeholders": {
+      "seconds": {"type": "int"}
+    }
+  },
+
+
+
+  "onboardingTitlePingWink": "ping & wink",
+  "onboardingSubtitleSeeWhatsPoppin": "check was gerade in deiner nähe abgeht",
+  "onboardingButtonLetsGo": "los geht's",
+  "onboardingBadgeAge13Plus": "nur 13+",
+  "onboardingValueTitleInstantSparks": "instant PW chat",
+  "onboardingValueSubtitleConnect60Sec": "connecte in 60 sek",
+  "onboardingValueTitleHyperlocalVibes": "hyperlokale vibes",
+  "onboardingValueSubtitleOnly2kmRadius": "nur 2km radius",
+  "onboardingValueTitleNoProfiles": "keine profile",
+  "onboardingValueSubtitleJustPureMoments": "nur echte momente",
+  "onboardingButtonImReady": "ich bin ready",
+  "onboardingLocationTitle": "unlock deine area",
+  "onboardingLocationSubtitle": "sieh vibes im 2km umkreis",
+  "onboardingLocationPrivacyTitle": "privatsphäre first",
+  "onboardingLocationPrivacyBullet1": "nur wenn app offen ist",
+  "onboardingLocationPrivacyBullet2": "kein hintergrund-tracking",
+  "onboardingLocationPrivacyBullet3": "nur anonyme vibes",
+  "onboardingButtonEnableRadar": "radar aktivieren",
+  "onboardingButtonMaybeLater": "vielleicht später",
+  "onboardingNotificationTitle": "verpass keinen PW chat",
+  "onboardingNotificationSubtitle": "bekomm pings wenn was los ist",
+  "onboardingNotificationFeature1": "instant pings von vibern",
+  "onboardingNotificationFeature2": "tägliche vibe reminder",
+  "onboardingNotificationFeature3": "hot spot alerts",
+  "onboardingButtonTurnOnPings": "pings aktivieren",
+  "onboardingButtonNotNow": "jetzt nicht",
+  "onboardingLegalTitle": "fast fertig!",
+  "onboardingLegalAgeRequirement": "du musst 13 oder älter sein",
+  "onboardingLegalAgeSubtitle": "ping & wink ist für teens und älter",
+  "onboardingLegalConsent": "mit weiter bestätigst du dass du 13+ bist und akzeptierst unsere",
+  "onboardingLegalTerms": "nutzungsbedingungen",
+  "onboardingLegalAnd": " und ",
+  "onboardingLegalPrivacyPolicy": "datenschutzrichtlinie",
+  "onboardingLegalSafetyFeature1": "nur anonyme vibes",
+  "onboardingLegalSafetyFeature2": "instant blocking & reporting",
+  "onboardingLegalSafetyFeature3": "20 min timeout bei fehlverhalten",
+  "onboardingButtonImAge13AndAgree": "ich bin 13+ und akzeptiere",
+  "onboardingButtonImUnder13": "ich bin unter 13",
+  "onboardingLocationDeniedTitle": "du verpasst alle PW sparks",
+  "onboardingLocationDeniedMessage": "ohne standort kannst du nicht:\n• sehen wer in der nähe ist\n• pings senden\n• winks bekommen\n• PW sparks erstellen",
+  "onboardingButtonGoBack": "zurück",
+  "onboardingButtonExitApp": "beenden",
+  "onboardingNotificationDeniedTitle": "du verpasst alles",
+  "onboardingNotificationDeniedMessage": "ohne benachrichtigungen:\n• niemand kann dich pingen\n• du verpasst PW sparks nearby\n• null connections möglich\n\nunsere user aktivieren benachrichtigungen",
+  "onboardingButtonLetMeReconsider": "lass mich überlegen",
+  "onboardingButtonContinueAnyway": "trotzdem weiter",
+  "onboardingAgeDialogTitle": "bis später!",
+  "onboardingAgeDialogMessage": "ping & wink ist für nutzer ab 13 jahren. komm zurück wenn du alt genug bist!",
+  "onboardingButtonUnderstood": "verstanden",
+  "onboardingNotificationExampleTitle": "ping & wink",
+  "onboardingNotificationExampleNow": "jetzt",
+  "onboardingNotificationExamplePing": "neuer ping 230m entfernt",
+  "onboardingNotificationExampleMessage": "jemand vibed mit dir",
+  "onboardingMapNotification": "jemand ist 753m entfernt am start",
+  "onboardingLocationPrivacyFormatted": "• nur wenn app offen ist\n• kein hintergrund-tracking\n• nur anonyme vibes",
+  "onboardingLocationDeniedFormatted": "ohne standort kannst du nicht:\n• sehen wer in der nähe ist\n• pings senden\n• winks bekommen\n• sparks erstellen",
+  "onboardingNotificationDeniedFormatted": "ohne benachrichtigungen:\n• niemand kann dich pingen\n• verpasst vibes nearby\n• null connections\n\nunsere user aktivieren benachrichtigungen",
+
+
+
+  "settingsTitle": "Einstellungen",
+  "settingsAppName": "Ping&Wink",
+  "settingsAppTagline": "Connecte durch Emotionen",
+  "settingsShareTitle": "Mit Friends teilen",
+  "settingsShareSubtitle": "Lade andere ein Vibes zu entdecken",
+  "settingsSectionPreferences": "Einstellungen",
+  "settingsSectionLegal": "Rechtliches",
+  "settingsSectionSupport": "Support",
+  "settingsSectionDataManagement": "Datenverwaltung",
+  "settingsNotificationsTitle": "Benachrichtigungen",
+  "settingsNotificationsEnabled": "Aktiviert",
+  "settingsNotificationsDisabled": "Deaktiviert",
+  "settingsMapThemeTitle": "Map Theme",
+  "settingsMapThemeCyberpunk": "Cyberpunk",
+  "settingsMapThemeMinimalist": "Minimalistisch",
+  "settingsLocationModeTitle": "Standort-Modus",
+  "settingsLocationModeSoft": "Standort verschoben, nur für Style",
+  "settingsLocationModeExact": "Dein Vibe genau wo du bist",
+  "settingsDeleteVibeTitle": "Meinen Vibe löschen",
+  "settingsDeleteVibeSubtitle": "Deine Emotion von der Map entfernen",
+  "settingsPrivacyTitle": "Datenschutzrichtlinie",
+  "settingsPrivacySubtitle": "Wie wir deine Daten schützen",
+  "settingsTermsTitle": "Nutzungsbedingungen",
+  "settingsTermsSubtitle": "Regeln für die App-Nutzung",
+  "settingsHelpTitle": "Hilfe-Center",
+  "settingsHelpSubtitle": "FAQ und Guides",
+  "settingsContactTitle": "Kontakt",
+  "settingsContactEmail": "hello@pingandwink.com",
+  "settingsDeleteAccountTitle": "Account löschen",
+  "settingsDeleteAccountSubtitle": "Alle deine Daten löschen",
+  "settingsFooterTagline": "Ping & Wink - Just Vibes",
+  "settingsFooterCopyright": "© 2025 Ping and Wink",
+  "settingsDeviceIdPrefix": "Geräte-ID: {id}...",
+  "@settingsDeviceIdPrefix": {
+    "placeholders": {
+      "id": {"type": "String"}
+    }
+  },
+  "settingsDeleteVibeDialogTitle": "Deinen Vibe löschen?",
+  "settingsDeleteVibeDialogMessage": "Deine Emotion verschwindet von der Map",
+  "settingsVibeDeletedSuccess": "Dein Vibe wurde gelöscht",
+  "settingsVibeDeleteError": "Fehler beim Löschen des Vibes",
+  "settingsNotificationWarningTitle": "Achtung!",
+  "settingsNotificationWarningMessage": "Wenn du Benachrichtigungen deaktivierst, kannst du keine PINGS von anderen empfangen.\n\nPW Chats (Connections) werden unmöglich.\n\nWirklich deaktivieren?",
+  "settingsNotificationWarningCancel": "Abbrechen",
+  "settingsNotificationWarningDisable": "Trotzdem deaktivieren",
+  "settingsNotificationsDisabledMessage": "⚠️ Benachrichtigungen deaktiviert - Du bekommst keine Pings",
+  "settingsNotificationsEnabledMessage": "✅ Benachrichtigungen aktiviert - Du kannst Pings empfangen",
+  "settingsMapThemeCyberpunkActivated": "Cyberpunk Mode aktiviert 🌃",
+  "settingsMapThemeDayActivated": "Tag-Modus aktiviert ☀️",
+  "settingsSoftModeEnabled": "Soft Mode! Dein Vibe ist verschoben 🌊",
+  "settingsNormalModeEnabled": "Normal Mode! Exakter Standort 📍",
+  "settingsIdCopied": "ID kopiert",
+  "settingsDeleteAccountDialogTitle": "⚠️ Account löschen",
+  "settingsDeleteAccountDialogMessage": "Diese Aktion kann nicht rückgängig gemacht werden. Alle deine Emotionen und Daten werden für immer gelöscht.\n\nBist du sicher?",
+  "settingsDeleteAccountDialogDelete": "Löschen",
+  "settingsDeleteAccountError": "Fehler beim Account löschen",
+  "settingsModerationPanelTitle": "🔍 Moderations-Panel",
+  "settingsModerationPanelSubtitle": "Nur für App Store Review",
+  "settingsModerationActiveBans": "Aktive Bans",
+  "settingsModerationReports": "Reports",
+  "settingsModerationClearData": "Testdaten löschen",
+  "settingsModerationDataCleared": "Testdaten gelöscht",
+
+
+
+  "sparkConnectingToChat": "Verbinde mit PW Chat...",
+  "sparkChatTitle": "PW Chat",
+  "sparkChatEnded": "Beendet",
+  "sparkSendFirstMessage": "Sende die erste Message!",
+  "sparkWaitingForMate": "Warte auf PW Mate...",
+  "sparkMessagePlaceholder": "Nachricht...",
+  "sparkWaitForReply": "Warte auf Antwort...",
+  "sparkChatEndedPlaceholder": "Chat beendet",
+  "sparkLeaveChat": "PW Chat verlassen?",
+  "sparkChatEndForBoth": "Chat endet für beide PW Mates",
+  "sparkStay": "Bleiben",
+  "sparkLeave": "Verlassen",
+  "sparkExtended": "Verlängert! +3 Min ⚡",
+  "sparkWaitingForOther": "Warte auf PW Mate...",
+  "sparkMaxExtensionsReached": "Maximale Verlängerungen erreicht",
+  "sparkFailedToExtend": "Verlängern fehlgeschlagen",
+  "sparkFailedToSend": "Senden fehlgeschlagen",
+  "sparkMessageTooLong": "Nachricht zu lang (max 199)",
+  "sparkErrorInitializing": "Fehler beim Chat-Start: {error}",
+  "@sparkErrorInitializing": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "sparkUserBanned": "User für 7 Minuten gebannt",
+  "sparkRestrictedForBanning": "Du bist wegen zu vielen Bans eingeschränkt",
+  "sparkReportSubmitted": "Report gesendet",
+  "sparkBehaviorRestriction": "Du bist wegen unangemessenem Verhalten eingeschränkt",
+
+
+
+  "splashTitlePing": "PING",
+  "splashTitleAmpersand": "&",
+  "splashTitleWink": "WINK",
+  "splashTagline": "ZÜNDE DEN MOMENT",
+
+
+
+  "trendsEmotionalPulse": "Emotionaler Puls {time}",
+  "@trendsEmotionalPulse": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "trendsTimeMorning": "heute morgen",
+  "trendsTimeAfternoon": "heute nachmittag",
+  "trendsTimeEvening": "heute abend",
+  "trendsTimeLateNight": "spät nachts",
+  "trendsActiveVibes": "Aktive Vibes",
+  "trendsSparkers": "PW Mates",
+  "trendsDominantEmotion": "Dominante Emotion",
+  "trendsPercentOfSparkers": "{percent}% der PW Mates",
+  "@trendsPercentOfSparkers": {
+    "placeholders": {
+      "percent": {"type": "int"}
+    }
+  },
+  "trendsEmotionDistribution": "Emotions-Verteilung",
+  "trendsQuote1": "Jede geteilte Emotion schafft eine Connection ✨",
+  "trendsQuote2": "Zusammen erschaffen wir die Emotions-Map 🗺️",
+  "trendsQuote3": "Dein Vibe kann jemandes Tag ändern 💫",
+  "trendsQuote4": "PW Chats starten mit einem simplen Ping ⚡",
+
+
+
+  "banOverlayTitle": "Temporäre Einschränkung",
+  "banOverlayMessage": "Dein PW Mate fand deine Message unangemessen",
+  "banOverlayRestrictionInfo": "Du kannst während dieser Zeit keine Vibes teilen",
+
+
+
+  "bottomNavMap": "Map",
+  "bottomNavHistory": "Verlauf",
+  "bottomNavTrends": "Trends",
+  "bottomNavSettings": "Settings",
+
+
+
+  "guidelinesTitle": "Community-Richtlinien",
+  "guidelinesRespectTitle": "Sei respektvoll",
+  "guidelinesRespectSubtitle": "Behandle alle mit Freundlichkeit",
+  "guidelinesNoHarassmentTitle": "Keine Belästigung",
+  "guidelinesNoHarassmentSubtitle": "Sende keine unangemessenen Messages",
+  "guidelinesKeepRealTitle": "Bleib echt",
+  "guidelinesKeepRealSubtitle": "Teile nur authentische Vibes",
+  "guidelinesHaveFunTitle": "Hab Spaß",
+  "guidelinesHaveFunSubtitle": "Genieße PW Spark Connections!",
+  "guidelinesViolationWarning": "Verstöße können zu temporären oder permanenten Einschränkungen führen",
+  "guidelinesButtonUnderstand": "Verstanden",
+
+
+
+  "emotionSelectorStreakDay": "Tag {day} - Halte deine Streak!",
+  "@emotionSelectorStreakDay": {
+    "placeholders": {
+      "day": {"type": "int"}
+    }
+  },
+  "emotionSelectorTapYourVibe": "TIPP DEINEN VIBE",
+  "emotionSelectorWhatsYourVibe": "was ist dein vibe gerade?",
+  "emotionSelectorActiveNow": "{count} aktiv jetzt",
+  "@emotionSelectorActiveNow": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+
+
+  "miniBarSendNewPing": "Neuen Ping senden",
+  "miniBarPingActive": "Dein Ping ist aktiv",
+
+
+
+  "moderationBanTitle": "Ban für 7 Min",
+  "moderationBanSubtitle": "Diesen User temporär einschränken",
+  "moderationReportTitle": "Melden",
+  "moderationReportSubtitle": "Unangemessenes Verhalten melden",
+  "moderationEndChatTitle": "Chat beenden",
+  "moderationEndChatSubtitle": "Diese PW Session verlassen",
+  "moderationReportDialogTitle": "User melden",
+  "moderationReportReasonHarassment": "Belästigung",
+  "moderationReportReasonSpam": "Spam",
+  "moderationReportReasonHateSpeech": "Hassrede",
+  "moderationReportReasonOther": "Anderes",
+  "moderationReportSendButton": "Report senden",
+
+
+
+  "pingBottomVibeTooFar": "Vibe zu weit weg (max 3km)",
+  "pingBottomVibeTooFarMessage": "Vibe zu weit - max 3km für Ping",
+  "pingBottomTooFar": "ZU WEIT",
+  "pingBottomPing": "PING",
+  "pingBottomDistanceVeryClose": "sehr nah",
+  "pingBottomDistanceMeters": "{meters}m",
+  "@pingBottomDistanceMeters": {
+    "placeholders": {
+      "meters": {"type": "int"}
+    }
+  },
+  "pingBottomDistanceKilometers": "{km}km",
+  "@pingBottomDistanceKilometers": {
+    "placeholders": {
+      "km": {"type": "String"}
+    }
+  },
+  "pingBottomTimeNow": "jetzt",
+  "pingBottomTimeMinutes": "{minutes}min",
+  "@pingBottomTimeMinutes": {
+    "placeholders": {
+      "minutes": {"type": "int"}
+    }
+  },
+  "pingBottomTimeHours": "{hours}h",
+  "@pingBottomTimeHours": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+
+
+
+  "vibeAnimBrainEnergy": "KOPF AM GLÜHEN",
+  "vibeAnimCozy": "VIBE: GEMÜTLICH",
+  "vibeAnimSweatSlay": "SCHWITZEN. SIEGEN. REPEAT",
+  "vibeAnimLostInBeat": "LOST IM BEAT",
+  "vibeAnimCityLights": "CITY LIGHTS AN",
+  "vibeAnimLightsCameraVibes": "LICHT. KAMERA. VIBES.",
+  "vibeAnimEveningVibes": "ABEND VIBES",
+  "vibeAnimPartyMode": "PARTY MODE: AN",
+  "vibeAnimSubBrainTime": "Brain Time 🧠",
+  "vibeAnimSubCaffeine": "Koffein Vibes ☕",
+  "vibeAnimSubNoDaysOff": "No Days Off 🔥",
+  "vibeAnimSubVolumeMax": "Lautstärke: MAX 🎧",
+  "vibeAnimSubUrbanExplorer": "Urban Explorer 🌃",
+  "vibeAnimSubCreateGlow": "Create & Glow 📸",
+  "vibeAnimSubNightFlow": "Night Flow 🌙",
+  "vibeAnimSubUnleashChaos": "Chaos entfesseln 🎉",
+  "vibeAnimDefaultMessage": "VIBE GESETZT",
+  "vibeAnimDefaultSubMessage": "Let's go!",
+
+
+
+  "viralShareFailed": "Teilen fehlgeschlagen",
+  "viralShareTextNight": "alle schlafen. aber etwas passiert\npingandwink.com",
+  "viralShareTextEvening": "der abend. die beste zeit\npingandwink.com",
+  "viralShareTextDefault": "was passiert gerade jetzt?\npingandwink.com",
+  "viralShareMainText": "was passiert\nwährend du das liest?",
+  "viralShareFindOut": "finde es raus",
+  "viralShareLogo": "ping&wink",
+  "viralShareButton": "teilen →",
+
+
+
+  "winkBannerPing": "PING {distance}",
+  "@winkBannerPing": {
+    "placeholders": {
+      "distance": {"type": "String"}
+    }
+  },
+  "winkBannerSparkmateWants": "PW Mate will connecten",
+  "winkBannerWinkBack": "WINK ZURÜCK"
+
+}

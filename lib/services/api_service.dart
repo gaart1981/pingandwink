@@ -2,6 +2,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
+import 'dart:io' show Platform;
 import '../config/app_config.dart';
 import '../models/emotion_data.dart';
 
@@ -380,12 +381,25 @@ class ApiService {
     }
   }
 
-  /// Save push token to database - simplified version
+  /// Save push token to database - fixed version with platform support
   static Future<void> savePushToken({
     required String deviceId,
     required String playerId,
   }) async {
     try {
+      // Определяем платформу
+      String platformName = 'android'; // default
+      if (Platform.isIOS) {
+        platformName = 'ios';
+      } else if (Platform.isAndroid) {
+        platformName = 'android';
+      }
+
+      debugPrint('💾 Saving push token:');
+      debugPrint('   Device ID: $deviceId');
+      debugPrint('   Player ID: $playerId');
+      debugPrint('   Platform: $platformName');
+
       // Using UPSERT (insert or update) to avoid duplicates
       final response = await http.post(
         Uri.parse(
@@ -399,16 +413,21 @@ class ApiService {
         body: json.encode({
           'device_id': deviceId,
           'player_id': playerId,
+          'platform': platformName, // КРИТИЧЕСКИ ВАЖНО!
           'push_enabled': true,
           'updated_at': DateTime.now().toIso8601String(),
         }),
       );
 
       if (response.statusCode != 201 && response.statusCode != 200) {
-        debugPrint('Failed to save push token: ${response.statusCode}');
+        debugPrint('❌ Failed to save push token: ${response.statusCode}');
+        debugPrint('   Response body: ${response.body}');
+      } else {
+        debugPrint('✅ Push token saved successfully');
+        debugPrint('   Platform: $platformName');
       }
     } catch (e) {
-      debugPrint('Error saving push token: $e');
+      debugPrint('❌ Error saving push token: $e');
     }
   }
 }

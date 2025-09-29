@@ -27,8 +27,8 @@ class AppConfig {
   static const double focusedMapZoom = 12.0;  // view when adding emotion
   
   // Default location (Atlantic ocean NY)
-  static const double defaultLatitude = 40.0000;
-  static const double defaultLongitude = -73.0000;
+  static const double defaultLatitude = 53.292279;
+  static const double defaultLongitude = -6.422303;
   
   // Animation durations
   static const Duration splashDuration = Duration(seconds: 2);

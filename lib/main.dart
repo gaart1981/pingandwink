@@ -52,6 +52,41 @@ void main() async {
     // Initialize with app ID from .env
     OneSignal.initialize(oneSignalAppId);
 
+    // Дополнительная отладка для iOS
+    OneSignal.User.addObserver((state) {
+      debugPrint('🔔 OneSignal User State Changed:');
+      debugPrint('   External ID: ${state.current.externalId}');
+      debugPrint('   OneSignal ID: ${state.current.onesignalId}');
+    });
+
+  // Улучшенная отладка подписки
+    OneSignal.User.pushSubscription.addObserver((state) async {
+      debugPrint('🔔 ============= Push Subscription Changed =============');
+      debugPrint('   Platform: ${Platform.isIOS ? "iOS" : "Android"}');
+      debugPrint('   Player ID: ${state.current.id}');
+      debugPrint('   Token: ${state.current.token}');
+      debugPrint('   OptedIn: ${state.current.optedIn}');
+      debugPrint('🔔 ===================================================');
+
+      if (state.current.id != null && state.current.id!.isNotEmpty) {
+        // Save token to database
+        debugPrint('💾 Attempting to save push token...');
+        debugPrint(
+            '   Platform being saved: ${Platform.isIOS ? "iOS" : "Android"}');
+        try {
+          await ApiService.savePushToken(
+            deviceId: deviceId,
+            playerId: state.current.id!,
+          );
+          debugPrint('✅ Push token saved to database');
+        } catch (e) {
+          debugPrint('❌ Error saving push token: $e');
+        }
+      } else {
+        debugPrint('⚠️ No player ID available yet');
+      }
+    });
+
     // already Requested in onboarding. 
     //OneSignal.Notifications.requestPermission(true);
 

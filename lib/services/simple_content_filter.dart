@@ -75,7 +75,7 @@ class SimpleContentFilter {
     
     // === HARASSMENT (Basic protection) ===
     'kill yourself', 'kys', 'die', 'hate you',
-    'fuck you', 'fuck off', 'fucking',
+    'fuck', 'fuck off', 'fucking',
     'shit', 'bitch', 'asshole', 'bastard',
     'retard', 'idiot', 'stupid', 'dumb',
     

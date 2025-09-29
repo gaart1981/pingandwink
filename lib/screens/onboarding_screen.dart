@@ -675,22 +675,43 @@ class _OnboardingScreenState extends State<OnboardingScreen>
 
             const SizedBox(height: 40),
 
-            // CTA
+            // CTA - FIXED LOGIC
             _buildCTAButton(
               l10n.onboardingButtonEnableRadar,
               () async {
                 HapticFeedback.mediumImpact();
+
+                // Check current permission status first
+                final currentPermission = await Geolocator.checkPermission();
+
+                // If already granted, just proceed
+                if (currentPermission == LocationPermission.whileInUse ||
+                    currentPermission == LocationPermission.always) {
+                  setState(() {
+                    _locationGranted = true;
+                  });
+                  _nextPage();
+                  return;
+                }
+
+                // If permanently denied, show settings dialog
+                if (currentPermission == LocationPermission.deniedForever) {
+                  _showLocationPermanentlyDeniedDialog(l10n);
+                  return;
+                }
+
+                // If just denied, try to request
                 final permission = await Geolocator.requestPermission();
 
-                // Check if permission was granted
                 if (permission == LocationPermission.whileInUse ||
                     permission == LocationPermission.always) {
                   setState(() {
                     _locationGranted = true;
                   });
                   _nextPage();
+                } else if (permission == LocationPermission.deniedForever) {
+                  _showLocationPermanentlyDeniedDialog(l10n);
                 } else {
-                  // Show popup if denied
                   _showLocationDeniedDialog(l10n);
                 }
               },
@@ -700,7 +721,11 @@ class _OnboardingScreenState extends State<OnboardingScreen>
             // Skip button
             TextButton(
               onPressed: () {
-                _showLocationDeniedDialog(l10n);
+                // Skip this step
+                setState(() {
+                  _locationGranted = false;
+                });
+                _nextPage();
               },
               child: Text(
                 l10n.onboardingButtonMaybeLater,
@@ -711,6 +736,92 @@ class _OnboardingScreenState extends State<OnboardingScreen>
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  void _showLocationPermanentlyDeniedDialog(AppLocalizations l10n) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => Dialog(
+        backgroundColor: Colors.transparent,
+        child: Container(
+          padding: const EdgeInsets.all(24),
+          decoration: BoxDecoration(
+            color: const Color(0xFF1A0B2E),
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              color: Colors.orange.withOpacity(0.5),
+              width: 1,
+            ),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                'Settings',
+                style: TextStyle(fontSize: 48),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                l10n.onboardingLocationDeniedTitle,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 12),
+              Text(
+                l10n.onboardingLocationDeniedFormatted,
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.7),
+                  fontSize: 14,
+                  height: 1.4,
+                ),
+              ),
+              const SizedBox(height: 20),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                        Geolocator.openAppSettings();
+                      },
+                      child: Text(
+                        l10n.settingsTitle,
+                        style: TextStyle(color: AppTheme.primaryColor),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                        setState(() {
+                          _locationGranted = false;
+                        });
+                        _nextPage();
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.grey,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
+                      child: Text(
+                        l10n.onboardingButtonContinueAnyway,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -1359,16 +1470,21 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
-                        SystemNavigator.pop();
+                        Navigator.pop(context);
+                        // Continue without location
+                        setState(() {
+                          _locationGranted = false;
+                        });
+                        _nextPage();
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red,
+                        backgroundColor: Colors.grey,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
                       ),
                       child: Text(
-                        l10n.onboardingButtonExitApp,
+                        l10n.onboardingButtonContinueAnyway,
                         style: TextStyle(color: Colors.white),
                       ),
                     ),

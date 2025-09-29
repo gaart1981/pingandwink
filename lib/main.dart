@@ -6,6 +6,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
+import 'dart:io';
 
 import 'config/app_config.dart';
 import 'config/theme.dart';
@@ -129,6 +130,30 @@ void main() async {
     }
 
     debugPrint('✅ OneSignal initialized successfully');
+
+    // add control for iOS
+    if (Platform.isIOS) {
+      debugPrint('🍎 iOS detected - extra token check...');
+      await Future.delayed(const Duration(seconds: 8));
+
+      final iosPlayerId = OneSignal.User.pushSubscription.id;
+      if (iosPlayerId != null && iosPlayerId.isNotEmpty) {
+        debugPrint('🍎 iOS token found: $iosPlayerId');
+        try {
+          await ApiService.savePushToken(
+            deviceId: deviceId,
+            playerId: iosPlayerId,
+          );
+          debugPrint('✅ iOS token saved successfully');
+        } catch (e) {
+          debugPrint('❌ Failed to save iOS token: $e');
+        }
+      } else {
+        debugPrint('⚠️ Still no iOS token after extra wait');
+      }
+    }
+
+
   } catch (e) {
     debugPrint('❌ Error initializing OneSignal: $e');
   }

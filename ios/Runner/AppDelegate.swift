@@ -13,8 +13,12 @@ import flutter_local_notifications
       UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
     }
     
-    // Register Flutter plugins
-    GeneratedPluginRegistrant.register(with: self)
+    // Register Flutter plugins with error handling
+    do {
+      GeneratedPluginRegistrant.register(with: self)
+    } catch {
+      print("Error registering plugins: \(error)")
+    }
     
     // Call super
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)

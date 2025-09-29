@@ -6,7 +6,6 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
-import 'package:timezone/data/latest.dart' as tz;
 
 import 'config/app_config.dart';
 import 'config/theme.dart';
@@ -20,9 +19,6 @@ import 'l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // Initialize timezones
-  tz.initializeTimeZones();
 
   // Load environment variables
   try {
@@ -55,7 +51,7 @@ void main() async {
     // Initialize with app ID from .env
     OneSignal.initialize(oneSignalAppId);
 
-    // Request permission
+    // already Requested in onboarding. 
     //OneSignal.Notifications.requestPermission(true);
 
     // Handle notification taps
@@ -199,12 +195,10 @@ class MoodMapApp extends StatelessWidget {
       supportedLocales: const [
         
         Locale('en'), // English (основной)
-        Locale('es'),
         Locale('es', '419'), // Spanish (Latin America)
         Locale('ru'), // Russian
         Locale('fr'), // French
         Locale('de'), // German
-        Locale('pt'),
         Locale('pt', 'BR'), // Portuguese (Brazil)
         Locale('ko'), // Korean
         Locale('ar'), // Arabic

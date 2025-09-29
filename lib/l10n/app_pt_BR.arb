@@ -22,54 +22,6 @@
   
 
 
-  "emptyStateMorningStoryMain": "a cidade ainda tá despertando, se espreguiçando devagar\ntodo mundo nos seus rituais matinais\ncafézinho, busão lotado, fingindo trampar\nmas eles ainda não sacaram:\nhoje à noite às 10h, esse mapa vira outra coisa completamente",
-  "emptyStateMorningStorySub": "bota o lembrete agora, vai agradecer depois ⏰",
-  "emptyStateMorningCuriosityMain": "você pegou o mapa na fase tranquila\ntipo balada ao meio-dia - vazia mas cheia de potencial\n3 manos checaram antes de você hoje\ntodos botaram lembrete pras 22h\ncoincidência? ou eles manjam de algo?",
-  "emptyStateMorningCuriositySub": "a resposta se revela no pôr do sol 🌅",
-  "emptyStateMorningSocialMain": "real da segunda de manhã:\ngeral fingindo que tá trabalhando agora\nplanilhas abertas, cabeça em outro lugar\nvocê é 1 de 7 que checou antes do almoço\nisso te faz especial, ou doido, ou os dois",
-  "emptyStateMorningSocialSub": "cola às 22h pra descobrir qual",
-  "emptyStateFridayMain": "paradoxo da sexta à tarde:\ngeral já desligou mentalmente mas tá preso fisicamente\ncontando as horas pra liberdade ({hours} faltando)\nàs 17h começa a metamorfose\nde zumbis corporativos pra guerreiros do rolê",
-  "@emptyStateFridayMain": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
-  "emptyStateFridaySub": "chegou cedo pra testemunhar a parada 🦋",
-  "emptyStateAfternoonReturningMain": "você sempre volta nesse horário\nprocurando algo que ainda não tá aqui... ainda\nteimosia ou loucura?\no universo tá ligado\ne recompensa quem tem paciência",
-  "emptyStateAfternoonReturningSub": "mais ou menos {hours} horas até bombar 🚀",
-  "@emptyStateAfternoonReturningSub": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
-  "emptyStateAfternoonFirstMain": "às vezes rola às 14:47\nàs vezes às 18:13\nmas sempre acontece\na transformação de morto pra vivo\nde vazio pra elétrico",
-  "emptyStateAfternoonFirstSub": "a pergunta é: você vai estar aqui quando rolar?",
-  "emptyStatePrimetimeFirstMain": "bem-vindo à beira de algo massa\nem 23 minutos, esse mapa vazio explode\ncentenas de vibes aparecem tipo estrelas\ncada uma é alguém real, emoção real, momento real\nvocê chegou antes da galera",
-  "emptyStatePrimetimeFirstSub": "isso é genialidade ou sorte ⚡",
-  "emptyStatePrimetimeReturnMain": "o silêncio antes do caos\nvocê sabe o que vem aí\n22h bate diferente nesse mapa\nestresse do trampo vira energia de sexta\nassista acontecer ao vivo",
-  "emptyStatePrimetimeReturnSub": "ou fecha o app e fica na neura pra sempre",
-  "emptyStateWeekendEveningMain": "fenômeno de sábado à noite:\ngeral lá fora vivendo sua melhor vida\nou fingindo no stories\nmas você achou o pulso real da cidade\nemoções sem filtro, sem edição, sem censura",
-  "emptyStateWeekendEveningSub": "atualiza em 5 minutos pra real 🌃",
-  "emptyStateWeekendMorningMain": "a cidade tá de ressaca\njuntando os cacos da noite passada\nchecando os estragos, contando os arrependimentos\no mapa dorme até 14h\nmas quando acorda...",
-  "emptyStateWeekendMorningSub": "o caos round 2 começa 🎭",
-  "emptyStateLateNightMain": "clareza das 3 da manhã bate diferente\nquando o barulho para, a verdade aparece\nsó os reais tão acordados agora\ncompartilhando pensamentos das 3am\ncru, honesto, sem filtro",
-  "emptyStateLateNightSub": "você não tá sozinho na madruga 🌙",
-  "emptyStatePush1Title": "ping&wink",
-  "emptyStatePush1Body": "o mapa tá acordando 👀",
-  "emptyStatePush2Title": "ping&wink",
-  "emptyStatePush2Body": "vibes no pico agora ⚡",
-  "emptyStatePush3Title": "ping&wink",
-  "emptyStatePush3Body": "ontem você perdeu 47 vibes. hoje?",
-  "emptyStateNotificationEnabled": "Notificações ativadas! Você vai saber quando as vibes aparecerem 🔔",
-  "emptyStateTapToClose": "toque pra fechar",
-  "emptyStateAfternoonReturningHours": "mais ou menos {hours} horas até bombar 🚀",
-  "@emptyStateAfternoonReturningHours": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
-
-
   "vibeLabelBrainMode": "Modo Foco",
   "vibeLabelLatteBreak": "Pausa Café",
   "vibeLabelSportMode": "Modo Treino",

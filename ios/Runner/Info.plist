@@ -66,6 +66,9 @@
 		<key>UIStatusBarHidden</key>
 		<false/>
 		<key>UIViewControllerBasedStatusBarAppearance</key>
+		<!-- Face ID for secure storage -->
+		<key>NSFaceIDUsageDescription</key>
+		<string>Ping&amp;Wink uses Face ID to securely store your data</string>
 		<false/>
 	</dict>
 </plist>

@@ -21,48 +21,7 @@
   "commonConfirm": "Bestätigen",
   
 
-
-  "emptyStateMorningStoryMain": "die Stadt wacht noch auf, streckt sich langsam\njeder in seinen Morgenritualen\nKaffee, Pendeln, so tun als ob man arbeitet\naber das wissen sie noch nicht:\nheute Abend um 19 Uhr verwandelt sich diese Karte komplett",
-  "emptyStateMorningStorySub": "stell jetzt deinen Wecker, danke dir später ⏰",
-  "emptyStateMorningCuriosityMain": "du hast die Karte in ihrer ruhigen Phase erwischt\nwie ein Nachtclub mittags - leer aber voller Potenzial\n3 Leute haben heute vor dir geschaut\nalle haben Erinnerungen für 19 Uhr gesetzt\nZufall? oder wissen sie etwas?",
-  "emptyStateMorningCuriositySub": "die Antwort offenbart sich bei Sonnenuntergang 🌅",
-  "emptyStateMorningSocialMain": "Montagmorgen Wahrheit:\njeder tut gerade so als würde er arbeiten\nTabellen offen, Gedanken woanders\ndu bist 1 von 7 Leuten die vor Mittag gecheckt haben\ndas macht dich besonders, oder verrückt, oder beides",
-  "emptyStateMorningSocialSub": "komm um 19 Uhr zurück um herauszufinden was",
-  "emptyStateFridayMain": "Freitagnachmittag Paradox:\njeder mental ausgecheckt aber physisch gefangen\nStunden bis zur Freiheit zählend (noch {hours})\num 17 Uhr beginnt die Metamorphose\nvon Arbeitszombies zu Wochenendkriegern",
-  "@emptyStateFridayMain": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
-  "emptyStateFridaySub": "du bist früh dran es zu bezeugen 🦋",
-  "emptyStateAfternoonReturningMain": "du kommst immer wieder zu dieser Zeit\nsuchst nach etwas das noch nicht hier ist... noch nicht\nBeharrlichkeit oder Wahnsinn?\ndas Universum beobachtet\nund es belohnt Geduld",
-  "emptyStateAfternoonReturningSub": "ungefähr {hours} Stunden bis zur Zündung 🚀",
-  "emptyStateAfternoonFirstMain": "manchmal passiert es um 14:47\nmanchmal um 18:13\naber es passiert immer\ndie Verwandlung von tot zu lebendig\nvon leer zu elektrisch",
-  "emptyStateAfternoonFirstSub": "die Frage ist: wirst du hier sein wenn es passiert?",
-  "emptyStatePrimetimeFirstMain": "willkommen am Rand von etwas Großem\nin 23 Minuten explodiert diese leere Karte\nHunderte von Vibes erscheinen wie Sterne\njeder eine echte Person, echte Emotion, echter Moment\ndu bist vor der Menge hier",
-  "emptyStatePrimetimeFirstSub": "das ist entweder Genie oder Glück ⚡",
-  "emptyStatePrimetimeReturnMain": "die Vorspiel-Stille vor dem Sturm\ndu weißt was kommt\n19 Uhr trifft anders auf dieser Karte\nArbeitsstress verwandelt sich in Wochenendenergie\nsieh es in Echtzeit passieren",
-  "emptyStatePrimetimeReturnSub": "oder schließ die App und frage dich für immer",
-  "emptyStateWeekendEveningMain": "Samstagabend Phänomen:\njeder da draußen lebt sein bestes Leben\noder tut so auf Instagram\naber du hast den echten Puls der Stadt gefunden\nungefilterte, unbearbeitete, unzensierte Emotionen",
-  "emptyStateWeekendEveningSub": "aktualisiere in 5 Minuten für die Wahrheit 🌃",
-  "emptyStateWeekendMorningMain": "die Stadt hat einen Kater\nsetzt langsam die letzte Nacht zusammen\nprüft Schäden, zählt Bedauern\ndie Karte schläft bis 14 Uhr\naber wenn sie aufwacht...",
-  "emptyStateWeekendMorningSub": "Chaos Runde 2 beginnt 🎭",
-  "emptyStateLateNightMain": "2 Uhr morgens Klarheit trifft anders\nwenn der Lärm stoppt, taucht Wahrheit auf\nnur die Echten sind jetzt wach\nteilen ihre 3 Uhr morgens Gedanken\nroh, ehrlich, ungefiltert",
-  "emptyStateLateNightSub": "du bist nicht allein im Dunkeln 🌙",
-  "emptyStatePush1Title": "ping&wink",
-  "emptyStatePush1Body": "die Karte wacht auf 👀",
-  "emptyStatePush2Title": "ping&wink",
-  "emptyStatePush2Body": "Peak Vibes gerade jetzt ⚡",
-  "emptyStatePush3Title": "ping&wink",
-  "emptyStatePush3Body": "gestern hast du 47 Vibes verpasst. heute?",
-  "emptyStateNotificationEnabled": "Benachrichtigungen aktiviert! Du wirst wissen wenn Vibes erscheinen 🔔",
-  "emptyStateTapToClose": "tippen zum Schließen",
-  "emptyStateAfternoonReturningHours": "ungefähr {hours} Stunden bis zur Zündung 🚀",
-  "@emptyStateAfternoonReturningHours": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
+  "mapEmptyHintFridayTime": "Jetzt leer? Ganz normal! 😊 Hauptzeit ist 18-22 Uhr wenn alle aktiv sind 🌃",
 
 
   "vibeLabelBrainMode": "Fokus Mode",

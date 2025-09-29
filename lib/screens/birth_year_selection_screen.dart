@@ -179,7 +179,7 @@ class _BirthYearSelectionScreenState extends State<BirthYearSelectionScreen>
   }
 
   Future<void> _confirmAndSave() async {
-    if (_isSaving || !_buttonEnabled) return;
+    if (_isSaving) return;
 
     HapticFeedback.heavyImpact();
     setState(() {
@@ -187,24 +187,26 @@ class _BirthYearSelectionScreenState extends State<BirthYearSelectionScreen>
     });
 
     try {
-      // Save adjusted year (1969 for all 1969+ users)
       final yearToSave = _getAdjustedYear();
 
-      // Save locally
       await StorageService.saveBirthYear(yearToSave);
 
-      // Save to server
       final deviceId = await StorageService.getDeviceId();
       await ApiService.saveBirthYear(
         deviceId: deviceId,
         birthYear: yearToSave,
       );
 
-      // Complete onboarding
-      widget.onComplete();
+      // Check if widget is still mounted before calling callback
+      if (mounted) {
+        widget.onComplete();
+      }
     } catch (e) {
       debugPrint('Error saving birth year: $e');
-      widget.onComplete(); // Continue anyway
+      // Check mounted before calling callback in error case too
+      if (mounted) {
+        widget.onComplete();
+      }
     }
   }
 

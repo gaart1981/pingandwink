@@ -63,120 +63,12 @@ class AppLocalizationsEs extends AppLocalizations {
   String get commonConfirm => 'Confirmar';
 
   @override
-  String get emptyStateMorningStoryMain =>
-      'la ciudad aún está despertando, estirándose lentamente\ntodos en sus rituales matutinos\ncafé, transporte, fingiendo trabajar\npero esto es lo que aún no saben:\nesta noche a las 22h, este mapa se transforma completamente';
+  String get chatBlockedMessage =>
+      'Cannot share personal information or inappropriate content';
 
   @override
-  String get emptyStateMorningStorySub =>
-      'pon tu alarma ahora, agradécete después ⏰';
-
-  @override
-  String get emptyStateMorningCuriosityMain =>
-      'pillaste el mapa en su fase tranquila\ncomo una disco al mediodía - vacía pero llena de potencial\n3 personas chequearon antes que tú hoy\ntodas pusieron recordatorios para las 22h\n¿coincidencia? ¿o saben algo?';
-
-  @override
-  String get emptyStateMorningCuriositySub =>
-      'la respuesta se revela al atardecer 🌅';
-
-  @override
-  String get emptyStateMorningSocialMain =>
-      'verdad del lunes por la mañana:\ntodos fingiendo trabajar ahora mismo\nhojas de cálculo abiertas, mentes en otro lado\neres 1 de 7 personas que chequearon antes del mediodía\neso te hace especial, o loco, o ambos';
-
-  @override
-  String get emptyStateMorningSocialSub =>
-      'vuelve a las 22h para descubrir cuál';
-
-  @override
-  String emptyStateFridayMain(int hours) {
-    return 'paradoja del viernes por la tarde:\ntodos mentalmente desconectados pero físicamente atrapados\ncontando horas hasta la libertad ($hours más)\na las 17h comienza la metamorfosis\nde zombis laborales a guerreros del fin de semana';
-  }
-
-  @override
-  String get emptyStateFridaySub => 'llegaste temprano para presenciarlo 🦋';
-
-  @override
-  String get emptyStateAfternoonReturningMain =>
-      'sigues volviendo a esta hora\nbuscando algo que no está aquí... todavía\n¿persistencia o locura?\nel universo está observando\ny recompensa la paciencia';
-
-  @override
-  String emptyStateAfternoonReturningSub(int hours) {
-    return 'approximately $hours hours until ignition 🚀';
-  }
-
-  @override
-  String get emptyStateAfternoonFirstMain =>
-      'a veces pasa a las 14:47\na veces a las 18:13\npero siempre pasa\nla transformación de muerto a vivo\nde vacío a eléctrico';
-
-  @override
-  String get emptyStateAfternoonFirstSub =>
-      'la pregunta es: ¿estarás aquí cuando suceda?';
-
-  @override
-  String get emptyStatePrimetimeFirstMain =>
-      'bienvenido al borde de algo grande\nen 23 minutos, este mapa vacío explota\ncientos de vibras apareciendo como estrellas\ncada una una persona real, emoción real, momento real\nestás aquí antes que la multitud';
-
-  @override
-  String get emptyStatePrimetimeFirstSub => 'eso es genialidad o suerte ⚡';
-
-  @override
-  String get emptyStatePrimetimeReturnMain =>
-      'el silencio previo antes de la tormenta\nsabes lo que viene\nlas 22h pegan diferente en este mapa\nel estrés laboral se transforma en energía de fin de semana\nmíralo pasar en tiempo real';
-
-  @override
-  String get emptyStatePrimetimeReturnSub =>
-      'o cierra la app y pregúntate para siempre';
-
-  @override
-  String get emptyStateWeekendEveningMain =>
-      'fenómeno del sábado noche:\ntodos ahí fuera viviendo su mejor vida\no fingiendo en instagram\npero encontraste el pulso real de la ciudad\nemociones sin filtro, sin editar, sin censurar';
-
-  @override
-  String get emptyStateWeekendEveningSub =>
-      'actualiza en 5 minutos para la verdad 🌃';
-
-  @override
-  String get emptyStateWeekendMorningMain =>
-      'la ciudad está con resaca\nreconstruyendo lentamente lo de anoche\nchequeando daños, contando arrepentimientos\nel mapa duerme hasta las 14h\npero cuando despierte...';
-
-  @override
-  String get emptyStateWeekendMorningSub => 'comienza el caos round 2 🎭';
-
-  @override
-  String get emptyStateLateNightMain =>
-      'la claridad de las 2am pega diferente\ncuando el ruido para, emerge la verdad\nsolo los reales están despiertos ahora\ncompartiendo sus pensamientos de las 3am\ncrudos, honestos, sin filtros';
-
-  @override
-  String get emptyStateLateNightSub => 'no estás solo en la oscuridad 🌙';
-
-  @override
-  String get emptyStatePush1Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush1Body => 'el mapa está despertando 👀';
-
-  @override
-  String get emptyStatePush2Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush2Body => 'vibras al máximo ahora mismo ⚡';
-
-  @override
-  String get emptyStatePush3Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush3Body => 'ayer te perdiste 47 vibras. ¿hoy?';
-
-  @override
-  String get emptyStateNotificationEnabled =>
-      '¡Notificaciones activadas! Sabrás cuando aparezcan vibras 🔔';
-
-  @override
-  String get emptyStateTapToClose => 'toca para cerrar';
-
-  @override
-  String emptyStateAfternoonReturningHours(int hours) {
-    return 'aproximadamente $hours horas hasta la ignición 🚀';
-  }
+  String get mapEmptyHintFridayTime =>
+      '¿Vacío ahora? ¡Es normal! 😊 La hora punta es de 18-22h cuando todos están activos 🌃';
 
   @override
   String get vibeLabelBrainMode => 'Modo Focus';
@@ -1366,117 +1258,6 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
   String get commonConfirm => 'Confirmar';
 
   @override
-  String get emptyStateMorningStoryMain =>
-      'la ciudad aún está despertando, estirándose lentamente\ntodos en sus rituales matutinos\ncafé, transporte, fingiendo trabajar\npero esto es lo que aún no saben:\nesta noche a las 22h, este mapa se transforma completamente';
-
-  @override
-  String get emptyStateMorningStorySub =>
-      'pon tu alarma ahora, agradécete después ⏰';
-
-  @override
-  String get emptyStateMorningCuriosityMain =>
-      'pillaste el mapa en su fase tranquila\ncomo una disco al mediodía - vacía pero llena de potencial\n3 personas chequearon antes que tú hoy\ntodas pusieron recordatorios para las 22h\n¿coincidencia? ¿o saben algo?';
-
-  @override
-  String get emptyStateMorningCuriositySub =>
-      'la respuesta se revela al atardecer 🌅';
-
-  @override
-  String get emptyStateMorningSocialMain =>
-      'verdad del lunes por la mañana:\ntodos fingiendo trabajar ahora mismo\nhojas de cálculo abiertas, mentes en otro lado\neres 1 de 7 personas que chequearon antes del mediodía\neso te hace especial, o loco, o ambos';
-
-  @override
-  String get emptyStateMorningSocialSub =>
-      'vuelve a las 22h para descubrir cuál';
-
-  @override
-  String emptyStateFridayMain(int hours) {
-    return 'paradoja del viernes por la tarde:\ntodos mentalmente desconectados pero físicamente atrapados\ncontando horas hasta la libertad ($hours más)\na las 17h comienza la metamorfosis\nde zombis laborales a guerreros del fin de semana';
-  }
-
-  @override
-  String get emptyStateFridaySub => 'llegaste temprano para presenciarlo 🦋';
-
-  @override
-  String get emptyStateAfternoonReturningMain =>
-      'sigues volviendo a esta hora\nbuscando algo que no está aquí... todavía\n¿persistencia o locura?\nel universo está observando\ny recompensa la paciencia';
-
-  @override
-  String get emptyStateAfternoonFirstMain =>
-      'a veces pasa a las 14:47\na veces a las 18:13\npero siempre pasa\nla transformación de muerto a vivo\nde vacío a eléctrico';
-
-  @override
-  String get emptyStateAfternoonFirstSub =>
-      'la pregunta es: ¿estarás aquí cuando suceda?';
-
-  @override
-  String get emptyStatePrimetimeFirstMain =>
-      'bienvenido al borde de algo grande\nen 23 minutos, este mapa vacío explota\ncientos de vibras apareciendo como estrellas\ncada una una persona real, emoción real, momento real\nestás aquí antes que la multitud';
-
-  @override
-  String get emptyStatePrimetimeFirstSub => 'eso es genialidad o suerte ⚡';
-
-  @override
-  String get emptyStatePrimetimeReturnMain =>
-      'el silencio previo antes de la tormenta\nsabes lo que viene\nlas 22h pegan diferente en este mapa\nel estrés laboral se transforma en energía de fin de semana\nmíralo pasar en tiempo real';
-
-  @override
-  String get emptyStatePrimetimeReturnSub =>
-      'o cierra la app y pregúntate para siempre';
-
-  @override
-  String get emptyStateWeekendEveningMain =>
-      'fenómeno del sábado noche:\ntodos ahí fuera viviendo su mejor vida\no fingiendo en instagram\npero encontraste el pulso real de la ciudad\nemociones sin filtro, sin editar, sin censurar';
-
-  @override
-  String get emptyStateWeekendEveningSub =>
-      'actualiza en 5 minutos para la verdad 🌃';
-
-  @override
-  String get emptyStateWeekendMorningMain =>
-      'la ciudad está con resaca\nreconstruyendo lentamente lo de anoche\nchequeando daños, contando arrepentimientos\nel mapa duerme hasta las 14h\npero cuando despierte...';
-
-  @override
-  String get emptyStateWeekendMorningSub => 'comienza el caos round 2 🎭';
-
-  @override
-  String get emptyStateLateNightMain =>
-      'la claridad de las 2am pega diferente\ncuando el ruido para, emerge la verdad\nsolo los reales están despiertos ahora\ncompartiendo sus pensamientos de las 3am\ncrudos, honestos, sin filtros';
-
-  @override
-  String get emptyStateLateNightSub => 'no estás solo en la oscuridad 🌙';
-
-  @override
-  String get emptyStatePush1Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush1Body => 'el mapa está despertando 👀';
-
-  @override
-  String get emptyStatePush2Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush2Body => 'vibras al máximo ahora mismo ⚡';
-
-  @override
-  String get emptyStatePush3Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush3Body => 'ayer te perdiste 47 vibras. ¿hoy?';
-
-  @override
-  String get emptyStateNotificationEnabled =>
-      '¡Notificaciones activadas! Sabrás cuando aparezcan vibras 🔔';
-
-  @override
-  String get emptyStateTapToClose => 'toca para cerrar';
-
-  @override
-  String emptyStateAfternoonReturningHours(int hours) {
-    return 'aproximadamente $hours horas hasta la ignición 🚀';
-  }
-
-  @override
   String get vibeLabelBrainMode => 'Modo Focus';
 
   @override
@@ -2576,6 +2357,1193 @@ class AppLocalizationsEs419 extends AppLocalizationsEs {
   @override
   String get viralShareTextDefault =>
       '¿qué está pasando ahorita?\npingandwink.com';
+
+  @override
+  String get viralShareMainText => '¿qué está pasando\nmientras lees esto?';
+
+  @override
+  String get viralShareFindOut => 'descubre';
+
+  @override
+  String get viralShareLogo => 'ping&wink';
+
+  @override
+  String get viralShareButton => 'compartir →';
+
+  @override
+  String winkBannerPing(String distance) {
+    return 'PING $distance';
+  }
+
+  @override
+  String get winkBannerSparkmateWants => 'PW mate quiere conectar';
+
+  @override
+  String get winkBannerWinkBack => 'WINK DE VUELTA';
+}
+
+/// The translations for Spanish Castilian, as used in Spain (`es_ES`).
+class AppLocalizationsEsEs extends AppLocalizationsEs {
+  AppLocalizationsEsEs() : super('es_ES');
+
+  @override
+  String get commonCancel => 'Cancelar';
+
+  @override
+  String get commonClose => 'Cerrar';
+
+  @override
+  String get commonOk => 'OK';
+
+  @override
+  String get commonYes => 'Sí';
+
+  @override
+  String get commonNo => 'No';
+
+  @override
+  String get commonSave => 'Guardar';
+
+  @override
+  String get commonDelete => 'Borrar';
+
+  @override
+  String get commonShare => 'Compartir';
+
+  @override
+  String get commonLoading => 'Cargando...';
+
+  @override
+  String get commonError => 'Error';
+
+  @override
+  String get commonSuccess => 'Hecho';
+
+  @override
+  String get commonRetry => 'Reintentar';
+
+  @override
+  String get commonNext => 'Siguiente';
+
+  @override
+  String get commonBack => 'Atrás';
+
+  @override
+  String get commonSkip => 'Saltar';
+
+  @override
+  String get commonDone => 'Listo';
+
+  @override
+  String get commonContinue => 'Continuar';
+
+  @override
+  String get commonConfirm => 'Confirmar';
+
+  @override
+  String get vibeLabelBrainMode => 'Modo Focus';
+
+  @override
+  String get vibeLabelLatteBreak => 'Café Break';
+
+  @override
+  String get vibeLabelSportMode => 'Modo Gym';
+
+  @override
+  String get vibeLabelSoundLoop => 'En la Música';
+
+  @override
+  String get vibeLabelCityWalk => 'De Paseo';
+
+  @override
+  String get vibeLabelContentMode => 'Creando';
+
+  @override
+  String get vibeLabelChillNight => 'Noche Chill';
+
+  @override
+  String get vibeLabelPartyMode => 'Modo Fiesta';
+
+  @override
+  String get scanYourVibe => 'Marca tu vibe ⚡';
+
+  @override
+  String get pickYourMood => 'Pilla tu mood y mira qué pasa ahora 👀';
+
+  @override
+  String waitMinutes(int minutes) {
+    return 'Espera $minutes min ⏰';
+  }
+
+  @override
+  String get swipeDownToMap => '↓ Desliza para ver el mapa';
+
+  @override
+  String get changeYourMood => 'Cambiar tu mood';
+
+  @override
+  String get swipeUp => 'Desliza arriba ↑';
+
+  @override
+  String get youAreNotAlone => '¡No estás solo!';
+
+  @override
+  String get you => 'TÚ';
+
+  @override
+  String get others => 'más';
+
+  @override
+  String get days => 'días';
+
+  @override
+  String streak(int days) {
+    return '🔥 Racha: $days días';
+  }
+
+  @override
+  String get shareMyVibe => '📤 Compartir mi vibe';
+
+  @override
+  String get close => 'Cerrar';
+
+  @override
+  String get happy => 'flipan';
+
+  @override
+  String get nearby => 'cerca de ti';
+
+  @override
+  String get enableLocationSettings => 'Activa la ubicación en ajustes';
+
+  @override
+  String get errorTryAgain => 'Error, prueba otra vez';
+
+  @override
+  String get networkError => 'Fallo de red';
+
+  @override
+  String get missingConfiguration => 'Falta configuración';
+
+  @override
+  String shareMessage(String emotion, String emotionName, int nearbyCount,
+      int streakDays, int happinessPercent) {
+    return 'mi mood $emotion ahora mismo 💭 quién más? mira -> moodmap.cloud  #MoodMap #VibeCheck';
+  }
+
+  @override
+  String get shareSubject => '¡Mi vibe en MoodMap! 🌟';
+
+  @override
+  String get pingErrorYourVibeExpired => 'Tu vibe ha caducado, pon uno nuevo';
+
+  @override
+  String get pingSentSuccess => '¡Ping enviado! ⚡ 60s para un Wink';
+
+  @override
+  String pingWaitSeconds(int seconds) {
+    return 'Espera $seconds seg';
+  }
+
+  @override
+  String get pingSomeoneAlreadySent => 'Alguien ya ha enviado un ping';
+
+  @override
+  String get pingPersonInSpark => 'Esta persona ya está en PW chat';
+
+  @override
+  String get pingThisVibeExpired => 'Este vibe ha caducado';
+
+  @override
+  String get pingFailedToSend => 'No se ha podido enviar';
+
+  @override
+  String get pingSendingError => 'Error al enviar';
+
+  @override
+  String get pingCancelled => 'Ping cancelado';
+
+  @override
+  String get pingCancelledBySender => 'Ping cancelado por quien lo envió';
+
+  @override
+  String get pingErrorConnecting => 'Error conectando con PW mate';
+
+  @override
+  String get pingErrorStartingChat => 'Error iniciando el chat';
+
+  @override
+  String get chatTimeNow => 'ahora';
+
+  @override
+  String chatTimeMinutes(int minutes) {
+    return '${minutes}m';
+  }
+
+  @override
+  String chatTimeHours(int hours) {
+    return '${hours}h';
+  }
+
+  @override
+  String get distanceVeryClose => 'muy cerca';
+
+  @override
+  String distanceMeters(int meters) {
+    return '${meters}m';
+  }
+
+  @override
+  String distanceKilometers(String km) {
+    return '${km}km';
+  }
+
+  @override
+  String get sparkDefaultAlias1 => 'PW mate 1';
+
+  @override
+  String get sparkDefaultAlias2 => 'PW mate 2';
+
+  @override
+  String get birthYearTitle => 'tu año de nacimiento';
+
+  @override
+  String get birthYearPrivacyText => 'privado • nunca se muestra';
+
+  @override
+  String get birthYearDefaultGeneration => 'Generación Top ⭐';
+
+  @override
+  String get genLabel2012 => 'Niños iPad 📱';
+
+  @override
+  String get genLabel2011 => 'OG Minecraft ⛏️';
+
+  @override
+  String get genLabel2010 => 'Angry Birds 🦅';
+
+  @override
+  String get genLabel2009 => 'Gen Instagram 📸';
+
+  @override
+  String get genLabel2008 => 'Musical.ly 🎵';
+
+  @override
+  String get genLabel2007 => 'Niños TikTok 🎬';
+
+  @override
+  String get genLabel2006 => 'Gen YouTube 🎮';
+
+  @override
+  String get genLabel2005 => 'Era Tuenti 👍';
+
+  @override
+  String get genLabel2004 => 'Snapchat 👻';
+
+  @override
+  String get genLabel2003 => 'Era Messenger 💬';
+
+  @override
+  String get genLabel2002 => 'Gen iPod 🎧';
+
+  @override
+  String get genLabel2001 => 'Potterheads ⚡';
+
+  @override
+  String get genLabel2000 => 'Niños Y2K 🌐';
+
+  @override
+  String get genLabel1999 => 'Gen Matrix 💊';
+
+  @override
+  String get genLabel1998 => 'Game Boy 🎮';
+
+  @override
+  String get genLabel1997 => 'Pokémon 🔴';
+
+  @override
+  String get genLabel1996 => 'Niños Internet 💻';
+
+  @override
+  String get genLabel1995 => 'Windows 95 🪟';
+
+  @override
+  String get genLabel1994 => 'Era Friends ☕';
+
+  @override
+  String get genLabel1993 => 'Gen Sonic 💨';
+
+  @override
+  String get genLabel1992 => 'Bola de Dragón 📺';
+
+  @override
+  String get genLabel1991 => 'Super Nintendo 🎮';
+
+  @override
+  String get genLabel1990 => 'Gen MTV 🎸';
+
+  @override
+  String get genLabel1989 => 'Era Nintendo 🕹️';
+
+  @override
+  String get genLabel1988 => 'Walkman 🎧';
+
+  @override
+  String get genLabel1987 => 'Niños VHS 📼';
+
+  @override
+  String get genLabel1986 => 'Gen Arcade 👾';
+
+  @override
+  String get genLabel1985 => 'Regreso al Futuro ⏰';
+
+  @override
+  String get genLabel1984 => 'Niños Mac 🍎';
+
+  @override
+  String get genLabel1983 => 'Star Wars ⚔️';
+
+  @override
+  String get genLabel1982 => 'Gen E.T. 👽';
+
+  @override
+  String get genLabel1981 => 'Inicio MTV 📺';
+
+  @override
+  String get genLabel1980 => 'Pac-Man 👾';
+
+  @override
+  String get genLabel1979 => 'Era Disco 🪩';
+
+  @override
+  String get genLabel1978 => 'Space Invaders 🚀';
+
+  @override
+  String get genLabel1977 => 'Star Wars OG 🌟';
+
+  @override
+  String get genLabel1976 => 'Punk Rock 🎸';
+
+  @override
+  String get genLabel1975 => 'Gen Tiburón 🦈';
+
+  @override
+  String get genLabel1974 => 'Inicio Disco 💃';
+
+  @override
+  String get genLabel1973 => 'Pink Floyd 🌈';
+
+  @override
+  String get genLabel1972 => 'Era Pong 🏓';
+
+  @override
+  String get genLabel1971 => 'Zeppelin 🎸';
+
+  @override
+  String get genLabel1970 => 'Gen Beatles 🎵';
+
+  @override
+  String get genLabel1969 => 'Leyendas 👑';
+
+  @override
+  String get birthYear1969Plus => '1969+';
+
+  @override
+  String get historyTitle => 'Historial';
+
+  @override
+  String get historyEmptyTitle => 'Sin emociones todavía';
+
+  @override
+  String get historyEmptySubtitle =>
+      'Empieza a compartir tus vibes\npara ver tu historial';
+
+  @override
+  String get historyMyEmotions => 'Mis emociones';
+
+  @override
+  String get historyStatTotal => 'Total';
+
+  @override
+  String get historyStatDominant => 'Dominante';
+
+  @override
+  String get historyToday => 'Hoy';
+
+  @override
+  String historyTimeFormat(String date, String time) {
+    return '$date • $time';
+  }
+
+  @override
+  String historyTodayFormat(String today, String time) {
+    return '$today • $time';
+  }
+
+  @override
+  String get trendsTitle => 'Tendencias';
+
+  @override
+  String get trendsSubtitle => 'Cargando las stats de la ciudad';
+
+  @override
+  String get trendsEmoji => '📊';
+
+  @override
+  String get mapToastYourOwnVibe => 'Es tu propio vibe';
+
+  @override
+  String get mapErrorNeedActiveVibeToPing =>
+      'Necesitas un vibe activo para enviar pings';
+
+  @override
+  String get mapErrorAlreadyHavePingOrUnavailable =>
+      'Ya tienes un ping activo o el vibe no está disponible';
+
+  @override
+  String mapBanRestrictionMessage(String time) {
+    return 'Estás restringido durante $time';
+  }
+
+  @override
+  String get mapBanRestrictionLifted =>
+      '¡Restricción levantada! Puedes compartir vibes otra vez';
+
+  @override
+  String mapSuccessVibeSent(int count) {
+    return '¡Vibe enviado! $count más cerca 🎉';
+  }
+
+  @override
+  String get mapTutorialTapToSpark => 'toca un vibe • PW chat en 60s';
+
+  @override
+  String mapActivePingStatus(int seconds) {
+    return 'Ping activo (${seconds}s) - Toca para cancelar';
+  }
+
+  @override
+  String get onboardingTitlePingWink => 'ping & wink';
+
+  @override
+  String get onboardingSubtitleSeeWhatsPoppin =>
+      'mira qué está pasando cerca ahora';
+
+  @override
+  String get onboardingButtonLetsGo => 'vamos';
+
+  @override
+  String get onboardingBadgeAge13Plus => 'solo 13+';
+
+  @override
+  String get onboardingValueTitleInstantSparks => 'PW chat al instante';
+
+  @override
+  String get onboardingValueSubtitleConnect60Sec => 'conecta en 60 seg';
+
+  @override
+  String get onboardingValueTitleHyperlocalVibes => 'vibes hiperlocales';
+
+  @override
+  String get onboardingValueSubtitleOnly2kmRadius => 'solo 2km de radio';
+
+  @override
+  String get onboardingValueTitleNoProfiles => 'sin perfiles';
+
+  @override
+  String get onboardingValueSubtitleJustPureMoments => 'solo momentos reales';
+
+  @override
+  String get onboardingButtonImReady => 'estoy listo';
+
+  @override
+  String get onboardingLocationTitle => 'desbloquea tu zona';
+
+  @override
+  String get onboardingLocationSubtitle => 'mira los vibes en 2km a la redonda';
+
+  @override
+  String get onboardingLocationPrivacyTitle => 'privacidad primero';
+
+  @override
+  String get onboardingLocationPrivacyBullet1 =>
+      'solo cuando la app está abierta';
+
+  @override
+  String get onboardingLocationPrivacyBullet2 =>
+      'sin tracking en segundo plano';
+
+  @override
+  String get onboardingLocationPrivacyBullet3 => 'solo vibes anónimos';
+
+  @override
+  String get onboardingButtonEnableRadar => 'activar radar';
+
+  @override
+  String get onboardingButtonMaybeLater => 'quizá luego';
+
+  @override
+  String get onboardingNotificationTitle => 'no te pierdas ningún PW chat';
+
+  @override
+  String get onboardingNotificationSubtitle =>
+      'recibe pings cuando haya movida cerca';
+
+  @override
+  String get onboardingNotificationFeature1 => 'pings instantáneos de vibers';
+
+  @override
+  String get onboardingNotificationFeature2 => 'recordatorios diarios de vibe';
+
+  @override
+  String get onboardingNotificationFeature3 => 'alertas de zonas top';
+
+  @override
+  String get onboardingButtonTurnOnPings => 'activar pings';
+
+  @override
+  String get onboardingButtonNotNow => 'ahora no';
+
+  @override
+  String get onboardingLegalTitle => '¡casi está!';
+
+  @override
+  String get onboardingLegalAgeRequirement => 'debes tener 13 años o más';
+
+  @override
+  String get onboardingLegalAgeSubtitle =>
+      'ping & wink es para adolescentes y mayores';
+
+  @override
+  String get onboardingLegalConsent =>
+      'al continuar, confirmas que tienes 13+ y aceptas nuestros';
+
+  @override
+  String get onboardingLegalTerms => 'términos';
+
+  @override
+  String get onboardingLegalAnd => ' y ';
+
+  @override
+  String get onboardingLegalPrivacyPolicy => 'política de privacidad';
+
+  @override
+  String get onboardingLegalSafetyFeature1 => 'solo vibes anónimos';
+
+  @override
+  String get onboardingLegalSafetyFeature2 => 'bloqueo y reporte instantáneo';
+
+  @override
+  String get onboardingLegalSafetyFeature3 =>
+      'timeout de 20 min por mal comportamiento';
+
+  @override
+  String get onboardingButtonImAge13AndAgree => 'tengo 13+ y acepto';
+
+  @override
+  String get onboardingButtonImUnder13 => 'tengo menos de 13';
+
+  @override
+  String get onboardingLocationDeniedTitle =>
+      'te vas a perder todas las PW chispas';
+
+  @override
+  String get onboardingLocationDeniedMessage =>
+      'sin ubicación no puedes:\n• ver quién está cerca\n• enviar pings\n• recibir winks\n• crear PW chispas';
+
+  @override
+  String get onboardingButtonGoBack => 'volver';
+
+  @override
+  String get onboardingButtonExitApp => 'salir';
+
+  @override
+  String get onboardingNotificationDeniedTitle => 'te lo vas a perder todo';
+
+  @override
+  String get onboardingNotificationDeniedMessage =>
+      'sin notis:\n• nadie puede pingearte\n• te pierdes las PW chispas cerca\n• cero conexiones posibles\n\nnuestros usuarios activan notis';
+
+  @override
+  String get onboardingButtonLetMeReconsider => 'déjame pensarlo';
+
+  @override
+  String get onboardingButtonContinueAnyway => 'continuar igualmente';
+
+  @override
+  String get onboardingAgeDialogTitle => '¡hasta luego!';
+
+  @override
+  String get onboardingAgeDialogMessage =>
+      'ping & wink es para usuarios de 13 años o más. ¡vuelve cuando crezcas!';
+
+  @override
+  String get onboardingButtonUnderstood => 'entendido';
+
+  @override
+  String get onboardingNotificationExampleTitle => 'ping & wink';
+
+  @override
+  String get onboardingNotificationExampleNow => 'ahora';
+
+  @override
+  String get onboardingNotificationExamplePing => 'nuevo ping a 230m';
+
+  @override
+  String get onboardingNotificationExampleMessage => 'alguien vibra contigo';
+
+  @override
+  String get onboardingMapNotification => 'alguien se ha encendido a 753m';
+
+  @override
+  String get onboardingLocationPrivacyFormatted =>
+      '• solo cuando la app está abierta\n• sin tracking en segundo plano\n• solo vibes anónimos';
+
+  @override
+  String get onboardingLocationDeniedFormatted =>
+      'sin ubicación no puedes:\n• ver quién está cerca\n• enviar pings\n• recibir winks\n• crear chispas';
+
+  @override
+  String get onboardingNotificationDeniedFormatted =>
+      'sin notis:\n• nadie puede pingearte\n• te pierdes los vibes cerca\n• cero conexiones\n\nnuestros usuarios activan notis';
+
+  @override
+  String get settingsTitle => 'Ajustes';
+
+  @override
+  String get settingsAppName => 'Ping&Wink';
+
+  @override
+  String get settingsAppTagline => 'Conecta por emociones';
+
+  @override
+  String get settingsShareTitle => 'Comparte con tus colegas';
+
+  @override
+  String get settingsShareSubtitle => 'Invita a otros a descubrir vibes';
+
+  @override
+  String get settingsSectionPreferences => 'Preferencias';
+
+  @override
+  String get settingsSectionLegal => 'Legal';
+
+  @override
+  String get settingsSectionSupport => 'Soporte';
+
+  @override
+  String get settingsSectionDataManagement => 'Gestión de datos';
+
+  @override
+  String get settingsNotificationsTitle => 'Notificaciones';
+
+  @override
+  String get settingsNotificationsEnabled => 'Activadas';
+
+  @override
+  String get settingsNotificationsDisabled => 'Desactivadas';
+
+  @override
+  String get settingsMapThemeTitle => 'Tema del mapa';
+
+  @override
+  String get settingsMapThemeCyberpunk => 'Cyberpunk';
+
+  @override
+  String get settingsMapThemeMinimalist => 'Minimalista';
+
+  @override
+  String get settingsLocationModeTitle => 'Modo ubicación';
+
+  @override
+  String get settingsLocationModeSoft =>
+      'Ubicación desplazada, solo por estilo';
+
+  @override
+  String get settingsLocationModeExact => 'Tu vibe exactamente donde estás';
+
+  @override
+  String get settingsDeleteVibeTitle => 'Borrar mi vibe';
+
+  @override
+  String get settingsDeleteVibeSubtitle => 'Quitar tu emoción del mapa';
+
+  @override
+  String get settingsPrivacyTitle => 'Política de privacidad';
+
+  @override
+  String get settingsPrivacySubtitle => 'Cómo protegemos tus datos';
+
+  @override
+  String get settingsTermsTitle => 'Términos de uso';
+
+  @override
+  String get settingsTermsSubtitle => 'Reglas para usar la app';
+
+  @override
+  String get settingsHelpTitle => 'Centro de ayuda';
+
+  @override
+  String get settingsHelpSubtitle => 'FAQ y guías';
+
+  @override
+  String get settingsContactTitle => 'Contacto';
+
+  @override
+  String get settingsContactEmail => 'hello@pingandwink.com';
+
+  @override
+  String get settingsDeleteAccountTitle => 'Eliminar mi cuenta';
+
+  @override
+  String get settingsDeleteAccountSubtitle => 'Borrar todos tus datos';
+
+  @override
+  String get settingsFooterTagline => 'Ping & Wink - Solo vibes';
+
+  @override
+  String get settingsFooterCopyright => '© 2025 Ping and Wink';
+
+  @override
+  String settingsDeviceIdPrefix(String id) {
+    return 'ID dispositivo: $id...';
+  }
+
+  @override
+  String get settingsDeleteVibeDialogTitle => '¿Borrar tu vibe?';
+
+  @override
+  String get settingsDeleteVibeDialogMessage =>
+      'Tu emoción desaparecerá del mapa';
+
+  @override
+  String get settingsVibeDeletedSuccess => 'Tu vibe se ha borrado';
+
+  @override
+  String get settingsVibeDeleteError => 'Error borrando vibe';
+
+  @override
+  String get settingsNotificationWarningTitle => '¡Ojo!';
+
+  @override
+  String get settingsNotificationWarningMessage =>
+      'Si desactivas las notis, no podrás recibir PINGS de otros.\n\nLos PW chats (conexiones) serán imposibles.\n\n¿Seguro que quieres desactivar?';
+
+  @override
+  String get settingsNotificationWarningCancel => 'Cancelar';
+
+  @override
+  String get settingsNotificationWarningDisable => 'Desactivar igualmente';
+
+  @override
+  String get settingsNotificationsDisabledMessage =>
+      '⚠️ Notis desactivadas - No recibirás ningún ping';
+
+  @override
+  String get settingsNotificationsEnabledMessage =>
+      '✅ Notis activadas - Puedes recibir pings';
+
+  @override
+  String get settingsMapThemeCyberpunkActivated => 'Modo cyberpunk activado 🌃';
+
+  @override
+  String get settingsMapThemeDayActivated => 'Modo día activado ☀️';
+
+  @override
+  String get settingsSoftModeEnabled =>
+      '¡Modo soft! Tu vibe está desplazado 🌊';
+
+  @override
+  String get settingsNormalModeEnabled => '¡Modo normal! Ubicación exacta 📍';
+
+  @override
+  String get settingsIdCopied => 'ID copiado';
+
+  @override
+  String get settingsDeleteAccountDialogTitle => '⚠️ Eliminar cuenta';
+
+  @override
+  String get settingsDeleteAccountDialogMessage =>
+      'Esta acción es irreversible. Todas tus emociones y datos se borrarán para siempre.\n\n¿Estás seguro?';
+
+  @override
+  String get settingsDeleteAccountDialogDelete => 'Eliminar';
+
+  @override
+  String get settingsDeleteAccountError => 'Error eliminando cuenta';
+
+  @override
+  String get settingsModerationPanelTitle => '🔍 Panel de moderación';
+
+  @override
+  String get settingsModerationPanelSubtitle => 'Solo para review de App Store';
+
+  @override
+  String get settingsModerationActiveBans => 'Bans activos';
+
+  @override
+  String get settingsModerationReports => 'Reportes';
+
+  @override
+  String get settingsModerationClearData => 'Limpiar datos de prueba';
+
+  @override
+  String get settingsModerationDataCleared => 'Datos de prueba limpiados';
+
+  @override
+  String get sparkConnectingToChat => 'Conectando al PW chat...';
+
+  @override
+  String get sparkChatTitle => 'PW Chat';
+
+  @override
+  String get sparkChatEnded => 'Terminado';
+
+  @override
+  String get sparkSendFirstMessage => '¡Envía el primer mensaje!';
+
+  @override
+  String get sparkWaitingForMate => 'Esperando al PW mate...';
+
+  @override
+  String get sparkMessagePlaceholder => 'Mensaje...';
+
+  @override
+  String get sparkWaitForReply => 'Espera respuesta...';
+
+  @override
+  String get sparkChatEndedPlaceholder => 'Chat terminado';
+
+  @override
+  String get sparkLeaveChat => '¿Salir del PW chat?';
+
+  @override
+  String get sparkChatEndForBoth => 'El chat termina para ambos PW mates';
+
+  @override
+  String get sparkStay => 'Quedarme';
+
+  @override
+  String get sparkLeave => 'Salir';
+
+  @override
+  String get sparkExtended => '¡Extendido! +3 min ⚡';
+
+  @override
+  String get sparkWaitingForOther => 'Esperando al PW mate...';
+
+  @override
+  String get sparkMaxExtensionsReached => 'Máximo de extensiones alcanzado';
+
+  @override
+  String get sparkFailedToExtend => 'Fallo al extender';
+
+  @override
+  String get sparkFailedToSend => 'Fallo al enviar';
+
+  @override
+  String get sparkMessageTooLong => 'Mensaje muy largo (máx 199)';
+
+  @override
+  String sparkErrorInitializing(String error) {
+    return 'Error iniciando chat: $error';
+  }
+
+  @override
+  String get sparkUserBanned => 'Usuario baneado 7 minutos';
+
+  @override
+  String get sparkRestrictedForBanning =>
+      'Estás restringido por banear demasiado';
+
+  @override
+  String get sparkReportSubmitted => 'Reporte enviado';
+
+  @override
+  String get sparkBehaviorRestriction =>
+      'Estás restringido por comportamiento inadecuado';
+
+  @override
+  String get splashTitlePing => 'PING';
+
+  @override
+  String get splashTitleAmpersand => '&';
+
+  @override
+  String get splashTitleWink => 'WINK';
+
+  @override
+  String get splashTagline => 'ENCIENDE EL MOMENTO';
+
+  @override
+  String trendsEmotionalPulse(String time) {
+    return 'Pulso emocional $time';
+  }
+
+  @override
+  String get trendsTimeMorning => 'esta mañana';
+
+  @override
+  String get trendsTimeAfternoon => 'esta tarde';
+
+  @override
+  String get trendsTimeEvening => 'esta noche';
+
+  @override
+  String get trendsTimeLateNight => 'de madrugada';
+
+  @override
+  String get trendsActiveVibes => 'Vibes activos';
+
+  @override
+  String get trendsSparkers => 'PW mates';
+
+  @override
+  String get trendsDominantEmotion => 'Emoción dominante';
+
+  @override
+  String trendsPercentOfSparkers(int percent) {
+    return '$percent% de PW mates';
+  }
+
+  @override
+  String get trendsEmotionDistribution => 'Distribución de emociones';
+
+  @override
+  String get trendsQuote1 => 'Cada emoción compartida crea una conexión ✨';
+
+  @override
+  String get trendsQuote2 => 'Juntos creamos el mapa de emociones 🗺️';
+
+  @override
+  String get trendsQuote3 => 'Tu vibe puede cambiar el día de alguien 💫';
+
+  @override
+  String get trendsQuote4 => 'Los PW chats empiezan con un simple ping ⚡';
+
+  @override
+  String get banOverlayTitle => 'Restricción temporal';
+
+  @override
+  String get banOverlayMessage =>
+      'Tu PW mate ha encontrado tu mensaje inadecuado';
+
+  @override
+  String get banOverlayRestrictionInfo =>
+      'No puedes compartir vibes durante este tiempo';
+
+  @override
+  String get bottomNavMap => 'Mapa';
+
+  @override
+  String get bottomNavHistory => 'Historial';
+
+  @override
+  String get bottomNavTrends => 'Tendencias';
+
+  @override
+  String get bottomNavSettings => 'Ajustes';
+
+  @override
+  String get guidelinesTitle => 'Normas de la comunidad';
+
+  @override
+  String get guidelinesRespectTitle => 'Sé respetuoso';
+
+  @override
+  String get guidelinesRespectSubtitle => 'Trata a todos con buen rollo';
+
+  @override
+  String get guidelinesNoHarassmentTitle => 'Sin acoso';
+
+  @override
+  String get guidelinesNoHarassmentSubtitle =>
+      'No envíes mensajes inapropiados';
+
+  @override
+  String get guidelinesKeepRealTitle => 'Sé real';
+
+  @override
+  String get guidelinesKeepRealSubtitle => 'Comparte solo vibes auténticos';
+
+  @override
+  String get guidelinesHaveFunTitle => 'Diviértete';
+
+  @override
+  String get guidelinesHaveFunSubtitle => '¡Disfruta las PW chispas!';
+
+  @override
+  String get guidelinesViolationWarning =>
+      'Las violaciones pueden resultar en restricciones temporales o permanentes';
+
+  @override
+  String get guidelinesButtonUnderstand => 'Entendido';
+
+  @override
+  String emotionSelectorStreakDay(int day) {
+    return 'Día $day - ¡Mantén tu racha!';
+  }
+
+  @override
+  String get emotionSelectorTapYourVibe => 'TOCA TU VIBE';
+
+  @override
+  String get emotionSelectorWhatsYourVibe => '¿cuál es tu vibe ahora?';
+
+  @override
+  String emotionSelectorActiveNow(int count) {
+    return '$count activos ahora';
+  }
+
+  @override
+  String get miniBarSendNewPing => 'Envía un nuevo ping';
+
+  @override
+  String get miniBarPingActive => 'Tu ping está activo';
+
+  @override
+  String get moderationBanTitle => 'Ban de 7 min';
+
+  @override
+  String get moderationBanSubtitle => 'Restringir temporalmente a este usuario';
+
+  @override
+  String get moderationReportTitle => 'Reportar';
+
+  @override
+  String get moderationReportSubtitle => 'Reportar comportamiento inadecuado';
+
+  @override
+  String get moderationEndChatTitle => 'Terminar chat';
+
+  @override
+  String get moderationEndChatSubtitle => 'Salir de esta sesión PW';
+
+  @override
+  String get moderationReportDialogTitle => 'Reportar usuario';
+
+  @override
+  String get moderationReportReasonHarassment => 'Acoso';
+
+  @override
+  String get moderationReportReasonSpam => 'Spam';
+
+  @override
+  String get moderationReportReasonHateSpeech => 'Discurso de odio';
+
+  @override
+  String get moderationReportReasonOther => 'Otro';
+
+  @override
+  String get moderationReportSendButton => 'Enviar reporte';
+
+  @override
+  String get pingBottomVibeTooFar => 'Vibe muy lejos (máx 3km)';
+
+  @override
+  String get pingBottomVibeTooFarMessage =>
+      'Vibe muy lejos - máx 3km para ping';
+
+  @override
+  String get pingBottomTooFar => 'MUY LEJOS';
+
+  @override
+  String get pingBottomPing => 'PING';
+
+  @override
+  String get pingBottomDistanceVeryClose => 'muy cerca';
+
+  @override
+  String pingBottomDistanceMeters(int meters) {
+    return '${meters}m';
+  }
+
+  @override
+  String pingBottomDistanceKilometers(String km) {
+    return '${km}km';
+  }
+
+  @override
+  String get pingBottomTimeNow => 'ahora';
+
+  @override
+  String pingBottomTimeMinutes(int minutes) {
+    return '${minutes}min';
+  }
+
+  @override
+  String pingBottomTimeHours(int hours) {
+    return '${hours}h';
+  }
+
+  @override
+  String get vibeAnimBrainEnergy => 'CABEZA A TOPE';
+
+  @override
+  String get vibeAnimCozy => 'VIBE: RELAX';
+
+  @override
+  String get vibeAnimSweatSlay => 'SUDAR. GANAR. REPETIR';
+
+  @override
+  String get vibeAnimLostInBeat => 'PERDIDO EN EL RITMO';
+
+  @override
+  String get vibeAnimCityLights => 'LUCES DE CIUDAD';
+
+  @override
+  String get vibeAnimLightsCameraVibes => 'LUZ. CÁMARA. VIBES.';
+
+  @override
+  String get vibeAnimEveningVibes => 'VIBES NOCTURNOS';
+
+  @override
+  String get vibeAnimPartyMode => 'MODO: FIESTA';
+
+  @override
+  String get vibeAnimSubBrainTime => 'Hora de pensar 🧠';
+
+  @override
+  String get vibeAnimSubCaffeine => 'Vibes de cafeína ☕';
+
+  @override
+  String get vibeAnimSubNoDaysOff => 'Sin descanso 🔥';
+
+  @override
+  String get vibeAnimSubVolumeMax => 'Volumen: MAX 🎧';
+
+  @override
+  String get vibeAnimSubUrbanExplorer => 'Explorador urbano 🌃';
+
+  @override
+  String get vibeAnimSubCreateGlow => 'Crear y brillar 📸';
+
+  @override
+  String get vibeAnimSubNightFlow => 'Flow nocturno 🌙';
+
+  @override
+  String get vibeAnimSubUnleashChaos => 'Suelta el caos 🎉';
+
+  @override
+  String get vibeAnimDefaultMessage => 'VIBE MARCADO';
+
+  @override
+  String get vibeAnimDefaultSubMessage => '¡Vamos!';
+
+  @override
+  String get viralShareFailed => 'Fallo al compartir';
+
+  @override
+  String get viralShareTextNight =>
+      'todos duermen. pero algo está pasando\npingandwink.com';
+
+  @override
+  String get viralShareTextEvening =>
+      'la noche. el mejor momento\npingandwink.com';
+
+  @override
+  String get viralShareTextDefault =>
+      '¿qué está pasando ahora?\npingandwink.com';
 
   @override
   String get viralShareMainText => '¿qué está pasando\nmientras lees esto?';

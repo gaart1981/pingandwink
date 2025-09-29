@@ -21,54 +21,12 @@
   "commonConfirm": "Confirm",
   
 
+  "chatBlockedMessage": "Cannot share personal information or inappropriate content",
 
-  "emptyStateMorningStoryMain": "the city's still waking up, stretching slowly\neveryone's in their morning rituals\ncoffee, commute, pretending to work\nbut here's what they don't know yet:\ntonight at 7pm, this map transforms completely",
-  "emptyStateMorningStorySub": "set your alarm now, thank yourself later ⏰",
-  "emptyStateMorningCuriosityMain": "you caught the map in its quiet phase\nlike a nightclub at noon - empty but full of potential\n3 people checked before you today\nthey all set reminders for 7pm\ncoincidence? or do they know something?",
-  "emptyStateMorningCuriositySub": "the answer reveals itself at sunset 🌅",
-  "emptyStateMorningSocialMain": "monday morning truth:\neveryone's pretending to work right now\nspreadsheets open, minds elsewhere\nyou're 1 of 7 people who checked before noon\nthat makes you special, or crazy, or both",
-  "emptyStateMorningSocialSub": "come back at 7pm to find out which",
-  "emptyStateFridayMain": "friday afternoon paradox:\neveryone's mentally checked out but physically stuck\ncounting hours until freedom ({hours} more to go)\nat 5pm the metamorphosis begins\nfrom work zombies to weekend warriors",
-  "@emptyStateFridayMain": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
+  "mapEmptyHintFridayTime": "Empty now? Normal! 😊 Peak time is 6-10 PM when everyone's active 🌃",
+  "@mapEmptyHintFridayTime": {
+    "description": "Hint shown when map is empty after onboarding"
   },
-  "emptyStateFridaySub": "you're early to witness it 🦋",
-  "emptyStateAfternoonReturningMain": "you keep coming back at this time\nsearching for something that isn't here... yet\npersistence or insanity?\nthe universe is watching\nand it rewards patience",
-  "emptyStateAfternoonReturningSub": "approximately {hours} hours until ignition 🚀",
-  "@emptyStateAfternoonReturningSub": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
-  "emptyStateAfternoonFirstMain": "sometimes it happens at 2:47pm\nsometimes at 6:13pm\nbut it always happens\nthe transformation from dead to alive\nfrom empty to electric",
-  "emptyStateAfternoonFirstSub": "the question is: will you be here when it does?",
-  "emptyStatePrimetimeFirstMain": "welcome to the edge of something big\nin 23 minutes, this empty map explodes\nhundreds of vibes appearing like stars\neach one a real person, real emotion, real moment\nyou're here before the crowd",
-  "emptyStatePrimetimeFirstSub": "that's either genius or luck ⚡",
-  "emptyStatePrimetimeReturnMain": "the pregame silence before the storm\nyou know what's coming\n7pm hits different on this map\nworkplace stress transforms into weekend energy\nwatch it happen in real-time",
-  "emptyStatePrimetimeReturnSub": "or close the app and wonder forever",
-  "emptyStateWeekendEveningMain": "saturday night phenomenon:\neveryone's out there living their best life\nor pretending to on instagram\nbut you found the real pulse of the city\nunfiltered, unedited, uncensored emotions",
-  "emptyStateWeekendEveningSub": "refresh in 5 minutes for the truth 🌃",
-  "emptyStateWeekendMorningMain": "the city is hungover\nslowly piecing together last night\nchecking damage, counting regrets\nthe map sleeps until 2pm\nbut when it wakes up...",
-  "emptyStateWeekendMorningSub": "chaos round 2 begins 🎭",
-  "emptyStateLateNightMain": "2am clarity hits different\nwhen the noise stops, truth emerges\nonly the real ones are awake now\nsharing their 3am thoughts\nraw, honest, unfiltered",
-  "emptyStateLateNightSub": "you're not alone in the dark 🌙",
-  "emptyStatePush1Title": "ping&wink",
-  "emptyStatePush1Body": "the map is waking up 👀",
-  "emptyStatePush2Title": "ping&wink",
-  "emptyStatePush2Body": "peak vibes happening now ⚡",
-  "emptyStatePush3Title": "ping&wink",
-  "emptyStatePush3Body": "yesterday you missed 47 vibes. today?",
-  "emptyStateNotificationEnabled": "Notifications enabled! You'll know when vibes appear 🔔",
-  "emptyStateTapToClose": "tap to close",
-  "emptyStateAfternoonReturningHours": "approximately {hours} hours until ignition 🚀",
-  "@emptyStateAfternoonReturningHours": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
-
 
 
   "vibeLabelBrainMode": "Brain Mode",

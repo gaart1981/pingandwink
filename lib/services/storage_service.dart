@@ -23,6 +23,8 @@ class StorageService {
   static const String _banUntilKey = 'ban_until';
   static const String _softLocationKey =
       'soft_location_mode'; // NEW: Soft location setting
+  static const String _hasShownEmptyHintKey = 'has_shown_empty_hint';
+  static const String _fridayPushScheduledKey = 'friday_push_scheduled';
 
   static SharedPreferences? _prefs;
 
@@ -371,5 +373,29 @@ class StorageService {
   static Future<void> setPingTutorialSeen() async {
     await _ensureInitialized();
     await _prefs!.setBool('seen_ping_tutorial', true);
+  }
+
+  /// Check if empty hint was shown
+  static Future<bool> hasShownEmptyHint() async {
+    await _ensureInitialized();
+    return _prefs!.getBool(_hasShownEmptyHintKey) ?? false;
+  }
+
+  /// Mark empty hint as shown
+  static Future<void> setEmptyHintShown() async {
+    await _ensureInitialized();
+    await _prefs!.setBool(_hasShownEmptyHintKey, true);
+  }
+
+  /// Check if Friday push was scheduled
+  static Future<bool> isFridayPushScheduled() async {
+    await _ensureInitialized();
+    return _prefs!.getBool(_fridayPushScheduledKey) ?? false;
+  }
+
+  /// Mark Friday push as scheduled
+  static Future<void> setFridayPushScheduled() async {
+    await _ensureInitialized();
+    await _prefs!.setBool(_fridayPushScheduledKey, true);
   }
 }

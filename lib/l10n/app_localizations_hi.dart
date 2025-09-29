@@ -63,119 +63,12 @@ class AppLocalizationsHi extends AppLocalizations {
   String get commonConfirm => 'Pakka?';
 
   @override
-  String get emptyStateMorningStoryMain =>
-      'sheher abhi bhi jaag raha hai, dheere-dheere stretch kar raha\nsab apni subah ki rituals mein\ncoffee, aana-jaana, kaam karne ka natak\nlekin wo abhi tak nahi jaante:\naaj raat 7 baje, ye map poori tarah badal jaata hai';
+  String get chatBlockedMessage =>
+      'Cannot share personal information or inappropriate content';
 
   @override
-  String get emptyStateMorningStorySub =>
-      'abhi alarm set karo, baad mein khud ko thank karo ⏰';
-
-  @override
-  String get emptyStateMorningCuriosityMain =>
-      'tumne map ko uski shaant phase mein pakda\ndopahar ke night club jaisa - khaali lekin potential se bhara\naaj tumse pehle 3 log check kar chuke\nsabne shaam 7 baje ke liye reminder set kiya\nittefaq? ya wo kuch jaante hain?';
-
-  @override
-  String get emptyStateMorningCuriositySub => 'jawab sunset pe khulega 🌅';
-
-  @override
-  String get emptyStateMorningSocialMain =>
-      'monday subah ki sacchai:\nsab abhi kaam karne ka natak kar rahe\nspreadsheets khuli, dimaag kahin aur\ndopahar se pehle check karne wale 7 mein se 1 ho\nye tumhe special banata hai, ya pagal, ya dono';
-
-  @override
-  String get emptyStateMorningSocialSub =>
-      'kya pata karne shaam 7 baje wapas aao';
-
-  @override
-  String emptyStateFridayMain(int hours) {
-    return 'friday dopahar ka paradox:\nsab mentally nikal chuke lekin physically phase\nazaadi tak ghante gin rahe ($hours baaki)\nshaam 5 baje transformation shuru hota hai\nkaam ke zombies se weekend warriors banna';
-  }
-
-  @override
-  String get emptyStateFridaySub => 'ise dekhne ke liye jaldi aa gaye 🦋';
-
-  @override
-  String get emptyStateAfternoonReturningMain =>
-      'tum is time wapas aate rehte ho\nkuch khoj rahe jo abhi yahan nahi... abhi tak\nzidd ya pagalpan?\nuniverse dekh raha hai\naur patience ka reward deta hai';
-
-  @override
-  String emptyStateAfternoonReturningSub(int hours) {
-    return 'ignition tak lagbhag $hours ghante 🚀';
-  }
-
-  @override
-  String get emptyStateAfternoonFirstMain =>
-      'kabhi 2:47 baje hota hai\nkabhi 6:13 baje\nlekin hamesha hota hai\nmurda se zinda mein transformation\nkhaali se electric mein';
-
-  @override
-  String get emptyStateAfternoonFirstSub =>
-      'sawal hai: jab hoga tab yahan hoge?';
-
-  @override
-  String get emptyStatePrimetimeFirstMain =>
-      'kuch bade ke kinaare pe swagat hai\n23 minute mein, ye khaali map phatta hai\nsaikdon vibes sitaron ki tarah dikhte hain\nhar ek asli insaan, asli emotion, asli pal\ntum bheed se pehle yahan ho';
-
-  @override
-  String get emptyStatePrimetimeFirstSub => 'ye ya to genius hai ya kismat ⚡';
-
-  @override
-  String get emptyStatePrimetimeReturnMain =>
-      'toofan se pehle game se pehle ki chuppi\ntum jaante ho kya aa raha hai\nshaam 7 baje is map pe alag tarah se maarta hai\nkaam ka stress weekend energy mein badal jaata hai\nreal-time mein dekho';
-
-  @override
-  String get emptyStatePrimetimeReturnSub =>
-      'ya app band karo aur hamesha sochte raho';
-
-  @override
-  String get emptyStateWeekendEveningMain =>
-      'saturday raat ka phenomenon:\nsab bahar apni best life jee rahe\nya instagram pe dikhaawa kar rahe\nlekin tumne sheher ki asli dhadkan paayi\nbina filter, bina edit, bina censor emotions';
-
-  @override
-  String get emptyStateWeekendEveningSub =>
-      'sacchai ke liye 5 minute mein refresh karo 🌃';
-
-  @override
-  String get emptyStateWeekendMorningMain =>
-      'sheher hangover mein hai\ndheere-dheere kal raat ko jod raha\nnuksaan check kar raha, pachtaave gin raha\nmap dopahar 2 baje tak sota hai\nlekin jab jaagta hai...';
-
-  @override
-  String get emptyStateWeekendMorningSub => 'chaos round 2 shuru hota hai 🎭';
-
-  @override
-  String get emptyStateLateNightMain =>
-      'subah 2 baje ki clarity alag tarah se maarti hai\njab shor rukta hai, sacchai ubharti hai\nsirf asli abhi jaage hain\n3 baje ke thoughts share kar rahe\nkaccha, imaandaar, bina filter';
-
-  @override
-  String get emptyStateLateNightSub => 'andhere mein akele nahi ho 🌙';
-
-  @override
-  String get emptyStatePush1Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush1Body => 'map jaag raha hai 👀';
-
-  @override
-  String get emptyStatePush2Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush2Body => 'peak vibes abhi ⚡';
-
-  @override
-  String get emptyStatePush3Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush3Body => 'kal tumne 47 vibes miss kiye. aaj?';
-
-  @override
-  String get emptyStateNotificationEnabled =>
-      'Notifications on! Vibes dikhne pe pata chalega 🔔';
-
-  @override
-  String get emptyStateTapToClose => 'band karne ke liye tap karo';
-
-  @override
-  String emptyStateAfternoonReturningHours(int hours) {
-    return 'ignition tak lagbhag $hours ghante 🚀';
-  }
+  String get mapEmptyHintFridayTime =>
+      'Abhi empty hai? Normal hai yaar! 😊 Peak time 6-10 PM hai jab sab log active hote hain 🌃';
 
   @override
   String get vibeLabelBrainMode => 'Padhai Mode';

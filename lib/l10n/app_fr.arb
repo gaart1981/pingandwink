@@ -20,55 +20,7 @@
   "commonContinue": "Continuer",
   "commonConfirm": "Confirmer",
   
-
-
-  "emptyStateMorningStoryMain": "la ville se réveille encore, s'étire lentement\ntout le monde dans ses rituels matinaux\ncafé, métro, faire semblant de travailler\nmais voici ce qu'ils ne savent pas encore:\nce soir à 19h, cette carte se transforme complètement",
-  "emptyStateMorningStorySub": "mets ton alarme maintenant, remercie-toi plus tard ⏰",
-  "emptyStateMorningCuriosityMain": "tu as attrapé la carte dans sa phase calme\ncomme une boîte de nuit à midi - vide mais pleine de potentiel\n3 personnes ont vérifié avant toi aujourd'hui\nelles ont toutes mis des rappels pour 19h\ncoïncidence? ou savent-elles quelque chose?",
-  "emptyStateMorningCuriositySub": "la réponse se révèle au coucher du soleil 🌅",
-  "emptyStateMorningSocialMain": "vérité du lundi matin:\ntout le monde fait semblant de travailler maintenant\ntableaux excel ouverts, esprits ailleurs\ntu es 1 des 7 personnes qui ont vérifié avant midi\nça te rend spécial, ou fou, ou les deux",
-  "emptyStateMorningSocialSub": "reviens à 19h pour découvrir lequel",
-  "emptyStateFridayMain": "paradoxe du vendredi après-midi:\ntout le monde mentalement déconnecté mais physiquement coincé\ncomptant les heures jusqu'à la liberté ({hours} de plus)\nà 17h la métamorphose commence\nde zombies du travail à guerriers du weekend",
-  "@emptyStateFridayMain": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
-  "emptyStateFridaySub": "tu es en avance pour en être témoin 🦋",
-  "emptyStateAfternoonReturningMain": "tu continues à revenir à cette heure\ncherchant quelque chose qui n'est pas là... encore\npersistance ou folie?\nl'univers observe\net il récompense la patience",
-  "@emptyStateAfternoonReturningSub": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
-  "emptyStateAfternoonFirstMain": "parfois ça arrive à 14h47\nparfois à 18h13\nmais ça arrive toujours\nla transformation de mort à vivant\nde vide à électrique",
-  "emptyStateAfternoonFirstSub": "la question est: seras-tu là quand ça arrive?",
-  "emptyStatePrimetimeFirstMain": "bienvenue au bord de quelque chose de grand\ndans 23 minutes, cette carte vide explose\ndes centaines de vibes apparaissant comme des étoiles\nchacune une vraie personne, vraie émotion, vrai moment\ntu es là avant la foule",
-  "emptyStatePrimetimeFirstSub": "c'est soit du génie soit de la chance ⚡",
-  "emptyStatePrimetimeReturnMain": "le silence d'avant-match avant la tempête\ntu sais ce qui arrive\n19h frappe différemment sur cette carte\nle stress du travail se transforme en énergie du weekend\nregarde ça arriver en temps réel",
-  "emptyStatePrimetimeReturnSub": "ou ferme l'app et demande-toi pour toujours",
-  "emptyStateWeekendEveningMain": "phénomène du samedi soir:\ntout le monde dehors vivant sa meilleure vie\nou faisant semblant sur instagram\nmais tu as trouvé le vrai pouls de la ville\némotions non filtrées, non éditées, non censurées",
-  "emptyStateWeekendEveningSub": "actualise dans 5 minutes pour la vérité 🌃",
-  "emptyStateWeekendMorningMain": "la ville a la gueule de bois\nrecomposant lentement la nuit dernière\nvérifiant les dégâts, comptant les regrets\nla carte dort jusqu'à 14h\nmais quand elle se réveille...",
-  "emptyStateWeekendMorningSub": "le chaos round 2 commence 🎭",
-  "emptyStateLateNightMain": "la clarté de 2h du mat frappe différemment\nquand le bruit s'arrête, la vérité émerge\nseuls les vrais sont éveillés maintenant\npartageant leurs pensées de 3h du mat\nbrutes, honnêtes, non filtrées",
-  "emptyStateLateNightSub": "tu n'es pas seul dans le noir 🌙",
-  "emptyStatePush1Title": "ping&wink",
-  "emptyStatePush1Body": "la carte se réveille 👀",
-  "emptyStatePush2Title": "ping&wink",
-  "emptyStatePush2Body": "vibes au max maintenant ⚡",
-  "emptyStatePush3Title": "ping&wink",
-  "emptyStatePush3Body": "hier tu as raté 47 vibes. aujourd'hui?",
-  "emptyStateNotificationEnabled": "Notifications activées! Tu sauras quand les vibes apparaissent 🔔",
-  "emptyStateTapToClose": "touche pour fermer",
-  "emptyStateAfternoonReturningHours": "environ {hours} heures jusqu'à l'allumage 🚀",
-  "@emptyStateAfternoonReturningHours": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
-
-
+  "mapEmptyHintFridayTime": "Vide maintenant ? C'est normal ! 😊 L'heure de pointe c'est 18h-22h quand tout le monde est actif 🌃",
 
   "vibeLabelBrainMode": "Mode Focus",
   "vibeLabelLatteBreak": "Pause Café",

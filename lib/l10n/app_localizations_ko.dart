@@ -63,113 +63,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get commonConfirm => '확실해?';
 
   @override
-  String get emptyStateMorningStoryMain =>
-      '도시가 아직 깨어나고 있어, 천천히 기지개를 켜\n모두가 아침 루틴 중\n커피, 출근, 일하는 척\n하지만 그들이 아직 모르는 건:\n오늘 저녁 7시, 이 지도가 완전히 변신해';
+  String get chatBlockedMessage =>
+      'Cannot share personal information or inappropriate content';
 
   @override
-  String get emptyStateMorningStorySub => '지금 알람 설정해, 나중에 고마워할 거야 ⏰';
-
-  @override
-  String get emptyStateMorningCuriosityMain =>
-      '조용한 단계의 지도를 잡았네\n낮의 나이트클럽처럼 - 비어있지만 잠재력으로 가득\n오늘 너보다 먼저 3명이 체크했어\n모두 오후 7시 알림을 설정했지\n우연일까? 아니면 뭔가 알고 있을까?';
-
-  @override
-  String get emptyStateMorningCuriositySub => '답은 해질녘에 드러나 🌅';
-
-  @override
-  String get emptyStateMorningSocialMain =>
-      '월요일 아침의 진실:\n모두가 지금 일하는 척 중\n스프레드시트는 열려있고, 마음은 딴 곳에\n정오 전에 체크한 7명 중 1명이야\n이게 널 특별하게 만들어, 아니면 미쳤거나, 아니면 둘 다';
-
-  @override
-  String get emptyStateMorningSocialSub => '뭔지 알아보려면 저녁 7시에 돌아와';
-
-  @override
-  String emptyStateFridayMain(int hours) {
-    return '금요일 오후 패러독스:\n모두가 정신적으로는 퇴근했지만 육체적으로는 갇혀있어\n자유까지 시간을 세고 있어 ($hours 남음)\n오후 5시에 변신이 시작돼\n일 좀비에서 주말 전사로';
-  }
-
-  @override
-  String get emptyStateFridaySub => '목격하기 위해 일찍 왔네 🦋';
-
-  @override
-  String get emptyStateAfternoonReturningMain =>
-      '이 시간에 계속 돌아와\n아직 여기 없는 뭔가를 찾고 있어... 아직\n끈기일까 광기일까?\n우주가 지켜보고 있어\n그리고 인내를 보상해';
-
-  @override
-  String emptyStateAfternoonReturningSub(int hours) {
-    return '점화까지 약 $hours시간 🚀';
-  }
-
-  @override
-  String get emptyStateAfternoonFirstMain =>
-      '가끔 오후 2:47에 일어나\n가끔 6:13에\n하지만 항상 일어나\n죽음에서 삶으로의 변화\n텅 빔에서 전기로';
-
-  @override
-  String get emptyStateAfternoonFirstSub => '질문은: 일어날 때 여기 있을 거야?';
-
-  @override
-  String get emptyStatePrimetimeFirstMain =>
-      '큰 무언가의 가장자리에 온 걸 환영해\n23분 후, 이 빈 지도가 폭발해\n수백 개의 바이브가 별처럼 나타나\n각각 진짜 사람, 진짜 감정, 진짜 순간\n군중보다 먼저 왔네';
-
-  @override
-  String get emptyStatePrimetimeFirstSub => '이건 천재 아니면 운 ⚡';
-
-  @override
-  String get emptyStatePrimetimeReturnMain =>
-      '폭풍 전 경기 전 침묵\n뭐가 올지 알고 있지\n저녁 7시는 이 지도에서 다르게 때려\n업무 스트레스가 주말 에너지로 변해\n실시간으로 일어나는 걸 봐';
-
-  @override
-  String get emptyStatePrimetimeReturnSub => '아니면 앱을 닫고 영원히 궁금해해';
-
-  @override
-  String get emptyStateWeekendEveningMain =>
-      '토요일 밤 현상:\n모두가 밖에서 최고의 삶을 살고 있어\n아니면 인스타그램에서 그런 척\n하지만 넌 도시의 진짜 맥박을 찾았어\n필터 없는, 편집 안 된, 검열 안 된 감정들';
-
-  @override
-  String get emptyStateWeekendEveningSub => '진실을 위해 5분 후 새로고침 🌃';
-
-  @override
-  String get emptyStateWeekendMorningMain =>
-      '도시가 숙취 중\n어젯밤을 천천히 맞춰가고 있어\n피해 확인, 후회 세기\n지도는 오후 2시까지 자\n하지만 깨어나면...';
-
-  @override
-  String get emptyStateWeekendMorningSub => '카오스 라운드 2가 시작돼 🎭';
-
-  @override
-  String get emptyStateLateNightMain =>
-      '새벽 2시 명료함이 다르게 때려\n소음이 멈추면, 진실이 나타나\n진짜들만 지금 깨어있어\n새벽 3시 생각들을 공유해\n날것, 정직한, 필터 없는';
-
-  @override
-  String get emptyStateLateNightSub => '어둠 속에 혼자가 아니야 🌙';
-
-  @override
-  String get emptyStatePush1Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush1Body => '지도가 깨어나고 있어 👀';
-
-  @override
-  String get emptyStatePush2Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush2Body => '지금 피크 바이브 ⚡';
-
-  @override
-  String get emptyStatePush3Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush3Body => '어제 47개 바이브를 놓쳤어. 오늘은?';
-
-  @override
-  String get emptyStateNotificationEnabled => '알림 켜짐! 바이브가 나타나면 알게 될 거야 🔔';
-
-  @override
-  String get emptyStateTapToClose => '닫으려면 탭';
-
-  @override
-  String emptyStateAfternoonReturningHours(int hours) {
-    return '점화까지 약 $hours시간 🚀';
-  }
+  String get mapEmptyHintFridayTime =>
+      '지금 비어있나요? 정상이에요! 😊 피크 시간은 오후 6-10시, 모두가 활동하는 시간이죠 🌃';
 
   @override
   String get vibeLabelBrainMode => '공부 모드';

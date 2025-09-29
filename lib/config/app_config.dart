@@ -21,10 +21,10 @@ class AppConfig {
   static const int maxMoodsPerDay = 50;
   
   // Map settings
-  static const double minMapZoom = 7.0;  // country view
+  static const double minMapZoom = 5.0;  // country view
   static const double maxMapZoom = 16.0;  // street view
-  static const double defaultMapZoom = 12.0;  // ~6km view
-  static const double focusedMapZoom = 11.0;  // view when adding emotion
+  static const double defaultMapZoom = 14.0;  // ~2km view
+  static const double focusedMapZoom = 12.0;  // view when adding emotion
   
   // Default location (Atlantic ocean NY)
   static const double defaultLatitude = 40.0000;

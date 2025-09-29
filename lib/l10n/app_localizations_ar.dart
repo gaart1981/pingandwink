@@ -63,116 +63,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get commonConfirm => 'متأكد؟';
 
   @override
-  String get emptyStateMorningStoryMain =>
-      'المدينة لا تزال تستيقظ، تتمدد ببطء\nالجميع في طقوسهم الصباحية\nقهوة، تنقل، التظاهر بالعمل\nلكن إليك ما لا يعرفونه بعد:\nالليلة في الساعة 7 مساءً، هذه الخريطة تتحول تماماً';
+  String get chatBlockedMessage =>
+      'Cannot share personal information or inappropriate content';
 
   @override
-  String get emptyStateMorningStorySub =>
-      'اضبط المنبه الآن، اشكر نفسك لاحقاً ⏰';
-
-  @override
-  String get emptyStateMorningCuriosityMain =>
-      'وصلت للخريطة في مرحلتها الهادئة\nمثل نادي ليلي ظهراً - فارغ لكن مليء بالإمكانات\n3 أشخاص تفقدوا قبلك اليوم\nكلهم وضعوا تذكيرات للـ 7 مساءً\nصدفة؟ أم يعرفون شيئاً؟';
-
-  @override
-  String get emptyStateMorningCuriositySub => 'الجواب يكشف نفسه عند الغروب 🌅';
-
-  @override
-  String get emptyStateMorningSocialMain =>
-      'حقيقة صباح الاثنين:\nالجميع يتظاهر بالعمل الآن\nجداول البيانات مفتوحة، العقول في مكان آخر\nأنت 1 من 7 أشخاص تفقدوا قبل الظهر\nهذا يجعلك مميزاً، أو مجنوناً، أو كليهما';
-
-  @override
-  String get emptyStateMorningSocialSub => 'ارجع الساعة 7 مساءً لتكتشف أيهما';
-
-  @override
-  String emptyStateFridayMain(int hours) {
-    return 'مفارقة عصر الجمعة:\nالجميع منفصل ذهنياً لكن محاصر جسدياً\nيعدون الساعات حتى الحرية ($hours متبقية)\nعند الـ 5 مساءً يبدأ التحول\nمن زومبي العمل إلى محاربي نهاية الأسبوع';
-  }
-
-  @override
-  String get emptyStateFridaySub => 'وصلت مبكراً لتشهد ذلك 🦋';
-
-  @override
-  String get emptyStateAfternoonReturningMain =>
-      'تستمر بالعودة في هذا الوقت\nتبحث عن شيء ليس هنا... بعد\nإصرار أم جنون؟\nالكون يراقب\nويكافئ الصبر';
-
-  @override
-  String emptyStateAfternoonReturningSub(int hours) {
-    return 'تقريباً $hours ساعات حتى الإشعال 🚀';
-  }
-
-  @override
-  String get emptyStateAfternoonFirstMain =>
-      'أحياناً يحدث الساعة 2:47 مساءً\nأحياناً الساعة 6:13 مساءً\nلكنه يحدث دائماً\nالتحول من ميت إلى حي\nمن فارغ إلى كهربائي';
-
-  @override
-  String get emptyStateAfternoonFirstSub =>
-      'السؤال هو: هل ستكون هنا عندما يحدث؟';
-
-  @override
-  String get emptyStatePrimetimeFirstMain =>
-      'مرحباً بك على حافة شيء كبير\nبعد 23 دقيقة، هذه الخريطة الفارغة تنفجر\nمئات الذبذبات تظهر كالنجوم\nكل واحدة شخص حقيقي، عاطفة حقيقية، لحظة حقيقية\nأنت هنا قبل الحشد';
-
-  @override
-  String get emptyStatePrimetimeFirstSub => 'هذا إما عبقرية أو حظ ⚡';
-
-  @override
-  String get emptyStatePrimetimeReturnMain =>
-      'صمت ما قبل اللعبة قبل العاصفة\nأنت تعرف ما قادم\nالـ 7 مساءً تضرب بشكل مختلف على هذه الخريطة\nضغط العمل يتحول إلى طاقة نهاية الأسبوع\nشاهده يحدث في الوقت الفعلي';
-
-  @override
-  String get emptyStatePrimetimeReturnSub => 'أو أغلق التطبيق وتساءل إلى الأبد';
-
-  @override
-  String get emptyStateWeekendEveningMain =>
-      'ظاهرة ليلة السبت:\nالجميع هناك يعيش أفضل حياته\nأو يتظاهر على الإنستغرام\nلكنك وجدت نبض المدينة الحقيقي\nعواطف غير مفلترة، غير محررة، غير مراقبة';
-
-  @override
-  String get emptyStateWeekendEveningSub => 'حدّث بعد 5 دقائق للحقيقة 🌃';
-
-  @override
-  String get emptyStateWeekendMorningMain =>
-      'المدينة مخمورة\nتجمع ببطء الليلة الماضية\nتفحص الأضرار، تعد الندم\nالخريطة تنام حتى 2 مساءً\nلكن عندما تستيقظ...';
-
-  @override
-  String get emptyStateWeekendMorningSub => 'يبدأ الفوضى الجولة 2 🎭';
-
-  @override
-  String get emptyStateLateNightMain =>
-      'وضوح الـ 2 صباحاً يضرب بشكل مختلف\nعندما يتوقف الضجيج، تظهر الحقيقة\nفقط الحقيقيون مستيقظون الآن\nيشاركون أفكار الـ 3 صباحاً\nخام، صادق، غير مفلتر';
-
-  @override
-  String get emptyStateLateNightSub => 'لست وحيداً في الظلام 🌙';
-
-  @override
-  String get emptyStatePush1Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush1Body => 'الخريطة تستيقظ 👀';
-
-  @override
-  String get emptyStatePush2Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush2Body => 'ذروة الذبذبات الآن ⚡';
-
-  @override
-  String get emptyStatePush3Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush3Body => 'بالأمس فاتتك 47 ذبذبة. اليوم؟';
-
-  @override
-  String get emptyStateNotificationEnabled =>
-      'الإشعارات مفعلة! ستعرف عندما تظهر الذبذبات 🔔';
-
-  @override
-  String get emptyStateTapToClose => 'اضغط للإغلاق';
-
-  @override
-  String emptyStateAfternoonReturningHours(int hours) {
-    return 'تقريباً $hours ساعات حتى الإشعال 🚀';
-  }
+  String get mapEmptyHintFridayTime =>
+      'فارغة الآن؟ طبيعي! 😊 وقت الذروة 6-10 مساءً عندما يكون الجميع نشطين 🌃';
 
   @override
   String get vibeLabelBrainMode => 'وضع التركيز';

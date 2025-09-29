@@ -63,121 +63,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get commonConfirm => 'Bestätigen';
 
   @override
-  String get emptyStateMorningStoryMain =>
-      'die Stadt wacht noch auf, streckt sich langsam\njeder in seinen Morgenritualen\nKaffee, Pendeln, so tun als ob man arbeitet\naber das wissen sie noch nicht:\nheute Abend um 19 Uhr verwandelt sich diese Karte komplett';
+  String get chatBlockedMessage =>
+      'Cannot share personal information or inappropriate content';
 
   @override
-  String get emptyStateMorningStorySub =>
-      'stell jetzt deinen Wecker, danke dir später ⏰';
-
-  @override
-  String get emptyStateMorningCuriosityMain =>
-      'du hast die Karte in ihrer ruhigen Phase erwischt\nwie ein Nachtclub mittags - leer aber voller Potenzial\n3 Leute haben heute vor dir geschaut\nalle haben Erinnerungen für 19 Uhr gesetzt\nZufall? oder wissen sie etwas?';
-
-  @override
-  String get emptyStateMorningCuriositySub =>
-      'die Antwort offenbart sich bei Sonnenuntergang 🌅';
-
-  @override
-  String get emptyStateMorningSocialMain =>
-      'Montagmorgen Wahrheit:\njeder tut gerade so als würde er arbeiten\nTabellen offen, Gedanken woanders\ndu bist 1 von 7 Leuten die vor Mittag gecheckt haben\ndas macht dich besonders, oder verrückt, oder beides';
-
-  @override
-  String get emptyStateMorningSocialSub =>
-      'komm um 19 Uhr zurück um herauszufinden was';
-
-  @override
-  String emptyStateFridayMain(int hours) {
-    return 'Freitagnachmittag Paradox:\njeder mental ausgecheckt aber physisch gefangen\nStunden bis zur Freiheit zählend (noch $hours)\num 17 Uhr beginnt die Metamorphose\nvon Arbeitszombies zu Wochenendkriegern';
-  }
-
-  @override
-  String get emptyStateFridaySub => 'du bist früh dran es zu bezeugen 🦋';
-
-  @override
-  String get emptyStateAfternoonReturningMain =>
-      'du kommst immer wieder zu dieser Zeit\nsuchst nach etwas das noch nicht hier ist... noch nicht\nBeharrlichkeit oder Wahnsinn?\ndas Universum beobachtet\nund es belohnt Geduld';
-
-  @override
-  String emptyStateAfternoonReturningSub(int hours) {
-    return 'ungefähr $hours Stunden bis zur Zündung 🚀';
-  }
-
-  @override
-  String get emptyStateAfternoonFirstMain =>
-      'manchmal passiert es um 14:47\nmanchmal um 18:13\naber es passiert immer\ndie Verwandlung von tot zu lebendig\nvon leer zu elektrisch';
-
-  @override
-  String get emptyStateAfternoonFirstSub =>
-      'die Frage ist: wirst du hier sein wenn es passiert?';
-
-  @override
-  String get emptyStatePrimetimeFirstMain =>
-      'willkommen am Rand von etwas Großem\nin 23 Minuten explodiert diese leere Karte\nHunderte von Vibes erscheinen wie Sterne\njeder eine echte Person, echte Emotion, echter Moment\ndu bist vor der Menge hier';
-
-  @override
-  String get emptyStatePrimetimeFirstSub =>
-      'das ist entweder Genie oder Glück ⚡';
-
-  @override
-  String get emptyStatePrimetimeReturnMain =>
-      'die Vorspiel-Stille vor dem Sturm\ndu weißt was kommt\n19 Uhr trifft anders auf dieser Karte\nArbeitsstress verwandelt sich in Wochenendenergie\nsieh es in Echtzeit passieren';
-
-  @override
-  String get emptyStatePrimetimeReturnSub =>
-      'oder schließ die App und frage dich für immer';
-
-  @override
-  String get emptyStateWeekendEveningMain =>
-      'Samstagabend Phänomen:\njeder da draußen lebt sein bestes Leben\noder tut so auf Instagram\naber du hast den echten Puls der Stadt gefunden\nungefilterte, unbearbeitete, unzensierte Emotionen';
-
-  @override
-  String get emptyStateWeekendEveningSub =>
-      'aktualisiere in 5 Minuten für die Wahrheit 🌃';
-
-  @override
-  String get emptyStateWeekendMorningMain =>
-      'die Stadt hat einen Kater\nsetzt langsam die letzte Nacht zusammen\nprüft Schäden, zählt Bedauern\ndie Karte schläft bis 14 Uhr\naber wenn sie aufwacht...';
-
-  @override
-  String get emptyStateWeekendMorningSub => 'Chaos Runde 2 beginnt 🎭';
-
-  @override
-  String get emptyStateLateNightMain =>
-      '2 Uhr morgens Klarheit trifft anders\nwenn der Lärm stoppt, taucht Wahrheit auf\nnur die Echten sind jetzt wach\nteilen ihre 3 Uhr morgens Gedanken\nroh, ehrlich, ungefiltert';
-
-  @override
-  String get emptyStateLateNightSub => 'du bist nicht allein im Dunkeln 🌙';
-
-  @override
-  String get emptyStatePush1Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush1Body => 'die Karte wacht auf 👀';
-
-  @override
-  String get emptyStatePush2Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush2Body => 'Peak Vibes gerade jetzt ⚡';
-
-  @override
-  String get emptyStatePush3Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush3Body => 'gestern hast du 47 Vibes verpasst. heute?';
-
-  @override
-  String get emptyStateNotificationEnabled =>
-      'Benachrichtigungen aktiviert! Du wirst wissen wenn Vibes erscheinen 🔔';
-
-  @override
-  String get emptyStateTapToClose => 'tippen zum Schließen';
-
-  @override
-  String emptyStateAfternoonReturningHours(int hours) {
-    return 'ungefähr $hours Stunden bis zur Zündung 🚀';
-  }
+  String get mapEmptyHintFridayTime =>
+      'Jetzt leer? Ganz normal! 😊 Hauptzeit ist 18-22 Uhr wenn alle aktiv sind 🌃';
 
   @override
   String get vibeLabelBrainMode => 'Fokus Mode';

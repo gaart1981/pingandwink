@@ -63,119 +63,12 @@ class AppLocalizationsId extends AppLocalizations {
   String get commonConfirm => 'Yakin?';
 
   @override
-  String get emptyStateMorningStoryMain =>
-      'kota masih bangun, meregangkan badan perlahan\nsemua dalam ritual paginya\nkopi, perjalanan, pura-pura kerja\ntapi ini yang mereka belum tahu:\nmalam ini jam 7, peta ini berubah total';
+  String get chatBlockedMessage =>
+      'Cannot share personal information or inappropriate content';
 
   @override
-  String get emptyStateMorningStorySub =>
-      'set alarm sekarang, terima kasih diri sendiri nanti ⏰';
-
-  @override
-  String get emptyStateMorningCuriosityMain =>
-      'kamu dapat petanya di fase tenang\nkayak klub malam siang hari - kosong tapi penuh potensi\n3 orang cek sebelum kamu hari ini\nsemua set pengingat buat jam 7 malam\nkebetulan? atau mereka tahu sesuatu?';
-
-  @override
-  String get emptyStateMorningCuriositySub => 'jawabannya muncul pas sunset 🌅';
-
-  @override
-  String get emptyStateMorningSocialMain =>
-      'kebenaran senin pagi:\nsemua pura-pura kerja sekarang\nspreadsheet buka, pikiran di tempat lain\nkamu 1 dari 7 orang yang cek sebelum siang\nitu bikin kamu spesial, atau gila, atau dua-duanya';
-
-  @override
-  String get emptyStateMorningSocialSub =>
-      'balik jam 7 malam buat tahu yang mana';
-
-  @override
-  String emptyStateFridayMain(int hours) {
-    return 'paradoks jumat sore:\nsemua mental udah cabut tapi fisik masih stuck\nhitung jam sampe bebas ($hours lagi)\njam 5 sore metamorfosis mulai\ndari zombie kerja jadi prajurit weekend';
-  }
-
-  @override
-  String get emptyStateFridaySub => 'kamu dateng awal buat nyaksiin 🦋';
-
-  @override
-  String get emptyStateAfternoonReturningMain =>
-      'kamu terus balik jam segini\ncari sesuatu yang belum ada di sini... belum\nkegigihan atau kegilaan?\nsemesta lagi nonton\ndan ngasih reward ke kesabaran';
-
-  @override
-  String emptyStateAfternoonReturningSub(int hours) {
-    return 'kira-kira $hours jam sampe nyala 🚀';
-  }
-
-  @override
-  String get emptyStateAfternoonFirstMain =>
-      'kadang terjadi jam 2:47 sore\nkadang jam 6:13 sore\ntapi selalu terjadi\ntransformasi dari mati ke hidup\ndari kosong ke listrik';
-
-  @override
-  String get emptyStateAfternoonFirstSub =>
-      'pertanyaannya: kamu bakal ada pas itu terjadi?';
-
-  @override
-  String get emptyStatePrimetimeFirstMain =>
-      'selamat datang di tepi sesuatu yang besar\n23 menit lagi, peta kosong ini meledak\nratusan vibe muncul kayak bintang\ntiap satu orang beneran, emosi beneran, momen beneran\nkamu di sini sebelum kerumunan';
-
-  @override
-  String get emptyStatePrimetimeFirstSub => 'itu jenius atau hoki ⚡';
-
-  @override
-  String get emptyStatePrimetimeReturnMain =>
-      'keheningan pregame sebelum badai\nkamu tahu apa yang dateng\njam 7 malam beda di peta ini\nstres kerja berubah jadi energi weekend\nliat itu terjadi real-time';
-
-  @override
-  String get emptyStatePrimetimeReturnSub =>
-      'atau tutup app dan penasaran selamanya';
-
-  @override
-  String get emptyStateWeekendEveningMain =>
-      'fenomena sabtu malem:\nsemua di luar sana hidup terbaik mereka\natau pura-pura di instagram\ntapi kamu nemuin denyut asli kota\nemosi tanpa filter, tanpa edit, tanpa sensor';
-
-  @override
-  String get emptyStateWeekendEveningSub =>
-      'refresh 5 menit lagi buat kebenaran 🌃';
-
-  @override
-  String get emptyStateWeekendMorningMain =>
-      'kota lagi hangover\npelan-pelan nyusun tadi malem\ncek kerusakan, itung penyesalan\npeta tidur sampe jam 2 siang\ntapi pas bangun...';
-
-  @override
-  String get emptyStateWeekendMorningSub => 'chaos ronde 2 mulai 🎭';
-
-  @override
-  String get emptyStateLateNightMain =>
-      'kejernihan jam 2 pagi beda\npas kebisingan berhenti, kebenaran muncul\ncuma yang asli masih bangun sekarang\nbagi pikiran jam 3 pagi\nmentah, jujur, tanpa filter';
-
-  @override
-  String get emptyStateLateNightSub => 'kamu gak sendirian di gelap 🌙';
-
-  @override
-  String get emptyStatePush1Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush1Body => 'peta lagi bangun 👀';
-
-  @override
-  String get emptyStatePush2Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush2Body => 'puncak vibe sekarang ⚡';
-
-  @override
-  String get emptyStatePush3Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush3Body => 'kemarin kamu lewatin 47 vibe. hari ini?';
-
-  @override
-  String get emptyStateNotificationEnabled =>
-      'Notifikasi nyala! Kamu bakal tahu pas vibe muncul 🔔';
-
-  @override
-  String get emptyStateTapToClose => 'tap buat tutup';
-
-  @override
-  String emptyStateAfternoonReturningHours(int hours) {
-    return 'kira-kira $hours jam sampe nyala 🚀';
-  }
+  String get mapEmptyHintFridayTime =>
+      'Kosong sekarang? Normal kok! 😊 Jam ramai 18-22 malam saat semua aktif 🌃';
 
   @override
   String get vibeLabelBrainMode => 'Mode Mikir';

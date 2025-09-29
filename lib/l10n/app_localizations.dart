@@ -108,6 +108,7 @@ abstract class AppLocalizations {
     Locale('de'),
     Locale('es'),
     Locale('es', '419'),
+    Locale('es', 'ES'),
     Locale('fr'),
     Locale('hi'),
     Locale('id'),
@@ -226,191 +227,17 @@ abstract class AppLocalizations {
   /// **'Confirm'**
   String get commonConfirm;
 
-  /// No description provided for @emptyStateMorningStoryMain.
+  /// No description provided for @chatBlockedMessage.
   ///
   /// In en, this message translates to:
-  /// **'the city\'s still waking up, stretching slowly\neveryone\'s in their morning rituals\ncoffee, commute, pretending to work\nbut here\'s what they don\'t know yet:\ntonight at 7pm, this map transforms completely'**
-  String get emptyStateMorningStoryMain;
+  /// **'Cannot share personal information or inappropriate content'**
+  String get chatBlockedMessage;
 
-  /// No description provided for @emptyStateMorningStorySub.
+  /// Hint shown when map is empty after onboarding
   ///
   /// In en, this message translates to:
-  /// **'set your alarm now, thank yourself later ⏰'**
-  String get emptyStateMorningStorySub;
-
-  /// No description provided for @emptyStateMorningCuriosityMain.
-  ///
-  /// In en, this message translates to:
-  /// **'you caught the map in its quiet phase\nlike a nightclub at noon - empty but full of potential\n3 people checked before you today\nthey all set reminders for 7pm\ncoincidence? or do they know something?'**
-  String get emptyStateMorningCuriosityMain;
-
-  /// No description provided for @emptyStateMorningCuriositySub.
-  ///
-  /// In en, this message translates to:
-  /// **'the answer reveals itself at sunset 🌅'**
-  String get emptyStateMorningCuriositySub;
-
-  /// No description provided for @emptyStateMorningSocialMain.
-  ///
-  /// In en, this message translates to:
-  /// **'monday morning truth:\neveryone\'s pretending to work right now\nspreadsheets open, minds elsewhere\nyou\'re 1 of 7 people who checked before noon\nthat makes you special, or crazy, or both'**
-  String get emptyStateMorningSocialMain;
-
-  /// No description provided for @emptyStateMorningSocialSub.
-  ///
-  /// In en, this message translates to:
-  /// **'come back at 7pm to find out which'**
-  String get emptyStateMorningSocialSub;
-
-  /// No description provided for @emptyStateFridayMain.
-  ///
-  /// In en, this message translates to:
-  /// **'friday afternoon paradox:\neveryone\'s mentally checked out but physically stuck\ncounting hours until freedom ({hours} more to go)\nat 5pm the metamorphosis begins\nfrom work zombies to weekend warriors'**
-  String emptyStateFridayMain(int hours);
-
-  /// No description provided for @emptyStateFridaySub.
-  ///
-  /// In en, this message translates to:
-  /// **'you\'re early to witness it 🦋'**
-  String get emptyStateFridaySub;
-
-  /// No description provided for @emptyStateAfternoonReturningMain.
-  ///
-  /// In en, this message translates to:
-  /// **'you keep coming back at this time\nsearching for something that isn\'t here... yet\npersistence or insanity?\nthe universe is watching\nand it rewards patience'**
-  String get emptyStateAfternoonReturningMain;
-
-  /// No description provided for @emptyStateAfternoonReturningSub.
-  ///
-  /// In en, this message translates to:
-  /// **'approximately {hours} hours until ignition 🚀'**
-  String emptyStateAfternoonReturningSub(int hours);
-
-  /// No description provided for @emptyStateAfternoonFirstMain.
-  ///
-  /// In en, this message translates to:
-  /// **'sometimes it happens at 2:47pm\nsometimes at 6:13pm\nbut it always happens\nthe transformation from dead to alive\nfrom empty to electric'**
-  String get emptyStateAfternoonFirstMain;
-
-  /// No description provided for @emptyStateAfternoonFirstSub.
-  ///
-  /// In en, this message translates to:
-  /// **'the question is: will you be here when it does?'**
-  String get emptyStateAfternoonFirstSub;
-
-  /// No description provided for @emptyStatePrimetimeFirstMain.
-  ///
-  /// In en, this message translates to:
-  /// **'welcome to the edge of something big\nin 23 minutes, this empty map explodes\nhundreds of vibes appearing like stars\neach one a real person, real emotion, real moment\nyou\'re here before the crowd'**
-  String get emptyStatePrimetimeFirstMain;
-
-  /// No description provided for @emptyStatePrimetimeFirstSub.
-  ///
-  /// In en, this message translates to:
-  /// **'that\'s either genius or luck ⚡'**
-  String get emptyStatePrimetimeFirstSub;
-
-  /// No description provided for @emptyStatePrimetimeReturnMain.
-  ///
-  /// In en, this message translates to:
-  /// **'the pregame silence before the storm\nyou know what\'s coming\n7pm hits different on this map\nworkplace stress transforms into weekend energy\nwatch it happen in real-time'**
-  String get emptyStatePrimetimeReturnMain;
-
-  /// No description provided for @emptyStatePrimetimeReturnSub.
-  ///
-  /// In en, this message translates to:
-  /// **'or close the app and wonder forever'**
-  String get emptyStatePrimetimeReturnSub;
-
-  /// No description provided for @emptyStateWeekendEveningMain.
-  ///
-  /// In en, this message translates to:
-  /// **'saturday night phenomenon:\neveryone\'s out there living their best life\nor pretending to on instagram\nbut you found the real pulse of the city\nunfiltered, unedited, uncensored emotions'**
-  String get emptyStateWeekendEveningMain;
-
-  /// No description provided for @emptyStateWeekendEveningSub.
-  ///
-  /// In en, this message translates to:
-  /// **'refresh in 5 minutes for the truth 🌃'**
-  String get emptyStateWeekendEveningSub;
-
-  /// No description provided for @emptyStateWeekendMorningMain.
-  ///
-  /// In en, this message translates to:
-  /// **'the city is hungover\nslowly piecing together last night\nchecking damage, counting regrets\nthe map sleeps until 2pm\nbut when it wakes up...'**
-  String get emptyStateWeekendMorningMain;
-
-  /// No description provided for @emptyStateWeekendMorningSub.
-  ///
-  /// In en, this message translates to:
-  /// **'chaos round 2 begins 🎭'**
-  String get emptyStateWeekendMorningSub;
-
-  /// No description provided for @emptyStateLateNightMain.
-  ///
-  /// In en, this message translates to:
-  /// **'2am clarity hits different\nwhen the noise stops, truth emerges\nonly the real ones are awake now\nsharing their 3am thoughts\nraw, honest, unfiltered'**
-  String get emptyStateLateNightMain;
-
-  /// No description provided for @emptyStateLateNightSub.
-  ///
-  /// In en, this message translates to:
-  /// **'you\'re not alone in the dark 🌙'**
-  String get emptyStateLateNightSub;
-
-  /// No description provided for @emptyStatePush1Title.
-  ///
-  /// In en, this message translates to:
-  /// **'ping&wink'**
-  String get emptyStatePush1Title;
-
-  /// No description provided for @emptyStatePush1Body.
-  ///
-  /// In en, this message translates to:
-  /// **'the map is waking up 👀'**
-  String get emptyStatePush1Body;
-
-  /// No description provided for @emptyStatePush2Title.
-  ///
-  /// In en, this message translates to:
-  /// **'ping&wink'**
-  String get emptyStatePush2Title;
-
-  /// No description provided for @emptyStatePush2Body.
-  ///
-  /// In en, this message translates to:
-  /// **'peak vibes happening now ⚡'**
-  String get emptyStatePush2Body;
-
-  /// No description provided for @emptyStatePush3Title.
-  ///
-  /// In en, this message translates to:
-  /// **'ping&wink'**
-  String get emptyStatePush3Title;
-
-  /// No description provided for @emptyStatePush3Body.
-  ///
-  /// In en, this message translates to:
-  /// **'yesterday you missed 47 vibes. today?'**
-  String get emptyStatePush3Body;
-
-  /// No description provided for @emptyStateNotificationEnabled.
-  ///
-  /// In en, this message translates to:
-  /// **'Notifications enabled! You\'ll know when vibes appear 🔔'**
-  String get emptyStateNotificationEnabled;
-
-  /// No description provided for @emptyStateTapToClose.
-  ///
-  /// In en, this message translates to:
-  /// **'tap to close'**
-  String get emptyStateTapToClose;
-
-  /// No description provided for @emptyStateAfternoonReturningHours.
-  ///
-  /// In en, this message translates to:
-  /// **'approximately {hours} hours until ignition 🚀'**
-  String emptyStateAfternoonReturningHours(int hours);
+  /// **'Empty now? Normal! 😊 Peak time is 6-10 PM when everyone\'s active 🌃'**
+  String get mapEmptyHintFridayTime;
 
   /// No description provided for @vibeLabelBrainMode.
   ///
@@ -2538,6 +2365,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
         switch (locale.countryCode) {
           case '419':
             return AppLocalizationsEs419();
+          case 'ES':
+            return AppLocalizationsEsEs();
         }
         break;
       }

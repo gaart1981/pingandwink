@@ -63,119 +63,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get commonConfirm => 'Confirm';
 
   @override
-  String get emptyStateMorningStoryMain =>
-      'the city\'s still waking up, stretching slowly\neveryone\'s in their morning rituals\ncoffee, commute, pretending to work\nbut here\'s what they don\'t know yet:\ntonight at 7pm, this map transforms completely';
+  String get chatBlockedMessage =>
+      'Cannot share personal information or inappropriate content';
 
   @override
-  String get emptyStateMorningStorySub =>
-      'set your alarm now, thank yourself later ⏰';
-
-  @override
-  String get emptyStateMorningCuriosityMain =>
-      'you caught the map in its quiet phase\nlike a nightclub at noon - empty but full of potential\n3 people checked before you today\nthey all set reminders for 7pm\ncoincidence? or do they know something?';
-
-  @override
-  String get emptyStateMorningCuriositySub =>
-      'the answer reveals itself at sunset 🌅';
-
-  @override
-  String get emptyStateMorningSocialMain =>
-      'monday morning truth:\neveryone\'s pretending to work right now\nspreadsheets open, minds elsewhere\nyou\'re 1 of 7 people who checked before noon\nthat makes you special, or crazy, or both';
-
-  @override
-  String get emptyStateMorningSocialSub => 'come back at 7pm to find out which';
-
-  @override
-  String emptyStateFridayMain(int hours) {
-    return 'friday afternoon paradox:\neveryone\'s mentally checked out but physically stuck\ncounting hours until freedom ($hours more to go)\nat 5pm the metamorphosis begins\nfrom work zombies to weekend warriors';
-  }
-
-  @override
-  String get emptyStateFridaySub => 'you\'re early to witness it 🦋';
-
-  @override
-  String get emptyStateAfternoonReturningMain =>
-      'you keep coming back at this time\nsearching for something that isn\'t here... yet\npersistence or insanity?\nthe universe is watching\nand it rewards patience';
-
-  @override
-  String emptyStateAfternoonReturningSub(int hours) {
-    return 'approximately $hours hours until ignition 🚀';
-  }
-
-  @override
-  String get emptyStateAfternoonFirstMain =>
-      'sometimes it happens at 2:47pm\nsometimes at 6:13pm\nbut it always happens\nthe transformation from dead to alive\nfrom empty to electric';
-
-  @override
-  String get emptyStateAfternoonFirstSub =>
-      'the question is: will you be here when it does?';
-
-  @override
-  String get emptyStatePrimetimeFirstMain =>
-      'welcome to the edge of something big\nin 23 minutes, this empty map explodes\nhundreds of vibes appearing like stars\neach one a real person, real emotion, real moment\nyou\'re here before the crowd';
-
-  @override
-  String get emptyStatePrimetimeFirstSub => 'that\'s either genius or luck ⚡';
-
-  @override
-  String get emptyStatePrimetimeReturnMain =>
-      'the pregame silence before the storm\nyou know what\'s coming\n7pm hits different on this map\nworkplace stress transforms into weekend energy\nwatch it happen in real-time';
-
-  @override
-  String get emptyStatePrimetimeReturnSub =>
-      'or close the app and wonder forever';
-
-  @override
-  String get emptyStateWeekendEveningMain =>
-      'saturday night phenomenon:\neveryone\'s out there living their best life\nor pretending to on instagram\nbut you found the real pulse of the city\nunfiltered, unedited, uncensored emotions';
-
-  @override
-  String get emptyStateWeekendEveningSub =>
-      'refresh in 5 minutes for the truth 🌃';
-
-  @override
-  String get emptyStateWeekendMorningMain =>
-      'the city is hungover\nslowly piecing together last night\nchecking damage, counting regrets\nthe map sleeps until 2pm\nbut when it wakes up...';
-
-  @override
-  String get emptyStateWeekendMorningSub => 'chaos round 2 begins 🎭';
-
-  @override
-  String get emptyStateLateNightMain =>
-      '2am clarity hits different\nwhen the noise stops, truth emerges\nonly the real ones are awake now\nsharing their 3am thoughts\nraw, honest, unfiltered';
-
-  @override
-  String get emptyStateLateNightSub => 'you\'re not alone in the dark 🌙';
-
-  @override
-  String get emptyStatePush1Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush1Body => 'the map is waking up 👀';
-
-  @override
-  String get emptyStatePush2Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush2Body => 'peak vibes happening now ⚡';
-
-  @override
-  String get emptyStatePush3Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush3Body => 'yesterday you missed 47 vibes. today?';
-
-  @override
-  String get emptyStateNotificationEnabled =>
-      'Notifications enabled! You\'ll know when vibes appear 🔔';
-
-  @override
-  String get emptyStateTapToClose => 'tap to close';
-
-  @override
-  String emptyStateAfternoonReturningHours(int hours) {
-    return 'approximately $hours hours until ignition 🚀';
-  }
+  String get mapEmptyHintFridayTime =>
+      'Empty now? Normal! 😊 Peak time is 6-10 PM when everyone\'s active 🌃';
 
   @override
   String get vibeLabelBrainMode => 'Brain Mode';

@@ -19,56 +19,9 @@
   "commonDone": "Bitti",
   "commonContinue": "Devam et",
   "commonConfirm": "Emin misin?",
+
   
-
-
-  "emptyStateMorningStoryMain": "şehir hala uyanıyor, yavaşça geriniyor\nherkes sabah ritüellerinde\nkahve, işe gidiş, çalışıyormuş gibi yapmak\nama işte henüz bilmedikleri:\nbu akşam saat 7'de, bu harita tamamen dönüşüyor",
-  "emptyStateMorningStorySub": "alarmını şimdi kur, sonra kendine teşekkür et ⏰",
-  "emptyStateMorningCuriosityMain": "haritayı sessiz evresinde yakaladın\nöğlen vakti gece kulübü gibi - boş ama potansiyel dolu\nbugün senden önce 3 kişi kontrol etti\nhepsi akşam 7 için hatırlatıcı kurdu\ntesadüf mü? yoksa bir şey mi biliyorlar?",
-  "emptyStateMorningCuriositySub": "cevap gün batımında ortaya çıkıyor 🌅",
-  "emptyStateMorningSocialMain": "pazartesi sabahı gerçeği:\nherkes şu anda çalışıyormuş gibi yapıyor\ntablolar açık, akıllar başka yerde\nöğleden önce kontrol eden 7 kişiden 1'isin\nbu seni özel yapıyor, ya da deli, ya da ikisi birden",
-  "emptyStateMorningSocialSub": "hangisi olduğunu öğrenmek için akşam 7'de geri dön",
-  "emptyStateFridayMain": "cuma öğleden sonra paradoksu:\nherkes zihinsel olarak çıkmış ama fiziksel olarak tıkılmış\nözgürlüğe kadar saatleri sayıyor ({hours} kaldı)\nsaat 5'te metamorfoz başlıyor\niş zombilerinden hafta sonu savaşçılarına",
-  "@emptyStateFridayMain": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
-  "emptyStateFridaySub": "buna tanık olmak için erken geldin 🦋",
-  "emptyStateAfternoonReturningMain": "bu saatte gelmeye devam ediyorsun\nhenüz burada olmayan bir şey arıyorsun... henüz\nısrar mı delilik mi?\nevren izliyor\nve sabrı ödüllendiriyor",
-  "emptyStateAfternoonReturningSub": "ateşlemeye yaklaşık {hours} saat 🚀",
-  "@emptyStateAfternoonReturningSub": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
-  "emptyStateAfternoonFirstMain": "bazen saat 2:47'de oluyor\nbazen 6:13'te\nama her zaman oluyor\nölüden diriye dönüşüm\nboştan elektriğe",
-  "emptyStateAfternoonFirstSub": "soru şu: olduğunda burada olacak mısın?",
-  "emptyStatePrimetimeFirstMain": "büyük bir şeyin eşiğine hoş geldin\n23 dakika içinde, bu boş harita patlıyor\nyüzlerce vibe yıldızlar gibi beliriyor\nher biri gerçek bir insan, gerçek duygu, gerçek an\nkalabalıktan önce buradasın",
-  "emptyStatePrimetimeFirstSub": "bu ya dehalık ya da şans ⚡",
-  "emptyStatePrimetimeReturnMain": "fırtına öncesi maç öncesi sessizlik\nne geleceğini biliyorsun\nakşam 7 bu haritada farklı vuruyor\niş stresi hafta sonu enerjisine dönüşüyor\ngerçek zamanlı olarak izle",
-  "emptyStatePrimetimeReturnSub": "ya da uygulamayı kapat ve sonsuza kadar merak et",
-  "emptyStateWeekendEveningMain": "cumartesi gecesi fenomeni:\nherkes dışarıda en iyi hayatını yaşıyor\nya da instagramda öyle yapıyor\nama sen şehrin gerçek nabzını buldun\nfiltresiz, düzenlenmemiş, sansürsüz duygular",
-  "emptyStateWeekendEveningSub": "gerçek için 5 dakika sonra yenile 🌃",
-  "emptyStateWeekendMorningMain": "şehir akşamdan kalma\ndün geceyi yavaşça birleştiriyor\nhasarı kontrol ediyor, pişmanlıkları sayıyor\nharita öğlen 2'ye kadar uyuyor\nama uyandığında...",
-  "emptyStateWeekendMorningSub": "kaos 2. raund başlıyor 🎭",
-  "emptyStateLateNightMain": "sabah 2 berraklığı farklı vuruyor\ngürültü durduğunda, gerçek ortaya çıkıyor\nsadece gerçekler şimdi uyanık\nsabah 3 düşüncelerini paylaşıyor\nham, dürüst, filtresiz",
-  "emptyStateLateNightSub": "karanlıkta yalnız değilsin 🌙",
-  "emptyStatePush1Title": "ping&wink",
-  "emptyStatePush1Body": "harita uyanıyor 👀",
-  "emptyStatePush2Title": "ping&wink",
-  "emptyStatePush2Body": "zirve vibe'lar şu anda ⚡",
-  "emptyStatePush3Title": "ping&wink",
-  "emptyStatePush3Body": "dün 47 vibe'ı kaçırdın. bugün?",
-  "emptyStateNotificationEnabled": "Bildirimler açık! Vibe'lar göründüğünde bileceksin 🔔",
-  "emptyStateTapToClose": "kapatmak için dokun",
-  "emptyStateAfternoonReturningHours": "ateşlemeye yaklaşık {hours} saat 🚀",
-  "@emptyStateAfternoonReturningHours": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
-
+  "mapEmptyHintFridayTime": "Şimdi boş mu? Normal! 😊 Yoğun saatler akşam 6-10 arası, herkes o zaman aktif 🌃",
 
 
   "vibeLabelBrainMode": "Kafa Çalışıyor",

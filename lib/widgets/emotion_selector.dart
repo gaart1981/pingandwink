@@ -7,6 +7,7 @@ import '../config/emotions.dart';
 import '../config/theme.dart';
 import '../models/user_data.dart';
 import '../l10n/app_localizations.dart';
+import 'vibe_confirmation_animation.dart';
 import '../services/storage_service.dart';
 
 /// VIRAL Vibe Selector - designed to make Gen Z tap instantly
@@ -30,6 +31,7 @@ class EmotionSelector extends StatefulWidget {
 
 class _EmotionSelectorState extends State<EmotionSelector>
     with TickerProviderStateMixin {
+  Offset? _lastTapPosition;
   // Main controllers
   late AnimationController _slideController;
   late Animation<double> _slideAnimation;
@@ -52,9 +54,6 @@ class _EmotionSelectorState extends State<EmotionSelector>
   double _dragDistance = 0;
   bool _isDragging = false;
   bool _isClosing = false;
-
-  // Shader precache flag
-  bool _shadersInitialized = false;
 
   // Fake nearby counts for viral effect
   final List<int> _nearbyCounts = [23, 45, 12, 67, 34, 8, 91, 34];
@@ -138,16 +137,6 @@ class _EmotionSelectorState extends State<EmotionSelector>
         widget.onSwipeDown!();
       }
     });
-
-    // Precache shaders after first frame
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (mounted) {
-        // This forces shader compilation on first frame
-        setState(() {
-          _shadersInitialized = true;
-        });
-      }
-    });
   }
 
   @override
@@ -189,12 +178,24 @@ class _EmotionSelectorState extends State<EmotionSelector>
     }
   }
 
-  void _onVibeTapped(int vibeIndex) {
-    if (!widget.isSubmitting && !_isClosing) {
-      HapticFeedback.mediumImpact();
-      // Just pass selection up, no animation here
-      widget.onEmotionSelected(vibeIndex);
-    }
+  void _showVibeConfirmation(int vibeIndex) {
+    HapticFeedback.mediumImpact();
+
+    Navigator.of(context).push(
+      PageRouteBuilder(
+        opaque: false,
+        barrierColor: Colors.transparent,
+        pageBuilder: (_, __, ___) => VibeConfirmationAnimation(
+          vibeIndex: vibeIndex,
+          tapPosition: _lastTapPosition,
+          onComplete: () {
+            Navigator.of(context).pop();
+            widget.onEmotionSelected(vibeIndex);
+          },
+        ),
+        transitionDuration: Duration.zero,
+      ),
+    );
   }
 
   String _getVibeLabel(int index, AppLocalizations l10n) {
@@ -352,35 +353,24 @@ class _EmotionSelectorState extends State<EmotionSelector>
                                 Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    // Use conditional rendering to avoid glitch
-                                    _shadersInitialized
-                                        ? ShaderMask(
-                                            shaderCallback: (bounds) =>
-                                                LinearGradient(
-                                              colors: [
-                                                AppTheme.primaryColor,
-                                                AppTheme.secondaryColor,
-                                              ],
-                                            ).createShader(bounds),
-                                            child: Text(
-                                              l10n.emotionSelectorTapYourVibe,
-                                              style: const TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 24,
-                                                fontWeight: FontWeight.w900,
-                                                letterSpacing: 1.5,
-                                              ),
-                                            ),
-                                          )
-                                        : Text(
-                                            l10n.emotionSelectorTapYourVibe,
-                                            style: TextStyle(
-                                              color: AppTheme.primaryColor,
-                                              fontSize: 24,
-                                              fontWeight: FontWeight.w900,
-                                              letterSpacing: 1.5,
-                                            ),
-                                          ),
+                                    ShaderMask(
+                                      shaderCallback: (bounds) =>
+                                          LinearGradient(
+                                        colors: [
+                                          AppTheme.primaryColor,
+                                          AppTheme.secondaryColor,
+                                        ],
+                                      ).createShader(bounds),
+                                      child: Text(
+                                        l10n.emotionSelectorTapYourVibe,
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.w900,
+                                          letterSpacing: 1.5,
+                                        ),
+                                      ),
+                                    ),
                                     const SizedBox(width: 8),
                                     Transform.translate(
                                       offset: Offset(0, _arrowAnimation.value),
@@ -431,12 +421,16 @@ class _EmotionSelectorState extends State<EmotionSelector>
                                   onTapDown: (details) {
                                     setState(() {
                                       _hoveredIndex = index;
+                                      _lastTapPosition = details.globalPosition;
                                     });
                                     HapticFeedback.lightImpact();
                                   },
                                   onTapUp: (_) {
                                     setState(() => _hoveredIndex = null);
-                                    _onVibeTapped(index);
+                                    if (!widget.isSubmitting) {
+                                      HapticFeedback.mediumImpact();
+                                      _showVibeConfirmation(index);
+                                    }
                                   },
                                   onTapCancel: () {
                                     setState(() => _hoveredIndex = null);
@@ -444,152 +438,146 @@ class _EmotionSelectorState extends State<EmotionSelector>
                                   child: AnimatedScale(
                                     scale: isHovered ? 0.95 : pulseValue,
                                     duration: const Duration(milliseconds: 150),
-                                    child: RepaintBoundary(
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(20),
-                                          gradient: LinearGradient(
-                                            begin: Alignment.topLeft,
-                                            end: Alignment.bottomRight,
-                                            colors: [
-                                              vibe.gradient[0].withOpacity(
-                                                  isHovered ? 0.4 : 0.2),
-                                              vibe.gradient[1].withOpacity(
-                                                  isHovered ? 0.3 : 0.1),
-                                            ],
-                                          ),
-                                          border: Border.all(
-                                            color: isHovered
-                                                ? vibe.color
-                                                : vibe.color.withOpacity(0.5),
-                                            width: isHovered ? 2 : 1,
-                                          ),
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color: vibe.color.withOpacity(
-                                                  isHovered ? 0.6 : 0.3),
-                                              blurRadius: isHovered ? 20 : 15,
-                                              spreadRadius: isHovered ? 2 : 0,
-                                            ),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        gradient: LinearGradient(
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight,
+                                          colors: [
+                                            vibe.gradient[0].withOpacity(
+                                                isHovered ? 0.4 : 0.2),
+                                            vibe.gradient[1].withOpacity(
+                                                isHovered ? 0.3 : 0.1),
                                           ],
                                         ),
-                                        child: Stack(
-                                          children: [
-                                            // Animated gradient overlay
-                                            if (isHovered)
-                                              Positioned.fill(
-                                                child: Container(
-                                                  decoration: BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            20),
-                                                    gradient: RadialGradient(
-                                                      center: Alignment.center,
-                                                      colors: [
-                                                        vibe.color
-                                                            .withOpacity(0.3),
-                                                        Colors.transparent,
-                                                      ],
-                                                    ),
+                                        border: Border.all(
+                                          color: isHovered
+                                              ? vibe.color
+                                              : vibe.color.withOpacity(0.5),
+                                          width: isHovered ? 2 : 1,
+                                        ),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: vibe.color.withOpacity(
+                                                isHovered ? 0.6 : 0.3),
+                                            blurRadius: isHovered ? 20 : 15,
+                                            spreadRadius: isHovered ? 2 : 0,
+                                          ),
+                                        ],
+                                      ),
+                                      child: Stack(
+                                        children: [
+                                          // Animated gradient overlay
+                                          if (isHovered)
+                                            Positioned.fill(
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(20),
+                                                  gradient: RadialGradient(
+                                                    center: Alignment.center,
+                                                    colors: [
+                                                      vibe.color
+                                                          .withOpacity(0.3),
+                                                      Colors.transparent,
+                                                    ],
                                                   ),
                                                 ),
                                               ),
+                                            ),
 
-                                            // Content
-                                            Padding(
-                                              padding: const EdgeInsets.all(12),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  // Emoji with subtle float animation
-                                                  Transform.translate(
-                                                    offset: Offset(
-                                                      math.sin(DateTime.now()
-                                                                      .millisecondsSinceEpoch /
-                                                                  1000 +
-                                                              index) *
-                                                          2,
-                                                      math.cos(DateTime.now()
-                                                                      .millisecondsSinceEpoch /
-                                                                  1000 +
-                                                              index) *
-                                                          1,
-                                                    ),
-                                                    child: Text(
-                                                      vibe.icon,
-                                                      style: TextStyle(
-                                                        fontSize:
-                                                            isHovered ? 32 : 28,
-                                                      ),
+                                          // Content
+                                          Padding(
+                                            padding: const EdgeInsets.all(12),
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                // Emoji with subtle float animation
+                                                Transform.translate(
+                                                  offset: Offset(
+                                                    math.sin(DateTime.now()
+                                                                    .millisecondsSinceEpoch /
+                                                                1000 +
+                                                            index) *
+                                                        2,
+                                                    math.cos(DateTime.now()
+                                                                    .millisecondsSinceEpoch /
+                                                                1000 +
+                                                            index) *
+                                                        1,
+                                                  ),
+                                                  child: Text(
+                                                    vibe.icon,
+                                                    style: TextStyle(
+                                                      fontSize:
+                                                          isHovered ? 32 : 28,
                                                     ),
                                                   ),
-                                                  const SizedBox(height: 4),
+                                                ),
+                                                const SizedBox(height: 4),
 
-                                                  // Label
+                                                // Label
+                                                Text(
+                                                  _getVibeLabel(index, l10n),
+                                                  style: TextStyle(
+                                                    color: Colors.white
+                                                        .withOpacity(0.9),
+                                                    fontSize: 11,
+                                                    fontWeight: FontWeight.w700,
+                                                    letterSpacing: 0.5,
+                                                  ),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+
+                                          // Nearby count badge
+                                          Positioned(
+                                            top: 8,
+                                            right: 8,
+                                            child: Container(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                horizontal: 6,
+                                                vertical: 2,
+                                              ),
+                                              decoration: BoxDecoration(
+                                                color: Colors.black
+                                                    .withOpacity(0.5),
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                border: Border.all(
+                                                  color: vibe.color
+                                                      .withOpacity(0.5),
+                                                  width: 0.5,
+                                                ),
+                                              ),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [
+                                                  Icon(
+                                                    Icons.people,
+                                                    size: 10,
+                                                    color: vibe.color,
+                                                  ),
+                                                  const SizedBox(width: 2),
                                                   Text(
-                                                    _getVibeLabel(index, l10n),
+                                                    '${_nearbyCounts[index]}',
                                                     style: TextStyle(
-                                                      color: Colors.white
-                                                          .withOpacity(0.9),
-                                                      fontSize: 11,
+                                                      color: vibe.color,
+                                                      fontSize: 10,
                                                       fontWeight:
-                                                          FontWeight.w700,
-                                                      letterSpacing: 0.5,
+                                                          FontWeight.bold,
                                                     ),
-                                                    textAlign: TextAlign.center,
                                                   ),
                                                 ],
                                               ),
                                             ),
-
-                                            // Nearby count badge
-                                            Positioned(
-                                              top: 8,
-                                              right: 8,
-                                              child: Container(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                  horizontal: 6,
-                                                  vertical: 2,
-                                                ),
-                                                decoration: BoxDecoration(
-                                                  color: Colors.black
-                                                      .withOpacity(0.5),
-                                                  borderRadius:
-                                                      BorderRadius.circular(10),
-                                                  border: Border.all(
-                                                    color: vibe.color
-                                                        .withOpacity(0.5),
-                                                    width: 0.5,
-                                                  ),
-                                                ),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.people,
-                                                      size: 10,
-                                                      color: vibe.color,
-                                                    ),
-                                                    const SizedBox(width: 2),
-                                                    Text(
-                                                      '${_nearbyCounts[index]}',
-                                                      style: TextStyle(
-                                                        color: vibe.color,
-                                                        fontSize: 10,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ),

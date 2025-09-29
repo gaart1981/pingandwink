@@ -63,120 +63,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get commonConfirm => 'Подтвердить';
 
   @override
-  String get emptyStateMorningStoryMain =>
-      'город ещё просыпается, медленно потягивается\nвсе в своих утренних ритуалах\nкофе, дорога, притворство работы\nно вот чего они ещё не знают:\nсегодня в 19:00 эта карта полностью преобразится';
+  String get chatBlockedMessage =>
+      'Cannot share personal information or inappropriate content';
 
   @override
-  String get emptyStateMorningStorySub =>
-      'поставь будильник сейчас, поблагодаришь себя позже ⏰';
-
-  @override
-  String get emptyStateMorningCuriosityMain =>
-      'ты поймал карту в тихой фазе\nкак ночной клуб днём - пусто, но полно потенциала\n3 человека проверили до тебя сегодня\nвсе поставили напоминания на 19:00\nсовпадение? или они что-то знают?';
-
-  @override
-  String get emptyStateMorningCuriositySub => 'ответ откроется на закате 🌅';
-
-  @override
-  String get emptyStateMorningSocialMain =>
-      'правда понедельника утром:\nвсе притворяются, что работают сейчас\nтаблицы открыты, мысли где-то ещё\nты 1 из 7 человек, кто проверил до полудня\nэто делает тебя особенным, или сумасшедшим, или и то и другое';
-
-  @override
-  String get emptyStateMorningSocialSub =>
-      'вернись в 19:00 чтобы узнать что именно';
-
-  @override
-  String emptyStateFridayMain(int hours) {
-    return 'парадокс пятницы днём:\nвсе ментально отключились, но физически застряли\nсчитают часы до свободы (ещё $hours)\nв 17:00 начинается метаморфоза\nиз рабочих зомби в воинов выходных';
-  }
-
-  @override
-  String get emptyStateFridaySub => 'ты рано пришёл это увидеть 🦋';
-
-  @override
-  String get emptyStateAfternoonReturningMain =>
-      'ты продолжаешь возвращаться в это время\nища что-то, чего здесь нет... пока\nупорство или безумие?\nвселенная наблюдает\nи она вознаграждает терпение';
-
-  @override
-  String emptyStateAfternoonReturningSub(int hours) {
-    return 'approximately $hours hours until ignition 🚀';
-  }
-
-  @override
-  String get emptyStateAfternoonFirstMain =>
-      'иногда это происходит в 14:47\nиногда в 18:13\nно это всегда происходит\nпревращение из мёртвого в живое\nиз пустого в электрическое';
-
-  @override
-  String get emptyStateAfternoonFirstSub =>
-      'вопрос в том: будешь ли ты здесь когда это случится?';
-
-  @override
-  String get emptyStatePrimetimeFirstMain =>
-      'добро пожаловать на грань чего-то большого\nчерез 23 минуты эта пустая карта взорвётся\nсотни вайбов появятся как звёзды\nкаждый - реальный человек, реальная эмоция, реальный момент\nты здесь до толпы';
-
-  @override
-  String get emptyStatePrimetimeFirstSub =>
-      'это либо гениальность, либо удача ⚡';
-
-  @override
-  String get emptyStatePrimetimeReturnMain =>
-      'тишина перед игрой перед бурей\nты знаешь что грядёт\n19:00 бьёт по-другому на этой карте\nрабочий стресс превращается в энергию выходных\nсмотри как это происходит в реальном времени';
-
-  @override
-  String get emptyStatePrimetimeReturnSub =>
-      'или закрой приложение и гадай вечно';
-
-  @override
-  String get emptyStateWeekendEveningMain =>
-      'феномен субботнего вечера:\nвсе там живут лучшей жизнью\nили притворяются в инстаграме\nно ты нашёл настоящий пульс города\nэмоции без фильтров, без редактуры, без цензуры';
-
-  @override
-  String get emptyStateWeekendEveningSub =>
-      'обнови через 5 минут для правды 🌃';
-
-  @override
-  String get emptyStateWeekendMorningMain =>
-      'город с похмелья\nмедленно собирает вчерашнюю ночь\nпроверяет ущерб, считает сожаления\nкарта спит до 14:00\nно когда проснётся...';
-
-  @override
-  String get emptyStateWeekendMorningSub => 'хаос раунд 2 начинается 🎭';
-
-  @override
-  String get emptyStateLateNightMain =>
-      'ясность 2 часов ночи бьёт по-другому\nкогда шум останавливается, правда появляется\nтолько настоящие бодрствуют сейчас\nделятся мыслями 3 часов ночи\nсырые, честные, без фильтров';
-
-  @override
-  String get emptyStateLateNightSub => 'ты не один в темноте 🌙';
-
-  @override
-  String get emptyStatePush1Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush1Body => 'карта просыпается 👀';
-
-  @override
-  String get emptyStatePush2Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush2Body => 'пик вайбов прямо сейчас ⚡';
-
-  @override
-  String get emptyStatePush3Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush3Body => 'вчера ты пропустил 47 вайбов. сегодня?';
-
-  @override
-  String get emptyStateNotificationEnabled =>
-      'Уведомления включены! Ты узнаешь когда появятся вайбы 🔔';
-
-  @override
-  String get emptyStateTapToClose => 'нажми чтобы закрыть';
-
-  @override
-  String emptyStateAfternoonReturningHours(int hours) {
-    return 'примерно $hours часов до зажигания 🚀';
-  }
+  String get mapEmptyHintFridayTime =>
+      'Пусто сейчас? Это нормально! 😊 Пик активности вечером, когда все онлайн 🌃';
 
   @override
   String get vibeLabelBrainMode => 'Фокус';
@@ -584,13 +476,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get onboardingValueTitleHyperlocalVibes => 'гиперлокальные вайбы';
 
   @override
-  String get onboardingValueSubtitleOnly2kmRadius => 'только 2км радиус';
+  String get onboardingValueSubtitleOnly2kmRadius => 'только 3км радиус';
 
   @override
   String get onboardingValueTitleNoProfiles => 'никаких профилей';
 
   @override
-  String get onboardingValueSubtitleJustPureMoments => 'только чистые моменты';
+  String get onboardingValueSubtitleJustPureMoments => 'только настоящие вайбы';
 
   @override
   String get onboardingButtonImReady => 'я готов';
@@ -599,7 +491,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get onboardingLocationTitle => 'открой свой район';
 
   @override
-  String get onboardingLocationSubtitle => 'смотри вайбы в радиусе 2км';
+  String get onboardingLocationSubtitle => 'смотри вайбы в радиусе 3км';
 
   @override
   String get onboardingLocationPrivacyTitle => 'приватность важна';
@@ -633,7 +525,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get onboardingNotificationFeature2 => 'ежедневные напоминания о вайбе';
 
   @override
-  String get onboardingNotificationFeature3 => 'алерты о горячих точках';
+  String get onboardingNotificationFeature3 => 'посказки об активных местах';
 
   @override
   String get onboardingButtonTurnOnPings => 'включить пинги';
@@ -723,13 +615,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get onboardingNotificationExampleNow => 'сейчас';
 
   @override
-  String get onboardingNotificationExamplePing => 'новый пинг 230м';
+  String get onboardingNotificationExamplePing => 'новый пинг 1230м';
 
   @override
   String get onboardingNotificationExampleMessage => 'кто-то вайбит с тобой';
 
   @override
-  String get onboardingMapNotification => 'кто-то загорелся в 753м';
+  String get onboardingMapNotification => 'кто-то активен в 753м';
 
   @override
   String get onboardingLocationPrivacyFormatted =>

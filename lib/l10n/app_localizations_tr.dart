@@ -63,120 +63,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get commonConfirm => 'Emin misin?';
 
   @override
-  String get emptyStateMorningStoryMain =>
-      'şehir hala uyanıyor, yavaşça geriniyor\nherkes sabah ritüellerinde\nkahve, işe gidiş, çalışıyormuş gibi yapmak\nama işte henüz bilmedikleri:\nbu akşam saat 7\'de, bu harita tamamen dönüşüyor';
+  String get chatBlockedMessage =>
+      'Cannot share personal information or inappropriate content';
 
   @override
-  String get emptyStateMorningStorySub =>
-      'alarmını şimdi kur, sonra kendine teşekkür et ⏰';
-
-  @override
-  String get emptyStateMorningCuriosityMain =>
-      'haritayı sessiz evresinde yakaladın\nöğlen vakti gece kulübü gibi - boş ama potansiyel dolu\nbugün senden önce 3 kişi kontrol etti\nhepsi akşam 7 için hatırlatıcı kurdu\ntesadüf mü? yoksa bir şey mi biliyorlar?';
-
-  @override
-  String get emptyStateMorningCuriositySub =>
-      'cevap gün batımında ortaya çıkıyor 🌅';
-
-  @override
-  String get emptyStateMorningSocialMain =>
-      'pazartesi sabahı gerçeği:\nherkes şu anda çalışıyormuş gibi yapıyor\ntablolar açık, akıllar başka yerde\nöğleden önce kontrol eden 7 kişiden 1\'isin\nbu seni özel yapıyor, ya da deli, ya da ikisi birden';
-
-  @override
-  String get emptyStateMorningSocialSub =>
-      'hangisi olduğunu öğrenmek için akşam 7\'de geri dön';
-
-  @override
-  String emptyStateFridayMain(int hours) {
-    return 'cuma öğleden sonra paradoksu:\nherkes zihinsel olarak çıkmış ama fiziksel olarak tıkılmış\nözgürlüğe kadar saatleri sayıyor ($hours kaldı)\nsaat 5\'te metamorfoz başlıyor\niş zombilerinden hafta sonu savaşçılarına';
-  }
-
-  @override
-  String get emptyStateFridaySub => 'buna tanık olmak için erken geldin 🦋';
-
-  @override
-  String get emptyStateAfternoonReturningMain =>
-      'bu saatte gelmeye devam ediyorsun\nhenüz burada olmayan bir şey arıyorsun... henüz\nısrar mı delilik mi?\nevren izliyor\nve sabrı ödüllendiriyor';
-
-  @override
-  String emptyStateAfternoonReturningSub(int hours) {
-    return 'ateşlemeye yaklaşık $hours saat 🚀';
-  }
-
-  @override
-  String get emptyStateAfternoonFirstMain =>
-      'bazen saat 2:47\'de oluyor\nbazen 6:13\'te\nama her zaman oluyor\nölüden diriye dönüşüm\nboştan elektriğe';
-
-  @override
-  String get emptyStateAfternoonFirstSub =>
-      'soru şu: olduğunda burada olacak mısın?';
-
-  @override
-  String get emptyStatePrimetimeFirstMain =>
-      'büyük bir şeyin eşiğine hoş geldin\n23 dakika içinde, bu boş harita patlıyor\nyüzlerce vibe yıldızlar gibi beliriyor\nher biri gerçek bir insan, gerçek duygu, gerçek an\nkalabalıktan önce buradasın';
-
-  @override
-  String get emptyStatePrimetimeFirstSub => 'bu ya dehalık ya da şans ⚡';
-
-  @override
-  String get emptyStatePrimetimeReturnMain =>
-      'fırtına öncesi maç öncesi sessizlik\nne geleceğini biliyorsun\nakşam 7 bu haritada farklı vuruyor\niş stresi hafta sonu enerjisine dönüşüyor\ngerçek zamanlı olarak izle';
-
-  @override
-  String get emptyStatePrimetimeReturnSub =>
-      'ya da uygulamayı kapat ve sonsuza kadar merak et';
-
-  @override
-  String get emptyStateWeekendEveningMain =>
-      'cumartesi gecesi fenomeni:\nherkes dışarıda en iyi hayatını yaşıyor\nya da instagramda öyle yapıyor\nama sen şehrin gerçek nabzını buldun\nfiltresiz, düzenlenmemiş, sansürsüz duygular';
-
-  @override
-  String get emptyStateWeekendEveningSub =>
-      'gerçek için 5 dakika sonra yenile 🌃';
-
-  @override
-  String get emptyStateWeekendMorningMain =>
-      'şehir akşamdan kalma\ndün geceyi yavaşça birleştiriyor\nhasarı kontrol ediyor, pişmanlıkları sayıyor\nharita öğlen 2\'ye kadar uyuyor\nama uyandığında...';
-
-  @override
-  String get emptyStateWeekendMorningSub => 'kaos 2. raund başlıyor 🎭';
-
-  @override
-  String get emptyStateLateNightMain =>
-      'sabah 2 berraklığı farklı vuruyor\ngürültü durduğunda, gerçek ortaya çıkıyor\nsadece gerçekler şimdi uyanık\nsabah 3 düşüncelerini paylaşıyor\nham, dürüst, filtresiz';
-
-  @override
-  String get emptyStateLateNightSub => 'karanlıkta yalnız değilsin 🌙';
-
-  @override
-  String get emptyStatePush1Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush1Body => 'harita uyanıyor 👀';
-
-  @override
-  String get emptyStatePush2Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush2Body => 'zirve vibe\'lar şu anda ⚡';
-
-  @override
-  String get emptyStatePush3Title => 'ping&wink';
-
-  @override
-  String get emptyStatePush3Body => 'dün 47 vibe\'ı kaçırdın. bugün?';
-
-  @override
-  String get emptyStateNotificationEnabled =>
-      'Bildirimler açık! Vibe\'lar göründüğünde bileceksin 🔔';
-
-  @override
-  String get emptyStateTapToClose => 'kapatmak için dokun';
-
-  @override
-  String emptyStateAfternoonReturningHours(int hours) {
-    return 'ateşlemeye yaklaşık $hours saat 🚀';
-  }
+  String get mapEmptyHintFridayTime =>
+      'Şimdi boş mu? Normal! 😊 Yoğun saatler akşam 6-10 arası, herkes o zaman aktif 🌃';
 
   @override
   String get vibeLabelBrainMode => 'Kafa Çalışıyor';

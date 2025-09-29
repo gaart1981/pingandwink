@@ -53,8 +53,8 @@ class _MainContainerState extends State<MainContainer> {
         setState(() {
           _currentIndex = 0;
         });
-        // Then show selector after navigation completes
-        Future.delayed(const Duration(milliseconds: 300), () {
+        // Show selector immediately after navigation
+        WidgetsBinding.instance.addPostFrameCallback((_) {
           _mapScreenKey.currentState?.showEmotionSelector();
         });
       }

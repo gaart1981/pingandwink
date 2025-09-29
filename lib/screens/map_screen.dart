@@ -32,10 +32,6 @@ import 'birth_year_selection_screen.dart';
 import '../services/vibe_state_manager.dart';
 import '../controllers/ping_wink_controller.dart';
 import '../l10n/app_localizations.dart';
-import '../controllers/empty_state_controller.dart';
-import '../widgets/empty_state_widget.dart';
-import '../services/notification_service.dart';
-import '../widgets/vibe_confirmation_animation.dart';
 
 /// Map screen with Ping&Wink - Adapted for Mapbox 2.3.0
 class MapScreen extends StatefulWidget {
@@ -66,9 +62,9 @@ class MapScreenState extends State<MapScreen>
   bool _mapReady = false;
 
   // UI State
-  bool _showEmotionSelector = false;
+  bool _showEmotionSelector = true; // ALWAYS show selector first on startup
   bool _isSubmitting = false;
-  bool _hasActiveEmotion = false;
+  bool _hasActiveEmotion = false;  
 
   // User Data
   UserData? _userData;
@@ -81,7 +77,6 @@ class MapScreenState extends State<MapScreen>
   // Controllers - FIXED: Make non-nullable and initialize early
   late final VibeStateManager _vibeManager = VibeStateManager();
   late final PingWinkController _pingWinkController = PingWinkController();
-  late final EmptyStateController _emptyStateController;
 
   // Moderation state
   Timer? _statusUpdateTimer;
@@ -110,62 +105,46 @@ class MapScreenState extends State<MapScreen>
   void initState() {
     super.initState();
     _initializeAnimations();
-    _setupControllerCallbacks(); // FIXED: Setup callbacks early
+    _setupControllerCallbacks();
 
-    // Initialize Empty State controller
-    _emptyStateController = EmptyStateController(
-      onRequestPushPermission: () async {
-        final granted =
-            await NotificationService.requestNotificationPermissions();
-        if (granted && mounted) {
-          _showToast(
-              'Notifications enabled! You\'ll know when vibes appear 🔔');
-        }
-      },
-      onNavigateToSettings: () {
-        if (mounted) {
-          Navigator.pushNamed(context, '/settings');
-        }
-      },
-    );
-    _initializeApp().then((_) {
-      _checkBirthYear();
-    });
+    // Start simple initialization
+    _initializeApp();
 
-    // Push instant handling
+    // Push notification handling - UNIFIED handler
     OneSignal.Notifications.addForegroundWillDisplayListener((event) {
       if (mounted) {
         final data = event.notification.additionalData;
+
+        // Process all push types in one handler
         if (data != null) {
-          _pingWinkController.handlePingPushNotification(data);
-          _pingWinkController.handleSparkPushNotification(data);
+          // Check if it's a cancellation push
+          if (data['type'] == 'ping_cancelled') {
+            _pingWinkController.handlePingCancellationPush(data);
+          } else {
+            // Handle regular ping and spark notifications
+            _pingWinkController.handlePingPushNotification(data);
+            _pingWinkController.handleSparkPushNotification(data);
+          }
         }
       }
+
+      // CRITICAL: DO NOT call preventDefault()
+      // Let OneSignal show the notification
     });
 
+    // Handle push click - keep this one
     OneSignal.Notifications.addClickListener((event) {
       if (mounted) {
         final data = event.notification.additionalData;
-
-        // Save ping_id for later processing when app opens from background
         if (data != null && data['ping_id'] != null) {
           final pingId = data['ping_id'] as String;
-          debugPrint('📱 Push clicked: saving ping $pingId');
+          debugPrint('Push clicked: saving ping $pingId');
           StorageService.savePendingPing(pingId);
         }
       }
     });
 
-    // Handle ping cancellation via push notification
-    OneSignal.Notifications.addForegroundWillDisplayListener((event) {
-      if (mounted) {
-        final data = event.notification.additionalData;
-        if (data != null && data['type'] == 'ping_cancelled') {
-          _pingWinkController.handlePingCancellationPush(data);
-        }
-      }
-    });
-
+    // Check cached ban status
     StorageService.getCachedBanStatus().then((cachedBan) {
       if (cachedBan != null && cachedBan.isBanned && mounted) {
         setState(() {
@@ -177,7 +156,7 @@ class MapScreenState extends State<MapScreen>
     _checkBanStatus();
     CommunityGuidelinesDialog.showIfNeeded(context);
 
-    // Check ban status every 10 seconds
+    // Check ban status periodically
     Timer.periodic(const Duration(seconds: 10), (_) {
       if (_userData != null) {
         _checkBanStatus();
@@ -187,7 +166,7 @@ class MapScreenState extends State<MapScreen>
     WidgetsBinding.instance.addObserver(this);
     _checkStreakStatus();
 
-    // Status update timer - check every 5 seconds
+    // Status update timer
     _statusUpdateTimer = Timer.periodic(const Duration(seconds: 5), (_) {
       if (_mapReady && _activeEmotions.isNotEmpty) {
         _updateOnlyStatuses();
@@ -253,17 +232,6 @@ class MapScreenState extends State<MapScreen>
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.resumed) {
-      // Track user return for Empty State
-      _emptyStateController.onUserReturned();
-
-      // Recheck map state
-      if (_activeEmotions.length < 3 && mounted) {
-        _emptyStateController.checkAndShowMessage(
-          context,
-          _activeEmotions.length,
-        );
-      }
-
       StorageService.getCachedBanStatus().then((cachedBan) {
         if (cachedBan != null && cachedBan.isBanned && mounted) {
           setState(() {
@@ -349,13 +317,70 @@ class MapScreenState extends State<MapScreen>
   }
 
   Future<void> _initializeApp() async {
+    // Load user data first
     await _loadUserData();
-    // Initialize Ping&Wink controller after user data is loaded
+
+    // Initialize controller if user data exists
     if (_userData != null) {
       _pingWinkController.initialize(_userData!, _hasActiveEmotion);
     }
-    await _getCurrentLocation();
+
+    // Start parallel tasks
+    final locationFuture = _getCurrentLocation();
+
+    // Check birth year
+    if (_userData?.birthYear == null) {
+      await _checkBirthYear();
+    }
+
+    // Load emotions from API to check if user has active vibe
+    if (_userData != null) {
+      try {
+        final data = await ApiService.getMapData(
+          deviceId: _userData!.deviceId,
+          lat: _currentPosition?.latitude,
+          lon: _currentPosition?.longitude,
+          birthYear: _userData!.birthYear,
+        );
+
+        _activeEmotions = ApiService.parseEmotions(data, _userData!.deviceId);
+        _hasActiveEmotion = data['stats']?['has_active_mood'] ?? false;
+
+        // KEY LOGIC: Hide selector ONLY if user has active vibe
+        if (_hasActiveEmotion && mounted) {
+          setState(() {
+            _showEmotionSelector = false;
+          });
+        }
+        // If no active vibe - selector stays open!
+
+        _pingWinkController.updateActiveEmotionStatus(_hasActiveEmotion);
+
+        // Sync vibe states
+        _vibeManager.syncGlobalStates(
+          activeSparks: data['active_sparks'] ?? [],
+          activePings: data['active_pings'] ?? [],
+          myDeviceId: _userData!.deviceId,
+        );
+      } catch (e) {
+        debugPrint('Error loading emotions: $e');
+        // On error - selector stays open
+      }
+    }
+
+    // Wait for location
+    await locationFuture;
+
+    // Start refresh timer
     _startRefreshTimer();
+
+    // Check for pending ping from push
+    final pendingPing = await StorageService.getPendingPing();
+    if (pendingPing != null && mounted) {
+      // Handle pending ping - this was already being handled in initState
+      debugPrint('Found pending ping: $pendingPing');
+      await StorageService.clearPendingPing();
+    }
   }
 
   Future<void> _checkBirthYear() async {
@@ -519,26 +544,17 @@ class MapScreenState extends State<MapScreen>
         }
       }
 
+      // Only show selector if no active emotion and it's not already showing
       if (!_hasActiveEmotion && !_showEmotionSelector && mounted) {
-        final cachedBan = await StorageService.getCachedBanStatus();
-        if (cachedBan != null && cachedBan.isBanned) {
-          setState(() {
-            _banStatus = cachedBan;
-            _showEmotionSelector = true;
-          });
-        } else {
-          setState(() {
-            _showEmotionSelector = true;
-          });
-        }
+        setState(() {
+          _showEmotionSelector = true;
+        });
       }
-
-      // Check empty state after loading
-      if (mounted) {
-        _emptyStateController.checkAndShowMessage(
-          context,
-          _activeEmotions.length,
-        );
+      // Hide selector if user got active emotion
+      else if (_hasActiveEmotion && _showEmotionSelector && mounted) {
+        setState(() {
+          _showEmotionSelector = false;
+        });
       }
     } catch (e) {
       debugPrint('Error loading emotions: $e');
@@ -640,21 +656,14 @@ class MapScreenState extends State<MapScreen>
         }
       }
 
+      // Update selector state based on active emotion
       if (!_hasActiveEmotion && !_showEmotionSelector && mounted) {
         setState(() {
           _showEmotionSelector = true;
         });
-      }
-
-      // Check empty state after loading
-      if (mounted && _mapReady) {
-        Timer(const Duration(milliseconds: 500), () {
-          if (mounted) {
-            _emptyStateController.checkAndShowMessage(
-              context,
-              _activeEmotions.length,
-            );
-          }
+      } else if (_hasActiveEmotion && _showEmotionSelector && mounted) {
+        setState(() {
+          _showEmotionSelector = false;
         });
       }
     } catch (e) {
@@ -1381,15 +1390,7 @@ class MapScreenState extends State<MapScreen>
   Future<void> _submitMood(int emotion) async {
     if (_isSubmitting || _userData == null) return;
 
-    // First show the vibe confirmation animation
-    await _showVibeConfirmationAnimation(emotion);
-
-    // Now hide the selector and start submission
-    setState(() {
-      _showEmotionSelector = false;
-      _isSubmitting = true;
-    });
-
+    setState(() => _isSubmitting = true);
     HapticFeedback.mediumImpact();
 
     try {
@@ -1416,6 +1417,7 @@ class MapScreenState extends State<MapScreen>
 
       if (mounted) {
         setState(() {
+          _showEmotionSelector = false;
           _hasActiveEmotion = true;
         });
 
@@ -1432,33 +1434,20 @@ class MapScreenState extends State<MapScreen>
         }
 
         _showSuccessSnackbar(response['nearby_count'] ?? 0);
+        // friendly hint
+        if (_activeEmotions.where((e) => !e.isOwn).length <= 2) {
+          Timer(const Duration(seconds: 4), () {
+            if (mounted && !_showEmotionSelector) {
+              _showFriendlyEmptyMapHint();
+            }
+          });
+        }
       }
     } catch (e) {
       _showError(e.toString());
     } finally {
       if (mounted) setState(() => _isSubmitting = false);
     }
-  }
-
-// New method to show vibe confirmation animation
-  Future<void> _showVibeConfirmationAnimation(int emotion) async {
-    final completer = Completer<void>();
-
-    final overlayEntry = OverlayEntry(
-      builder: (context) => VibeConfirmationAnimation(
-        vibeIndex: emotion,
-        tapPosition: null,
-        onComplete: () {
-          completer.complete();
-        },
-      ),
-    );
-
-    Overlay.of(context).insert(overlayEntry);
-
-    // Wait for animation to complete
-    await completer.future;
-    overlayEntry.remove();
   }
 
   Future<void> _centerMapOnLocation({bool animate = true}) async {
@@ -1565,6 +1554,65 @@ class MapScreenState extends State<MapScreen>
           borderRadius: BorderRadius.circular(12),
         ),
         duration: const Duration(seconds: 2),
+      ),
+    );
+  }
+  
+  void _showFriendlyEmptyMapHint() async {
+    final l10n = AppLocalizations.of(context)!;
+
+    final hasShown = await StorageService.hasShownEmptyHint();
+    if (hasShown) return;
+
+    await StorageService.setEmptyHintShown();
+
+    if (!mounted) return;
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Container(
+          padding: const EdgeInsets.symmetric(vertical: 4),
+          child: Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF4CAF50).withOpacity(0.15),
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(
+                  Icons.favorite_rounded,
+                  color: Color(0xFF4CAF50),
+                  size: 20,
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Text(
+                  l10n.mapEmptyHintFridayTime,
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: Colors.white.withOpacity(0.95),
+                    height: 1.4,
+                  ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
+          ),
+        ),
+        backgroundColor: const Color(0xFF1B5E20),
+        behavior: SnackBarBehavior.floating,
+        duration: const Duration(seconds: 10),
+        margin: const EdgeInsets.only(
+          bottom: 100,
+          left: 16,
+          right: 16,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
       ),
     );
   }
@@ -1792,10 +1840,14 @@ class MapScreenState extends State<MapScreen>
     return Scaffold(
       body: Stack(
         children: [
-          // Map widget
-          MoodMapWidget(
-            onMapCreated: _onMapCreated,
-            currentPosition: _currentPosition,
+        
+          // Map widget (hidden when selector is showing)
+          Opacity(
+            opacity: _showEmotionSelector ? 0.0 : 1.0,
+            child: MoodMapWidget(
+              onMapCreated: _onMapCreated,
+              currentPosition: _currentPosition,
+            ),
           ),
 
           // Top gradient
@@ -1861,19 +1913,6 @@ class MapScreenState extends State<MapScreen>
               right: 0,
               child: _buildGenZTutorial(),
             ),
-
-          // Empty State Widget
-          ListenableBuilder(
-            listenable: _emptyStateController,
-            builder: (context, child) {
-              return EmptyStateWidget(
-                message: _emptyStateController.currentMessage,
-                submessage: _emptyStateController.currentSubmessage,
-                isVisible: _emptyStateController.isMessageVisible,
-                onDismiss: () => _emptyStateController.dismissMessage(),
-              );
-            },
-          ),
 
           // Streak counter widget
           if (!_showEmotionSelector)
@@ -2002,7 +2041,8 @@ class MapScreenState extends State<MapScreen>
             IgnorePointer(
               ignoring: _banStatus?.isBanned ?? false,
               child: Container(
-                color: Colors.black.withValues(alpha: 0.8),
+                color: Colors.black
+                    .withValues(alpha: 0.8), // Almost opaque background
                 child: Stack(
                   children: [
                     // Emotion selector
@@ -2151,7 +2191,6 @@ class MapScreenState extends State<MapScreen>
 
     _pulseController.dispose();
     _pingWinkController.dispose();
-    _emptyStateController.dispose();
     super.dispose();
   }
 }

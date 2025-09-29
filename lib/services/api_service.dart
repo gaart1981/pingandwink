@@ -23,26 +23,53 @@ class ApiService {
     required int birthYear,
   }) async {
     try {
+      final url = _saveBirthYearUrl;
+      final requestBody = {
+        'device_id': deviceId,
+        'birth_year': birthYear,
+      };
+
+      debugPrint('📤 Calling Edge Function save-birth-year:');
+      debugPrint('   URL: $url');
+      debugPrint('   Device ID: $deviceId');
+      debugPrint('   Birth Year: $birthYear');
+      debugPrint('   Request Body: ${json.encode(requestBody)}');
+
       final response = await http.post(
-        Uri.parse(_saveBirthYearUrl),
+        Uri.parse(url),
         headers: {
           'Authorization': 'Bearer ${AppConfig.supabaseAnonKey}',
           'Content-Type': 'application/json',
         },
-        body: json.encode({
-          'device_id': deviceId,
-          'birth_year': birthYear,
-        }),
+        body: json.encode(requestBody),
       );
 
+      debugPrint('📥 Response Status: ${response.statusCode}');
+      debugPrint('   Response Body: ${response.body}');
+
+      // Детально парсим ответ при ошибке
+      if (response.statusCode == 400 && response.body.isNotEmpty) {
+        try {
+          final errorData = json.decode(response.body);
+          debugPrint('   ❌ Error field: ${errorData['error']}');
+          debugPrint('   ❌ Details field: ${errorData['details']}');
+        } catch (e) {
+          debugPrint('   ❌ Could not parse error response');
+        }
+      }
+
+      // Проверяем успешные статусы
       if (response.statusCode == 200 || response.statusCode == 204) {
+        debugPrint('✅ Birth year saved successfully to Edge Function');
         return true;
       } else {
-        debugPrint('Failed to save birth year: ${response.statusCode}');
+        debugPrint('❌ Failed to save birth year: ${response.statusCode}');
         return false;
       }
     } catch (e) {
-      debugPrint('Error saving birth year: $e');
+      debugPrint('❌ Exception in saveBirthYear:');
+      debugPrint('   Error: $e');
+      debugPrint('   Stack trace: ${StackTrace.current}');
       return false;
     }
   }

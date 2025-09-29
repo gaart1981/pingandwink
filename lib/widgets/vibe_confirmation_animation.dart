@@ -1,6 +1,5 @@
 // lib/widgets/vibe_confirmation_animation.dart
 import 'dart:ui';
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../config/emotions.dart';
@@ -31,15 +30,12 @@ class _VibeConfirmationAnimationState extends State<VibeConfirmationAnimation>
   late AnimationController _scaleController;
   late AnimationController _textController;
   late AnimationController _backgroundController;
-  late AnimationController _particleController;
 
   late Animation<double> _scaleAnimation;
   late Animation<double> _textScaleAnimation;
   late Animation<double> _textOpacityAnimation;
   late Animation<double> _backgroundAnimation;
   late Animation<double> _emojiRotationAnimation;
-  late Animation<double> _emojiScaleAnimation;
-  late Animation<double> _particleAnimation;
 
   // Get vibe messages from localization
   String _getVibeMessage(int index, AppLocalizations l10n) {
@@ -93,9 +89,9 @@ class _VibeConfirmationAnimationState extends State<VibeConfirmationAnimation>
   void initState() {
     super.initState();
 
-    // Scale animation for the expanding circle - smoother curve
+    // Scale animation for the expanding circle
     _scaleController = AnimationController(
-      duration: const Duration(milliseconds: 700),
+      duration: const Duration(milliseconds: 500),
       vsync: this,
     );
 
@@ -104,81 +100,59 @@ class _VibeConfirmationAnimationState extends State<VibeConfirmationAnimation>
       end: 1.0,
     ).animate(CurvedAnimation(
       parent: _scaleController,
-      curve:
-          Curves.easeOutCubic, // Changed from easeOutExpo for smoother effect
+      curve: Curves.easeOutExpo,
     ));
 
-    // Text animations - longer duration
+    // Text animations
     _textController = AnimationController(
-      duration: const Duration(milliseconds: 1500),
+      duration: const Duration(milliseconds: 1200),
       vsync: this,
     );
 
     _textScaleAnimation = TweenSequence<double>([
       TweenSequenceItem(
-        tween: Tween<double>(begin: 0.0, end: 1.1)
-            .chain(CurveTween(curve: Curves.easeOutBack)), // Smoother curve
-        weight: 40,
+        tween: Tween<double>(begin: 0.0, end: 1.2)
+            .chain(CurveTween(curve: Curves.elasticOut)),
+        weight: 50,
       ),
       TweenSequenceItem(
-        tween: Tween<double>(begin: 1.1, end: 1.0)
+        tween: Tween<double>(begin: 1.2, end: 1.0)
             .chain(CurveTween(curve: Curves.easeInOut)),
         weight: 20,
       ),
       TweenSequenceItem(
         tween: Tween<double>(begin: 1.0, end: 1.0),
-        weight: 40,
+        weight: 30,
       ),
     ]).animate(_textController);
 
     _textOpacityAnimation = TweenSequence<double>([
       TweenSequenceItem(
-        tween: Tween<double>(begin: 0.0, end: 1.0)
-            .chain(CurveTween(curve: Curves.easeIn)),
-        weight: 25,
+        tween: Tween<double>(begin: 0.0, end: 1.0),
+        weight: 30,
       ),
       TweenSequenceItem(
         tween: Tween<double>(begin: 1.0, end: 1.0),
-        weight: 55,
+        weight: 50,
       ),
       TweenSequenceItem(
-        tween: Tween<double>(begin: 1.0, end: 0.0)
-            .chain(CurveTween(curve: Curves.easeOut)),
+        tween: Tween<double>(begin: 1.0, end: 0.0),
         weight: 20,
       ),
     ]).animate(_textController);
 
-    // Smoother emoji rotation
+    // Emoji rotation for fun
     _emojiRotationAnimation = Tween<double>(
-      begin: -0.1,
-      end: 0.1,
+      begin: -0.2,
+      end: 0.2,
     ).animate(CurvedAnimation(
       parent: _textController,
-      curve: Curves.easeInOutSine,
+      curve: Curves.elasticInOut,
     ));
 
-    // Emoji scale pulse
-    _emojiScaleAnimation = TweenSequence<double>([
-      TweenSequenceItem(
-        tween: Tween<double>(begin: 0.0, end: 1.3),
-        weight: 30,
-      ),
-      TweenSequenceItem(
-        tween: Tween<double>(begin: 1.3, end: 0.95),
-        weight: 20,
-      ),
-      TweenSequenceItem(
-        tween: Tween<double>(begin: 0.95, end: 1.0),
-        weight: 50,
-      ),
-    ]).animate(CurvedAnimation(
-      parent: _textController,
-      curve: Curves.easeOutCubic,
-    ));
-
-    // Background fade - smoother
+    // Background fade
     _backgroundController = AnimationController(
-      duration: const Duration(milliseconds: 400),
+      duration: const Duration(milliseconds: 300),
       vsync: this,
     );
 
@@ -187,20 +161,6 @@ class _VibeConfirmationAnimationState extends State<VibeConfirmationAnimation>
       end: 1.0,
     ).animate(CurvedAnimation(
       parent: _backgroundController,
-      curve: Curves.easeOutCubic,
-    ));
-
-    // Particle animation controller
-    _particleController = AnimationController(
-      duration: const Duration(milliseconds: 1200),
-      vsync: this,
-    );
-
-    _particleAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _particleController,
       curve: Curves.easeOut,
     ));
 
@@ -216,21 +176,20 @@ class _VibeConfirmationAnimationState extends State<VibeConfirmationAnimation>
     _backgroundController.forward();
 
     // Small delay then expand circle
-    await Future.delayed(const Duration(milliseconds: 100));
+    await Future.delayed(const Duration(milliseconds: 50));
     _scaleController.forward();
-    _particleController.forward();
 
     // Start text animation
-    await Future.delayed(const Duration(milliseconds: 250));
+    await Future.delayed(const Duration(milliseconds: 200));
     _textController.forward();
 
-    // Wait for completion - extended by 100ms
-    await Future.delayed(const Duration(milliseconds: 1100));
+    // Wait for completion
+    await Future.delayed(const Duration(milliseconds: 900));
 
     // Fade out
     _backgroundController.reverse();
 
-    await Future.delayed(const Duration(milliseconds: 400));
+    await Future.delayed(const Duration(milliseconds: 300));
     widget.onComplete();
   }
 
@@ -239,7 +198,6 @@ class _VibeConfirmationAnimationState extends State<VibeConfirmationAnimation>
     _scaleController.dispose();
     _textController.dispose();
     _backgroundController.dispose();
-    _particleController.dispose();
     super.dispose();
   }
 
@@ -262,8 +220,6 @@ class _VibeConfirmationAnimationState extends State<VibeConfirmationAnimation>
           _textOpacityAnimation,
           _backgroundAnimation,
           _emojiRotationAnimation,
-          _emojiScaleAnimation,
-          _particleAnimation,
         ]),
         builder: (context, child) {
           return Stack(
@@ -273,39 +229,37 @@ class _VibeConfirmationAnimationState extends State<VibeConfirmationAnimation>
                 child: IgnorePointer(
                   child: BackdropFilter(
                     filter: ImageFilter.blur(
-                      sigmaX: 15 * _backgroundAnimation.value,
-                      sigmaY: 15 * _backgroundAnimation.value,
+                      sigmaX: 10 * _backgroundAnimation.value,
+                      sigmaY: 10 * _backgroundAnimation.value,
                     ),
                     child: Container(
                       color: Colors.black
-                          .withOpacity(0.8 * _backgroundAnimation.value),
+                          .withOpacity(0.7 * _backgroundAnimation.value),
                     ),
                   ),
                 ),
               ),
 
-              // Expanding circle effect - smoother gradient
+              // Expanding circle effect from tap position
               Positioned(
                 left: expandOrigin.dx -
-                    (screenSize.width * 1.5 * _scaleAnimation.value),
+                    (screenSize.width * _scaleAnimation.value),
                 top: expandOrigin.dy -
-                    (screenSize.width * 1.5 * _scaleAnimation.value),
+                    (screenSize.width * _scaleAnimation.value),
                 child: Container(
-                  width: screenSize.width * 3 * _scaleAnimation.value,
-                  height: screenSize.width * 3 * _scaleAnimation.value,
+                  width: screenSize.width * 2 * _scaleAnimation.value,
+                  height: screenSize.width * 2 * _scaleAnimation.value,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     gradient: RadialGradient(
                       colors: [
                         vibe.gradient[0]
-                            .withOpacity(0.4 * _scaleAnimation.value),
+                            .withOpacity(0.3 * _scaleAnimation.value),
                         vibe.gradient[1]
-                            .withOpacity(0.2 * _scaleAnimation.value),
-                        vibe.gradient[0]
-                            .withOpacity(0.05 * _scaleAnimation.value),
+                            .withOpacity(0.1 * _scaleAnimation.value),
                         Colors.transparent,
                       ],
-                      stops: const [0.0, 0.3, 0.6, 1.0],
+                      stops: const [0.0, 0.5, 1.0],
                     ),
                   ),
                 ),
@@ -320,28 +274,21 @@ class _VibeConfirmationAnimationState extends State<VibeConfirmationAnimation>
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        // Rotating and scaling emoji
+                        // Rotating emoji
                         Transform.rotate(
                           angle: _emojiRotationAnimation.value,
                           child: Transform.scale(
-                            scale: _emojiScaleAnimation.value,
-                            child: Container(
-                              padding: const EdgeInsets.all(20),
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: vibe.color.withOpacity(0.3),
-                                    blurRadius: 40,
-                                    spreadRadius: 10,
+                            scale: 1.0 + (_scaleAnimation.value * 0.5),
+                            child: Text(
+                              vibe.icon,
+                              style: TextStyle(
+                                fontSize: 80,
+                                shadows: [
+                                  Shadow(
+                                    color: vibe.color.withOpacity(0.5),
+                                    blurRadius: 30,
                                   ),
                                 ],
-                              ),
-                              child: Text(
-                                vibe.icon,
-                                style: const TextStyle(
-                                  fontSize: 80,
-                                ),
                               ),
                             ),
                           ),
@@ -375,36 +322,31 @@ class _VibeConfirmationAnimationState extends State<VibeConfirmationAnimation>
 
                         const SizedBox(height: 8),
 
-                        // Sub message with fade
-                        AnimatedOpacity(
-                          opacity: _textOpacityAnimation.value * 0.9,
-                          duration: const Duration(milliseconds: 300),
-                          child: Text(
-                            _getVibeSubMessage(widget.vibeIndex, l10n),
-                            style: TextStyle(
-                              color: Colors.white.withOpacity(0.8),
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              letterSpacing: 0.5,
-                            ),
+                        // Sub message
+                        Text(
+                          _getVibeSubMessage(widget.vibeIndex, l10n),
+                          style: TextStyle(
+                            color: Colors.white.withOpacity(0.8),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 0.5,
                           ),
                         ),
 
                         const SizedBox(height: 30),
 
-                        // Animated pulse indicator
-                        AnimatedContainer(
-                          duration: const Duration(milliseconds: 600),
-                          width: 60 + (_scaleAnimation.value * 20),
+                        // Pulse indicator
+                        Container(
+                          width: 60,
                           height: 3,
                           decoration: BoxDecoration(
                             color: vibe.color,
                             borderRadius: BorderRadius.circular(2),
                             boxShadow: [
                               BoxShadow(
-                                color: vibe.color.withOpacity(0.8),
-                                blurRadius: 15,
-                                spreadRadius: 3,
+                                color: vibe.color,
+                                blurRadius: 10,
+                                spreadRadius: 2,
                               ),
                             ],
                           ),
@@ -415,8 +357,8 @@ class _VibeConfirmationAnimationState extends State<VibeConfirmationAnimation>
                 ),
               ),
 
-              // Smooth particle effects
-              ..._buildSmoothParticles(vibe, screenSize),
+              // Particle effects (optional fancy addition)
+              ..._buildParticles(vibe, screenSize),
             ],
           );
         },
@@ -424,42 +366,34 @@ class _VibeConfirmationAnimationState extends State<VibeConfirmationAnimation>
     );
   }
 
-  // Generate smooth floating particles
-  List<Widget> _buildSmoothParticles(EmotionConfig vibe, Size screenSize) {
-    if (_particleAnimation.value < 0.1) return [];
+  // Generate floating particles for extra wow
+  List<Widget> _buildParticles(EmotionConfig vibe, Size screenSize) {
+    if (_scaleAnimation.value < 0.5) return [];
 
-    return List.generate(8, (index) {
-      final angle = (index * 45) * (math.pi / 180);
-      final distance = 150 * _particleAnimation.value;
-      final offsetX = math.cos(angle) * distance;
-      final offsetY = math.sin(angle) * distance;
-
-      // Add floating effect
-      final floatOffset =
-          math.sin(_particleAnimation.value * math.pi * 2 + index) * 10;
+    return List.generate(6, (index) {
+      final angle = (index * 60) * (3.14159 / 180);
+      final distance = 100 * _scaleAnimation.value;
 
       return Positioned(
-        left: screenSize.width / 2 + offsetX - 4,
-        top: screenSize.height / 2 + offsetY + floatOffset - 4,
-        child: AnimatedOpacity(
-          duration: const Duration(milliseconds: 300),
-          opacity: (1 - _particleAnimation.value) * 0.8,
-          child: Transform.scale(
-            scale: 0.5 + (_particleAnimation.value * 0.5),
-            child: Container(
-              width: 8,
-              height: 8,
-              decoration: BoxDecoration(
-                color: vibe.color,
-                shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    color: vibe.color.withOpacity(0.6),
-                    blurRadius: 12,
-                    spreadRadius: 2,
-                  ),
-                ],
-              ),
+        left: screenSize.width / 2 +
+            (distance * _scaleAnimation.value * (index.isEven ? 1 : -1)),
+        top: screenSize.height / 2 +
+            (distance * _scaleAnimation.value * (index.isOdd ? 1 : -1)),
+        child: Transform.scale(
+          scale: _scaleAnimation.value,
+          child: Container(
+            width: 8,
+            height: 8,
+            decoration: BoxDecoration(
+              color: vibe.color,
+              shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  color: vibe.color,
+                  blurRadius: 10,
+                  spreadRadius: 2,
+                ),
+              ],
             ),
           ),
         ),

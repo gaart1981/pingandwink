@@ -21,53 +21,7 @@
   "commonConfirm": "Confirmar",
   
 
-
-  "emptyStateMorningStoryMain": "a cidade ainda tá acordando, se espreguiçando devagar\ntodo mundo nos rituais matinais\ncafé, transporte, fingindo trabalhar\nmas o que eles não sabem ainda:\nhoje à noite às 22h, esse mapa se transforma completamente",
-  "emptyStateMorningStorySub": "bota o alarme agora, agradeça depois ⏰",
-  "emptyStateMorningCuriosityMain": "você pegou o mapa na fase quieta\ntipo balada ao meio-dia - vazia mas cheia de potencial\n3 pessoas checaram antes de você hoje\ntodas botaram lembretes pras 22h\ncoincidência? ou elas sabem de algo?",
-  "emptyStateMorningCuriositySub": "a resposta se revela no pôr do sol 🌅",
-  "emptyStateMorningSocialMain": "verdade da segunda de manhã:\ntodo mundo fingindo trabalhar agora\nplanilhas abertas, mentes em outro lugar\nvocê é 1 de 7 pessoas que checaram antes do meio-dia\nisso te faz especial, ou louco, ou os dois",
-  "emptyStateMorningSocialSub": "volta às 22h pra descobrir qual",
-  "emptyStateFridayMain": "paradoxo da sexta à tarde:\ntodo mundo mentalmente desligado mas fisicamente preso\ncontando horas até a liberdade ({hours} faltando)\nàs 17h a metamorfose começa\nde zumbis do trabalho pra guerreiros do fim de semana",
-  "@emptyStateFridayMain": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
-  "emptyStateFridaySub": "você chegou cedo pra testemunhar 🦋",
-  "emptyStateAfternoonReturningMain": "você continua voltando nessa hora\nprocurando algo que não tá aqui... ainda\npersistência ou loucura?\no universo tá observando\ne recompensa paciência",
-  "@emptyStateAfternoonReturningSub": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
-  "emptyStateAfternoonFirstMain": "às vezes acontece às 14:47\nàs vezes às 18:13\nmas sempre acontece\na transformação de morto pra vivo\nde vazio pra elétrico",
-  "emptyStateAfternoonFirstSub": "a pergunta é: você vai estar aqui quando acontecer?",
-  "emptyStatePrimetimeFirstMain": "bem-vindo à beira de algo grande\nem 23 minutos, esse mapa vazio explode\ncentenas de vibes aparecendo como estrelas\ncada uma uma pessoa real, emoção real, momento real\nvocê tá aqui antes da multidão",
-  "emptyStatePrimetimeFirstSub": "isso é genialidade ou sorte ⚡",
-  "emptyStatePrimetimeReturnMain": "o silêncio pré-jogo antes da tempestade\nvocê sabe o que vem aí\n22h bate diferente nesse mapa\nestresse do trabalho se transforma em energia de fim de semana\nassista acontecer em tempo real",
-  "emptyStatePrimetimeReturnSub": "ou fecha o app e fica na curiosidade pra sempre",
-  "emptyStateWeekendEveningMain": "fenômeno de sábado à noite:\ntodo mundo lá fora vivendo sua melhor vida\nou fingindo no instagram\nmas você achou o pulso real da cidade\nemoções sem filtro, sem edição, sem censura",
-  "emptyStateWeekendEveningSub": "atualiza em 5 minutos pra verdade 🌃",
-  "emptyStateWeekendMorningMain": "a cidade tá de ressaca\njuntando os pedaços da noite passada devagar\nchecando danos, contando arrependimentos\no mapa dorme até 14h\nmas quando acordar...",
-  "emptyStateWeekendMorningSub": "o caos round 2 começa 🎭",
-  "emptyStateLateNightMain": "clareza das 2 da manhã bate diferente\nquando o barulho para, a verdade emerge\nsó os reais tão acordados agora\ncompartilhando pensamentos das 3 da manhã\ncru, honesto, sem filtro",
-  "emptyStateLateNightSub": "você não tá sozinho no escuro 🌙",
-  "emptyStatePush1Title": "ping&wink",
-  "emptyStatePush1Body": "o mapa tá acordando 👀",
-  "emptyStatePush2Title": "ping&wink",
-  "emptyStatePush2Body": "vibes no pico agora ⚡",
-  "emptyStatePush3Title": "ping&wink",
-  "emptyStatePush3Body": "ontem você perdeu 47 vibes. hoje?",
-  "emptyStateNotificationEnabled": "Notificações ativadas! Você vai saber quando as vibes aparecerem 🔔",
-  "emptyStateTapToClose": "toque pra fechar",
-  "emptyStateAfternoonReturningHours": "aproximadamente {hours} horas até a ignição 🚀",
-  "@emptyStateAfternoonReturningHours": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
-
+  "mapEmptyHintFridayTime": "Vazio agora? Normal! 😊 Horário de pico é das 18-22h quando todos estão ativos 🌃",
 
 
   "vibeLabelBrainMode": "Modo Focus",

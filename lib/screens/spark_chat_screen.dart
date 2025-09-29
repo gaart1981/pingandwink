@@ -13,6 +13,7 @@ import '../services/moderation_service.dart';
 import '../widgets/moderation_menu.dart';
 import '../services/vibe_state_manager.dart';
 import '../l10n/app_localizations.dart';
+import '../services/simple_content_filter.dart';
 
 /// Professional spark chat screen with working typing indicator
 class SparkChatScreen extends StatefulWidget {
@@ -53,6 +54,9 @@ class _SparkChatScreenState extends State<SparkChatScreen> {
   Timer? _typingDebounce;
   Timer? _typingHideTimer;
   Timer? _countdownTimer;
+  Timer? _errorDebounce;
+  DateTime? _lastErrorTime;
+  String? _lastErrorMessage;
   bool _iAmTyping = false;
 
   // Moderation variables
@@ -488,16 +492,40 @@ class _SparkChatScreenState extends State<SparkChatScreen> {
   }
 
   Future<void> _sendMessage() async {
+    // Check if we can send message at all
     if (!_canSendMessage || _isLoading || _sessionExpired) return;
 
+    // Get trimmed text from input field
     final text = _messageController.text.trim();
     if (text.isEmpty) return;
 
+    // Get localization for error messages
+    final l10n = AppLocalizations.of(context)!;
+
+    // Check message length limit (199 characters max)
     if (text.length > 199) {
-      final l10n = AppLocalizations.of(context)!;
       _showError(l10n.sparkMessageTooLong);
       return;
     }
+
+    // ===== CONTENT FILTER CHECK =====
+    // Check if message contains prohibited content
+    if (SimpleContentFilter.isMessageBlocked(text)) {
+      // Try to get localized error message, fallback to English
+      final errorMessage = l10n.chatBlockedMessage ??
+          'Cannot share personal information or inappropriate content';
+
+      // Show red error snackbar
+      _showError(errorMessage);
+
+      // Vibrate to get user attention
+      HapticFeedback.mediumImpact();
+
+      // Don't clear the input field - let user edit and try again
+      // Just return without sending
+      return;
+    }
+    // ===== END CONTENT FILTER CHECK =====
 
     // Cancel typing indicator
     _typingDebounce?.cancel();
@@ -508,29 +536,41 @@ class _SparkChatScreenState extends State<SparkChatScreen> {
     setState(() => _canBan = false);
     _banButtonTimer?.cancel();
 
+    // Set loading state and disable sending
     setState(() {
       _canSendMessage = false;
       _isLoading = true;
     });
 
+    // Clear the input field ONLY after successful validation
     _messageController.clear();
 
+    // Send message to server via ChatService
     final result = await ChatService.sendMessage(
       sessionId: widget.session.id,
       senderDevice: _myDeviceId!,
       message: text,
     );
 
+    // Handle server response
     if (result['success'] == true) {
+      // Message sent successfully
       HapticFeedback.selectionClick();
+
+      // Reload messages to show the new one
       _loadMessages();
     } else {
+      // Failed to send - restore the text so user doesn't lose it
       _messageController.text = text;
-      final l10n = AppLocalizations.of(context)!;
+
+      // Show error from server or generic error
       _showError(result['error'] ?? l10n.sparkFailedToSend);
+
+      // Re-enable sending
       setState(() => _canSendMessage = true);
     }
 
+    // Clear loading state
     setState(() => _isLoading = false);
   }
 
@@ -590,6 +630,29 @@ class _SparkChatScreenState extends State<SparkChatScreen> {
 
   void _showError(String message) {
     if (!mounted) return;
+
+    // Check if same error was shown recently (within 2 seconds)
+    final now = DateTime.now();
+    if (_lastErrorMessage == message &&
+        _lastErrorTime != null &&
+        now.difference(_lastErrorTime!).inSeconds < 2) {
+      // Same error within 2 seconds - don't show again
+      return;
+    }
+
+    // Cancel any pending error display
+    _errorDebounce?.cancel();
+
+    // Update last error tracking
+    _lastErrorMessage = message;
+    _lastErrorTime = now;
+
+    // Calculate top margin - SafeArea + Header height + extra padding
+    final topMargin = MediaQuery.of(context).padding.top + 80.0;
+
+    // Show error immediately (no delay for first click)
+    ScaffoldMessenger.of(context)
+        .hideCurrentSnackBar(); // Hide any existing snackbar
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Row(
@@ -609,10 +672,17 @@ class _SparkChatScreenState extends State<SparkChatScreen> {
         ),
         backgroundColor: const Color(0xFFFF0066),
         behavior: SnackBarBehavior.floating,
-        margin: const EdgeInsets.all(16),
+        // Position at top with calculated margin
+        margin: EdgeInsets.only(
+          top: topMargin,
+          left: 16,
+          right: 16,
+          bottom: MediaQuery.of(context).size.height - topMargin - 80,
+        ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
+        duration: const Duration(seconds: 3),
       ),
     );
   }
@@ -1230,6 +1300,7 @@ class _SparkChatScreenState extends State<SparkChatScreen> {
     _typingHideTimer?.cancel();
     _banButtonTimer?.cancel();
     _countdownTimer?.cancel();
+    _errorDebounce?.cancel();
     _messageController.dispose();
     _scrollController.dispose();
     _focusNode.dispose();

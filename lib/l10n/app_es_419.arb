@@ -21,52 +21,6 @@
   "commonConfirm": "Confirmar",
   
 
-  "emptyStateMorningStoryMain": "la ciudad aún está despertando, estirándose lentamente\ntodos en sus rituales matutinos\ncafé, transporte, fingiendo trabajar\npero esto es lo que aún no saben:\nesta noche a las 22h, este mapa se transforma completamente",
-  "emptyStateMorningStorySub": "pon tu alarma ahora, agradécete después ⏰",
-  "emptyStateMorningCuriosityMain": "pillaste el mapa en su fase tranquila\ncomo una disco al mediodía - vacía pero llena de potencial\n3 personas chequearon antes que tú hoy\ntodas pusieron recordatorios para las 22h\n¿coincidencia? ¿o saben algo?",
-  "emptyStateMorningCuriositySub": "la respuesta se revela al atardecer 🌅",
-  "emptyStateMorningSocialMain": "verdad del lunes por la mañana:\ntodos fingiendo trabajar ahora mismo\nhojas de cálculo abiertas, mentes en otro lado\neres 1 de 7 personas que chequearon antes del mediodía\neso te hace especial, o loco, o ambos",
-  "emptyStateMorningSocialSub": "vuelve a las 22h para descubrir cuál",
-  "emptyStateFridayMain": "paradoja del viernes por la tarde:\ntodos mentalmente desconectados pero físicamente atrapados\ncontando horas hasta la libertad ({hours} más)\na las 17h comienza la metamorfosis\nde zombis laborales a guerreros del fin de semana",
-  "@emptyStateFridayMain": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
-  "emptyStateFridaySub": "llegaste temprano para presenciarlo 🦋",
-  "emptyStateAfternoonReturningMain": "sigues volviendo a esta hora\nbuscando algo que no está aquí... todavía\n¿persistencia o locura?\nel universo está observando\ny recompensa la paciencia",
-  "@emptyStateAfternoonReturningSub": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
-  "emptyStateAfternoonFirstMain": "a veces pasa a las 14:47\na veces a las 18:13\npero siempre pasa\nla transformación de muerto a vivo\nde vacío a eléctrico",
-  "emptyStateAfternoonFirstSub": "la pregunta es: ¿estarás aquí cuando suceda?",
-  "emptyStatePrimetimeFirstMain": "bienvenido al borde de algo grande\nen 23 minutos, este mapa vacío explota\ncientos de vibras apareciendo como estrellas\ncada una una persona real, emoción real, momento real\nestás aquí antes que la multitud",
-  "emptyStatePrimetimeFirstSub": "eso es genialidad o suerte ⚡",
-  "emptyStatePrimetimeReturnMain": "el silencio previo antes de la tormenta\nsabes lo que viene\nlas 22h pegan diferente en este mapa\nel estrés laboral se transforma en energía de fin de semana\nmíralo pasar en tiempo real",
-  "emptyStatePrimetimeReturnSub": "o cierra la app y pregúntate para siempre",
-  "emptyStateWeekendEveningMain": "fenómeno del sábado noche:\ntodos ahí fuera viviendo su mejor vida\no fingiendo en instagram\npero encontraste el pulso real de la ciudad\nemociones sin filtro, sin editar, sin censurar",
-  "emptyStateWeekendEveningSub": "actualiza en 5 minutos para la verdad 🌃",
-  "emptyStateWeekendMorningMain": "la ciudad está con resaca\nreconstruyendo lentamente lo de anoche\nchequeando daños, contando arrepentimientos\nel mapa duerme hasta las 14h\npero cuando despierte...",
-  "emptyStateWeekendMorningSub": "comienza el caos round 2 🎭",
-  "emptyStateLateNightMain": "la claridad de las 2am pega diferente\ncuando el ruido para, emerge la verdad\nsolo los reales están despiertos ahora\ncompartiendo sus pensamientos de las 3am\ncrudos, honestos, sin filtros",
-  "emptyStateLateNightSub": "no estás solo en la oscuridad 🌙",
-  "emptyStatePush1Title": "ping&wink",
-  "emptyStatePush1Body": "el mapa está despertando 👀",
-  "emptyStatePush2Title": "ping&wink",
-  "emptyStatePush2Body": "vibras al máximo ahora mismo ⚡",
-  "emptyStatePush3Title": "ping&wink",
-  "emptyStatePush3Body": "ayer te perdiste 47 vibras. ¿hoy?",
-  "emptyStateNotificationEnabled": "¡Notificaciones activadas! Sabrás cuando aparezcan vibras 🔔",
-  "emptyStateTapToClose": "toca para cerrar",
-  "emptyStateAfternoonReturningHours": "aproximadamente {hours} horas hasta la ignición 🚀",
-  "@emptyStateAfternoonReturningHours": {
-    "placeholders": {
-      "hours": {"type": "int"}
-    }
-  },
-
 
   "vibeLabelBrainMode": "Modo Focus",
   "vibeLabelLatteBreak": "Break Café",

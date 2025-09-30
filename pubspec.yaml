@@ -1,7 +1,7 @@
 name: pingandwink
 description: just vibes
 publish_to: 'none'
-version: 1.0.4+10
+version: 1.0.4+11
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -28,32 +28,32 @@ dependencies:
   supabase_flutter: ^2.3.0
   http: ^1.1.0
   
-  # Map - оставляем текущую версию
-  mapbox_maps_flutter: 2.3.0
+  # Map - обновляем для privacy manifest
+  mapbox_maps_flutter: ^2.4.0  # обновлено с 2.3.0
   
   # Storage and utilities  
-  shared_preferences: ^2.2.0
-  uuid: ^4.2.2
+  shared_preferences: ^2.3.3  # обновлено с ^2.2.0
+  uuid: ^4.5.1  # обновлено с ^4.2.2
 
   # Device info - обновляем для iOS 18
-  device_info_plus: ^10.1.2
+  device_info_plus: ^11.1.1  # обновлено с ^10.1.2
   
   # КРИТИЧНО - обновляем для iOS 18.7
-  flutter_secure_storage: 9.2.2  # БЕЗ ^ чтобы зафиксировать версию
+  flutter_secure_storage: ^9.2.2  # добавлен ^ для автообновлений
   
   # Geolocation
-  geolocator: ^10.1.1
+  geolocator: ^13.0.2  # обновлено с ^10.1.1
 
   # UI
-  share_plus: ^7.2.2
+  share_plus: ^10.1.3  # обновлено с ^7.2.2
 
   qr_flutter: ^4.1.0
 
   # Push notifications
-  onesignal_flutter: ^5.1.0
+  onesignal_flutter: ^5.2.8  # обновлено с ^5.1.0
   
   # URL launcher
-  url_launcher: ^6.2.0
+  url_launcher: ^6.3.1  # обновлено с ^6.2.0
 
   # Markdown
   flutter_markdown: ^0.7.4

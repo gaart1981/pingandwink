@@ -7,6 +7,7 @@ import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'dart:io';
+import 'dart:async'; // Добавлен импорт Timer
 
 import 'config/app_config.dart';
 import 'config/theme.dart';
@@ -34,32 +35,27 @@ void main() async {
   final deviceId = await StorageService.getDeviceId();
   debugPrint('📱 Device ID: $deviceId');
 
-  // Initialize OneSignal
+  // Initialize OneSignal push notification service
   try {
     debugPrint('🔔 Initializing OneSignal...');
 
-    // Get OneSignal App ID from .env
     final oneSignalAppId = dotenv.env['ONESIGNAL_APP_ID'] ?? '';
 
     if (oneSignalAppId.isEmpty) {
-      debugPrint('❌ OneSignal App ID not found in .env file');
+      debugPrint('⌛ OneSignal App ID not found in .env file');
       throw Exception('ONESIGNAL_APP_ID not configured');
     }
 
-    // Set log level for debugging
+    // Set appropriate log level
     OneSignal.Debug.setLogLevel(OSLogLevel.verbose);
 
-    // Initialize with app ID from .env
+    // Initialize OneSignal
     OneSignal.initialize(oneSignalAppId);
 
-    // Дополнительная отладка для iOS
-    OneSignal.User.addObserver((state) {
-      debugPrint('🔔 OneSignal User State Changed:');
-      debugPrint('   External ID: ${state.current.externalId}');
-      debugPrint('   OneSignal ID: ${state.current.onesignalId}');
-    });
+    // Setup observer with retry logic
+    int retryCount = 0;
+    const maxRetries = 3;
 
-  // Улучшенная отладка подписки
     OneSignal.User.pushSubscription.addObserver((state) async {
       debugPrint('🔔 ============= Push Subscription Changed =============');
       debugPrint('   Platform: ${Platform.isIOS ? "iOS" : "Android"}');
@@ -69,128 +65,65 @@ void main() async {
       debugPrint('🔔 ===================================================');
 
       if (state.current.id != null && state.current.id!.isNotEmpty) {
-        // Save token to database
-        debugPrint('💾 Attempting to save push token...');
-        debugPrint(
-            '   Platform being saved: ${Platform.isIOS ? "iOS" : "Android"}');
-        try {
-          await ApiService.savePushToken(
-            deviceId: deviceId,
-            playerId: state.current.id!,
-          );
-          debugPrint('✅ Push token saved to database');
-        } catch (e) {
-          debugPrint('❌ Error saving push token: $e');
+        bool saved = false;
+        retryCount = 0; // Reset retry count for new attempt
+
+        while (!saved && retryCount < maxRetries) {
+          try {
+            await ApiService.savePushToken(
+              deviceId: deviceId,
+              playerId: state.current.id!,
+            );
+            saved = true;
+            debugPrint(
+                '✅ Push token saved to database (attempt ${retryCount + 1})');
+          } catch (e) {
+            retryCount++;
+            debugPrint('⌛ Error saving push token (attempt $retryCount): $e');
+            if (retryCount < maxRetries) {
+              await Future.delayed(Duration(seconds: 2 * retryCount));
+            }
+          }
         }
       } else {
         debugPrint('⚠️ No player ID available yet');
       }
     });
 
-    // already Requested in onboarding. 
-    //OneSignal.Notifications.requestPermission(true);
+    // iOS specific: Multiple retry attempts
+    if (Platform.isIOS) {
+      // First attempt after 15 seconds
+      Timer(const Duration(seconds: 15), () async {
+        await _tryToSaveIOSToken(deviceId, 'First attempt (15s)');
+      });
 
-    // Handle notification taps
+      // Second attempt after 30 seconds
+      Timer(const Duration(seconds: 30), () async {
+        await _tryToSaveIOSToken(deviceId, 'Second attempt (30s)');
+      });
+
+      // Final attempt after 45 seconds
+      Timer(const Duration(seconds: 45), () async {
+        await _tryToSaveIOSToken(deviceId, 'Final attempt (45s)');
+      });
+    }
+
+    // Handle notification clicks
     OneSignal.Notifications.addClickListener((notification) async {
       debugPrint(
           '🔔 Notification clicked: ${notification.notification.additionalData}');
 
       final data = notification.notification.additionalData;
       if (data != null && data['type'] == 'ping' && data['ping_id'] != null) {
-        // Сохраняем ping_id для обработки при открытии MapScreen
         final pingId = data['ping_id'] as String;
         debugPrint('💾 Saving ping_id from notification: $pingId');
         await StorageService.savePendingPing(pingId);
       }
     });
 
-    // Wait a bit for initialization
-    await Future.delayed(const Duration(seconds: 2));
-
-    // Listen for subscription changes and save token
-    OneSignal.User.pushSubscription.addObserver((state) async {
-      debugPrint('🔔 OneSignal subscription changed');
-      debugPrint('   Token: ${state.current.token}');
-      debugPrint('   ID: ${state.current.id}');
-      debugPrint('   OptedIn: ${state.current.optedIn}');
-
-      if (state.current.id != null && state.current.id!.isNotEmpty) {
-        // Save token to database
-        debugPrint('💾 Attempting to save push token...');
-        try {
-          await ApiService.savePushToken(
-            deviceId: deviceId,
-            playerId: state.current.id!,
-          );
-          debugPrint('✅ Push token saved to database');
-        } catch (e) {
-          debugPrint('❌ Error saving push token: $e');
-        }
-      } else {
-        debugPrint('⚠️ No player ID available yet');
-      }
-    });
-
-    // Force get current subscription after a delay
-    await Future.delayed(const Duration(seconds: 3));
-
-    final subscriptionId = OneSignal.User.pushSubscription.id;
-    final subscriptionToken = OneSignal.User.pushSubscription.token;
-
-    debugPrint('🔔 Current OneSignal State:');
-    debugPrint('   ID: $subscriptionId');
-    debugPrint('   Token: $subscriptionToken');
-
-    if (subscriptionId != null && subscriptionId.isNotEmpty) {
-      debugPrint('💾 Saving initial push token...');
-      await ApiService.savePushToken(
-        deviceId: deviceId,
-        playerId: subscriptionId,
-      );
-      debugPrint('✅ Initial push token saved');
-    } else {
-      debugPrint('⚠️ No subscription ID available on startup');
-
-      // Try again after another delay
-      await Future.delayed(const Duration(seconds: 5));
-      final retryId = OneSignal.User.pushSubscription.id;
-      if (retryId != null && retryId.isNotEmpty) {
-        debugPrint('💾 Retry: Saving push token...');
-        await ApiService.savePushToken(
-          deviceId: deviceId,
-          playerId: retryId,
-        );
-        debugPrint('✅ Push token saved on retry');
-      }
-    }
-
     debugPrint('✅ OneSignal initialized successfully');
-
-    // add control for iOS
-    if (Platform.isIOS) {
-      debugPrint('🍎 iOS detected - extra token check...');
-      await Future.delayed(const Duration(seconds: 8));
-
-      final iosPlayerId = OneSignal.User.pushSubscription.id;
-      if (iosPlayerId != null && iosPlayerId.isNotEmpty) {
-        debugPrint('🍎 iOS token found: $iosPlayerId');
-        try {
-          await ApiService.savePushToken(
-            deviceId: deviceId,
-            playerId: iosPlayerId,
-          );
-          debugPrint('✅ iOS token saved successfully');
-        } catch (e) {
-          debugPrint('❌ Failed to save iOS token: $e');
-        }
-      } else {
-        debugPrint('⚠️ Still no iOS token after extra wait');
-      }
-    }
-
-
   } catch (e) {
-    debugPrint('❌ Error initializing OneSignal: $e');
+    debugPrint('⌛ Error initializing OneSignal: $e');
   }
 
   // Initialize Mapbox
@@ -232,6 +165,37 @@ void main() async {
   runApp(MoodMapApp(showOnboarding: !onboardingComplete));
 }
 
+// Helper function for iOS token save attempts
+Future<void> _tryToSaveIOSToken(String deviceId, String attemptName) async {
+  final playerId = OneSignal.User.pushSubscription.id;
+  final optedIn = OneSignal.User.pushSubscription.optedIn;
+
+  debugPrint('🔔 ========= iOS CHECK: $attemptName =========');
+  debugPrint('   Player ID exists: ${playerId != null}');
+  debugPrint('   Player ID: $playerId');
+  debugPrint('   Opted In: $optedIn');
+
+  if (playerId != null && playerId.isNotEmpty && optedIn == true) {
+    debugPrint('💾 Saving iOS token...');
+
+    try {
+      await ApiService.savePushToken(
+        deviceId: deviceId,
+        playerId: playerId,
+      );
+      debugPrint('✅ iOS token saved successfully');
+
+      // Save to shared preferences to avoid duplicate saves
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('last_saved_player_id', playerId);
+      await prefs.setString(
+          'last_saved_player_id_time', DateTime.now().toIso8601String());
+    } catch (e) {
+      debugPrint('⌛ Failed to save: $e');
+    }
+  }
+}
+
 /// Main application widget
 class MoodMapApp extends StatelessWidget {
   final bool showOnboarding;
@@ -253,7 +217,6 @@ class MoodMapApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [
-        
         Locale('en'), // English (основной)
         Locale('es', '419'), // Spanish (Latin America)
         Locale('ru'), // Russian
@@ -265,7 +228,6 @@ class MoodMapApp extends StatelessWidget {
         Locale('tr'), // Turkish
         Locale('id'), // Indonesian
         Locale('hi'), // Hindi
-
       ],
       home:
           showOnboarding ? const OnboardingScreen() : const SplashToMainFlow(),
@@ -290,7 +252,7 @@ class _SplashToMainFlowState extends State<SplashToMainFlow> {
   }
 
   Future<void> _navigateToMain() async {
-    // Show splash 
+    // Show splash
     await Future.delayed(const Duration(milliseconds: 500));
 
     if (mounted) {

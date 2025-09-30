@@ -317,7 +317,7 @@ class _WinkBannerState extends State<WinkBanner>
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         children: const [
                                           Icon(
-                                            Icons.favorite,
+                                            Icons.electric_bolt,
                                             color: Colors.white,
                                             size: 18,
                                           ),

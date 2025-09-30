@@ -29,7 +29,7 @@ dependencies:
   http: ^1.1.0
   
   # Map - обновляем для privacy manifest
-  mapbox_maps_flutter: ^2.4.0  # обновлено с 2.3.0
+  mapbox_maps_flutter: 2.3.0  # обновлено с 2.3.0
   
   # Storage and utilities  
   shared_preferences: ^2.3.3  # обновлено с ^2.2.0

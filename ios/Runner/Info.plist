@@ -70,5 +70,11 @@
 		<!-- Face ID for secure storage -->
 		<key>NSFaceIDUsageDescription</key>
 		<string>Ping&amp;Wink uses Face ID to securely store your data</string>
+		<!-- OneSignal App Groups -->
+		<key>OneSignal_app_groups_key</key>
+		<string>group.com.pingandwink.pingandwink.onesignal</string>
+		<!-- Export Compliance -->
+		<key>ITSAppUsesNonExemptEncryption</key>
+		<false/>
 	</dict>
 </plist>

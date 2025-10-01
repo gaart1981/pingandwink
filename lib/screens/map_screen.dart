@@ -153,25 +153,11 @@ class MapScreenState extends State<MapScreen>
       }
     });
 
-    _checkBanStatus();
     CommunityGuidelinesDialog.showIfNeeded(context);
-
-    // Check ban status periodically
-    Timer.periodic(const Duration(seconds: 10), (_) {
-      if (_userData != null) {
-        _checkBanStatus();
-      }
-    });
 
     WidgetsBinding.instance.addObserver(this);
     _checkStreakStatus();
 
-    // Status update timer
-    _statusUpdateTimer = Timer.periodic(const Duration(seconds: 5), (_) {
-      if (_mapReady && _activeEmotions.isNotEmpty) {
-        _updateOnlyStatuses();
-      }
-    });
   }
 
   // FIXED: Setup all callbacks for controller
@@ -241,7 +227,6 @@ class MapScreenState extends State<MapScreen>
       });
 
       if (_userData != null) {
-        _checkBanStatus();
       }
 
       if (_showEmotionSelector && (_banStatus?.isBanned ?? false)) {
@@ -251,60 +236,7 @@ class MapScreenState extends State<MapScreen>
       }
     }
   }
-
-  Future<void> _checkBanStatus() async {
-    if (_userData == null) return;
-    if (!mounted) return;
-
-    final banStatus =
-        await ModerationService.checkBanStatus(_userData!.deviceId);
-    if (!mounted) return;
-
-    await StorageService.saveBanStatus(
-      banStatus.isBanned,
-      banStatus.bannedUntil,
-    );
-
-    if (!mounted) return;
-
-    final bool wasBanned = _banStatus?.isBanned ?? false;
-    final bool isNowBanned = banStatus.isBanned;
-
-    if (wasBanned != isNowBanned) {
-      setState(() {
-        _banStatus = banStatus.isBanned ? banStatus : null;
-
-        if (banStatus.isBanned && !_hasActiveEmotion) {
-          _showEmotionSelector = true;
-        } else if (!banStatus.isBanned && !_hasActiveEmotion) {
-          _showEmotionSelector = false;
-        }
-      });
-
-      if (isNowBanned && mounted) {
-        final l10n = AppLocalizations.of(context)!;
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-                l10n.mapBanRestrictionMessage(banStatus.remainingTimeText)),
-            backgroundColor: Colors.red,
-            duration: const Duration(seconds: 5),
-          ),
-        );
-      } else if (!isNowBanned && wasBanned && mounted) {
-        final l10n = AppLocalizations.of(context)!;
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(l10n.mapBanRestrictionLifted),
-            backgroundColor: Colors.green,
-            duration: const Duration(seconds: 3),
-          ),
-        );
-      }
-    } else {
-      _banStatus = banStatus.isBanned ? banStatus : null;
-    }
-  }
+  
 
   // Delegate method for ping cancellation
   void _cancelPing(String id) => _pingWinkController.cancelPing(id);
@@ -474,7 +406,10 @@ class MapScreenState extends State<MapScreen>
   }
 
   void _startRefreshTimer() {
-    _refreshTimer = Timer.periodic(const Duration(seconds: 10), (timer) {
+      _refreshTimer = Timer.periodic(
+        Duration(seconds: AppConfig.mapPollingInterval), // timer from app_config
+        (timer) {
+
       if (_userData?.birthYear == null) {
         debugPrint('⏳ Skipping refresh - no birth year set');
         return;
@@ -562,8 +497,11 @@ class MapScreenState extends State<MapScreen>
   }
 
   Future<void> _loadEmotionsForViewport() async {
-    if (_mapboxMap == null || !_mapReady || _userData == null) return;
+    debugPrint('🔄 API CALL to get-map at ${DateTime.now().toIso8601String()}');
+    debugPrint(
+        '📍 Called from: ${StackTrace.current.toString().split('\n')[1]}');
 
+    if (_mapboxMap == null || !_mapReady || _userData == null) return;
     try {
       mapbox.CoordinateBounds? bounds;
       double? zoom;
@@ -608,6 +546,46 @@ class MapScreenState extends State<MapScreen>
 
       _activeEmotions = ApiService.parseEmotions(data, _userData!.deviceId);
       _hasActiveEmotion = data['stats']?['has_active_mood'] ?? false;
+
+      // Process ban status from get-map response
+      if (data['ban_status'] != null) {
+        // User is banned - update local state
+        final ban = data['ban_status'];
+        final newBanStatus = BanStatus(
+          isBanned: true,
+          bannedUntil: DateTime.parse(ban['banned_until']),
+          remainingSeconds: ban['remaining_seconds'] ?? 0,
+        );
+
+        // Only show notification if this is a new ban
+        final wasNotBanned = _banStatus?.isBanned != true;
+
+        setState(() {
+          _banStatus = newBanStatus;
+        });
+
+        // Show notification for new ban
+        if (wasNotBanned && mounted) {
+          final l10n = AppLocalizations.of(context)!;
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(l10n
+                  .mapBanRestrictionMessage(newBanStatus.remainingTimeText)),
+              backgroundColor: Colors.red,
+              duration: const Duration(seconds: 5),
+            ),
+          );
+        }
+      } else {
+        // User is not banned - clear any existing ban
+        if (_banStatus?.isBanned == true) {
+          setState(() {
+            _banStatus = null;
+          });
+          debugPrint('✅ Ban expired or lifted');
+        }
+      }
+
 
       // Update controller with active emotion status
       _pingWinkController.updateActiveEmotionStatus(_hasActiveEmotion);
@@ -912,103 +890,7 @@ class MapScreenState extends State<MapScreen>
     } catch (e) {
       debugPrint('Error adding emotion to map: $e');
     }
-  }
-
-  // Update only statuses without reloading map
-  Future<void> _updateOnlyStatuses() async {
-    if (_activeEmotions.isEmpty) return;
-
-    debugPrint('STATUS CHECK: Current processingPings = $_processingPings');
-
-    // Collect all IDs
-    final moodIds = _activeEmotions.map((e) => e.id).toList();
-    final deviceIds = _activeEmotions.map((e) => e.deviceId).toSet().toList();
-
-    // Parallel requests
-    final results = await Future.wait([
-      _checkBulkPingStatuses(moodIds),
-      _checkBulkSparkStatuses(deviceIds),
-    ]);
-
-    final busyMoods = results[0];
-
-    // Update if changed
-    bool needsUpdate = false;
-    for (var moodId in busyMoods) {
-      _vibeManager.setLocalState(
-          moodId: moodId,
-          status: VibeStatus.receivingPing,
-          color: Colors.white);
-      needsUpdate = true;
-    }
-
-    if (needsUpdate) {
-      await _updateCenterColors();
-    }
-  }
-
-  // Check ping statuses for all moods
-  Future<Set<String>> _checkBulkPingStatuses(List<String> moodIds) async {
-    if (moodIds.isEmpty) return {};
-
-    try {
-      final url = '${AppConfig.supabaseUrl}/rest/v1/pings';
-      final queryParams = {
-        'to_mood_id': 'in.(${moodIds.join(',')})',
-        'status': 'eq.pending',
-        'expires_at': 'gt.${DateTime.now().toIso8601String()}',
-        'select': 'to_mood_id',
-      };
-
-      final uri = Uri.parse(url).replace(queryParameters: queryParams);
-      final response = await http.get(uri, headers: {
-        'Authorization': 'Bearer ${AppConfig.supabaseAnonKey}',
-        'apikey': AppConfig.supabaseAnonKey,
-      });
-
-      if (response.statusCode == 200) {
-        final data = json.decode(response.body) as List;
-        return data.map((p) => p['to_mood_id'] as String).toSet();
-      }
-    } catch (e) {
-      debugPrint('Error checking ping statuses: $e');
-    }
-    return {};
-  }
-
-  // Check Spark sessions for all devices
-  Future<Set<String>> _checkBulkSparkStatuses(List<String> deviceIds) async {
-    if (deviceIds.isEmpty) return {};
-
-    try {
-      final url = '${AppConfig.supabaseUrl}/rest/v1/spark_sessions';
-      final queryParams = {
-        'or':
-            '(device_1.in.(${deviceIds.join(',')}),device_2.in.(${deviceIds.join(',')}))',
-        'is_active': 'eq.true',
-        'select': 'device_1,device_2',
-      };
-
-      final uri = Uri.parse(url).replace(queryParameters: queryParams);
-      final response = await http.get(uri, headers: {
-        'Authorization': 'Bearer ${AppConfig.supabaseAnonKey}',
-        'apikey': AppConfig.supabaseAnonKey,
-      });
-
-      if (response.statusCode == 200) {
-        final data = json.decode(response.body) as List;
-        final devices = <String>{};
-        for (var session in data) {
-          devices.add(session['device_1'] as String);
-          devices.add(session['device_2'] as String);
-        }
-        return devices;
-      }
-    } catch (e) {
-      debugPrint('Error checking spark statuses: $e');
-    }
-    return {};
-  }
+  } 
 
   // Update center dot colors WITHOUT recreating them
   Future<void> _updateCenterColors() async {
@@ -1622,8 +1504,7 @@ class MapScreenState extends State<MapScreen>
     if (!mounted) return;
 
     // Check ban BEFORE showing selector
-    if (_userData != null) {
-      await _checkBanStatus();
+    if (_userData != null) { 
 
       if (_banStatus?.isBanned ?? false) {
         if (!mounted) return;
@@ -2026,7 +1907,6 @@ class MapScreenState extends State<MapScreen>
                 ),
                 onPressed: () async {
                   if (_userData != null) {
-                    await _checkBanStatus();
                   }
 
                   setState(() {
@@ -2067,8 +1947,7 @@ class MapScreenState extends State<MapScreen>
                         child: BanOverlay(
                           banStatus: _banStatus!,
                           onBanExpired: () {
-                            setState(() => _banStatus = null);
-                            _checkBanStatus();
+                            setState(() => _banStatus = null);  
                           },
                         ),
                       ),
@@ -2162,8 +2041,7 @@ class MapScreenState extends State<MapScreen>
   @override
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
-    _refreshTimer?.cancel();
-    _statusUpdateTimer?.cancel();
+    _refreshTimer?.cancel();   
     _viewportDebounce?.cancel();
     _tutorialBlinkTimer?.cancel();
     _winkAnimationTimer?.cancel();

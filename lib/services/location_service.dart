@@ -128,8 +128,8 @@ class LocationService {
   static Map<String, double> _generateRandomOffset(double currentLatitude) {
     final random = Random();
 
-    // Random distance between 50 and 80 meters
-    final distanceMeters = 60 + random.nextDouble() * 30;
+    // Random distance between 80 and 120 meters
+    final distanceMeters = 80 + random.nextDouble() * 40;
 
     // Random angle (0 to 360 degrees, converted to radians)
     final angleDegrees = random.nextDouble() * 360;

@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'dart:io' show Platform;
 import '../config/app_config.dart';
 import '../models/emotion_data.dart';
+import '../services/storage_service.dart';
 
 /// API Service for Ping&Wink application with age filtering support
 class ApiService {
@@ -164,6 +165,19 @@ class ApiService {
 
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
+        // Check if ban_status is in response (from updated Edge Function)
+        if (data['ban_status'] != null && deviceId != null) {
+          final ban = data['ban_status'];
+          if (ban['is_banned'] == true) {
+            // Save ban to local storage
+            await StorageService.saveBanStatus(
+                true, DateTime.parse(ban['banned_until']));
+            debugPrint('⛔ User banned until ${ban['banned_until']}');
+          }
+        } else if (deviceId != null) {
+          // Clear any cached ban
+          await StorageService.saveBanStatus(false, null);
+        }
 
         // ВАЖНОЕ ИЗМЕНЕНИЕ: Возвращаем ВСЕ поля, включая новые
         return {
@@ -171,6 +185,7 @@ class ApiService {
           'moods': data['moods'] ?? [],
           'active_sparks': data['active_sparks'] ?? [], // НОВОЕ
           'active_pings': data['active_pings'] ?? [], // НОВОЕ
+          'ban_status': data['ban_status'], // NEW: Include ban status
           'stats': data['stats'] ?? {},
           'server_time': data['server_time'],
         };

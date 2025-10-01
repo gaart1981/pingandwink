@@ -111,14 +111,19 @@ class PingWinkController extends ChangeNotifier {
 
     // Start periodic checking (13 seconds for battery optimization)
     _pingCheckTimer?.cancel();
-    _pingCheckTimer = Timer.periodic(const Duration(seconds: 13), (_) {
-      if (_hasActiveEmotion) {
-        _checkIncomingPings();
-        debugPrint('[PingWink] Checking pings - emotion is active');
-      } else {
-        debugPrint('[PingWink] Skipping ping check - no active emotion');
-      }
-      _checkActiveSparks();
+  
+    // Delay to avoid peak load with map polling
+    Future.delayed(Duration(seconds: AppConfig.pingPollingDelayOffset), () {
+      _pingCheckTimer =
+          Timer.periodic(Duration(seconds: AppConfig.pingPollingInterval), (_) {
+        if (_hasActiveEmotion) {
+          _checkIncomingPings();
+          debugPrint('[PingWink] Checking pings - emotion is active');
+        } else {
+          debugPrint('[PingWink] Skipping ping check - no active emotion');
+        }
+        _checkActiveSparks();
+      });
     });
   }
 

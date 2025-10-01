@@ -21,7 +21,7 @@ class AppConfig {
   static const int maxMoodsPerDay = 50;
   
   // Map settings
-  static const double minMapZoom = 9.0;  // country view
+  static const double minMapZoom = 9.0;  // city view 9
   static const double maxMapZoom = 16.0;  // street view
   static const double defaultMapZoom = 14.0;  // ~2km view
   static const double focusedMapZoom = 12.0;  // view when adding emotion
@@ -29,6 +29,17 @@ class AppConfig {
   // Default location (Atlantic ocean NY)
   static const double defaultLatitude = 40.000000;
   static const double defaultLongitude = -72.000000;
+
+  // ============ POLLING CONFIGURATION ============
+  // Change these values to adjust all timers at once
+  // Main map polling interval (seconds)
+  static const int mapPollingInterval = 8;
+  // Ping check polling interval (should match map polling)
+  static const int pingPollingInterval = 8;
+  // Delay offset for ping polling to avoid peak load (seconds)
+  // Should be roughly half of polling interval
+  static const int pingPollingDelayOffset = 4;
+  // ============ END POLLING CONFIG ============
   
   // Animation durations
   static const Duration splashDuration = Duration(seconds: 2);

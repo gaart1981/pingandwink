@@ -1,6 +1,5 @@
 platform :ios, '13.0'
 
-# CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
 project 'Runner', {
@@ -32,6 +31,7 @@ target 'Runner' do
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
   
+<<<<<<< HEAD
   # НЕ указываем версию MapboxMaps явно - пусть плагин сам управляет
 end
 
@@ -39,6 +39,17 @@ end
 target 'OneSignalNotificationServiceExtension' do
   use_frameworks!
   pod 'OneSignalXCFramework', '5.2.14'  # Версия должна совпадать с той, что требует onesignal_flutter
+=======
+  pod 'MapboxMaps', :modular_headers => true
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
+end
+
+# CRITICAL: OneSignal Extension target
+target 'OneSignalNotificationServiceExtension' do
+  use_frameworks!
+  use_modular_headers!
+  
+  pod 'OneSignalXCFramework', '>= 5.0', '< 6.0'
 end
 
 post_install do |installer|

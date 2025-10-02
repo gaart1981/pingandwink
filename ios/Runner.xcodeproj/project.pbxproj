@@ -14,8 +14,12 @@
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
+<<<<<<< HEAD
 		BA84C14D2E8E8B860089FF32 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BA84C1462E8E8B860089FF32 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BA84C1582E8E93130089FF32 /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = BA84C1572E8E93130089FF32 /* OneSignalExtension */; };
+=======
+		BA16490E2E8E00950031E32C /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BA1649072E8E00950031E32C /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,11 +30,19 @@
 			remoteGlobalIDString = 97C146ED1CF9000F007C117D;
 			remoteInfo = Runner;
 		};
+<<<<<<< HEAD
 		BA84C14B2E8E8B860089FF32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BA84C1452E8E8B860089FF32;
+=======
+		BA16490C2E8E00950031E32C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA1649062E8E00950031E32C;
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			remoteInfo = OneSignalNotificationServiceExtension;
 		};
 /* End PBXContainerItemProxy section */
@@ -46,13 +58,21 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+<<<<<<< HEAD
 		BA84C14E2E8E8B860089FF32 /* Embed Foundation Extensions */ = {
+=======
+		BA16490F2E8E00950031E32C /* Embed Foundation Extensions */ = {
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+<<<<<<< HEAD
 				BA84C14D2E8E8B860089FF32 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */,
+=======
+				BA16490E2E8E00950031E32C /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */,
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,22 +95,39 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		BA84C1462E8E8B860089FF32 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA84C1542E8E8CBE0089FF32 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		BA84C1522E8E8B860089FF32 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+=======
+		BA1649072E8E00950031E32C /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1649162E8E04E00031E32C /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BA1649132E8E00950031E32C /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
+<<<<<<< HEAD
 			target = BA84C1452E8E8B860089FF32 /* OneSignalNotificationServiceExtension */;
+=======
+			target = BA1649062E8E00950031E32C /* OneSignalNotificationServiceExtension */;
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+<<<<<<< HEAD
 		BA84C1472E8E8B860089FF32 /* OneSignalNotificationServiceExtension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (BA84C1522E8E8B860089FF32 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = OneSignalNotificationServiceExtension; sourceTree = "<group>"; };
+=======
+		BA1649082E8E00950031E32C /* OneSignalNotificationServiceExtension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (BA1649132E8E00950031E32C /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = OneSignalNotificationServiceExtension; sourceTree = "<group>"; };
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +138,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+<<<<<<< HEAD
 		BA84C1432E8E8B860089FF32 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BA84C1582E8E93130089FF32 /* OneSignalExtension in Frameworks */,
+=======
+		BA1649042E8E00950031E32C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +180,11 @@
 			children = (
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
+<<<<<<< HEAD
 				BA84C1472E8E8B860089FF32 /* OneSignalNotificationServiceExtension */,
+=======
+				BA1649082E8E00950031E32C /* OneSignalNotificationServiceExtension */,
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 				97C146EF1CF9000F007C117D /* Products */,
 				331C8082294A63A400263BE5 /* RunnerTests */,
 				BA84C1562E8E93130089FF32 /* Frameworks */,
@@ -148,7 +196,11 @@
 			children = (
 				97C146EE1CF9000F007C117D /* Runner.app */,
 				331C8081294A63A400263BE5 /* RunnerTests.xctest */,
+<<<<<<< HEAD
 				BA84C1462E8E8B860089FF32 /* OneSignalNotificationServiceExtension.appex */,
+=======
+				BA1649072E8E00950031E32C /* OneSignalNotificationServiceExtension.appex */,
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,7 +208,11 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				BA84C1542E8E8CBE0089FF32 /* Runner.entitlements */,
+=======
+				BA1649162E8E04E00031E32C /* Runner.entitlements */,
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
 				97C146FD1CF9000F007C117D /* Assets.xcassets */,
 				97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */,
@@ -206,18 +262,27 @@
 				97C146EC1CF9000F007C117D /* Resources */,
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
+<<<<<<< HEAD
 				BA84C14E2E8E8B860089FF32 /* Embed Foundation Extensions */,
+=======
+				BA16490F2E8E00950031E32C /* Embed Foundation Extensions */,
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			);
 			buildRules = (
 			);
 			dependencies = (
+<<<<<<< HEAD
 				BA84C14C2E8E8B860089FF32 /* PBXTargetDependency */,
+=======
+				BA16490D2E8E00950031E32C /* PBXTargetDependency */,
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			);
 			name = Runner;
 			productName = Runner;
 			productReference = 97C146EE1CF9000F007C117D /* Runner.app */;
 			productType = "com.apple.product-type.application";
 		};
+<<<<<<< HEAD
 		BA84C1452E8E8B860089FF32 /* OneSignalNotificationServiceExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA84C1532E8E8B860089FF32 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
@@ -225,12 +290,22 @@
 				BA84C1422E8E8B860089FF32 /* Sources */,
 				BA84C1432E8E8B860089FF32 /* Frameworks */,
 				BA84C1442E8E8B860089FF32 /* Resources */,
+=======
+		BA1649062E8E00950031E32C /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA1649142E8E00950031E32C /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				BA1649032E8E00950031E32C /* Sources */,
+				BA1649042E8E00950031E32C /* Frameworks */,
+				BA1649052E8E00950031E32C /* Resources */,
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+<<<<<<< HEAD
 				BA84C1472E8E8B860089FF32 /* OneSignalNotificationServiceExtension */,
 			);
 			name = OneSignalNotificationServiceExtension;
@@ -239,6 +314,15 @@
 			);
 			productName = OneSignalNotificationServiceExtension;
 			productReference = BA84C1462E8E8B860089FF32 /* OneSignalNotificationServiceExtension.appex */;
+=======
+				BA1649082E8E00950031E32C /* OneSignalNotificationServiceExtension */,
+			);
+			name = OneSignalNotificationServiceExtension;
+			packageProductDependencies = (
+			);
+			productName = OneSignalNotificationServiceExtension;
+			productReference = BA1649072E8E00950031E32C /* OneSignalNotificationServiceExtension.appex */;
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -260,7 +344,11 @@
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 1100;
 					};
+<<<<<<< HEAD
 					BA84C1452E8E8B860089FF32 = {
+=======
+					BA1649062E8E00950031E32C = {
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 						CreatedOnToolsVersion = 26.0.1;
 					};
 				};
@@ -283,7 +371,11 @@
 			targets = (
 				97C146ED1CF9000F007C117D /* Runner */,
 				331C8080294A63A400263BE5 /* RunnerTests */,
+<<<<<<< HEAD
 				BA84C1452E8E8B860089FF32 /* OneSignalNotificationServiceExtension */,
+=======
+				BA1649062E8E00950031E32C /* OneSignalNotificationServiceExtension */,
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			);
 		};
 /* End PBXProject section */
@@ -307,7 +399,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+<<<<<<< HEAD
 		BA84C1442E8E8B860089FF32 /* Resources */ = {
+=======
+		BA1649052E8E00950031E32C /* Resources */ = {
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -368,7 +464,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+<<<<<<< HEAD
 		BA84C1422E8E8B860089FF32 /* Sources */ = {
+=======
+		BA1649032E8E00950031E32C /* Sources */ = {
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -383,10 +483,17 @@
 			target = 97C146ED1CF9000F007C117D /* Runner */;
 			targetProxy = 331C8085294A63A400263BE5 /* PBXContainerItemProxy */;
 		};
+<<<<<<< HEAD
 		BA84C14C2E8E8B860089FF32 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BA84C1452E8E8B860089FF32 /* OneSignalNotificationServiceExtension */;
 			targetProxy = BA84C14B2E8E8B860089FF32 /* PBXContainerItemProxy */;
+=======
+		BA16490D2E8E00950031E32C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA1649062E8E00950031E32C /* OneSignalNotificationServiceExtension */;
+			targetProxy = BA16490C2E8E00950031E32C /* PBXContainerItemProxy */;
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 		};
 /* End PBXTargetDependency section */
 
@@ -470,7 +577,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = V83Q24L69W;
+=======
+				DEVELOPMENT_TEAM = "";
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -651,7 +762,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = V83Q24L69W;
+=======
+				DEVELOPMENT_TEAM = "";
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -675,7 +790,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = V83Q24L69W;
+=======
+				DEVELOPMENT_TEAM = "";
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -690,7 +809,11 @@
 			};
 			name = Release;
 		};
+<<<<<<< HEAD
 		BA84C14F2E8E8B860089FF32 /* Debug */ = {
+=======
+		BA1649102E8E00950031E32C /* Debug */ = {
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -734,7 +857,11 @@
 			};
 			name = Debug;
 		};
+<<<<<<< HEAD
 		BA84C1502E8E8B860089FF32 /* Release */ = {
+=======
+		BA1649112E8E00950031E32C /* Release */ = {
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -775,7 +902,11 @@
 			};
 			name = Release;
 		};
+<<<<<<< HEAD
 		BA84C1512E8E8B860089FF32 /* Profile */ = {
+=======
+		BA1649122E8E00950031E32C /* Profile */ = {
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -849,12 +980,21 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
 		BA84C1532E8E8B860089FF32 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA84C14F2E8E8B860089FF32 /* Debug */,
 				BA84C1502E8E8B860089FF32 /* Release */,
 				BA84C1512E8E8B860089FF32 /* Profile */,
+=======
+		BA1649142E8E00950031E32C /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA1649102E8E00950031E32C /* Debug */,
+				BA1649112E8E00950031E32C /* Release */,
+				BA1649122E8E00950031E32C /* Profile */,
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

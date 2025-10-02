@@ -3,7 +3,6 @@ import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:device_info_plus/device_info_plus.dart';
 
 /// Simplified notification service without timezone
 class NotificationService {
@@ -41,6 +40,8 @@ class NotificationService {
 
     _isInitialized = true;
     debugPrint('✅ Notifications initialized (without permissions)');
+
+    // Permission request removed - now called only from onboarding
   }
 
   /// Request notification permissions - public method for onboarding
@@ -52,48 +53,34 @@ class NotificationService {
   /// Private method for requesting permissions
   static Future<bool> _requestPermissions() async {
     if (Platform.isIOS) {
-      final IOSFlutterLocalNotificationsPlugin? iosImplementation =
-          _notifications.resolvePlatformSpecificImplementation<
-              IOSFlutterLocalNotificationsPlugin>();
-
-      if (iosImplementation != null) {
-        final bool? granted = await iosImplementation.requestPermissions(
-          alert: true,
-          badge: true,
-          sound: true,
-        );
-        debugPrint('🔔 iOS permissions granted: $granted');
-        return granted ?? false;
-      }
-      return false;
+      final bool? granted = await _notifications
+          .resolvePlatformSpecificImplementation<
+              IOSFlutterLocalNotificationsPlugin>()
+          ?.requestPermissions(
+            alert: true,
+            badge: true,
+            sound: true,
+          );
+      debugPrint('🔔 iOS permissions granted: $granted');
+      return granted ?? false;
     } else if (Platform.isAndroid) {
       final AndroidFlutterLocalNotificationsPlugin? androidImplementation =
           _notifications.resolvePlatformSpecificImplementation<
               AndroidFlutterLocalNotificationsPlugin>();
 
       if (androidImplementation != null) {
-        // Получаем реальную версию Android SDK
-        final DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-        final AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-        final int sdkInt = androidInfo.version.sdkInt;
-
-        debugPrint('🔔 Android SDK version: $sdkInt');
-        debugPrint('🔔 Android version: ${androidInfo.version.release}');
-        debugPrint(
-            '🔔 Android device: ${androidInfo.brand} ${androidInfo.model}');
-
-        // Для Android 13+ (API 33+) требуется явный запрос разрешения
-        if (sdkInt >= 33) {
-          debugPrint(
-              '🔔 Android 13+ detected, requesting POST_NOTIFICATIONS permission...');
+        // For Android 13+ (API 33+)
+        if (Platform.version.contains('13') ||
+            Platform.version.contains('14') ||
+            int.tryParse(Platform.version.split('.').first) != null &&
+                int.parse(Platform.version.split('.').first) >= 33) {
           final bool? granted =
               await androidImplementation.requestNotificationsPermission();
-          debugPrint('🔔 Android 13+ permission result: $granted');
+          debugPrint('🔔 Android permissions granted: $granted');
           return granted ?? false;
         } else {
-          // Для Android < 13 разрешения не требуются
-          debugPrint(
-              '🔔 Android < 13 (SDK $sdkInt), permissions granted by default');
+          // For Android < 13 permissions not required
+          debugPrint('🔔 Android < 13, permissions not required');
           return true;
         }
       }
@@ -187,39 +174,20 @@ class NotificationService {
   /// Check if notifications are enabled
   static Future<bool> areNotificationsEnabled() async {
     if (Platform.isIOS) {
-      final IOSFlutterLocalNotificationsPlugin? iosImplementation =
+      final implementation =
           _notifications.resolvePlatformSpecificImplementation<
               IOSFlutterLocalNotificationsPlugin>();
-
-      if (iosImplementation != null) {
-        // Just check, don't request
-        final bool? hasPermission = await iosImplementation.requestPermissions(
-          alert: false,
-          badge: false,
-          sound: false,
-        );
-        return hasPermission ?? false;
+      if (implementation != null) {
+        // Check current permission status
+        return await implementation.requestPermissions(
+              alert: false,
+              badge: false,
+              sound: false,
+            ) ??
+            false;
       }
-    } else if (Platform.isAndroid) {
-      // Для Android используем device_info_plus для проверки версии
-      final DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-      final AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-
-      if (androidInfo.version.sdkInt >= 33) {
-        // Для Android 13+ проверяем разрешение
-        final AndroidFlutterLocalNotificationsPlugin? androidImplementation =
-            _notifications.resolvePlatformSpecificImplementation<
-                AndroidFlutterLocalNotificationsPlugin>();
-
-        if (androidImplementation != null) {
-          final bool? hasPermission =
-              await androidImplementation.areNotificationsEnabled();
-          return hasPermission ?? false;
-        }
-      }
-      // Для Android < 13 всегда возвращаем true
-      return true;
     }
+    // For Android return true as permissions not required before Android 13
     return true;
   }
 }

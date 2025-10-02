@@ -507,8 +507,8 @@
 
 
 
-  "pingBottomVibeTooFar": "Vibe muito longe (máx 6km)",
-  "pingBottomVibeTooFarMessage": "Vibe muito longe - máx 6km pra ping",
+  "pingBottomVibeTooFar": "Vibe muito longe (máx 3km)",
+  "pingBottomVibeTooFarMessage": "Vibe muito longe - máx 3km pra ping",
   "pingBottomTooFar": "MUITO LONGE",
   "pingBottomPing": "PING",
   "pingBottomDistanceVeryClose": "pertinho",

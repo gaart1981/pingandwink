@@ -28,7 +28,7 @@ class AppConfig {
   
   // Default location (Atlantic ocean NY)
   static const double defaultLatitude = 40.000000;
-  static const double defaultLongitude = -73.000000;
+  static const double defaultLongitude = -72.000000;
 
   // ============ POLLING CONFIGURATION ============
   // Change these values to adjust all timers at once

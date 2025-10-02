@@ -27,6 +27,25 @@ workflows:
           pod repo update
           pod install --repo-update
           cd ..
+      - name: Remove problematic build phase
+        script: |
+          # Удаляем проблемный Thin Binary скрипт если он есть
+          cd ios
+          ruby -e "
+          require 'xcodeproj'
+          project = Xcodeproj::Project.open('Runner.xcodeproj')
+          project.targets.each do |target|
+            if target.name == 'Runner'
+              target.build_phases.each do |phase|
+                if phase.respond_to?(:name) && phase.name == 'Thin Binary'
+                  phase.remove_from_project
+                end
+              end
+            end
+          end
+          project.save
+          "
+          cd ..
       - name: Flutter build ipa
         script: |
           flutter build ipa --release \

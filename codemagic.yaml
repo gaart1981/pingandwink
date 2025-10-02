@@ -19,9 +19,14 @@ workflows:
       - name: Get Flutter packages
         script: |
           flutter packages pub get
-      - name: Install pods
+      - name: Clean and install pods
         script: |
-          find . -name "Podfile" -execdir pod install \;
+          cd ios
+          rm -rf Pods
+          rm -rf Podfile.lock
+          pod repo update
+          pod install --repo-update
+          cd ..
       - name: Flutter build ipa
         script: |
           flutter build ipa --release \

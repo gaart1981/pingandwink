@@ -36,10 +36,10 @@ target 'Runner' do
   pod 'MapboxMaps', '11.8.0'
 end
 
-# OneSignal Notification Service Extension
+# OneSignal Notification Service Extension - ВАЖНО: версия должна совпадать с onesignal_flutter
 target 'OneSignalNotificationServiceExtension' do
   use_frameworks!
-  pod 'OneSignalXCFramework', '5.2.8'
+  pod 'OneSignalXCFramework', '5.2.14'  # Изменено с 5.2.8 на 5.2.14
 end
 
 post_install do |installer|

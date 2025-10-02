@@ -475,7 +475,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get onboardingValueTitleHyperlocalVibes => 'vibes hiperlocales';
 
   @override
-  String get onboardingValueSubtitleOnly2kmRadius => 'solo 3km de radio';
+  String get onboardingValueSubtitleOnly2kmRadius => 'solo 6km de radio';
 
   @override
   String get onboardingValueTitleNoProfiles => 'sin perfiles';
@@ -490,7 +490,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get onboardingLocationTitle => 'desbloquea tu zona';
 
   @override
-  String get onboardingLocationSubtitle => 'mira los moods en 3km a la redonda';
+  String get onboardingLocationSubtitle => 'mira los moods en 6km a la redonda';
 
   @override
   String get onboardingLocationPrivacyTitle => 'privacidad primero';
@@ -1068,11 +1068,11 @@ class AppLocalizationsEs extends AppLocalizations {
   String get moderationReportSendButton => 'Enviar reporte';
 
   @override
-  String get pingBottomVibeTooFar => 'Vibe muy lejos (máx 3km)';
+  String get pingBottomVibeTooFar => 'Vibe muy lejos (máx 6km)';
 
   @override
   String get pingBottomVibeTooFarMessage =>
-      'Vibe muy lejos - máx 3km para ping';
+      'Vibe muy lejos - máx 6km para ping';
 
   @override
   String get pingBottomTooFar => 'MUY LEJOS';
@@ -3438,11 +3438,11 @@ class AppLocalizationsEsEs extends AppLocalizationsEs {
   String get moderationReportSendButton => 'Enviar reporte';
 
   @override
-  String get pingBottomVibeTooFar => 'Vibe muy lejos (máx 3km)';
+  String get pingBottomVibeTooFar => 'Vibe muy lejos (máx 6km)';
 
   @override
   String get pingBottomVibeTooFarMessage =>
-      'Vibe muy lejos - máx 3km para ping';
+      'Vibe muy lejos - máx 6km para ping';
 
   @override
   String get pingBottomTooFar => 'MUY LEJOS';

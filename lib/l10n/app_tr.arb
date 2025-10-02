@@ -261,12 +261,12 @@
   "onboardingValueTitleInstantSparks": "anında PW chat",
   "onboardingValueSubtitleConnect60Sec": "60 saniyede bağlan",
   "onboardingValueTitleHyperlocalVibes": "süper lokal vibe'lar",
-  "onboardingValueSubtitleOnly2kmRadius": "sadece 3km çap",
+  "onboardingValueSubtitleOnly2kmRadius": "sadece 6km çap",
   "onboardingValueTitleNoProfiles": "profil yok",
   "onboardingValueSubtitleJustPureMoments": "sadece gerçek anlar",
   "onboardingButtonImReady": "hazırım",
   "onboardingLocationTitle": "bölgeni aç",
-  "onboardingLocationSubtitle": "3km içindeki ruh hallerini gör",
+  "onboardingLocationSubtitle": "6km içindeki ruh hallerini gör",
   "onboardingLocationPrivacyTitle": "gizlilik önce",
   "onboardingLocationPrivacyBullet1": "sadece uygulama açıkken",
   "onboardingLocationPrivacyBullet2": "arka planda takip yok",
@@ -509,8 +509,8 @@
 
 
 
-  "pingBottomVibeTooFar": "Vibe çok uzak (maks 3km)",
-  "pingBottomVibeTooFarMessage": "Vibe çok uzak - ping için maks 3km",
+  "pingBottomVibeTooFar": "Vibe çok uzak (maks 6km)",
+  "pingBottomVibeTooFarMessage": "Vibe çok uzak - ping için maks 6km",
   "pingBottomTooFar": "ÇOK UZAK",
   "pingBottomPing": "PING",
   "pingBottomDistanceVeryClose": "çok yakın",

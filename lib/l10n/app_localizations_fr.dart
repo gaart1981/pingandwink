@@ -1075,11 +1075,11 @@ class AppLocalizationsFr extends AppLocalizations {
   String get moderationReportSendButton => 'Envoyer le signalement';
 
   @override
-  String get pingBottomVibeTooFar => 'Vibe trop loin (max 3km)';
+  String get pingBottomVibeTooFar => 'Vibe trop loin (max 6km)';
 
   @override
   String get pingBottomVibeTooFarMessage =>
-      'Vibe trop loin - max 3km pour un ping';
+      'Vibe trop loin - max 6km pour un ping';
 
   @override
   String get pingBottomTooFar => 'TROP LOIN';

@@ -32,14 +32,13 @@ target 'Runner' do
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
   
-  # Mapbox specific settings
-  pod 'MapboxMaps', '11.8.0'
+  # НЕ указываем версию MapboxMaps явно - пусть плагин сам управляет
 end
 
-# OneSignal Notification Service Extension - ВАЖНО: версия должна совпадать с onesignal_flutter
+# OneSignal Notification Service Extension
 target 'OneSignalNotificationServiceExtension' do
   use_frameworks!
-  pod 'OneSignalXCFramework', '5.2.14'  # Изменено с 5.2.8 на 5.2.14
+  pod 'OneSignalXCFramework', '5.2.14'  # Версия должна совпадать с той, что требует onesignal_flutter
 end
 
 post_install do |installer|

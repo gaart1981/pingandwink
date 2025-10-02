@@ -987,7 +987,7 @@ abstract class AppLocalizations {
   /// No description provided for @onboardingValueSubtitleOnly2kmRadius.
   ///
   /// In en, this message translates to:
-  /// **'only 3km radius'**
+  /// **'only 6km radius'**
   String get onboardingValueSubtitleOnly2kmRadius;
 
   /// No description provided for @onboardingValueTitleNoProfiles.
@@ -1017,7 +1017,7 @@ abstract class AppLocalizations {
   /// No description provided for @onboardingLocationSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'see moods within 3km radius'**
+  /// **'see moods within 6km radius'**
   String get onboardingLocationSubtitle;
 
   /// No description provided for @onboardingLocationPrivacyTitle.
@@ -2097,13 +2097,13 @@ abstract class AppLocalizations {
   /// No description provided for @pingBottomVibeTooFar.
   ///
   /// In en, this message translates to:
-  /// **'Vibe too far (max 3km)'**
+  /// **'Vibe too far (max 6km)'**
   String get pingBottomVibeTooFar;
 
   /// No description provided for @pingBottomVibeTooFarMessage.
   ///
   /// In en, this message translates to:
-  /// **'Vibe too far - max 3km to send ping'**
+  /// **'Vibe too far - max 6km to send ping'**
   String get pingBottomVibeTooFarMessage;
 
   /// No description provided for @pingBottomTooFar.

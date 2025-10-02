@@ -66,12 +66,12 @@ class _PingBottomSheetState extends State<PingBottomSheet>
   void _sendPing() async {
     if (_isSending) return;
 
-    // Check if distance is too far
-    if (widget.distance > 3000) {
+    // Check if DISTANCE to ping is too far
+    if (widget.distance > 6999) {
       HapticFeedback.heavyImpact();
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Vibe too far (max 3km)'),
+          content: Text('Vibe too far (max 6km)'),
           backgroundColor: const Color(0xFFFF0066),
           behavior: SnackBarBehavior.floating,
           shape:
@@ -97,7 +97,7 @@ class _PingBottomSheetState extends State<PingBottomSheet>
     final emotionConfig = Emotions.getEmotion(widget.emotion.emotion);
 
     return Container(
-      height: widget.distance > 3000 ? 320 : 280,
+      height: widget.distance > 6999 ? 320 : 280,
       decoration: BoxDecoration(
         color: const Color(0xFF0A0015),
         borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
@@ -174,12 +174,12 @@ class _PingBottomSheetState extends State<PingBottomSheet>
                     padding:
                         const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
-                      color: widget.distance > 3000
+                      color: widget.distance > 6999
                           ? const Color(0xFFFF0066).withOpacity(0.1)
                           : Colors.white.withOpacity(0.05),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                        color: widget.distance > 3000
+                        color: widget.distance > 6999
                             ? const Color(0xFFFF0066).withOpacity(0.3)
                             : Colors.white.withOpacity(0.1),
                         width: 1,
@@ -189,11 +189,11 @@ class _PingBottomSheetState extends State<PingBottomSheet>
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
-                          widget.distance > 3000
+                          widget.distance > 6999
                               ? Icons.warning
                               : Icons.near_me,
                           size: 14,
-                          color: widget.distance > 3000
+                          color: widget.distance > 6999
                               ? const Color(0xFFFF0066)
                               : emotionConfig.color,
                         ),
@@ -201,7 +201,7 @@ class _PingBottomSheetState extends State<PingBottomSheet>
                         Text(
                           _formatDistance(widget.distance),
                           style: TextStyle(
-                            color: widget.distance > 3000
+                            color: widget.distance > 6999
                                 ? const Color(0xFFFF0066)
                                 : emotionConfig.color,
                             fontSize: 13,
@@ -249,8 +249,8 @@ class _PingBottomSheetState extends State<PingBottomSheet>
                 ],
               ),
 
-              // Warning message if too far
-              if (widget.distance > 3000)
+              // Warning message if distance too far
+              if (widget.distance > 6999)
                 Padding(
                   padding: const EdgeInsets.only(top: 16),
                   child: Container(
@@ -331,7 +331,7 @@ class _PingBottomSheetState extends State<PingBottomSheet>
                     Expanded(
                       flex: 2,
                       child: GestureDetector(
-                        onTap: _isSending || widget.distance > 3000
+                        onTap: _isSending || widget.distance > 6999
                             ? null
                             : _sendPing,
                         child: AnimatedContainer(
@@ -339,7 +339,7 @@ class _PingBottomSheetState extends State<PingBottomSheet>
                           height: 50,
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
-                              colors: widget.distance > 3000
+                              colors: widget.distance > 6999
                                   ? [
                                       const Color(0xFFFF0066).withOpacity(0.3),
                                       const Color(0xFFFF0066).withOpacity(0.2)
@@ -357,13 +357,13 @@ class _PingBottomSheetState extends State<PingBottomSheet>
                               end: Alignment.bottomRight,
                             ),
                             borderRadius: BorderRadius.circular(16),
-                            border: widget.distance > 3000
+                            border: widget.distance > 6999
                                 ? Border.all(
                                     color: const Color(0xFFFF0066)
                                         .withOpacity(0.5),
                                     width: 1)
                                 : null,
-                            boxShadow: _isSending || widget.distance > 3000
+                            boxShadow: _isSending || widget.distance > 6999
                                 ? []
                                 : [
                                     BoxShadow(
@@ -375,7 +375,7 @@ class _PingBottomSheetState extends State<PingBottomSheet>
                                   ],
                           ),
                           child: Center(
-                            child: widget.distance > 3000
+                            child: widget.distance > 6999
                                 ? Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [

@@ -261,12 +261,12 @@
   "onboardingValueTitleInstantSparks": "мгновенный PW чат",
   "onboardingValueSubtitleConnect60Sec": "коннект за 60 сек",
   "onboardingValueTitleHyperlocalVibes": "гиперлокальные вайбы",
-  "onboardingValueSubtitleOnly2kmRadius": "только 3км радиус",
+  "onboardingValueSubtitleOnly2kmRadius": "только 6км радиус",
   "onboardingValueTitleNoProfiles": "никаких профилей",
   "onboardingValueSubtitleJustPureMoments": "только настоящие вайбы",
   "onboardingButtonImReady": "я готов",
   "onboardingLocationTitle": "открой свой район",
-  "onboardingLocationSubtitle": "смотри вайбы в радиусе 3км",
+  "onboardingLocationSubtitle": "смотри вайбы в радиусе 6км",
   "onboardingLocationPrivacyTitle": "приватность важна",
   "onboardingLocationPrivacyBullet1": "только когда приложение открыто",
   "onboardingLocationPrivacyBullet2": "без фонового отслеживания",
@@ -509,8 +509,8 @@
 
 
 
-  "pingBottomVibeTooFar": "Вайб слишком далеко (макс 3км)",
-  "pingBottomVibeTooFarMessage": "Вайб слишком далеко - макс 3км для пинга",
+  "pingBottomVibeTooFar": "Вайб слишком далеко (макс 6км)",
+  "pingBottomVibeTooFarMessage": "Вайб слишком далеко - макс 6км для пинга",
   "pingBottomTooFar": "ДАЛЕКО",
   "pingBottomPing": "PING",
   "pingBottomDistanceVeryClose": "очень близко",

@@ -1066,10 +1066,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get moderationReportSendButton => 'Report senden';
 
   @override
-  String get pingBottomVibeTooFar => 'Vibe zu weit weg (max 3km)';
+  String get pingBottomVibeTooFar => 'Vibe zu weit weg (max 6km)';
 
   @override
-  String get pingBottomVibeTooFarMessage => 'Vibe zu weit - max 3km für Ping';
+  String get pingBottomVibeTooFarMessage => 'Vibe zu weit - max 6km für Ping';
 
   @override
   String get pingBottomTooFar => 'ZU WEIT';

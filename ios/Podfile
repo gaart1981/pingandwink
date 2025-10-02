@@ -32,6 +32,7 @@ target 'Runner' do
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
   
 <<<<<<< HEAD
+<<<<<<< HEAD
   # НЕ указываем версию MapboxMaps явно - пусть плагин сам управляет
 end
 
@@ -40,8 +41,18 @@ target 'OneSignalNotificationServiceExtension' do
   use_frameworks!
   pod 'OneSignalXCFramework', '5.2.14'  # Версия должна совпадать с той, что требует onesignal_flutter
 =======
+=======
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
   pod 'MapboxMaps', :modular_headers => true
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
+end
+
+# CRITICAL: OneSignal Extension target
+target 'OneSignalNotificationServiceExtension' do
+  use_frameworks!
+  use_modular_headers!
+  
+  pod 'OneSignalXCFramework', '>= 5.0', '< 6.0'
 end
 
 # CRITICAL: OneSignal Extension target

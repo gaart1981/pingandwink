@@ -13,8 +13,12 @@ class NotificationService: UNNotificationServiceExtension {
         self.bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
         
 <<<<<<< HEAD
+<<<<<<< HEAD
         if let bestAttemptContent = bestAttemptContent {
             // OneSignal обработка уведомлений
+=======
+        if let bestAttemptContent = self.bestAttemptContent {
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
         if let bestAttemptContent = self.bestAttemptContent {
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)

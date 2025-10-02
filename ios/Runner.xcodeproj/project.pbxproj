@@ -15,8 +15,12 @@
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 		BA84C14D2E8E8B860089FF32 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BA84C1462E8E8B860089FF32 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BA84C1582E8E93130089FF32 /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = BA84C1572E8E93130089FF32 /* OneSignalExtension */; };
+=======
+		BA16490E2E8E00950031E32C /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BA1649072E8E00950031E32C /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 		BA16490E2E8E00950031E32C /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BA1649072E8E00950031E32C /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -31,17 +35,23 @@
 			remoteInfo = Runner;
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		BA84C14B2E8E8B860089FF32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BA84C1452E8E8B860089FF32;
 =======
+=======
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 		BA16490C2E8E00950031E32C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BA1649062E8E00950031E32C;
+<<<<<<< HEAD
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
+=======
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			remoteInfo = OneSignalNotificationServiceExtension;
 		};
@@ -59,7 +69,11 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		BA84C14E2E8E8B860089FF32 /* Embed Foundation Extensions */ = {
+=======
+		BA16490F2E8E00950031E32C /* Embed Foundation Extensions */ = {
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 		BA16490F2E8E00950031E32C /* Embed Foundation Extensions */ = {
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -69,7 +83,11 @@
 			dstSubfolderSpec = 13;
 			files = (
 <<<<<<< HEAD
+<<<<<<< HEAD
 				BA84C14D2E8E8B860089FF32 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */,
+=======
+				BA16490E2E8E00950031E32C /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */,
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 				BA16490E2E8E00950031E32C /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */,
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -96,6 +114,7 @@
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 		BA84C1462E8E8B860089FF32 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA84C1542E8E8CBE0089FF32 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,12 +129,24 @@
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		BA1649132E8E00950031E32C /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
+=======
+		BA1649072E8E00950031E32C /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1649162E8E04E00031E32C /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BA1649132E8E00950031E32C /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
 <<<<<<< HEAD
+<<<<<<< HEAD
 			target = BA84C1452E8E8B860089FF32 /* OneSignalNotificationServiceExtension */;
+=======
+			target = BA1649062E8E00950031E32C /* OneSignalNotificationServiceExtension */;
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 			target = BA1649062E8E00950031E32C /* OneSignalNotificationServiceExtension */;
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -124,7 +155,11 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 <<<<<<< HEAD
+<<<<<<< HEAD
 		BA84C1472E8E8B860089FF32 /* OneSignalNotificationServiceExtension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (BA84C1522E8E8B860089FF32 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = OneSignalNotificationServiceExtension; sourceTree = "<group>"; };
+=======
+		BA1649082E8E00950031E32C /* OneSignalNotificationServiceExtension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (BA1649132E8E00950031E32C /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = OneSignalNotificationServiceExtension; sourceTree = "<group>"; };
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 		BA1649082E8E00950031E32C /* OneSignalNotificationServiceExtension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (BA1649132E8E00950031E32C /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = OneSignalNotificationServiceExtension; sourceTree = "<group>"; };
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -139,16 +174,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		BA84C1432E8E8B860089FF32 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BA84C1582E8E93130089FF32 /* OneSignalExtension in Frameworks */,
 =======
+=======
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 		BA1649042E8E00950031E32C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
+=======
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,7 +222,11 @@
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				BA84C1472E8E8B860089FF32 /* OneSignalNotificationServiceExtension */,
+=======
+				BA1649082E8E00950031E32C /* OneSignalNotificationServiceExtension */,
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 				BA1649082E8E00950031E32C /* OneSignalNotificationServiceExtension */,
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -197,7 +242,11 @@
 				97C146EE1CF9000F007C117D /* Runner.app */,
 				331C8081294A63A400263BE5 /* RunnerTests.xctest */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				BA84C1462E8E8B860089FF32 /* OneSignalNotificationServiceExtension.appex */,
+=======
+				BA1649072E8E00950031E32C /* OneSignalNotificationServiceExtension.appex */,
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 				BA1649072E8E00950031E32C /* OneSignalNotificationServiceExtension.appex */,
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -209,7 +258,11 @@
 			isa = PBXGroup;
 			children = (
 <<<<<<< HEAD
+<<<<<<< HEAD
 				BA84C1542E8E8CBE0089FF32 /* Runner.entitlements */,
+=======
+				BA1649162E8E04E00031E32C /* Runner.entitlements */,
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 				BA1649162E8E04E00031E32C /* Runner.entitlements */,
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -263,7 +316,11 @@
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				BA84C14E2E8E8B860089FF32 /* Embed Foundation Extensions */,
+=======
+				BA16490F2E8E00950031E32C /* Embed Foundation Extensions */,
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 				BA16490F2E8E00950031E32C /* Embed Foundation Extensions */,
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -272,7 +329,11 @@
 			);
 			dependencies = (
 <<<<<<< HEAD
+<<<<<<< HEAD
 				BA84C14C2E8E8B860089FF32 /* PBXTargetDependency */,
+=======
+				BA16490D2E8E00950031E32C /* PBXTargetDependency */,
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 				BA16490D2E8E00950031E32C /* PBXTargetDependency */,
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -283,6 +344,7 @@
 			productType = "com.apple.product-type.application";
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		BA84C1452E8E8B860089FF32 /* OneSignalNotificationServiceExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA84C1532E8E8B860089FF32 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
@@ -291,6 +353,8 @@
 				BA84C1432E8E8B860089FF32 /* Frameworks */,
 				BA84C1442E8E8B860089FF32 /* Resources */,
 =======
+=======
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 		BA1649062E8E00950031E32C /* OneSignalNotificationServiceExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA1649142E8E00950031E32C /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
@@ -298,6 +362,9 @@
 				BA1649032E8E00950031E32C /* Sources */,
 				BA1649042E8E00950031E32C /* Frameworks */,
 				BA1649052E8E00950031E32C /* Resources */,
+<<<<<<< HEAD
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
+=======
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			);
 			buildRules = (
@@ -305,6 +372,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+<<<<<<< HEAD
 <<<<<<< HEAD
 				BA84C1472E8E8B860089FF32 /* OneSignalNotificationServiceExtension */,
 			);
@@ -315,6 +383,8 @@
 			productName = OneSignalNotificationServiceExtension;
 			productReference = BA84C1462E8E8B860089FF32 /* OneSignalNotificationServiceExtension.appex */;
 =======
+=======
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 				BA1649082E8E00950031E32C /* OneSignalNotificationServiceExtension */,
 			);
 			name = OneSignalNotificationServiceExtension;
@@ -322,6 +392,9 @@
 			);
 			productName = OneSignalNotificationServiceExtension;
 			productReference = BA1649072E8E00950031E32C /* OneSignalNotificationServiceExtension.appex */;
+<<<<<<< HEAD
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
+=======
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			productType = "com.apple.product-type.app-extension";
 		};
@@ -345,7 +418,11 @@
 						LastSwiftMigration = 1100;
 					};
 <<<<<<< HEAD
+<<<<<<< HEAD
 					BA84C1452E8E8B860089FF32 = {
+=======
+					BA1649062E8E00950031E32C = {
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 					BA1649062E8E00950031E32C = {
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -372,7 +449,11 @@
 				97C146ED1CF9000F007C117D /* Runner */,
 				331C8080294A63A400263BE5 /* RunnerTests */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				BA84C1452E8E8B860089FF32 /* OneSignalNotificationServiceExtension */,
+=======
+				BA1649062E8E00950031E32C /* OneSignalNotificationServiceExtension */,
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 				BA1649062E8E00950031E32C /* OneSignalNotificationServiceExtension */,
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -400,7 +481,11 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		BA84C1442E8E8B860089FF32 /* Resources */ = {
+=======
+		BA1649052E8E00950031E32C /* Resources */ = {
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 		BA1649052E8E00950031E32C /* Resources */ = {
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -465,7 +550,11 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		BA84C1422E8E8B860089FF32 /* Sources */ = {
+=======
+		BA1649032E8E00950031E32C /* Sources */ = {
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 		BA1649032E8E00950031E32C /* Sources */ = {
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -484,15 +573,21 @@
 			targetProxy = 331C8085294A63A400263BE5 /* PBXContainerItemProxy */;
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		BA84C14C2E8E8B860089FF32 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BA84C1452E8E8B860089FF32 /* OneSignalNotificationServiceExtension */;
 			targetProxy = BA84C14B2E8E8B860089FF32 /* PBXContainerItemProxy */;
 =======
+=======
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 		BA16490D2E8E00950031E32C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BA1649062E8E00950031E32C /* OneSignalNotificationServiceExtension */;
 			targetProxy = BA16490C2E8E00950031E32C /* PBXContainerItemProxy */;
+<<<<<<< HEAD
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
+=======
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 		};
 /* End PBXTargetDependency section */
@@ -578,7 +673,11 @@
 				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 <<<<<<< HEAD
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = V83Q24L69W;
+=======
+				DEVELOPMENT_TEAM = "";
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 				DEVELOPMENT_TEAM = "";
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -763,7 +862,11 @@
 				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 <<<<<<< HEAD
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = V83Q24L69W;
+=======
+				DEVELOPMENT_TEAM = "";
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 				DEVELOPMENT_TEAM = "";
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -791,7 +894,11 @@
 				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 <<<<<<< HEAD
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = V83Q24L69W;
+=======
+				DEVELOPMENT_TEAM = "";
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 				DEVELOPMENT_TEAM = "";
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -810,7 +917,11 @@
 			name = Release;
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		BA84C14F2E8E8B860089FF32 /* Debug */ = {
+=======
+		BA1649102E8E00950031E32C /* Debug */ = {
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 		BA1649102E8E00950031E32C /* Debug */ = {
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -858,7 +969,11 @@
 			name = Debug;
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		BA84C1502E8E8B860089FF32 /* Release */ = {
+=======
+		BA1649112E8E00950031E32C /* Release */ = {
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 		BA1649112E8E00950031E32C /* Release */ = {
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -903,7 +1018,11 @@
 			name = Release;
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		BA84C1512E8E8B860089FF32 /* Profile */ = {
+=======
+		BA1649122E8E00950031E32C /* Profile */ = {
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 =======
 		BA1649122E8E00950031E32C /* Profile */ = {
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
@@ -981,6 +1100,7 @@
 			defaultConfigurationName = Release;
 		};
 <<<<<<< HEAD
+<<<<<<< HEAD
 		BA84C1532E8E8B860089FF32 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -988,12 +1108,17 @@
 				BA84C1502E8E8B860089FF32 /* Release */,
 				BA84C1512E8E8B860089FF32 /* Profile */,
 =======
+=======
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 		BA1649142E8E00950031E32C /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA1649102E8E00950031E32C /* Debug */,
 				BA1649112E8E00950031E32C /* Release */,
 				BA1649122E8E00950031E32C /* Profile */,
+<<<<<<< HEAD
+>>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
+=======
 >>>>>>> parent of 89195c7 (Откат к рабочей вер. Андроид13 пуш улучшен)
 			);
 			defaultConfigurationIsVisible = 0;

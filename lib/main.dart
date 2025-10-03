@@ -18,6 +18,7 @@ import 'services/notification_service.dart';
 import 'services/api_service.dart';
 import 'services/storage_service.dart';
 import 'l10n/app_localizations.dart';
+import 'services/onesignal_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -161,6 +162,11 @@ void main() async {
   final onboardingComplete = prefs.getBool('onboarding_complete') ?? false;
 
   debugPrint('📱 Onboarding complete: $onboardingComplete');
+
+  // Check and refresh OneSignal token if needed
+  if (Platform.isAndroid) {
+    await OneSignalService.checkAndRefresh();
+  }
 
   runApp(MoodMapApp(showOnboarding: !onboardingComplete));
 }

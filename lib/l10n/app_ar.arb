@@ -261,12 +261,12 @@
   "onboardingValueTitleInstantSparks": "PW chat فوري",
   "onboardingValueSubtitleConnect60Sec": "اتصل في 60 ثانية",
   "onboardingValueTitleHyperlocalVibes": "vibes محلية جداً",
-  "onboardingValueSubtitleOnly2kmRadius": "3 كم بس",
+  "onboardingValueSubtitleOnly2kmRadius": "المنطقة القريبة فقط",
   "onboardingValueTitleNoProfiles": "مفيش بروفايلات",
   "onboardingValueSubtitleJustPureMoments": "لحظات حقيقية بس",
   "onboardingButtonImReady": "أنا جاهز",
   "onboardingLocationTitle": "افتح منطقتك",
-  "onboardingLocationSubtitle": "شوف المود في دايرة 3 كم",
+  "onboardingLocationSubtitle": "شاهد المشاعر من حولك",
   "onboardingLocationPrivacyTitle": "الخصوصية أولاً",
   "onboardingLocationPrivacyBullet1": "بس لما التطبيق يكون مفتوح",
   "onboardingLocationPrivacyBullet2": "مفيش تتبع في الخلفية",
@@ -509,8 +509,8 @@
 
 
 
-  "pingBottomVibeTooFar": "Vibe بعيد أوي (أقصى 3كم)",
-  "pingBottomVibeTooFarMessage": "Vibe بعيد - أقصى 3كم للـ ping",
+  "pingBottomVibeTooFar": "الفايب بعيد جداً",
+  "pingBottomVibeTooFarMessage": "هذا الفايب خارج النطاق",
   "pingBottomTooFar": "بعيد أوي",
   "pingBottomPing": "PING",
   "pingBottomDistanceVeryClose": "قريب أوي",

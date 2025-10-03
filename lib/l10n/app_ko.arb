@@ -261,12 +261,12 @@
   "onboardingValueTitleInstantSparks": "즉시 PW chat",
   "onboardingValueSubtitleConnect60Sec": "60초 안에 연결",
   "onboardingValueTitleHyperlocalVibes": "완전 로컬 vibe",
-  "onboardingValueSubtitleOnly2kmRadius": "반경 3km만",
+  "onboardingValueSubtitleOnly2kmRadius": "가까운 지역만",
   "onboardingValueTitleNoProfiles": "프로필 없음",
   "onboardingValueSubtitleJustPureMoments": "순수한 순간만",
   "onboardingButtonImReady": "준비됐어",
   "onboardingLocationTitle": "네 지역 열어",
-  "onboardingLocationSubtitle": "3km 안의 무드 봐",
+  "onboardingLocationSubtitle": "주변 바이브 보기",
   "onboardingLocationPrivacyTitle": "프라이버시 우선",
   "onboardingLocationPrivacyBullet1": "앱 열었을 때만",
   "onboardingLocationPrivacyBullet2": "백그라운드 추적 없음",
@@ -509,8 +509,8 @@
 
 
 
-  "pingBottomVibeTooFar": "Vibe 너무 멀어 (최대 3km)",
-  "pingBottomVibeTooFarMessage": "Vibe 너무 멀어 - ping 최대 3km",
+  "pingBottomVibeTooFar": "바이브가 너무 멀어요",
+  "pingBottomVibeTooFarMessage": "이 바이브는 범위를 벗어났어요",
   "pingBottomTooFar": "너무 멀어",
   "pingBottomPing": "PING",
   "pingBottomDistanceVeryClose": "완전 가까움",

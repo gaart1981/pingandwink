@@ -475,7 +475,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get onboardingValueTitleHyperlocalVibes => 'süper lokal vibe\'lar';
 
   @override
-  String get onboardingValueSubtitleOnly2kmRadius => 'sadece 6km çap';
+  String get onboardingValueSubtitleOnly2kmRadius => 'sadece yakın alan';
 
   @override
   String get onboardingValueTitleNoProfiles => 'profil yok';
@@ -490,7 +490,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get onboardingLocationTitle => 'bölgeni aç';
 
   @override
-  String get onboardingLocationSubtitle => '6km içindeki ruh hallerini gör';
+  String get onboardingLocationSubtitle => 'etrafındaki vibe\'ları gör';
 
   @override
   String get onboardingLocationPrivacyTitle => 'gizlilik önce';
@@ -1064,11 +1064,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get moderationReportSendButton => 'Raporu Gönder';
 
   @override
-  String get pingBottomVibeTooFar => 'Vibe çok uzak (maks 6km)';
+  String get pingBottomVibeTooFar => 'Vibe çok uzakta';
 
   @override
-  String get pingBottomVibeTooFarMessage =>
-      'Vibe çok uzak - ping için maks 6km';
+  String get pingBottomVibeTooFarMessage => 'Bu vibe erişim alanı dışında';
 
   @override
   String get pingBottomTooFar => 'ÇOK UZAK';

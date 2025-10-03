@@ -477,7 +477,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get onboardingValueTitleHyperlocalVibes => 'ekdum local vibes';
 
   @override
-  String get onboardingValueSubtitleOnly2kmRadius => 'sirf 3km radius';
+  String get onboardingValueSubtitleOnly2kmRadius => 'sirf paas ka area';
 
   @override
   String get onboardingValueTitleNoProfiles => 'koi profile nahi';
@@ -492,7 +492,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get onboardingLocationTitle => 'apna area unlock karo';
 
   @override
-  String get onboardingLocationSubtitle => '3km mein sabke moods dekho';
+  String get onboardingLocationSubtitle => 'apne aas-paas ke vibes dekho';
 
   @override
   String get onboardingLocationPrivacyTitle => 'privacy pehle';
@@ -1068,11 +1068,10 @@ class AppLocalizationsHi extends AppLocalizations {
   String get moderationReportSendButton => 'Report bhejo';
 
   @override
-  String get pingBottomVibeTooFar => 'Vibe bahut door hai (max 3km)';
+  String get pingBottomVibeTooFar => 'Vibe bohot door hai';
 
   @override
-  String get pingBottomVibeTooFarMessage =>
-      'Vibe door hai - ping ke liye max 3km';
+  String get pingBottomVibeTooFarMessage => 'Ye vibe reach se bahar hai';
 
   @override
   String get pingBottomTooFar => 'BAHUT DOOR';

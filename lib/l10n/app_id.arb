@@ -261,12 +261,12 @@
   "onboardingValueTitleInstantSparks": "PW chat instan",
   "onboardingValueSubtitleConnect60Sec": "connect dalam 60 detik",
   "onboardingValueTitleHyperlocalVibes": "vibe lokal banget",
-  "onboardingValueSubtitleOnly2kmRadius": "cuma radius 3km",
+  "onboardingValueSubtitleOnly2kmRadius": "hanya area terdekat",
   "onboardingValueTitleNoProfiles": "gak ada profil",
   "onboardingValueSubtitleJustPureMoments": "cuma momen asli",
   "onboardingButtonImReady": "gue siap",
   "onboardingLocationTitle": "buka area kamu",
-  "onboardingLocationSubtitle": "liat mood dalam radius 3km",
+  "onboardingLocationSubtitle": "lihat vibe di sekitarmu",
   "onboardingLocationPrivacyTitle": "privasi dulu",
   "onboardingLocationPrivacyBullet1": "cuma pas app dibuka",
   "onboardingLocationPrivacyBullet2": "gak ada tracking background",
@@ -509,8 +509,8 @@
 
 
 
-  "pingBottomVibeTooFar": "Vibe terlalu jauh (max 3km)",
-  "pingBottomVibeTooFarMessage": "Vibe kejauhan - max 3km buat ping",
+  "pingBottomVibeTooFar": "Vibe terlalu jauh",
+  "pingBottomVibeTooFarMessage": "Vibe ini di luar jangkauan",
   "pingBottomTooFar": "KEJAUHAN",
   "pingBottomPing": "PING",
   "pingBottomDistanceVeryClose": "deket banget",

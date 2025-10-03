@@ -472,7 +472,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get onboardingValueTitleHyperlocalVibes => 'vibes محلية جداً';
 
   @override
-  String get onboardingValueSubtitleOnly2kmRadius => '3 كم بس';
+  String get onboardingValueSubtitleOnly2kmRadius => 'المنطقة القريبة فقط';
 
   @override
   String get onboardingValueTitleNoProfiles => 'مفيش بروفايلات';
@@ -487,7 +487,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get onboardingLocationTitle => 'افتح منطقتك';
 
   @override
-  String get onboardingLocationSubtitle => 'شوف المود في دايرة 3 كم';
+  String get onboardingLocationSubtitle => 'شاهد المشاعر من حولك';
 
   @override
   String get onboardingLocationPrivacyTitle => 'الخصوصية أولاً';
@@ -1053,10 +1053,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get moderationReportSendButton => 'ابعت البلاغ';
 
   @override
-  String get pingBottomVibeTooFar => 'Vibe بعيد أوي (أقصى 3كم)';
+  String get pingBottomVibeTooFar => 'الفايب بعيد جداً';
 
   @override
-  String get pingBottomVibeTooFarMessage => 'Vibe بعيد - أقصى 3كم للـ ping';
+  String get pingBottomVibeTooFarMessage => 'هذا الفايب خارج النطاق';
 
   @override
   String get pingBottomTooFar => 'بعيد أوي';

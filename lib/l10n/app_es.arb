@@ -261,12 +261,12 @@
   "onboardingValueTitleInstantSparks": "PW chat al instante",
   "onboardingValueSubtitleConnect60Sec": "conecta en 60 seg",
   "onboardingValueTitleHyperlocalVibes": "vibes hiperlocales",
-  "onboardingValueSubtitleOnly2kmRadius": "solo 6km de radio",
+  "onboardingValueSubtitleOnly2kmRadius": "solo área cercana",
   "onboardingValueTitleNoProfiles": "sin perfiles",
   "onboardingValueSubtitleJustPureMoments": "solo momentos reales",
   "onboardingButtonImReady": "estoy listo",
   "onboardingLocationTitle": "desbloquea tu zona",
-  "onboardingLocationSubtitle": "mira los moods en 6km a la redonda",
+  "onboardingLocationSubtitle": "ver vibes a tu alrededor",
   "onboardingLocationPrivacyTitle": "privacidad primero",
   "onboardingLocationPrivacyBullet1": "solo cuando la app está abierta",
   "onboardingLocationPrivacyBullet2": "sin tracking en segundo plano",
@@ -509,8 +509,8 @@
 
 
 
-  "pingBottomVibeTooFar": "Vibe muy lejos (máx 6km)",
-  "pingBottomVibeTooFarMessage": "Vibe muy lejos - máx 6km para ping",
+  "pingBottomVibeTooFar": "Vibe demasiado lejos",
+  "pingBottomVibeTooFarMessage": "Este vibe está fuera de alcance",
   "pingBottomTooFar": "MUY LEJOS",
   "pingBottomPing": "PING",
   "pingBottomDistanceVeryClose": "muy cerca",

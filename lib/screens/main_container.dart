@@ -1,11 +1,13 @@
 // lib/screens/main_container.dart
 import 'package:flutter/material.dart';
+import 'dart:io' show Platform;
 import 'map_screen.dart';
 import 'history_screen.dart';
-import 'trends_screen.dart'; // Added import for TrendsScreen
+import 'trends_screen.dart';
 import 'settings_screen.dart';
 import '../widgets/bottom_navigation.dart';
 import '../l10n/app_localizations.dart';
+import '../services/onesignal_service.dart';
 
 /// Main container for Stage 1 - simplified
 class MainContainer extends StatefulWidget {
@@ -15,7 +17,8 @@ class MainContainer extends StatefulWidget {
   State<MainContainer> createState() => _MainContainerState();
 }
 
-class _MainContainerState extends State<MainContainer> {
+class _MainContainerState extends State<MainContainer>
+    with WidgetsBindingObserver {
   int _currentIndex = 0;
 
   // Key for MapScreen to access its methods
@@ -26,20 +29,34 @@ class _MainContainerState extends State<MainContainer> {
   @override
   void initState() {
     super.initState();
+    // Add lifecycle observer
+    WidgetsBinding.instance.addObserver(this);
+
     _screens = [
       MapScreen(
         key: _mapScreenKey,
         isInContainer: true,
       ),
       const HistoryScreen(),
-      const TrendsScreen(), // Changed from TrendsPlaceholder to TrendsScreen
+      const TrendsScreen(),
       const SettingsScreen(),
     ];
   }
 
   @override
   void dispose() {
+    // Remove lifecycle observer
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    // Check OneSignal token when app resumes on Android
+    if (state == AppLifecycleState.resumed && Platform.isAndroid) {
+      debugPrint('🔄 App resumed - checking OneSignal token');
+      OneSignalService.checkAndRefresh();
+    }
   }
 
   void _onNavigationTap(int index) {

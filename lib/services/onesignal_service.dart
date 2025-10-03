@@ -6,6 +6,7 @@ import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'dart:io' show Platform;
 import '../services/api_service.dart';
 import '../services/storage_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class OneSignalService {
   static bool _isInitialized = false;
@@ -234,6 +235,53 @@ class OneSignalService {
       if (kDebugMode) {
         debugPrint('   Details: ${e.toString()}');
       }
+    }
+  }
+
+  /// Force refresh token - called from Flutter when app resumes
+  static Future<void> forceRefresh() async {
+    debugPrint('🔄 Force refreshing OneSignal token');
+    
+    // Reset flags to allow re-initialization
+    if (Platform.isAndroid) {
+      _isInitialized = false;
+      _tokenSaved = false;
+    }
+    
+    // Re-initialize
+    await initialize();
+  }
+  
+  /// Check if token needs refresh based on last refresh time
+  static Future<bool> needsRefresh() async {
+    if (!Platform.isAndroid) return false;
+    
+    final prefs = await SharedPreferences.getInstance();
+    final lastRefreshStr = prefs.getString('last_onesignal_refresh');
+    
+    if (lastRefreshStr == null) return true;
+    
+    try {
+      final lastRefresh = DateTime.fromMillisecondsSinceEpoch(
+        int.parse(lastRefreshStr)
+      );
+      final hoursSinceRefresh = DateTime.now().difference(lastRefresh).inHours;
+      
+      debugPrint('📊 Hours since last refresh: $hoursSinceRefresh');
+      return hoursSinceRefresh >= 1;
+    } catch (e) {
+      debugPrint('❌ Error parsing last refresh time: $e');
+      return true;
+    }
+  }
+  
+  /// Called when app resumes from background
+  static Future<void> checkAndRefresh() async {
+    if (await needsRefresh()) {
+      debugPrint('⚠️ Token needs refresh (>2 hours old)');
+      await forceRefresh();
+    } else {
+      debugPrint('✅ Token is fresh, no refresh needed');
     }
   }
 }

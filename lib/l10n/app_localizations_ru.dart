@@ -476,7 +476,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get onboardingValueTitleHyperlocalVibes => 'гиперлокальные вайбы';
 
   @override
-  String get onboardingValueSubtitleOnly2kmRadius => 'только 6км радиус';
+  String get onboardingValueSubtitleOnly2kmRadius => 'только те кто недалеко';
 
   @override
   String get onboardingValueTitleNoProfiles => 'никаких профилей';
@@ -491,7 +491,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get onboardingLocationTitle => 'открой свой район';
 
   @override
-  String get onboardingLocationSubtitle => 'смотри вайбы в радиусе 6км';
+  String get onboardingLocationSubtitle => 'смотри вайбы вокруг тебя';
 
   @override
   String get onboardingLocationPrivacyTitle => 'приватность важна';
@@ -1062,11 +1062,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get moderationReportSendButton => 'Отправить жалобу';
 
   @override
-  String get pingBottomVibeTooFar => 'Вайб слишком далеко (макс 6км)';
+  String get pingBottomVibeTooFar => 'Вайб слишком далеко';
 
   @override
-  String get pingBottomVibeTooFarMessage =>
-      'Вайб слишком далеко - макс 6км для пинга';
+  String get pingBottomVibeTooFarMessage => 'Вайб вне зоны пинга';
 
   @override
   String get pingBottomTooFar => 'ДАЛЕКО';

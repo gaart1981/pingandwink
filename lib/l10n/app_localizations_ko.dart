@@ -471,7 +471,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get onboardingValueTitleHyperlocalVibes => '완전 로컬 vibe';
 
   @override
-  String get onboardingValueSubtitleOnly2kmRadius => '반경 3km만';
+  String get onboardingValueSubtitleOnly2kmRadius => '가까운 지역만';
 
   @override
   String get onboardingValueTitleNoProfiles => '프로필 없음';
@@ -486,7 +486,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get onboardingLocationTitle => '네 지역 열어';
 
   @override
-  String get onboardingLocationSubtitle => '3km 안의 무드 봐';
+  String get onboardingLocationSubtitle => '주변 바이브 보기';
 
   @override
   String get onboardingLocationPrivacyTitle => '프라이버시 우선';
@@ -1046,10 +1046,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get moderationReportSendButton => '신고 보내기';
 
   @override
-  String get pingBottomVibeTooFar => 'Vibe 너무 멀어 (최대 3km)';
+  String get pingBottomVibeTooFar => '바이브가 너무 멀어요';
 
   @override
-  String get pingBottomVibeTooFarMessage => 'Vibe 너무 멀어 - ping 최대 3km';
+  String get pingBottomVibeTooFarMessage => '이 바이브는 범위를 벗어났어요';
 
   @override
   String get pingBottomTooFar => '너무 멀어';

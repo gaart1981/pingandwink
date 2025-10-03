@@ -261,12 +261,12 @@
   "onboardingValueTitleInstantSparks": "instant PW chat",
   "onboardingValueSubtitleConnect60Sec": "60 second mein connect",
   "onboardingValueTitleHyperlocalVibes": "ekdum local vibes",
-  "onboardingValueSubtitleOnly2kmRadius": "sirf 3km radius",
+  "onboardingValueSubtitleOnly2kmRadius": "sirf paas ka area",
   "onboardingValueTitleNoProfiles": "koi profile nahi",
   "onboardingValueSubtitleJustPureMoments": "bas real moments",
   "onboardingButtonImReady": "main ready hun",
   "onboardingLocationTitle": "apna area unlock karo",
-  "onboardingLocationSubtitle": "3km mein sabke moods dekho",
+  "onboardingLocationSubtitle": "apne aas-paas ke vibes dekho",
   "onboardingLocationPrivacyTitle": "privacy pehle",
   "onboardingLocationPrivacyBullet1": "sirf jab app khuli ho",
   "onboardingLocationPrivacyBullet2": "background mein tracking nahi",
@@ -509,8 +509,8 @@
 
 
 
-  "pingBottomVibeTooFar": "Vibe bahut door hai (max 3km)",
-  "pingBottomVibeTooFarMessage": "Vibe door hai - ping ke liye max 3km",
+  "pingBottomVibeTooFar": "Vibe bohot door hai",
+  "pingBottomVibeTooFarMessage": "Ye vibe reach se bahar hai",
   "pingBottomTooFar": "BAHUT DOOR",
   "pingBottomPing": "PING",
   "pingBottomDistanceVeryClose": "ekdum paas",

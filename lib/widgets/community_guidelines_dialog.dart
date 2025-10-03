@@ -1,6 +1,7 @@
 // lib/widgets/community_guidelines_dialog.dart
 import 'package:flutter/material.dart';
 import 'dart:ui';
+import 'dart:math' as math;
 import '../config/theme.dart';
 import '../services/moderation_service.dart';
 import '../services/storage_service.dart';
@@ -25,11 +26,31 @@ class CommunityGuidelinesDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    
+    // Получаем размеры экрана для адаптации
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+    final padding = MediaQuery.of(context).padding;
+    
+    // Рассчитываем максимальную высоту диалога (80% от доступной высоты)
+    final maxDialogHeight = (screenHeight - padding.top - padding.bottom) * 0.85;
+    
+    // Адаптивные отступы в зависимости от размера экрана
+    final isSmallScreen = screenHeight < 700;
+    final contentPadding = isSmallScreen ? 16.0 : 24.0;
+    final verticalSpacing = isSmallScreen ? 16.0 : 24.0;
 
     return Dialog(
       backgroundColor: Colors.transparent,
+      insetPadding: EdgeInsets.symmetric(
+        horizontal: 16,
+        vertical: math.max(padding.top + 16, 24),
+      ),
       child: Container(
-        constraints: const BoxConstraints(maxWidth: 350),
+        constraints: BoxConstraints(
+          maxWidth: math.min(350, screenWidth - 32),
+          maxHeight: maxDialogHeight,
+        ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(24),
           child: BackdropFilter(
@@ -46,10 +67,10 @@ class CommunityGuidelinesDialog extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // Header with gradient
+                  // Header с градиентом (фиксированный)
                   Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.all(24),
+                    padding: EdgeInsets.all(contentPadding),
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
@@ -57,12 +78,15 @@ class CommunityGuidelinesDialog extends StatelessWidget {
                           AppTheme.secondaryColor.withOpacity(0.2),
                         ],
                       ),
+                      borderRadius: const BorderRadius.vertical(
+                        top: Radius.circular(24),
+                      ),
                     ),
                     child: Column(
                       children: [
                         Container(
-                          width: 60,
-                          height: 60,
+                          width: isSmallScreen ? 50 : 60,
+                          height: isSmallScreen ? 50 : 60,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             gradient: LinearGradient(
@@ -72,119 +96,148 @@ class CommunityGuidelinesDialog extends StatelessWidget {
                               ],
                             ),
                           ),
-                          child: const Center(
+                          child: Center(
                             child: Text(
                               '✨',
-                              style: TextStyle(fontSize: 28),
+                              style: TextStyle(fontSize: isSmallScreen ? 24 : 28),
                             ),
                           ),
                         ),
-                        const SizedBox(height: 16),
+                        SizedBox(height: isSmallScreen ? 12 : 16),
                         Text(
                           l10n.guidelinesTitle,
-                          style: const TextStyle(
+                          style: TextStyle(
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: isSmallScreen ? 18 : 20,
                             fontWeight: FontWeight.bold,
                           ),
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),
                   ),
 
-                  // Guidelines content
-                  Padding(
-                    padding: const EdgeInsets.all(24),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        _buildGuideline(
-                          '💜',
-                          l10n.guidelinesRespectTitle,
-                          l10n.guidelinesRespectSubtitle,
-                        ),
-                        _buildGuideline(
-                          '🚫',
-                          l10n.guidelinesNoHarassmentTitle,
-                          l10n.guidelinesNoHarassmentSubtitle,
-                        ),
-                        _buildGuideline(
-                          '✨',
-                          l10n.guidelinesKeepRealTitle,
-                          l10n.guidelinesKeepRealSubtitle,
-                        ),
-                        _buildGuideline(
-                          '🎉',
-                          l10n.guidelinesHaveFunTitle,
-                          l10n.guidelinesHaveFunSubtitle,
-                        ),
-
-                        const SizedBox(height: 24),
-
-                        // Important note
-                        Container(
-                          padding: const EdgeInsets.all(12),
-                          decoration: BoxDecoration(
-                            color: Colors.orange.withOpacity(0.1),
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(
-                              color: Colors.orange.withOpacity(0.3),
-                            ),
+                  // Прокручиваемый контент
+                  Flexible(
+                    child: SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      padding: EdgeInsets.all(contentPadding),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          _buildGuideline(
+                            '💜',
+                            l10n.guidelinesRespectTitle,
+                            l10n.guidelinesRespectSubtitle,
+                            isSmallScreen,
                           ),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.info_outline,
-                                color: Colors.orange.shade300,
-                                size: 20,
+                          _buildGuideline(
+                            '🚫',
+                            l10n.guidelinesNoHarassmentTitle,
+                            l10n.guidelinesNoHarassmentSubtitle,
+                            isSmallScreen,
+                          ),
+                          _buildGuideline(
+                            '✨',
+                            l10n.guidelinesKeepRealTitle,
+                            l10n.guidelinesKeepRealSubtitle,
+                            isSmallScreen,
+                          ),
+                          _buildGuideline(
+                            '🎉',
+                            l10n.guidelinesHaveFunTitle,
+                            l10n.guidelinesHaveFunSubtitle,
+                            isSmallScreen,
+                          ),
+
+                          SizedBox(height: verticalSpacing),
+
+                          // Важное примечание
+                          Container(
+                            padding: EdgeInsets.all(isSmallScreen ? 10 : 12),
+                            decoration: BoxDecoration(
+                              color: Colors.orange.withOpacity(0.1),
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: Colors.orange.withOpacity(0.3),
                               ),
-                              const SizedBox(width: 12),
-                              Expanded(
-                                child: Text(
-                                  l10n.guidelinesViolationWarning,
-                                  style: TextStyle(
-                                    color: Colors.orange.shade200,
-                                    fontSize: 12,
+                            ),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Icon(
+                                  Icons.info_outline,
+                                  color: Colors.orange.shade300,
+                                  size: isSmallScreen ? 18 : 20,
+                                ),
+                                const SizedBox(width: 8),
+                                Expanded(
+                                  child: Text(
+                                    l10n.guidelinesViolationWarning,
+                                    style: TextStyle(
+                                      color: Colors.orange.shade200,
+                                      fontSize: isSmallScreen ? 11 : 12,
+                                      height: 1.3,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-
-                        const SizedBox(height: 24),
-
-                        // Accept button
-                        SizedBox(
-                          width: double.infinity,
-                          child: ElevatedButton(
-                            onPressed: () async {
-                              final deviceId =
-                                  await StorageService.getDeviceId();
-                              await ModerationService.acceptGuidelines(
-                                  deviceId);
-                              if (context.mounted) {
-                                Navigator.of(context).pop();
-                              }
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: AppTheme.primaryColor,
-                              padding: const EdgeInsets.symmetric(vertical: 16),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                            ),
-                            child: Text(
-                              l10n.guidelinesButtonUnderstand,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
+                              ],
                             ),
                           ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  // Кнопка принятия (всегда видима)
+                  Container(
+                    padding: EdgeInsets.fromLTRB(
+                      contentPadding,
+                      isSmallScreen ? 12 : 16,
+                      contentPadding,
+                      contentPadding,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.3),
+                      border: Border(
+                        top: BorderSide(
+                          color: Colors.white.withOpacity(0.1),
+                          width: 1,
                         ),
-                      ],
+                      ),
+                    ),
+                    child: SafeArea(
+                      top: false,
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: () async {
+                            final deviceId = await StorageService.getDeviceId();
+                            await ModerationService.acceptGuidelines(deviceId);
+                            if (context.mounted) {
+                              Navigator.of(context).pop();
+                            }
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppTheme.primaryColor,
+                            padding: EdgeInsets.symmetric(
+                              vertical: isSmallScreen ? 14 : 16,
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            elevation: 0,
+                          ),
+                          child: Text(
+                            l10n.guidelinesButtonUnderstand,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: isSmallScreen ? 15 : 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -196,40 +249,46 @@ class CommunityGuidelinesDialog extends StatelessWidget {
     );
   }
 
-  Widget _buildGuideline(String emoji, String title, String subtitle) {
+  Widget _buildGuideline(String emoji, String title, String subtitle, bool isSmallScreen) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
+      padding: EdgeInsets.symmetric(vertical: isSmallScreen ? 6 : 8),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: 40,
-            height: 40,
+            width: isSmallScreen ? 36 : 40,
+            height: isSmallScreen ? 36 : 40,
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.1),
               shape: BoxShape.circle,
             ),
             child: Center(
-              child: Text(emoji, style: const TextStyle(fontSize: 20)),
+              child: Text(
+                emoji, 
+                style: TextStyle(fontSize: isSmallScreen ? 18 : 20),
+              ),
             ),
           ),
-          const SizedBox(width: 16),
+          SizedBox(width: isSmallScreen ? 12 : 16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.white,
-                    fontSize: 14,
+                    fontSize: isSmallScreen ? 13 : 14,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
+                const SizedBox(height: 2),
                 Text(
                   subtitle,
                   style: TextStyle(
                     color: Colors.white.withOpacity(0.6),
-                    fontSize: 12,
+                    fontSize: isSmallScreen ? 11 : 12,
+                    height: 1.3,
                   ),
                 ),
               ],

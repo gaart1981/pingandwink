@@ -76,5 +76,12 @@
 	<!-- Export Compliance -->
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<!-- OneSignal Provisional Authorization Control -->
+	<key>OneSignal_disable_provisional_authorization</key>
+	<true/>
+	<key>OneSignal_prompt_for_pushnotifications_on_first_launch</key>
+	<false/>
+	<key>OneSignal_suppress_launch_urls</key>
+	<true/>
 </dict>
 </plist>

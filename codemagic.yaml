@@ -1,37 +1,79 @@
+# codemagic.yaml
 workflows:
   ios-workflow:
     name: iOS Workflow
+    instance_type: mac_mini_m1
     max_build_duration: 60
     environment:
       ios_signing:
-        distribution_type: app_store
+        distribution_type: development  # или app_store для продакшн
         bundle_identifier: com.pingandwink.pingandwink
       vars:
-        XCODE_WORKSPACE: "ios/Runner.xcworkspace"
-        XCODE_SCHEME: "Runner"
+        ONESIGNAL_APP_ID: "a65a7e49-5606-45dd-b32d-9e12db9f4e72"
       flutter: stable
       xcode: latest
       cocoapods: default
+    
     scripts:
-      - name: Set up code signing settings on Xcode project
+      # Установка зависимостей
+      - name: Install dependencies
         script: |
-          xcode-project use-profiles
-      - name: Get Flutter packages
+          flutter pub get
+          cd ios && pod install
+      
+      # Обновление Push Notifications capability
+      - name: Set up Push Notifications
         script: |
-          flutter packages pub get
-      - name: Install pods
+          cd ios
+          echo "Adding Push Notifications capability..."
+          /usr/libexec/PlistBuddy -c "Add :UIBackgroundModes array" Runner/Info.plist 2>/dev/null || true
+          /usr/libexec/PlistBuddy -c "Add :UIBackgroundModes:0 string remote-notification" Runner/Info.plist 2>/dev/null || true
+      
+      # Сборка iOS
+      - name: Build iOS
         script: |
-          find . -name "Podfile" -execdir pod install \;
-      - name: Flutter build ipa
+          flutter build ios --release --no-codesign
+          
+      # Подпись приложения (если настроены сертификаты)
+      - name: Build IPA
         script: |
-          flutter build ipa --release \
-            --build-name=$CM_BUILD_ID \
-            --build-number=$(($(app-store-connect get-latest-build-number "$APP_STORE_APPLE_ID") + 1)) \
-            --export-options-plist=/Users/builder/export_options.plist
+          xcode-project build-ipa \
+            --workspace "ios/Runner.xcworkspace" \
+            --scheme "Runner"
+    
     artifacts:
       - build/ios/ipa/*.ipa
-      - /tmp/xcodebuild_logs/*.log
       - flutter_drive.log
+    
     publishing:
-      app_store_connect:
-        auth: integration
+      email:
+        recipients:
+          - your-email@example.com  # Замените на ваш email
+        notify:
+          success: true
+          failure: true
+
+  android-workflow:
+    name: Android Workflow  
+    instance_type: linux_x2
+    max_build_duration: 30
+    environment:
+      flutter: stable
+      vars:
+        ONESIGNAL_APP_ID: "a65a7e49-5606-45dd-b32d-9e12db9f4e72"
+    
+    scripts:
+      - name: Set up local.properties
+        script: |
+          echo "flutter.sdk=$HOME/programs/flutter" > "$CM_BUILD_DIR/android/local.properties"
+      
+      - name: Get Flutter packages
+        script: |
+          flutter pub get
+      
+      - name: Build APK
+        script: |
+          flutter build apk --release
+    
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk

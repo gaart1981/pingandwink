@@ -812,10 +812,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsModerationReports => 'Reports';
 
   @override
-  String get settingsModerationClearData => 'Clear Test Data';
+  String get settingsModerationClearData => 'Clear Data';
 
   @override
-  String get settingsModerationDataCleared => 'Test data cleared';
+  String get settingsModerationDataCleared => 'Data cleared';
 
   @override
   String get sparkConnectingToChat => 'Connecting to PW chat...';

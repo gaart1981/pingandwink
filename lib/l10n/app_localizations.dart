@@ -1623,13 +1623,13 @@ abstract class AppLocalizations {
   /// No description provided for @settingsModerationClearData.
   ///
   /// In en, this message translates to:
-  /// **'Clear Test Data'**
+  /// **'Clear Data'**
   String get settingsModerationClearData;
 
   /// No description provided for @settingsModerationDataCleared.
   ///
   /// In en, this message translates to:
-  /// **'Test data cleared'**
+  /// **'Data cleared'**
   String get settingsModerationDataCleared;
 
   /// No description provided for @sparkConnectingToChat.

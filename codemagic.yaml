@@ -1,12 +1,11 @@
-# codemagic.yaml
 workflows:
   ios-workflow:
-    name: iOS Workflow
+    name: iOS Build
     instance_type: mac_mini_m1
     max_build_duration: 60
     environment:
       ios_signing:
-        distribution_type: development  # или app_store для продакшн
+        distribution_type: app_store  # ИСПРАВЛЕНО: для TestFlight нужен app_store
         bundle_identifier: com.pingandwink.pingandwink
       vars:
         ONESIGNAL_APP_ID: "a65a7e49-5606-45dd-b32d-9e12db9f4e72"
@@ -15,46 +14,42 @@ workflows:
       cocoapods: default
     
     scripts:
-      # Установка зависимостей
       - name: Install dependencies
         script: |
           flutter pub get
           cd ios && pod install
       
-      # Обновление Push Notifications capability
-      - name: Set up Push Notifications
+      - name: Verify push notification setup
         script: |
-          cd ios
-          echo "Adding Push Notifications capability..."
-          /usr/libexec/PlistBuddy -c "Add :UIBackgroundModes array" Runner/Info.plist 2>/dev/null || true
-          /usr/libexec/PlistBuddy -c "Add :UIBackgroundModes:0 string remote-notification" Runner/Info.plist 2>/dev/null || true
+          echo "✅ Checking push notification configuration..."
+          echo "Entitlements:"
+          cat ios/Runner/Runner.entitlements
+          echo "Background modes in Info.plist:"
+          grep -A 3 UIBackgroundModes ios/Runner/Info.plist || echo "UIBackgroundModes not found"
       
-      # Сборка iOS
-      - name: Build iOS
+      - name: Flutter build IPA
         script: |
-          flutter build ios --release --no-codesign
-          
-      # Подпись приложения (если настроены сертификаты)
-      - name: Build IPA
-        script: |
-          xcode-project build-ipa \
-            --workspace "ios/Runner.xcworkspace" \
-            --scheme "Runner"
+          flutter build ipa --release \
+            --export-options-plist=/Users/builder/export_options.plist
     
     artifacts:
       - build/ios/ipa/*.ipa
-      - flutter_drive.log
+      - build/ios/archive/*.xcarchive
     
     publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true  # ДОБАВЛЕНО: автоматическая загрузка в TestFlight
+        submit_to_app_store: false
       email:
         recipients:
-          - your-email@example.com  # Замените на ваш email
+          - pingandwink@gmail.com  # ИСПРАВЛЕНО: ваш реальный email
         notify:
           success: true
           failure: true
 
   android-workflow:
-    name: Android Workflow  
+    name: Android Build
     instance_type: linux_x2
     max_build_duration: 30
     environment:

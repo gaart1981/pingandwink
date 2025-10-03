@@ -94,9 +94,9 @@ void main() async {
   debugPrint('📱 Onboarding complete: $onboardingComplete');
 
   // Check and refresh OneSignal token if needed
-  if (Platform.isAndroid) {
-    await OneSignalService.checkAndRefresh();
-  }
+  //if (Platform.isAndroid) {
+  //  await OneSignalService.checkAndRefresh();
+  //}
 
   runApp(MoodMapApp(showOnboarding: !onboardingComplete));
 }

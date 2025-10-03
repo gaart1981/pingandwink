@@ -13,6 +13,7 @@ import 'main_container.dart';
 import 'legal/privacy_policy.dart';
 import 'legal/terms_of_service.dart';
 import 'birth_year_selection_screen.dart';
+import 'dart:io';
 
 /// Gen Z optimized onboarding for Ping&Wink
 class OnboardingScreen extends StatefulWidget {
@@ -975,18 +976,47 @@ class _OnboardingScreenState extends State<OnboardingScreen>
               l10n.onboardingButtonTurnOnPings,
               () async {
                 HapticFeedback.mediumImpact();
+
+                // НОВОЕ: Инициализируем OneSignal прямо здесь
+                final prefs = await SharedPreferences.getInstance();
+                final oneSignalAppId =
+                    prefs.getString('onesignal_app_id') ?? '';
+
+                if (oneSignalAppId.isNotEmpty) {
+                  // Инициализация OneSignal
+                  OneSignal.initialize(oneSignalAppId);
+
+                  // Для iOS - сразу запрашиваем разрешения
+                  if (Platform.isIOS) {
+                    await Future.delayed(
+                        Duration(milliseconds: 500)); // Небольшая задержка
+                    final granted =
+                        await OneSignal.Notifications.requestPermission(true);
+
+                    if (granted) {
+                      setState(() {
+                        _notificationsGranted = true;
+                      });
+                      _nextPage();
+                      return; // Выходим, чтобы не дублировать
+                    }
+                  } else {
+                    // Android
+                    OneSignal.Notifications.requestPermission(true);
+                    setState(() {
+                      _notificationsGranted = true;
+                    });
+                    _nextPage();
+                    return;
+                  }
+                }
+
+                // Local notifications как запасной вариант
                 await NotificationService.init();
-
-                // Request OneSignal permissions
-                final oneSignalGranted =
-                    await OneSignal.Notifications.requestPermission(true);
-
-                // Request local notifications
                 final localGranted =
                     await NotificationService.requestNotificationPermissions();
 
-                // If at least one permission was granted
-                if (oneSignalGranted || localGranted) {
+                if (localGranted) {
                   setState(() {
                     _notificationsGranted = true;
                   });

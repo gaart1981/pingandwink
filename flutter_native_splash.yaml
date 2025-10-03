@@ -1,0 +1,27 @@
+# flutter_native_splash.yaml
+flutter_native_splash:
+  # Background color - pure black
+  color: "#000000"
+  
+  # Logo image - make sure splash_logo.png is at least 1024x1024px
+  image: assets/splash_logo.png
+  
+  # Android 12+ specific settings
+  android_12:
+    color: "#000000"
+    image: assets/splash_logo.png
+    icon_background_color: "#000000"
+  
+  # Platform settings
+  android: true
+  ios: true
+  web: false
+  
+  # Android specific settings
+  android_gravity: center
+  
+  # iOS specific settings  
+  ios_content_mode: scaleAspectFit
+  
+  # Full screen settings
+  fullscreen: false

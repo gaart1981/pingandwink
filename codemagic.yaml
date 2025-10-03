@@ -5,7 +5,7 @@ workflows:
     max_build_duration: 60
     environment:
       ios_signing:
-        distribution_type: app_store  # ИСПРАВЛЕНО: для TestFlight нужен app_store
+        distribution_type: app_store
         bundle_identifier: com.pingandwink.pingandwink
       vars:
         ONESIGNAL_APP_ID: "a65a7e49-5606-45dd-b32d-9e12db9f4e72"
@@ -14,18 +14,43 @@ workflows:
       cocoapods: default
     
     scripts:
+      - name: Fix Xcode project entitlements
+        script: |
+          echo "🔧 Adding CODE_SIGN_ENTITLEMENTS to Xcode project..."
+          cd ios
+          
+          # Backup project file
+          cp Runner.xcodeproj/project.pbxproj Runner.xcodeproj/project.pbxproj.backup
+          
+          # Add CODE_SIGN_ENTITLEMENTS using sed
+          sed -i '' 's/PRODUCT_NAME = "$(TARGET_NAME)";/PRODUCT_NAME = "$(TARGET_NAME)";\
+				CODE_SIGN_ENTITLEMENTS = Runner\/Runner.entitlements;/g' Runner.xcodeproj/project.pbxproj
+          
+          echo "✅ CODE_SIGN_ENTITLEMENTS added to project"
+          
+      - name: Verify entitlements setup
+        script: |
+          echo "📋 Verifying push notification configuration..."
+          echo ""
+          echo "1. Checking Runner.entitlements content:"
+          if [ -f "ios/Runner/Runner.entitlements" ]; then
+            cat ios/Runner/Runner.entitlements
+            echo "✅ Entitlements file exists"
+          else
+            echo "❌ Runner.entitlements NOT FOUND!"
+            exit 1
+          fi
+          echo ""
+          echo "2. Checking for aps-environment:"
+          grep "aps-environment" ios/Runner/Runner.entitlements && echo "✅ aps-environment found" || echo "❌ aps-environment NOT FOUND!"
+          echo ""
+          echo "3. Checking CODE_SIGN_ENTITLEMENTS in project:"
+          grep "CODE_SIGN_ENTITLEMENTS" ios/Runner.xcodeproj/project.pbxproj && echo "✅ CODE_SIGN_ENTITLEMENTS found" || echo "⚠️ CODE_SIGN_ENTITLEMENTS not found"
+          
       - name: Install dependencies
         script: |
           flutter pub get
           cd ios && pod install
-      
-      - name: Verify push notification setup
-        script: |
-          echo "✅ Checking push notification configuration..."
-          echo "Entitlements:"
-          cat ios/Runner/Runner.entitlements
-          echo "Background modes in Info.plist:"
-          grep -A 3 UIBackgroundModes ios/Runner/Info.plist || echo "UIBackgroundModes not found"
       
       - name: Flutter build IPA
         script: |
@@ -39,11 +64,11 @@ workflows:
     publishing:
       app_store_connect:
         auth: integration
-        submit_to_testflight: true  # ДОБАВЛЕНО: автоматическая загрузка в TestFlight
+        submit_to_testflight: true
         submit_to_app_store: false
       email:
         recipients:
-          - pingandwink@gmail.com  # ИСПРАВЛЕНО: ваш реальный email
+          - pingandwink@gmail.com
         notify:
           success: true
           failure: true

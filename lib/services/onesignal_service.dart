@@ -1,287 +1,137 @@
 // lib/services/onesignal_service.dart
-// ИСПРАВЛЕНО: Добавлена задержка для iOS и детальное логирование
+// УПРОЩЕННАЯ ВЕРСИЯ БЕЗ ДУБЛИРУЮЩЕЙ ИНИЦИАЛИЗАЦИИ
 import 'package:flutter/foundation.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'dart:io' show Platform;
+import 'dart:async';
 import '../services/api_service.dart';
 import '../services/storage_service.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class OneSignalService {
-  static bool _isInitialized = false;
-  static bool _tokenSaved = false; // Флаг для предотвращения дублирования
+  // НЕТ инициализации здесь! Она только в main.dart
 
-  /// Initialize OneSignal push notification service
-  static Future<void> initialize() async {
-    if (_isInitialized) {
-      debugPrint('⚠️ OneSignal already initialized');
+  /// Проверить и сохранить player_id если доступен
+  static Future<void> checkAndSavePlayerId() async {
+    final playerId = OneSignal.User.pushSubscription.id;
+    final token = OneSignal.User.pushSubscription.token;
+    final optedIn = OneSignal.User.pushSubscription.optedIn;
+
+    debugPrint('');
+    debugPrint('📊 ═══════════════════════════════════');
+    debugPrint('📊 CHECKING ONESIGNAL STATUS');
+    debugPrint('📊 ═══════════════════════════════════');
+    debugPrint('   Platform: ${Platform.isIOS ? "iOS" : "Android"}');
+    debugPrint('   Player ID: ${playerId ?? "null"}');
+    debugPrint('   Token: ${token ?? "null"}');
+    debugPrint('   Opted In: ${optedIn ?? false}');
+    debugPrint('📊 ═══════════════════════════════════');
+    debugPrint('');
+
+    if (playerId != null && playerId.isNotEmpty && optedIn == true) {
+      final deviceId = await StorageService.getDeviceId();
+
+      try {
+        await ApiService.savePushToken(
+          deviceId: deviceId,
+          playerId: playerId,
+        );
+        debugPrint('✅ Player ID saved successfully to backend');
+      } catch (e) {
+        debugPrint('❌ Failed to save player ID: $e');
+      }
+    } else {
+      debugPrint(
+          '⚠️ Cannot save - Player ID not available or user not opted in');
+    }
+  }
+
+  /// Диагностика состояния OneSignal
+  static void diagnoseStatus() {
+    debugPrint('');
+    debugPrint('🔍 ═══════════════════════════════════');
+    debugPrint('🔍 ONESIGNAL DIAGNOSTIC');
+    debugPrint('🔍 ═══════════════════════════════════');
+    debugPrint('   Platform: ${Platform.isIOS ? "iOS" : "Android"}');
+    debugPrint('   Time: ${DateTime.now().toIso8601String()}');
+
+    final id = OneSignal.User.pushSubscription.id;
+    debugPrint('   Player ID: ${id ?? "NULL"}');
+
+    final token = OneSignal.User.pushSubscription.token;
+    debugPrint('   Push Token: ${token ?? "NULL"}');
+
+    final optedIn = OneSignal.User.pushSubscription.optedIn;
+    debugPrint('   Opted In: $optedIn');
+
+    debugPrint('🔍 ═══════════════════════════════════');
+    debugPrint('');
+  }
+
+  /// Retry логика специально для iOS
+  static Future<void> retryIOSRegistration() async {
+    if (!Platform.isIOS) {
+      debugPrint('📱 Skipping iOS retry on Android platform');
       return;
     }
 
-    try {
-      debugPrint('🚀 Initializing OneSignal...');
-      debugPrint('   Platform: ${Platform.isIOS ? "iOS" : "Android"}');
+    debugPrint('🍎 iOS: Starting retry sequence for player_id');
 
-      // Get OneSignal App ID from environment variables
-      final oneSignalAppId = dotenv.env['ONESIGNAL_APP_ID'] ?? '';
+    // Попытка 1: через 5 секунд
+    Timer(const Duration(seconds: 5), () async {
+      debugPrint('🍎 iOS Retry 1/3 (5 seconds)');
+      await checkAndSavePlayerId();
 
-      if (oneSignalAppId.isEmpty) {
-        debugPrint('❌ OneSignal App ID not found in .env file');
-        return;
-      }
-
-      debugPrint('✅ OneSignal App ID: ${oneSignalAppId.substring(0, 8)}...');
-
-      // Set appropriate log level - warn for debug, none for production
-      if (kDebugMode) {
-        OneSignal.Debug.setLogLevel(OSLogLevel.warn);
+      if (OneSignal.User.pushSubscription.id == null) {
+        debugPrint('⚠️ iOS Retry 1 failed - player_id still null');
       } else {
-        OneSignal.Debug.setLogLevel(OSLogLevel.none);
+        debugPrint('✅ iOS Retry 1 successful!');
       }
+    });
 
-      // Initialize OneSignal with app ID
-      OneSignal.initialize(oneSignalAppId);
-      debugPrint('✅ OneSignal initialized');
+    // Попытка 2: через 15 секунд
+    Timer(const Duration(seconds: 15), () async {
+      debugPrint('🍎 iOS Retry 2/3 (15 seconds)');
+      await checkAndSavePlayerId();
 
-      // Request notification permissions
-      debugPrint('📱 Requesting notification permissions...');
-      OneSignal.Notifications.requestPermission(true);
-
-      // Get device ID for tracking
-      final deviceId = await StorageService.getDeviceId();
-      debugPrint('📱 Device ID: ${deviceId.substring(0, 8)}...');
-
-      // Listen for push subscription changes
-      OneSignal.User.pushSubscription.addObserver((state) async {
-        debugPrint('');
-        debugPrint('🔔 ═══════════════════════════════════');
-        debugPrint('🔔 PUSH SUBSCRIPTION STATE CHANGED');
-        debugPrint('🔔 ═══════════════════════════════════');
-        debugPrint('   Previous Player ID: ${state.previous.id ?? "null"}');
-        debugPrint('   Current Player ID: ${state.current.id ?? "null"}');
-        debugPrint('   Previous Token: ${state.previous.token ?? "null"}');
-        debugPrint('   Current Token: ${state.current.token ?? "null"}');
-        debugPrint('   Opted In: ${state.current.optedIn}');
-        debugPrint('   Platform: ${Platform.isIOS ? "iOS" : "Android"}');
-        debugPrint('🔔 ═══════════════════════════════════');
-        debugPrint('');
-
-        final playerId = state.current.id;
-
-        if (playerId != null && playerId.trim().isNotEmpty && !_tokenSaved) {
-          debugPrint('✅ Valid Player ID received: $playerId');
-          debugPrint('💾 Saving token to database...');
-
-          await _savePushToken(deviceId, playerId);
-          _tokenSaved = true;
-
-          debugPrint('✅ Token saved successfully');
-        } else if (_tokenSaved) {
-          debugPrint('ℹ️ Token already saved, skipping');
-        } else {
-          debugPrint('⚠️ Player ID is null or empty, cannot save');
-        }
-      });
-
-      // КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ ДЛЯ iOS:
-      // На iOS токен создаётся позже, чем на Android
-      // Добавляем задержку перед проверкой начального состояния
-      if (Platform.isIOS) {
-        debugPrint(
-          '⏳ iOS detected - waiting 2 seconds for token generation...',
-        );
-        await Future.delayed(const Duration(seconds: 2));
-      }
-
-      // Check current subscription state
-      debugPrint('🔍 Checking initial subscription state...');
-      final subscriptionState = OneSignal.User.pushSubscription;
-      final initialPlayerId = subscriptionState.id;
-      final initialToken = subscriptionState.token;
-      final isOptedIn = subscriptionState.optedIn;
-
-      debugPrint('');
-      debugPrint('📊 ═══════════════════════════════════');
-      debugPrint('📊 INITIAL SUBSCRIPTION STATE');
-      debugPrint('📊 ═══════════════════════════════════');
-      debugPrint('   Player ID: ${initialPlayerId ?? "null"}');
-      debugPrint('   Token: ${initialToken ?? "null"}');
-      debugPrint('   Opted In: $isOptedIn');
-      debugPrint('   Platform: ${Platform.isIOS ? "iOS" : "Android"}');
-      debugPrint('📊 ═══════════════════════════════════');
-      debugPrint('');
-
-      if (initialPlayerId != null &&
-          initialPlayerId.trim().isNotEmpty &&
-          !_tokenSaved) {
-        debugPrint('✅ Initial Player ID found: $initialPlayerId');
-        debugPrint('💾 Saving initial push token...');
-
-        await _savePushToken(deviceId, initialPlayerId);
-        _tokenSaved = true;
-
-        debugPrint('✅ Initial push token saved');
-      } else if (_tokenSaved) {
-        debugPrint('ℹ️ Token already saved');
+      if (OneSignal.User.pushSubscription.id == null) {
+        debugPrint('⚠️ iOS Retry 2 failed - player_id still null');
       } else {
-        debugPrint('⚠️ No initial Player ID available');
-        debugPrint('   Will be saved when subscription state changes');
-
-        // ДЛЯ iOS: Попробуем ещё раз через 5 секунд
-        if (Platform.isIOS) {
-          debugPrint('⏳ iOS: Scheduling retry in 5 seconds...');
-          Future.delayed(const Duration(seconds: 5), () async {
-            final retryState = OneSignal.User.pushSubscription;
-            final retryPlayerId = retryState.id;
-
-            debugPrint('');
-            debugPrint('🔄 ═══════════════════════════════════');
-            debugPrint('🔄 iOS RETRY ATTEMPT');
-            debugPrint('🔄 ═══════════════════════════════════');
-            debugPrint('   Player ID: ${retryPlayerId ?? "null"}');
-            debugPrint('   Token Saved: $_tokenSaved');
-            debugPrint('🔄 ═══════════════════════════════════');
-            debugPrint('');
-
-            if (retryPlayerId != null &&
-                retryPlayerId.trim().isNotEmpty &&
-                !_tokenSaved) {
-              debugPrint('✅ iOS: Player ID found on retry: $retryPlayerId');
-              debugPrint('💾 Saving token on retry...');
-
-              await _savePushToken(deviceId, retryPlayerId);
-              _tokenSaved = true;
-
-              debugPrint('✅ iOS: Token saved on retry');
-            } else if (_tokenSaved) {
-              debugPrint('ℹ️ iOS: Token already saved');
-            } else {
-              debugPrint('❌ iOS: Still no Player ID after retry');
-            }
-          });
-        }
+        debugPrint('✅ iOS Retry 2 successful!');
       }
+    });
 
-      _isInitialized = true;
+    // Попытка 3: через 30 секунд
+    Timer(const Duration(seconds: 30), () async {
+      debugPrint('🍎 iOS Retry 3/3 (30 seconds)');
+      await checkAndSavePlayerId();
 
-      debugPrint('');
-      debugPrint('✅ ═══════════════════════════════════');
-      debugPrint('✅ ONESIGNAL INITIALIZATION COMPLETE');
-      debugPrint('✅ ═══════════════════════════════════');
-      debugPrint('');
-    } catch (e) {
-      debugPrint('❌ Error initializing OneSignal');
-      if (kDebugMode) {
-        debugPrint('   Error: ${e.toString()}');
-        debugPrint('   Stack trace: ${StackTrace.current}');
+      if (OneSignal.User.pushSubscription.id == null) {
+        debugPrint('❌ iOS: All retries failed - manual intervention needed');
+        debugPrint('❌ iOS: User may need to restart app or check settings');
+      } else {
+        debugPrint('✅ iOS Retry 3 successful!');
       }
-    }
+    });
   }
 
-  /// Save push token to database
-  static Future<void> _savePushToken(String deviceId, String playerId) async {
-    try {
-      debugPrint('');
-      debugPrint('💾 ═══════════════════════════════════');
-      debugPrint('💾 SAVING PUSH TOKEN TO DATABASE');
-      debugPrint('💾 ═══════════════════════════════════');
-      debugPrint('   Device ID: ${deviceId.substring(0, 8)}...');
-      debugPrint('   Player ID: $playerId');
-      debugPrint('   Platform: ${Platform.isIOS ? "iOS" : "Android"}');
-      debugPrint('💾 ═══════════════════════════════════');
-      debugPrint('');
+  /// Проверка при возврате из фона
+  static Future<void> checkOnResume() async {
+    debugPrint('📱 App resumed - checking OneSignal status');
+    diagnoseStatus();
 
-      await ApiService.savePushToken(deviceId: deviceId, playerId: playerId);
-
-      debugPrint('');
-      debugPrint('✅ ═══════════════════════════════════');
-      debugPrint('✅ PUSH TOKEN SAVED SUCCESSFULLY');
-      debugPrint('✅ ═══════════════════════════════════');
-      debugPrint('');
-    } catch (e) {
-      debugPrint('');
-      debugPrint('❌ ═══════════════════════════════════');
-      debugPrint('❌ ERROR SAVING PUSH TOKEN');
-      debugPrint('❌ ═══════════════════════════════════');
-      if (kDebugMode) {
-        debugPrint('   Error: ${e.toString()}');
-        debugPrint('   Stack trace: ${StackTrace.current}');
-      }
-      debugPrint('❌ ═══════════════════════════════════');
-      debugPrint('');
-    }
-  }
-
-  /// Send test push notification via Edge Function
-  static Future<void> testPush() async {
-    try {
-      final deviceId = await StorageService.getDeviceId();
+    // Для iOS делаем дополнительную проверку
+    if (Platform.isIOS) {
       final playerId = OneSignal.User.pushSubscription.id;
-
-      if (playerId == null) {
-        debugPrint('❌ No OneSignal player ID available');
-        return;
+      if (playerId == null || playerId.isEmpty) {
+        debugPrint('🍎 iOS: No player_id on resume, starting retry');
+        await retryIOSRegistration();
+      } else {
+        // Пробуем сохранить если есть
+        await checkAndSavePlayerId();
       }
-
-      debugPrint('📤 Sending test push...');
-
-      // Send via Edge Function that has REST API key
-      await ApiService.testPushNotification(playerId);
-
-      debugPrint('✅ Test push sent');
-    } catch (e) {
-      debugPrint('❌ Error sending test push');
-      if (kDebugMode) {
-        debugPrint('   Details: ${e.toString()}');
-      }
-    }
-  }
-
-  /// Force refresh token - called from Flutter when app resumes
-  static Future<void> forceRefresh() async {
-    debugPrint('🔄 Force refreshing OneSignal token');
-    
-    // Reset flags to allow re-initialization
-    if (Platform.isAndroid) {
-      _isInitialized = false;
-      _tokenSaved = false;
-    }
-    
-    // Re-initialize
-    await initialize();
-  }
-  
-  /// Check if token needs refresh based on last refresh time
-  static Future<bool> needsRefresh() async {
-    if (!Platform.isAndroid) return false;
-    
-    final prefs = await SharedPreferences.getInstance();
-    final lastRefreshStr = prefs.getString('last_onesignal_refresh');
-    
-    if (lastRefreshStr == null) return true;
-    
-    try {
-      final lastRefresh = DateTime.fromMillisecondsSinceEpoch(
-        int.parse(lastRefreshStr)
-      );
-      final hoursSinceRefresh = DateTime.now().difference(lastRefresh).inHours;
-      
-      debugPrint('📊 Hours since last refresh: $hoursSinceRefresh');
-      return hoursSinceRefresh >= 1;
-    } catch (e) {
-      debugPrint('❌ Error parsing last refresh time: $e');
-      return true;
-    }
-  }
-  
-  /// Called when app resumes from background
-  static Future<void> checkAndRefresh() async {
-    if (await needsRefresh()) {
-      debugPrint('⚠️ Token needs refresh (>2 hours old)');
-      await forceRefresh();
     } else {
-      debugPrint('✅ Token is fresh, no refresh needed');
+      // Для Android просто сохраняем если есть
+      await checkAndSavePlayerId();
     }
   }
 }

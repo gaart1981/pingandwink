@@ -25,7 +25,6 @@ class StorageService {
       'soft_location_mode'; // NEW: Soft location setting
   static const String _hasShownEmptyHintKey = 'has_shown_empty_hint';
   static const String _fridayPushScheduledKey = 'friday_push_scheduled';
-  static const String _oneSignalAppIdKey = 'onesignal_app_id';
 
   static SharedPreferences? _prefs;
 
@@ -398,18 +397,5 @@ class StorageService {
   static Future<void> setFridayPushScheduled() async {
     await _ensureInitialized();
     await _prefs!.setBool(_fridayPushScheduledKey, true);
-  }
-
-  /// Save OneSignal App ID for later initialization
-  static Future<void> saveOneSignalAppId(String appId) async {
-    await _ensureInitialized();
-    await _prefs!.setString(_oneSignalAppIdKey, appId);
-    debugPrint('Saved OneSignal App ID for onboarding');
-  }
-
-  /// Get saved OneSignal App ID
-  static Future<String?> getOneSignalAppId() async {
-    await _ensureInitialized();
-    return _prefs!.getString(_oneSignalAppIdKey);
   }
 }

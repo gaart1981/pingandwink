@@ -13,7 +13,8 @@ import 'main_container.dart';
 import 'legal/privacy_policy.dart';
 import 'legal/terms_of_service.dart';
 import 'birth_year_selection_screen.dart';
-import 'dart:io';
+import 'dart:io' show Platform;
+import 'dart:async';
 
 /// Gen Z optimized onboarding for Ping&Wink
 class OnboardingScreen extends StatefulWidget {
@@ -971,55 +972,135 @@ class _OnboardingScreenState extends State<OnboardingScreen>
 
             const SizedBox(height: 40),
 
-            // CTA
+            // CTA с платформо-зависимой логикой
             _buildCTAButton(
               l10n.onboardingButtonTurnOnPings,
               () async {
                 HapticFeedback.mediumImpact();
 
-                // НОВОЕ: Инициализируем OneSignal прямо здесь
-                final prefs = await SharedPreferences.getInstance();
-                final oneSignalAppId =
-                    prefs.getString('onesignal_app_id') ?? '';
+                // Инициализация локальных уведомлений
+                await NotificationService.init();
 
-                if (oneSignalAppId.isNotEmpty) {
-                  // Инициализация OneSignal
-                  OneSignal.initialize(oneSignalAppId);
+                bool oneSignalGranted = false;
 
-                  // Для iOS - сразу запрашиваем разрешения
+                if (Platform.isAndroid) {
+                  // Android: можем запросить разрешения сразу
+                  debugPrint(
+                      '🤖 Android: Requesting OneSignal permissions immediately');
+
+                  oneSignalGranted =
+                      await OneSignal.Notifications.requestPermission(true);
+                  debugPrint('🤖 Android permission result: $oneSignalGranted');
+                } else if (Platform.isIOS) {
+                  // iOS: нужна задержка перед запросом
+                  debugPrint('🍎 iOS detected: Special handling required');
+                  debugPrint(
+                      '🍎 iOS: Waiting 3 seconds before permission request...');
+
+                  // Показываем loading индикатор
+                  showDialog(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (_) => Center(
+                      child: Container(
+                        padding: const EdgeInsets.all(24),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF1A0B2E),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            CircularProgressIndicator(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                  AppTheme.primaryColor),
+                            ),
+                            const SizedBox(height: 16),
+                            Text(
+                              'Preparing notifications...',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                              ),
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              'iOS requires setup time',
+                              style: TextStyle(
+                                color: Colors.white.withOpacity(0.5),
+                                fontSize: 12,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+
+                  // Ждем 3 секунды для iOS (согласно исследованию)
+                  await Future.delayed(const Duration(seconds: 3));
+
+                  // Закрываем loading
+                  if (context.mounted && Navigator.canPop(context)) {
+                    Navigator.pop(context);
+                  }
+
+                  // Теперь запрашиваем разрешение
+                  debugPrint(
+                      '🍎 iOS: Now requesting permission after 3 second delay');
+                  oneSignalGranted =
+                      await OneSignal.Notifications.requestPermission(true);
+                  debugPrint('🍎 iOS permission result: $oneSignalGranted');
+
+                  // Дополнительная проверка для iOS
+                  if (!oneSignalGranted) {
+                    debugPrint(
+                        '🍎 iOS: Permission not granted, checking again in 2 seconds...');
+                    await Future.delayed(const Duration(seconds: 2));
+
+                    // Проверяем статус подписки
+                    final status = OneSignal.User.pushSubscription.optedIn;
+                    oneSignalGranted = status ?? false;
+                    debugPrint('🍎 iOS: Recheck result: $oneSignalGranted');
+                  }
+
+                  // Диагностика для iOS
                   if (Platform.isIOS) {
-                    await Future.delayed(
-                        Duration(milliseconds: 500)); // Небольшая задержка
-                    final granted =
-                        await OneSignal.Notifications.requestPermission(true);
-
-                    if (granted) {
-                      setState(() {
-                        _notificationsGranted = true;
-                      });
-                      _nextPage();
-                      return; // Выходим, чтобы не дублировать
-                    }
-                  } else {
-                    // Android
-                    OneSignal.Notifications.requestPermission(true);
-                    setState(() {
-                      _notificationsGranted = true;
-                    });
-                    _nextPage();
-                    return;
+                    debugPrint('🍎 iOS Diagnostic after permission:');
+                    final playerId = OneSignal.User.pushSubscription.id;
+                    final token = OneSignal.User.pushSubscription.token;
+                    final optedIn = OneSignal.User.pushSubscription.optedIn;
+                    debugPrint('   Player ID: ${playerId ?? "null"}');
+                    debugPrint('   Token: ${token ?? "null"}');
+                    debugPrint('   Opted In: ${optedIn ?? false}');
                   }
                 }
 
-                // Local notifications как запасной вариант
-                await NotificationService.init();
+                // Запрашиваем локальные уведомления
                 final localGranted =
                     await NotificationService.requestNotificationPermissions();
+                debugPrint('📱 Local notifications result: $localGranted');
 
-                if (localGranted) {
+                if (oneSignalGranted || localGranted) {
                   setState(() {
                     _notificationsGranted = true;
                   });
+
+                  // Для iOS - дополнительная проверка player_id через 5 секунд
+                  if (Platform.isIOS) {
+                    Timer(const Duration(seconds: 5), () {
+                      final playerId = OneSignal.User.pushSubscription.id;
+                      if (playerId == null || playerId.isEmpty) {
+                        debugPrint(
+                            '⚠️ iOS: Player ID still null after 5 seconds');
+                        debugPrint('⚠️ iOS: This may require app restart');
+                      } else {
+                        debugPrint(
+                            '✅ iOS: Player ID successfully obtained: $playerId');
+                      }
+                    });
+                  }
+
                   _nextPage();
                 } else {
                   _showNotificationsDeniedDialog(l10n);

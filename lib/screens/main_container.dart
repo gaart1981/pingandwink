@@ -8,6 +8,8 @@ import 'settings_screen.dart';
 import '../widgets/bottom_navigation.dart';
 import '../l10n/app_localizations.dart';
 import '../services/onesignal_service.dart';
+import '../services/onesignal_service.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 /// Main container for Stage 1 - simplified
 class MainContainer extends StatefulWidget {
@@ -52,10 +54,22 @@ class _MainContainerState extends State<MainContainer>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    // Check OneSignal token when app resumes on Android
-    if (state == AppLifecycleState.resumed && Platform.isAndroid) {
-      debugPrint('🔄 App resumed - checking OneSignal token');
-      OneSignalService.checkAndRefresh();
+    // Check OneSignal status when app resumes
+    if (state == AppLifecycleState.resumed) {
+      debugPrint('🔄 App resumed - checking OneSignal status');
+      
+      // Проверяем статус OneSignal для обеих платформ
+      OneSignalService.diagnoseStatus();
+      OneSignalService.checkOnResume();
+      
+      // Для iOS запускаем retry если нужно
+      if (Platform.isIOS) {
+        final playerId = OneSignal.User.pushSubscription.id;
+        if (playerId == null) {
+          debugPrint('🍎 iOS: Starting retry sequence on resume');
+          OneSignalService.retryIOSRegistration();
+        }
+      }
     }
   }
 

@@ -7,7 +7,6 @@ import 'package:mapbox_maps_flutter/mapbox_maps_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'dart:io';
-import 'dart:async'; // Добавлен импорт Timer
 
 import 'config/app_config.dart';
 import 'config/theme.dart';
@@ -18,7 +17,6 @@ import 'services/notification_service.dart';
 import 'services/api_service.dart';
 import 'services/storage_service.dart';
 import 'l10n/app_localizations.dart';
-import 'services/onesignal_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,9 +34,10 @@ void main() async {
   final deviceId = await StorageService.getDeviceId();
   debugPrint('📱 Device ID: $deviceId');
 
-  // Initialize OneSignal push notification service
+  // Initialize OneSignal - ТОЛЬКО ИНИЦИАЛИЗАЦИЯ БЕЗ РАЗРЕШЕНИЙ
   try {
-    debugPrint('🔔 Preparing OneSignal...');
+    debugPrint('🔔 Initializing OneSignal SDK...');
+    debugPrint('📱 Platform: ${Platform.isIOS ? "iOS" : "Android"}');
 
     final oneSignalAppId = dotenv.env['ONESIGNAL_APP_ID'] ?? '';
 
@@ -47,14 +46,69 @@ void main() async {
       throw Exception('ONESIGNAL_APP_ID not configured');
     }
 
-    // КРИТИЧНО: Только сохраняем APP ID для позднего использования
-    // НЕ инициализируем здесь!
-    debugPrint('✅ OneSignal App ID found, will initialize in onboarding');
+    // Set log level for debugging
+    OneSignal.Debug.setLogLevel(OSLogLevel.verbose);
 
-    // Сохраняем для onboarding
-    await StorageService.saveOneSignalAppId(oneSignalAppId);
+    // ВАЖНО: Только инициализация SDK, БЕЗ запроса разрешений!
+    OneSignal.initialize(oneSignalAppId);
+
+    debugPrint('✅ OneSignal SDK initialized (without permissions)');
+
+    // Observer для отслеживания player_id когда он появится
+    OneSignal.User.pushSubscription.addObserver((state) async {
+      debugPrint('');
+      debugPrint('🔔 ═══════════════════════════════════');
+      debugPrint('🔔 PUSH SUBSCRIPTION STATE CHANGED');
+      debugPrint('🔔 ═══════════════════════════════════');
+      debugPrint('   Platform: ${Platform.isIOS ? "iOS" : "Android"}');
+      debugPrint('   Previous Player ID: ${state.previous.id ?? "null"}');
+      debugPrint('   Current Player ID: ${state.current.id ?? "null"}');
+      debugPrint('   Previous Token: ${state.previous.token ?? "null"}');
+      debugPrint('   Current Token: ${state.current.token ?? "null"}');
+      debugPrint('   Opted In: ${state.current.optedIn}');
+      debugPrint('🔔 ═══════════════════════════════════');
+      debugPrint('');
+
+      final playerId = state.current.id;
+
+      if (playerId != null && playerId.trim().isNotEmpty) {
+        debugPrint('✅ Valid Player ID received: $playerId');
+        debugPrint('💾 Saving token to database...');
+
+        bool saved = false;
+        int retryCount = 0;
+        const maxRetries = 3;
+
+        while (!saved && retryCount < maxRetries) {
+          try {
+            await ApiService.savePushToken(
+              deviceId: deviceId,
+              playerId: playerId,
+            );
+            saved = true;
+            debugPrint(
+                '✅ Push token saved to database (attempt ${retryCount + 1})');
+          } catch (e) {
+            retryCount++;
+            debugPrint('❌ Error saving push token (attempt $retryCount): $e');
+            if (retryCount < maxRetries) {
+              await Future.delayed(Duration(seconds: 2 * retryCount));
+            }
+          }
+        }
+      } else {
+        debugPrint('⚠️ Player ID is null or empty, cannot save');
+      }
+    });
+
+    // НЕ ЗАПРАШИВАЕМ РАЗРЕШЕНИЯ ЗДЕСЬ!
+    // Разрешения будут запрошены в onboarding_screen.dart
+    debugPrint('ℹ️ Permissions will be requested during onboarding');
   } catch (e) {
-    debugPrint('❌ Error preparing OneSignal: $e');
+    debugPrint('❌ Error initializing OneSignal: $e');
+    if (e.toString().contains('ONESIGNAL_APP_ID')) {
+      debugPrint('💡 Please check your .env file for ONESIGNAL_APP_ID');
+    }
   }
 
   // Initialize Mapbox
@@ -83,7 +137,7 @@ void main() async {
     anonKey: supabaseAnonKey,
   );
 
-  // Initialize notifications
+  // Initialize notifications service (without requesting permissions)
   await NotificationService.init();
   debugPrint('🔔 Notifications service initialized');
 
@@ -93,10 +147,18 @@ void main() async {
 
   debugPrint('📱 Onboarding complete: $onboardingComplete');
 
-  // Check and refresh OneSignal token if needed
-  //if (Platform.isAndroid) {
-  //  await OneSignalService.checkAndRefresh();
-  //}
+  // Handle notification clicks
+  OneSignal.Notifications.addClickListener((notification) async {
+    debugPrint(
+        '🔔 Notification clicked: ${notification.notification.additionalData}');
+
+    final data = notification.notification.additionalData;
+    if (data != null && data['type'] == 'ping' && data['ping_id'] != null) {
+      final pingId = data['ping_id'] as String;
+      debugPrint('💾 Saving ping_id from notification: $pingId');
+      await StorageService.savePendingPing(pingId);
+    }
+  });
 
   runApp(MoodMapApp(showOnboarding: !onboardingComplete));
 }

@@ -34,11 +34,8 @@ void main() async {
   final deviceId = await StorageService.getDeviceId();
   debugPrint('📱 Device ID: $deviceId');
 
-  // Initialize OneSignal - ТОЛЬКО ИНИЦИАЛИЗАЦИЯ БЕЗ РАЗРЕШЕНИЙ
+  // OneSignal платформо-зависимая инициализация
   try {
-    debugPrint('🔔 Initializing OneSignal SDK...');
-    debugPrint('📱 Platform: ${Platform.isIOS ? "iOS" : "Android"}');
-
     final oneSignalAppId = dotenv.env['ONESIGNAL_APP_ID'] ?? '';
 
     if (oneSignalAppId.isEmpty) {
@@ -49,66 +46,29 @@ void main() async {
     // Set log level for debugging
     OneSignal.Debug.setLogLevel(OSLogLevel.verbose);
 
-    // ВАЖНО: Только инициализация SDK, БЕЗ запроса разрешений!
-    OneSignal.initialize(oneSignalAppId);
+    if (Platform.isAndroid) {
+      // Android: инициализируем сразу (FCM требует немедленной инициализации)
+      debugPrint('🤖 Android detected - initializing OneSignal immediately');
+      OneSignal.initialize(oneSignalAppId);
+      _setupOneSignalObserver(deviceId);
+      debugPrint('✅ OneSignal initialized for Android');
+    } else if (Platform.isIOS) {
+      // iOS: откладываем инициализацию для подготовки APNs delegate
+      debugPrint('🍎 iOS detected - delaying OneSignal initialization');
+      debugPrint('🍎 Waiting 3 seconds for UI to be ready...');
 
-    debugPrint('✅ OneSignal SDK initialized (without permissions)');
-
-    // Observer для отслеживания player_id когда он появится
-    OneSignal.User.pushSubscription.addObserver((state) async {
-      debugPrint('');
-      debugPrint('🔔 ═══════════════════════════════════');
-      debugPrint('🔔 PUSH SUBSCRIPTION STATE CHANGED');
-      debugPrint('🔔 ═══════════════════════════════════');
-      debugPrint('   Platform: ${Platform.isIOS ? "iOS" : "Android"}');
-      debugPrint('   Previous Player ID: ${state.previous.id ?? "null"}');
-      debugPrint('   Current Player ID: ${state.current.id ?? "null"}');
-      debugPrint('   Previous Token: ${state.previous.token ?? "null"}');
-      debugPrint('   Current Token: ${state.current.token ?? "null"}');
-      debugPrint('   Opted In: ${state.current.optedIn}');
-      debugPrint('🔔 ═══════════════════════════════════');
-      debugPrint('');
-
-      final playerId = state.current.id;
-
-      if (playerId != null && playerId.trim().isNotEmpty) {
-        debugPrint('✅ Valid Player ID received: $playerId');
-        debugPrint('💾 Saving token to database...');
-
-        bool saved = false;
-        int retryCount = 0;
-        const maxRetries = 3;
-
-        while (!saved && retryCount < maxRetries) {
-          try {
-            await ApiService.savePushToken(
-              deviceId: deviceId,
-              playerId: playerId,
-            );
-            saved = true;
-            debugPrint(
-                '✅ Push token saved to database (attempt ${retryCount + 1})');
-          } catch (e) {
-            retryCount++;
-            debugPrint('❌ Error saving push token (attempt $retryCount): $e');
-            if (retryCount < maxRetries) {
-              await Future.delayed(Duration(seconds: 2 * retryCount));
-            }
-          }
-        }
-      } else {
-        debugPrint('⚠️ Player ID is null or empty, cannot save');
-      }
-    });
-
-    // НЕ ЗАПРАШИВАЕМ РАЗРЕШЕНИЯ ЗДЕСЬ!
-    // Разрешения будут запрошены в onboarding_screen.dart
-    debugPrint('ℹ️ Permissions will be requested during onboarding');
-  } catch (e) {
-    debugPrint('❌ Error initializing OneSignal: $e');
-    if (e.toString().contains('ONESIGNAL_APP_ID')) {
-      debugPrint('💡 Please check your .env file for ONESIGNAL_APP_ID');
+      Future.delayed(const Duration(seconds: 3), () {
+        debugPrint('🍎 iOS: Initializing OneSignal after 3 second delay');
+        OneSignal.initialize(oneSignalAppId);
+        _setupOneSignalObserver(deviceId);
+        debugPrint('✅ OneSignal initialized for iOS');
+      });
     }
+
+    // НЕ запрашиваем разрешения здесь!
+    debugPrint('ℹ️ Permissions will be requested during onboarding page 4');
+  } catch (e) {
+    debugPrint('❌ Error with OneSignal setup: $e');
   }
 
   // Initialize Mapbox
@@ -161,6 +121,55 @@ void main() async {
   });
 
   runApp(MoodMapApp(showOnboarding: !onboardingComplete));
+}
+
+// Вспомогательная функция для настройки OneSignal observer
+void _setupOneSignalObserver(String deviceId) {
+  OneSignal.User.pushSubscription.addObserver((state) async {
+    debugPrint('');
+    debugPrint('🔔 ═══════════════════════════════════');
+    debugPrint('🔔 PUSH SUBSCRIPTION STATE CHANGED');
+    debugPrint('🔔 ═══════════════════════════════════');
+    debugPrint('   Platform: ${Platform.isIOS ? "iOS" : "Android"}');
+    debugPrint('   Previous Player ID: ${state.previous.id ?? "null"}');
+    debugPrint('   Current Player ID: ${state.current.id ?? "null"}');
+    debugPrint('   Previous Token: ${state.previous.token ?? "null"}');
+    debugPrint('   Current Token: ${state.current.token ?? "null"}');
+    debugPrint('   Opted In: ${state.current.optedIn}');
+    debugPrint('🔔 ═══════════════════════════════════');
+    debugPrint('');
+
+    final playerId = state.current.id;
+
+    if (playerId != null && playerId.trim().isNotEmpty) {
+      debugPrint('✅ Valid Player ID received: $playerId');
+      debugPrint('💾 Saving token to database...');
+
+      bool saved = false;
+      int retryCount = 0;
+      const maxRetries = 3;
+
+      while (!saved && retryCount < maxRetries) {
+        try {
+          await ApiService.savePushToken(
+            deviceId: deviceId,
+            playerId: playerId,
+          );
+          saved = true;
+          debugPrint(
+              '✅ Push token saved to database (attempt ${retryCount + 1})');
+        } catch (e) {
+          retryCount++;
+          debugPrint('❌ Error saving push token (attempt $retryCount): $e');
+          if (retryCount < maxRetries) {
+            await Future.delayed(Duration(seconds: 2 * retryCount));
+          }
+        }
+      }
+    } else {
+      debugPrint('⚠️ Player ID is null or empty, cannot save');
+    }
+  });
 }
 
 /// Main application widget
